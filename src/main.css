@@ -14,6 +14,10 @@
   font: unset;
 }
 
+*:focus-visible {
+  outline: 2px solid;
+}
+
 html {
   font-size: 100%;
 }
