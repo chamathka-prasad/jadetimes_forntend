@@ -16,6 +16,7 @@
 
 *:focus-visible {
   outline: 2px solid;
+  transition: none;
 }
 
 html {
@@ -27,6 +28,10 @@ h2,
 h3,
 h4 {
   line-height: 1.25;
+}
+
+.full-hide {
+  visibility: hidden
 }
 
 /* Tailwind CSS */

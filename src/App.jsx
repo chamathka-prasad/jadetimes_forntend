@@ -14,19 +14,18 @@ import Innovation from "./pages/Innovation";
 import Political from "./pages/Political";
 import Universe from "./pages/Universe";
 import Fashion from "./pages/Fashion";
+import Login from "./pages/Login";
+import Membership from "./pages/Membership";
 
 const App = () => {
-  const [toggleMenu, setToggleMenu] = useState(true);
+  const [toggleMenu, setToggleMenu] = useState(false);
   const handleClick = () => {
     setToggleMenu(!toggleMenu);
   };
   return (
     <>
       <Header toggleMenu={handleClick} />
-      <Aside
-        toggleMenu={handleClick}
-        className={toggleMenu && "right-full invisible"}
-      />
+      <Aside toggleMenu={handleClick} className={toggleMenu && "visible translate-x-0"} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/search" element={<Search />} />
@@ -40,6 +39,8 @@ const App = () => {
         <Route path="/political" element={<Political />} />
         <Route path="/universe" element={<Universe />} />
         <Route path="/fashion" element={<Fashion />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/membership" element={<Membership />} />
       </Routes>
     </>
   );
