@@ -19,13 +19,16 @@ import Membership from "./pages/Membership";
 
 const App = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
-  const handleClick = () => {
+  const handleToggle = () => {
     setToggleMenu(!toggleMenu);
+  };
+  const handleToggleStop = (event) => {
+    event.stopPropagation();
   };
   return (
     <>
-      <Header toggleMenu={handleClick} />
-      <Aside toggleMenu={handleClick} className={toggleMenu && "visible translate-x-0"} />
+      <Header handleToggle={handleToggle} />
+      <Aside handleToggle={handleToggle} navClassName={toggleMenu && "visible translate-x-0"} asideClassName={toggleMenu && "visible opacity-100"} handleToggleStop={handleToggleStop} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/search" element={<Search />} />

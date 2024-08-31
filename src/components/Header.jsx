@@ -6,12 +6,12 @@ import Logo from "/logo.png";
 
 const Header = (props) => {
   return (
-    <header className="bg-black text-white">
+    <header className="bg-black text-white sticky top-0">
       <div className="p-4 flex items-center max-w-7xl mx-auto">
         <Link to="/" className="block min-w-32 max-w-48 order-2 px-4 mx-auto sm:order-3" >
           <img src={Logo} alt="jadetimes logo" />
         </Link>
-        <button className="block order-1" onClick={props.toggleMenu} aria-label="Menu" >
+        <button className="block order-1" onClick={props.handleToggle} aria-label="Menu" >
           <FaAlignLeft size={24} />
         </button>
         <Link to="/search" className="block order-5" aria-label="search">
