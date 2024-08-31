@@ -31,11 +31,11 @@ h4 {
 }
 
 .full-hide {
-  visibility: hidden
+  visibility: hidden;
 }
 
 .bg-transparent-black {
-  background-color: rgba(0, 0, 0, 0.5)
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 /* Tailwind CSS */
