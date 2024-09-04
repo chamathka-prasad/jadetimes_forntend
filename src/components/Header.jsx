@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaAlignLeft } from "react-icons/fa6";
 import { FaMagnifyingGlass } from "react-icons/fa6";
-import Logo from "/logo.png";
+import Logo from "/logo-white.png";
 
 const Header = (props) => {
   return (
@@ -17,11 +17,11 @@ const Header = (props) => {
         <Link to="/search" className="block order-5" aria-label="search">
           <FaMagnifyingGlass size={24} />
         </Link>
-        <Link to="/membership" className=" hidden sm:block bg-red-600 font-medium text-xs py-1 px-2 order-2 ml-6 duration-500 hover:bg-white hover:text-black w-40 text-center uppercase">
+        <Link to="/membership" className=" hidden sm:block bg-red-600 font-medium text-xs py-1 px-2 order-2 ml-6 duration-500 hover:bg-white hover:text-black w-40 text-center uppercase whitespace-nowrap">
           Subscribe : 49.99/Year
         </Link>
         <div className="w-40 hidden sm:block order-4 mr-6 font-medium text-right">
-          <Link to="/login">Log In</Link>
+          <Link to="/log-in">Log In</Link>
         </div>
       </div>
       <nav className="hidden bg-neutral-100 text-black sm:block">

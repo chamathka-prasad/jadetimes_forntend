@@ -16,6 +16,9 @@ import Universe from "./pages/Universe";
 import Fashion from "./pages/Fashion";
 import Login from "./pages/Login";
 import Membership from "./pages/Membership";
+import TalkToUs from "./pages/TalkToUs";
+import AdvertiseWithUs from "./pages/AdvertiseWithUs";
+import Footer from "./components/Footer"
 
 const App = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -44,7 +47,10 @@ const App = () => {
         <Route path="/fashion" element={<Fashion />} />
         <Route path="/login" element={<Login />} />
         <Route path="/membership" element={<Membership />} />
+        <Route path="/advertise-with-us" element={<AdvertiseWithUs />} />
+        <Route path="/talk-to-us" element={<TalkToUs />} />
       </Routes>
+      <Footer />
     </>
   );
 };
