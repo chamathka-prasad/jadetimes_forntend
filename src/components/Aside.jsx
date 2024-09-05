@@ -8,11 +8,11 @@ const Aside = (props) => {
       <nav className={`bg-black flex flex-col max-w-80 h-full p-4 -translate-x-full full-hide duration-500 ${props.navClassName}`} onClick={props.handleToggleStop}>
         <ul className="order-2 flex flex-col gap-6 mt-8 font-medium items-start overflow-y-auto">
           <li className="flex flex-row flex-wrap gap-8 items-center justify-between self-stretch sm:hidden">
-            <Link to="/membership" className="sm:hidden bg-red-600 font-medium text-xs py-1 px-2 duration-500 hover:bg-white hover:text-black text-center uppercase">
-              Subscribe : 49.99/Year
-            </Link>
-            <Link to="/log-in" onClick={props.handleToggle}>
+          <Link to="/log-in" onClick={props.handleToggle}>
               Log In
+            </Link>
+            <Link to="/membership" onClick={props.handleToggle} className="sm:hidden bg-red-600 font-medium text-xs py-1 px-2 duration-500 hover:bg-white hover:text-black text-center uppercase">
+              Subscribe : 49.99/Year
             </Link>
           </li>
           <li className="self-stretch">

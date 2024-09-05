@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { FaAlignLeft } from "react-icons/fa6";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import Logo from "/logo-white.png";
@@ -27,37 +27,37 @@ const Header = (props) => {
       <nav className="hidden bg-neutral-100 text-black sm:block">
         <ul className="flex flex-row flex-wrap gap-6 p-2 justify-center text-sm font-medium">
           <li>
-            <Link to="/">Home</Link>
+            <NavLink className="hover:text-red-600 duration-500" to="/">Home</NavLink>
           </li>
           <li>
-            <Link to="/news">News</Link>
+            <NavLink className="hover:text-red-600 duration-500" to="/news">News</NavLink>
           </li>
           <li>
-            <Link to="/business">Business</Link>
+            <NavLink className="hover:text-red-600 duration-500" to="/business">Business</NavLink>
           </li>
           <li>
-            <Link to="/sports">Sports</Link>
+            <NavLink className="hover:text-red-600 duration-500" to="/sports">Sports</NavLink>
           </li>
           <li>
-            <Link to="/travel">Travel</Link>
+            <NavLink className="hover:text-red-600 duration-500" to="/travel">Travel</NavLink>
           </li>
           <li>
-            <Link to="/culture">Culture</Link>
+            <NavLink className="hover:text-red-600 duration-500" to="/culture">Culture</NavLink>
           </li>
           <li>
-            <Link to="/entertainment">Entertainment</Link>
+            <NavLink className="hover:text-red-600 duration-500" to="/entertainment">Entertainment</NavLink>
           </li>
           <li>
-            <Link to="/innovation">Innovation</Link>
+            <NavLink className="hover:text-red-600 duration-500" to="/innovation">Innovation</NavLink>
           </li>
           <li>
-            <Link to="/political">Political</Link>
+            <NavLink className="hover:text-red-600 duration-500" to="/political">Political</NavLink>
           </li>
           <li>
-            <Link to="/universe">Universe</Link>
+            <NavLink className="hover:text-red-600 duration-500" to="/universe">Universe</NavLink>
           </li>
           <li>
-            <Link to="/fashion">Fashion</Link>
+            <NavLink className="hover:text-red-600 duration-500" to="/fashion">Fashion</NavLink>
           </li>
         </ul>
       </nav>
