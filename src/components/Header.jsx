@@ -3,6 +3,7 @@ import { NavLink, Link } from "react-router-dom";
 import { FaAlignLeft } from "react-icons/fa6";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import Logo from "/logo-white.png";
+import Paths from "../routes/Paths";
 
 const Header = (props) => {
   return (
@@ -26,39 +27,11 @@ const Header = (props) => {
       </div>
       <nav className="hidden bg-neutral-100 text-black sm:block">
         <ul className="flex flex-row flex-wrap gap-6 p-2 justify-center text-sm font-medium">
-          <li>
-            <NavLink className="hover:text-red-600 duration-500" to="/">Home</NavLink>
-          </li>
-          <li>
-            <NavLink className="hover:text-red-600 duration-500" to="/news">News</NavLink>
-          </li>
-          <li>
-            <NavLink className="hover:text-red-600 duration-500" to="/business">Business</NavLink>
-          </li>
-          <li>
-            <NavLink className="hover:text-red-600 duration-500" to="/sports">Sports</NavLink>
-          </li>
-          <li>
-            <NavLink className="hover:text-red-600 duration-500" to="/travel">Travel</NavLink>
-          </li>
-          <li>
-            <NavLink className="hover:text-red-600 duration-500" to="/culture">Culture</NavLink>
-          </li>
-          <li>
-            <NavLink className="hover:text-red-600 duration-500" to="/entertainment">Entertainment</NavLink>
-          </li>
-          <li>
-            <NavLink className="hover:text-red-600 duration-500" to="/innovation">Innovation</NavLink>
-          </li>
-          <li>
-            <NavLink className="hover:text-red-600 duration-500" to="/political">Political</NavLink>
-          </li>
-          <li>
-            <NavLink className="hover:text-red-600 duration-500" to="/universe">Universe</NavLink>
-          </li>
-          <li>
-            <NavLink className="hover:text-red-600 duration-500" to="/fashion">Fashion</NavLink>
-          </li>
+          {Paths.map(Path => (
+            <li key={Path.key}>
+              <NavLink className="hover:text-red-600 duration-500" to={Path.to}>{Path.name}</NavLink>
+            </li>
+          ))}
         </ul>
       </nav>
     </header>

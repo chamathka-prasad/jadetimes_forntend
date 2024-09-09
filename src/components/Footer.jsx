@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "/logo-black.png"
 import { FaWhatsapp, FaTiktok, FaXTwitter, FaYoutube, FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa6";
+import Paths from "../routes/Paths"
 
 const Footer = () => {
   return (
@@ -34,46 +35,28 @@ const Footer = () => {
         </div>
         <div>
           <nav className="border-t border-b border-neutral-200 py-4">
-          <ul className="text-neutral-700 flex flex-wrap items-center gap-4 justify-center text-xl mb-4">
-              <li><a href="https://www.whatsapp.com/channel/0029VaevKQj35fM4n9S7ub1c" aria-label="whatsapp" target="_black" className="inline-block duration-500 hover:text-black"><FaWhatsapp/></a></li>
-              <li><a href="https://www.tiktok.com/@jadetimes_officials" aria-label="tiktok" target="_blank" className="inline-block duration-500 hover:text-black"><FaTiktok/></a></li>
-              <li><a href="https://x.com/jade_times" aria-label="x-twitter" target="_blank" className="inline-block duration-500 hover:text-black"><FaXTwitter/></a></li>
-              <li><a href="https://www.facebook.com/officialJadetimes" aria-label="facebook" target="_blank" className="inline-block duration-500 hover:text-black"><FaFacebookF/></a></li>
-              <li><a href="https://www.youtube.com/channel/UCh3RLLVBaEeBRRZBbnnVWWA" aria-label="youtube" target="_blank" className="inline-block duration-500 hover:text-black"><FaYoutube/></a></li>
-              <li><a href="https://www.instagram.com/jadetimes_official/" aria-label="instagram" target="_blank" className="inline-block duration-500 hover:text-black"><FaInstagram/></a></li>
-              <li><a href="https://www.linkedin.com/company/99353290/admin/feed/posts/" aria-label="linkedin" target="_blank" className="inline-block duration-500 hover:text-black"><FaLinkedinIn/></a></li>
+            <ul className="text-neutral-700 flex flex-wrap items-center gap-4 justify-center text-xl mb-4">
+              <li><a href="https://www.whatsapp.com/channel/0029VaevKQj35fM4n9S7ub1c" aria-label="whatsapp" target="_black" className="inline-block duration-500 hover:text-black"><FaWhatsapp /></a></li>
+              <li><a href="https://www.tiktok.com/@jadetimes_officials" aria-label="tiktok" target="_blank" className="inline-block duration-500 hover:text-black"><FaTiktok /></a></li>
+              <li><a href="https://x.com/jade_times" aria-label="x-twitter" target="_blank" className="inline-block duration-500 hover:text-black"><FaXTwitter /></a></li>
+              <li><a href="https://www.facebook.com/officialJadetimes" aria-label="facebook" target="_blank" className="inline-block duration-500 hover:text-black"><FaFacebookF /></a></li>
+              <li><a href="https://www.youtube.com/channel/UCh3RLLVBaEeBRRZBbnnVWWA" aria-label="youtube" target="_blank" className="inline-block duration-500 hover:text-black"><FaYoutube /></a></li>
+              <li><a href="https://www.instagram.com/jadetimes_official/" aria-label="instagram" target="_blank" className="inline-block duration-500 hover:text-black"><FaInstagram /></a></li>
+              <li><a href="https://www.linkedin.com/company/99353290/admin/feed/posts/" aria-label="linkedin" target="_blank" className="inline-block duration-500 hover:text-black"><FaLinkedinIn /></a></li>
             </ul>
-            <ul className="flex flex-wrap items-center justify-center gap-4 text-xs text-neutral-700">
-              <li>
-                <Link to="/news" className="hover:underline">News</Link>
-              </li>
-              <li>
-                <Link to="/business" className="hover:underline">Business</Link>
-              </li>
-              <li>
-                <Link to="/sports" className="hover:underline">Sports</Link>
-              </li>
-              <li>
-                <Link to="/travel" className="hover:underline">Travel</Link>
-              </li>
-              <li>
-                <Link to="/culture" className="hover:underline">Culture</Link>
-              </li>
-              <li>
-                <Link to="/entertainment" className="hover:underline">Entertainment</Link>
-              </li>
-              <li>
-                <Link to="/innovation" className="hover:underline">Innovation</Link>
-              </li>
-              <li>
-                <Link to="/political" className="hover:underline">Political</Link>
-              </li>
-              <li>
-                <Link to="/universe" className="hover:underline">Universe</Link>
-              </li>
-              <li>
-                <Link to="/fashion" className="hover:underline">Fashion</Link>
-              </li>
+            <ul className="text-xs text-neutral-700 flex flex-row items-center justify-center gap-4 flex-wrap">
+              {Paths.map(Path => (
+                <li key={Path.key} className="contents gap-4">
+                  <Link to={Path.to} className="duration-500 hover:underline">{Path.name}</Link>
+                    {Path.submenus && <ul className="flex flex-row items-center justify-center gap-4 flex-wrap">
+                    {Path.submenus.map(submenu => (
+                      <li key={submenu.key} className="contents">
+                        <Link to={submenu.to} className="whitespace-nowrap duration-500 hover:underline">{submenu.name}</Link>
+                      </li>
+                    ))}
+                    </ul>}
+                </li>
+              ))}
             </ul>
           </nav>
         </div>

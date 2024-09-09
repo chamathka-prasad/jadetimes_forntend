@@ -16,7 +16,7 @@ import AdvertiseWithUs from "../pages/AdvertiseWithUs";
 import TalkToUs from "../pages/TalkToUs";
 import NotFound from "../pages/NotFound";
 
-const PagesRoutes = [
+const Pages = [
     {
         id: 0,
         path: "/",
@@ -105,4 +105,4 @@ const PagesRoutes = [
     }
 ];
 
-export default PagesRoutes;
+export default Pages;
