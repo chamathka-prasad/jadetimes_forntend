@@ -6,8 +6,8 @@ import Paths from "../routes/Paths";
 const Aside = (props) => {
   return (
     <aside className={`bg-transparent-black text-white fixed h-dvh w-full top-0 full-hide opacity-0 duration-500 ${props.asideClassName}`} onClick={props.handleToggle}>
-      <nav className={`bg-black flex flex-col max-w-80 h-full p-4 -translate-x-full full-hide duration-500 ${props.navClassName}`} onClick={props.handleToggleStop}>
-        <ul className="order-2 flex flex-col gap-6 mt-8 font-medium items-start overflow-y-auto">
+      <nav className={`bg-black flex flex-col max-w-80 h-full -translate-x-full full-hide duration-500 ${props.navClassName}`} onClick={props.handleToggleStop}>
+        <ul className="order-2 flex flex-col gap-6 mt-[1.4rem] font-medium items-start overflow-y-auto pt-1 pr-4 pb-4 pl-4">
           <li className="flex flex-row flex-wrap gap-8 items-center justify-between self-stretch sm:hidden">
             <Link to="/log-in" onClick={props.handleToggle}>
               Log In
@@ -23,7 +23,7 @@ const Aside = (props) => {
                 <ul className="font-normal text-neutral-200 flex flex-col gap-2 mt-2 pl-2">
                   {Path.submenus.map((submenu) => (
                     <li key={submenu.key}>
-                      <Link to={submenu.to}>{submenu.name}</Link>
+                      <Link to={submenu.to} onClick={props.handleToggle}>{submenu.name}</Link>
                     </li>
                   ))}
                 </ul>
@@ -31,7 +31,7 @@ const Aside = (props) => {
             </li>
           ))}
         </ul>
-        <button className="inline-block mt-1 self-start" onClick={props.handleToggle}>
+        <button className="inline-block mt-5 ml-4 self-start" onClick={props.handleToggle}>
           <FaX size={24} />
         </button>
       </nav>

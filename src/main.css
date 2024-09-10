@@ -15,7 +15,9 @@
 }
 
 *:focus-visible {
+  outline: 2px solid;
   transition: none;
+  border-radius: 0px;
 }
 
 html {
