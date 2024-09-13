@@ -22,16 +22,18 @@ const App = () => {
         navClassName={toggleMenu && "visible translate-x-0"}
         asideClassName={toggleMenu && "visible opacity-100"}
       />
-      <Routes>
-        {Pages.map(page => (
-          <Route
-            key={page.id}
-            path={page.path}
-            element={page.component}
-            exact={page.exact}
-          />
-        ))}
-      </Routes>
+      <main>
+        <Routes>
+          {Pages.map(page => (
+            <Route
+              key={page.id}
+              path={page.path}
+              element={page.component}
+              exact={page.exact}
+            />
+          ))}
+        </Routes>
+      </main>
       <Footer />
     </>
   );

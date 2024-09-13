@@ -33,6 +33,11 @@ h4 {
   line-height: 1.25;
 }
 
+img {
+  display: block;
+  width: 100%;
+}
+
 .full-hide {
   visibility: hidden;
 }
@@ -42,7 +47,7 @@ h4 {
 }
 
 .active {
-  color: #FF0000;
+  color: #dc2626;
 }
 
 /* Tailwind CSS */

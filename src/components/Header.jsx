@@ -7,10 +7,10 @@ import Paths from "../routes/Paths";
 
 const Header = (props) => {
   return (
-    <header className="bg-black text-white sticky top-0">
+    <header className="bg-black text-white sticky top-0 z-10">
       <div className="p-4 flex items-center max-w-7xl mx-auto">
-        <Link to="/" className="block min-w-32 max-w-48 order-2 px-4 mx-auto sm:order-3">
-          <img src={Logo} alt="jadetimes logo" />
+        <Link to="/" className="block min-w-32 max-w-48 order-2 px-4 mx-auto sm:order-3" aria-label="jadetimes home">
+          <img src={Logo} alt="jadetimes home" />
         </Link>
         <button className="block order-1" onClick={props.handleToggle} aria-label="Menu">
           <FaAlignLeft size={24} />
