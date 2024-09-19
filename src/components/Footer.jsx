@@ -19,8 +19,8 @@ const Footer = () => {
               <Link to="/talk-to-us" className="hover:underline">Talk to us</Link>
             </div>
           </div>
-          <form>
-            <label htmlFor="email" className="uppercase block text-center text-sm mb-2">Sign up for our newsletter</label>
+          <form className="w-full max-w-lg">
+            <label htmlFor="email" className="uppercase block text-center text-sm mb-2 font-medium">Sign up for our newsletter</label>
             <div className="flex flex-col gap-2 md:flex-row md:gap-1">
               <input
                 className="py-2 px-3 border border-neutral-400 w-full duration-500 hover:bg-neutral-300 hover:border-neutral-300 hover:border-b-neutral-800"
