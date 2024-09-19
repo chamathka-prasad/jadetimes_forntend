@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const LargeArticle = () => {
     return (
-        <Link className="block border-b border-b-neutral-300 sm:border sm:border-neutral-300 sm:col-span-2 lg:col-span-5 lg:row-start-1 lg:row-end-4 xl:col-start-1 xl:col-end-9 xl:row-start-2 xl:row-end-5">
+        <Link className="block border-b border-b-neutral-300 sm:border sm:border-neutral-300 sm:col-span-2 lg:col-span-7 lg:row-start-1 lg:row-end-4 xl:col-start-1 xl:col-end-8 xl:row-start-2 xl:row-end-5">
             <article className="sm:grid sm:grid-cols-2 lg:h-full">
                 <picture>
                     <img src="https://placehold.co/486x372" alt="" className="h-full" />
