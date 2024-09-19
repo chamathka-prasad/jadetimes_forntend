@@ -6,5 +6,5 @@ import { ghPages } from 'vite-plugin-gh-pages';
 export default defineConfig({
 
   plugins: [react(),ghPages()],
-  base:"/jadetimes_forntend/",
+  base:"/jadetimes_forntend",
 })
