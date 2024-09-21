@@ -8,7 +8,7 @@ import Pages from "./routes/Pages";
 const App = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const handleToggle = () => {
-    setToggleMenu(!toggleMenu);
+    setToggleMenu(prevToggleMenu => !prevToggleMenu);
   };
   const handleToggleStop = (event) => {
     event.stopPropagation();

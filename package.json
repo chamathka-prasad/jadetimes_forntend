@@ -1,5 +1,5 @@
 {
-  "home": "https://chamathka-prasad.github.io/jadetimes_forntend",
+  "homepage": "https://chamathka-prasad.github.io/jadetimes_forntend",
   "name": "jadetimes_forntend",
   "private": true,
   "version": "0.0.0",
@@ -9,8 +9,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "vite build && gh-pages -d dist"
+    "predeploy": "vite build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "react": "^18.3.1",
