@@ -50,6 +50,10 @@ img {
   color: #dc2626;
 }
 
+.overflow-anywhere {
+  overflow-wrap: anywhere;
+}
+
 /* Tailwind CSS */
 @tailwind base;
 @tailwind components;
