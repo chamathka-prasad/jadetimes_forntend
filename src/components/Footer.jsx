@@ -23,12 +23,13 @@ const Footer = () => {
             <label htmlFor="email" className="uppercase block text-center text-sm mb-2 font-medium">Sign up for our newsletter</label>
             <div className="flex flex-col gap-2 md:flex-row md:gap-1">
               <input
-                className="py-2 px-3 border border-neutral-400 w-full duration-500 hover:bg-neutral-300 hover:border-neutral-300 hover:border-b-neutral-800"
+                className="py-2 px-3 border border-neutral-400 w-full duration-500 hover:bg-neutral-300 hover:border-neutral-300 hover:border-b-black"
                 id="email"
                 name="email"
                 type="email"
-                placeholder="examaple@email.com"
-                autoComplete="off" />
+                placeholder="Enter your email"
+                autoComplete="off"
+                required />
               <button className="uppercase bg-neutral-800 text-white text-sm border border-neutral-800 duration-500 font-medium py-[0.625rem] px-8 hover:bg-transparent hover:text-black">Subscribe</button>
             </div>
           </form>

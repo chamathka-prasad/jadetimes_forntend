@@ -15,7 +15,7 @@ const Home = () => {
     {
       link: "https://www.jadetimes.com/post/us-hopes-for-the-middle-east-fade-away",
       image: "https://static.wixstatic.com/media/7aad08_aa064048b21b4f8ab3b11b3314998555~mv2.jpg/v1/fill/w_1280,h_722,fp_0.50_0.50,q_90,enc_auto/7aad08_aa064048b21b4f8ab3b11b3314998555~mv2.jpg",
-      title: "US hopes for the Middle East fade away",
+      title: "U.S. hopes for the Middle East fade away",
       posted: "1 hour ago"
     },
     {

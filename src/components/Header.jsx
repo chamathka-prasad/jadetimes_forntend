@@ -15,7 +15,7 @@ const Header = (props) => {
         <button className="block order-1" onClick={props.handleToggle} aria-label="Menu">
           <FaAlignLeft size={24} />
         </button>
-        <Link to="/search" className="block order-5" aria-label="search">
+        <Link to="/search" className="block order-5" aria-label="search jadetimes">
           <FaMagnifyingGlass size={24} />
         </Link>
         <Link to="/membership" className=" hidden sm:block bg-red-600 font-medium text-xs py-1 px-2 order-2 ml-6 duration-500 hover:bg-white hover:text-black w-40 text-center uppercase whitespace-nowrap">
