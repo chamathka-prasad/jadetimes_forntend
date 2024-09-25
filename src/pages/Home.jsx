@@ -1,14 +1,6 @@
-import React from "react";
 import H1 from "../components/H1";
 import H2 from "../components/H2";
-// import LargeArticle from "../components/LargeArticle";
-// import SmallToMediumArticle from "../components/SmallToMediumArticle";
-import MediumArticle from "../components/MediumArticles";
-import SmallArticle from "../components/SmallArticle";
 import Article from "../components/Article";
-
-import LargeImage from "../assets/1.webp"
-import AddImage from "../assets/adds/1.webp"
 
 const Home = () => {
   const articles = [
@@ -139,9 +131,9 @@ const Home = () => {
                 </article>
               </Article>
             ))}
-            <Article link="https://specialgraphics.us/" className="hidden lg:block lg:col-span-2 lg:row-span-2" target="_blank">
+            {/* <Article link="https://specialgraphics.us/" className="hidden lg:block lg:col-span-2 lg:row-span-2" target="_blank">
               <img src={AddImage} alt="" className="h-full" />
-            </Article>
+            </Article> */}
             <div className="flex flex-col gap-4 p-4 sm:col-span-2 sm:p-0 sm:grid sm:grid-cols-2 lg:grid-cols-4 lg:col-span-10 xl:row-start-1">
               {articlesThree.map(article => (
                 <Article key={article.title} link={article.link} className="border border-neutral-300 block">
