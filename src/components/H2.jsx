@@ -1,9 +1,7 @@
-import React from "react";
-
-const H2 = (props) => {
+function H2({ heading }) {
     return (
-        <h2 className="text-white uppercase text-sm font-medium h-0 overflow-hidden sm:h-auto sm:my-4 sm:mx-4 sm:mb-0 sm:overflow-auto"><span className="bg-neutral-950 inline-block px-1">Latest Updates</span></h2>
+        <h2 className="mx-4 border-b-2 border-b-red-600 pb-1 font-semibold text-lg">{heading}</h2>
     )
 }
 
-export default H2;
+export default H2
