@@ -21,15 +21,16 @@ const Home = () => {
         <section>
           <LatestUpdates />
           <div className="sm:grid sm:grid-cols-2 sm:gap-4 sm:p-4 lg:grid-cols-10 lg:auto-rows-auto xl:auto-rows-auto">
-            <Article link={Articles[0].link} className="block border-b border-b-neutral-300 sm:border sm:border-neutral-300 sm:col-span-2 lg:col-span-7 lg:row-start-1 lg:row-end-4 xl:col-start-1 xl:col-end-8 xl:row-start-2 xl:row-end-5">
+            <Article link={Articles[0].link} className="block sm:border sm:border-neutral-300 sm:col-span-2 lg:col-span-7 lg:row-start-1 lg:row-end-4 xl:col-start-1 xl:col-end-8 xl:row-start-2 xl:row-end-5">
               <article className="sm:grid sm:grid-cols-2 lg:h-full">
                 <picture>
                   <img src={Articles[0].image} alt="" className="object-cover object-center sm:h-60 lg:h-full" />
                 </picture>
-                <p className="text-white uppercase text-sm font-medium text-center absolute left-0 right-0 -translate-y-3 sm:hidden" aria-hidden="true"><span className="bg-neutral-950 inline-block px-1">Latest Updates</span></p>
-                <div className="py-6 px-4 flex flex-col justify-between gap-2 lg:p-6 sm:justify-center">
-                  <h3 className="text-2xl">{Articles[0].title}</h3>
-                  <p className="uppercase text-xs text-neutral-600 whitespace-nowrap">{Articles[0].posted}</p>
+                <p className="text-white uppercase text-sm text-center absolute left-0 right-0 -translate-y-5 sm:hidden" aria-hidden="true"><span className="bg-neutral-900 inline-block px-3 py-2">Latest Updates</span></p>
+                <div className="pt-8 py-6 px-4 flex flex-col justify-between gap-2 lg:p-6 sm:justify-center">
+                  <h3 className="text-2xl lg:text-[1.75rem]">{Articles[0].title}</h3>
+                  <p className="lg:text-sm">{Articles[0].title}</p>
+                  <p className="text-neutral-600 whitespace-nowrap lg:text-xs">{Articles[0].posted}</p>
                 </div>
               </article>
             </Article>
@@ -40,8 +41,9 @@ const Home = () => {
                     <img src={article.image} alt="" className="min-w-20 w-20 min-h-20 h-20 object-cover object-center lg:w-full lg:h-full" />
                   </picture>
                   <div className="flex flex-col justify-between gap-3 max-w-sm lg:p-4">
-                    <h3 className="overflow-anywhere line-clamp-2 xl:line-clamp-3">{article.title}</h3>
-                    <p className="uppercase text-xs text-neutral-600 whitespace-nowrap">{article.posted}</p>
+                    <h3 className="overflow-anywhere line-clamp-2 lg:text-sm xl:line-clamp-3">{article.title}</h3>
+                    <p className="hidden text-xs line-clamp-2 overflow-anywhere xl:block">{article.title}</p>
+                    <p className="text-neutral-600 whitespace-nowrap lg:text-xs">{article.posted}</p>
                   </div>
                 </article>
               </Article>
@@ -57,8 +59,8 @@ const Home = () => {
                       <img src={article.image} alt="" />
                     </picture>
                     <div className="flex flex-col justify-between gap-3 max-w-sm p-4">
-                      <h3 className="line-clamp-2">{article.title}</h3>
-                      <p className="uppercase text-xs text-neutral-600 whitespace-nowrap">{article.posted}</p>
+                      <h3 className="text-lg line-clamp-2 lg:text-base">{article.title}</h3>
+                      <p className="text-neutral-600 whitespace-nowrap lg:text-xs">{article.posted}</p>
                     </div>
                   </article>
                 </Article>
@@ -67,33 +69,33 @@ const Home = () => {
             <Article link={Articles[9].link} className="border border-neutral-300 block m-4 sm:m-0 lg:col-span-2 lg:col-start-8 lg:col-end-11 lg:row-start-1 lg:row-end-2 xl:col-start-8 xl:col-end-11 xl:row-start-2 xl:row-end-3">
               <article className="flex flex-row p-4 gap-4 justify-between">
                 <div className="flex flex-col justify-between gap-3 max-w-sm">
-                  <h3 className="line-clamp-2 overflow-anywhere">{Articles[9].title}</h3>
-                  <p className="uppercase text-xs text-neutral-600 whitespace-nowrap">{Articles[9].posted}</p>
+                  <h3 className="line-clamp-2 overflow-anywhere lg:text-sm">{Articles[9].title}</h3>
+                  <p className="text-neutral-600 whitespace-nowrap lg:text-xs">{Articles[9].posted}</p>
                 </div>
                 <picture>
-                  <img src={Articles[9].image} alt="" className="min-w-20 w-20 min-h-20 h-20 object-cover object-center" />
+                  <img src={Articles[9].image} alt="" className="min-w-20 w-20 min-h-20 h-20 object-cover object-center lg:min-w-16 lg:w-16 lg:min-h-16 lg:h-16" />
                 </picture>
               </article>
             </Article>
             <Article link={Articles[10].link} className="border border-neutral-300 block m-4 sm:m-0 lg:col-span-2 lg:col-start-8 lg:col-end-11 lg:row-start-2 lg:row-end-3 xl:col-start-8 xl:col-end-11 xl:row-start-3 xl:row-end-4">
               <article className="flex flex-row p-4 gap-4 justify-between">
                 <div className="flex flex-col justify-between gap-3 max-w-sm">
-                  <h3 className="line-clamp-2 overflow-anywhere">{Articles[10].title}</h3>
-                  <p className="uppercase text-xs text-neutral-600 whitespace-nowrap">{Articles[10].posted}</p>
+                  <h3 className="line-clamp-2 overflow-anywhere lg:text-sm">{Articles[10].title}</h3>
+                  <p className="text-neutral-600 whitespace-nowrap lg:text-xs">{Articles[10].posted}</p>
                 </div>
                 <picture>
-                  <img src={Articles[10].image} alt="" className="min-w-20 w-20 min-h-20 h-20 object-cover object-center" />
+                  <img src={Articles[10].image} alt="" className="min-w-20 w-20 min-h-20 h-20 object-cover object-center lg:min-w-16 lg:w-16 lg:min-h-16 lg:h-16" />
                 </picture>
               </article>
             </Article>
             <Article link={Articles[11].link} className="border border-neutral-300 block m-4 sm:m-0 lg:col-span-2 lg:col-start-8 lg:col-end-11 lg:row-start-3 lg:row-end-4 xl:col-start-8 xl:col-end-11 xl:row-start-4 xl:row-end-5">
               <article className="flex flex-row p-4 gap-4 justify-between">
                 <div className="flex flex-col justify-between gap-3 max-w-sm">
-                  <h3 className="line-clamp-2 overflow-anywhere">{Articles[11].title}</h3>
-                  <p className="uppercase text-xs text-neutral-600 whitespace-nowrap">{Articles[11].posted}</p>
+                  <h3 className="line-clamp-2 overflow-anywhere lg:text-sm">{Articles[11].title}</h3>
+                  <p className="text-neutral-600 whitespace-nowrap lg:text-xs">{Articles[11].posted}</p>
                 </div>
                 <picture>
-                  <img src={Articles[11].image} alt="" className="min-w-20 w-20 min-h-20 h-20 object-cover object-center" />
+                  <img src={Articles[11].image} alt="" className="min-w-20 w-20 min-h-20 h-20 object-cover object-center lg:min-w-16 lg:w-16 lg:min-h-16 lg:h-16" />
                 </picture>
               </article>
             </Article>
@@ -110,7 +112,7 @@ const Home = () => {
                   </picture>
                   <div className="flex flex-col justify-between gap-3 max-w-sm lg:p-4">
                     <h3 className="overflow-anywhere line-clamp-2 xl:line-clamp-3">{article.title}</h3>
-                    <p className="uppercase text-xs text-neutral-600 whitespace-nowrap">{article.posted}</p>
+                    <p className="text-neutral-600 whitespace-nowrap">{article.posted}</p>
                   </div>
                 </article>
               </Article>
@@ -127,7 +129,7 @@ const Home = () => {
                   <article className="flex flex-row p-4 gap-4 justify-between">
                     <div className="flex flex-col justify-between gap-3 max-w-sm">
                       <h3 className="line-clamp-2 overflow-anywhere">{article.title}</h3>
-                      <p className="uppercase text-xs text-neutral-600 whitespace-nowrap">{article.posted}</p>
+                      <p className="text-neutral-600 whitespace-nowrap">{article.posted}</p>
                     </div>
                     <picture>
                       <img src={article.image} alt="" className="min-w-20 w-20 min-h-20 h-20 object-cover object-center" />

@@ -6,7 +6,7 @@ import Paths from "../routes/Paths";
 const Aside = (props) => {
   return (
     <aside className={`z-10 bg-transparent-black text-white fixed h-dvh w-full top-0 full-hide opacity-0 duration-500 ${props.asideClassName}`} onClick={props.handleToggle}>
-      <nav className={`bg-black flex flex-col max-w-80 h-full -translate-x-full full-hide duration-500 ${props.navClassName}`} onClick={props.handleToggleStop}>
+      <nav className={`bg-neutral-900 flex flex-col max-w-80 h-full -translate-x-full full-hide duration-500 ${props.navClassName}`} onClick={props.handleToggleStop}>
         <ul className="order-2 flex flex-col gap-6 mt-[1.4rem] font-medium items-start overflow-y-auto pt-1 pr-4 pb-4 pl-4">
           <li className="flex flex-row flex-wrap gap-8 items-center justify-between self-stretch sm:hidden">
             <Link to="/log-in" onClick={props.handleToggle}>
