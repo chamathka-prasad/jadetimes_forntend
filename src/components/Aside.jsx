@@ -17,7 +17,7 @@ const Aside = (props) => {
             </Link>
           </li>
           {Paths.map(Path => (
-            <li className="self-stretch" key={Path.key}>
+            <li className="self-stretch lg:text-sm" key={Path.key}>
               <NavLink to={Path.to} onClick={props.handleToggle}>{Path.name}</NavLink>
               {Path.submenus && (
                 <ul className="font-normal text-neutral-200 flex flex-col gap-2 mt-2 pl-2">
@@ -31,7 +31,7 @@ const Aside = (props) => {
             </li>
           ))}
         </ul>
-        <button className="inline-block mt-5 ml-4 self-start" onClick={props.handleToggle}>
+        <button className="inline-block mt-5 mx-4 self-end" onClick={props.handleToggle}>
           <FaX size={24} />
         </button>
       </nav>
