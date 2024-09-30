@@ -110,7 +110,7 @@ const Home = () => {
                     <p className="whitespace-nowrap lg:text-xs">
                       {article.posted}
                     </p>
-                    <h3 className="text-lg line-clamp-2 lg:text-sm">
+                    <h3 className="text-lg line-clamp-2 lg:text-base">
                       {article.title}
                     </h3>
                   </div>
