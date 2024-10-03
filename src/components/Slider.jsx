@@ -1,40 +1,93 @@
-import { useState } from "react"
+import { useRef, useState } from "react";
 
-import { FaCircleChevronLeft, FaCircleChevronRight, FaCircle } from "react-icons/fa6";
+import {
+  FaCircleChevronLeft,
+  FaCircleChevronRight,
+  FaCircle,
+} from "react-icons/fa6";
 
-function Slider({ articles }) {
-    const [currentIndex, setCurrentIndex] = useState(0)
+const Slider = ({ children, length }) => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const touchStartRef = useRef(0);
+  const touchEndRef = useRef(0);
+  const scrollRef = useRef(null);
 
-    const nextSlide = () => {
-        const currentSlide = currentIndex === articles.length - 1
-        const newSlide = currentSlide ? 0 : currentIndex + 1
-        setCurrentIndex(newSlide)
+  const handleTouchStart = (e) => {
+    touchStartRef.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e) => {
+    touchEndRef.current = e.changedTouches[0].clientX;
+    handleSwipe();
+  };
+
+  const handleSwipe = () => {
+    const distance = touchStartRef.current - touchEndRef.current;
+
+    if (distance > 50) {
+      nextSlide();
+    } else if (distance < -50) {
+      prevSlide();
     }
-    const previousSlide = () => {
-        const currentSlide = currentIndex === 0
-        const newSlide = currentSlide ? articles.length - 1 : currentIndex - 1
-        setCurrentIndex(newSlide)
-    }
+  };
 
-    return (
-        <div className="relative m-4 border border-neutral-300 sm:m-0 sm:col-span-2 group">
-            <a href={articles[currentIndex].link} style={{ backgroundImage: `url(${articles[currentIndex].image})` }} className="block h-96 bg-center bg-cover bg-no-repeat duration-300 lg:h-full">
-                <div className="flex flex-col justify-between h-full p-8 pb-12 bg-[#000000aa] text-white">
-                    <h3 className="order-2 text-lg">{articles[currentIndex].title}</h3>
-                    <p className="text-neutral-100 whitespace-nowrap">{articles[currentIndex].posted}</p>
-                </div>
-            </a>
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full flex flex-row justify-between px-4 text-white duration-300 md:opacity-0 group-hover:opacity-100">
-                <button className="cursor-pointer" onClick={previousSlide}><FaCircleChevronLeft size={40} /></button>
-                <button className="cursor-pointer" onClick={nextSlide}><FaCircleChevronRight size={40} /></button>
-            </div>
-            <div className="absolute text-white bottom-4 w-full flex flex-row gap-3 items-center justify-center duration-300 md:opacity-0 group-hover:opacity-100">
-                {articles.map((article, index) => (
-                    <button key={index} onClick={() => setCurrentIndex(index)}><FaCircle className={`duration-300 ${currentIndex === index ? "text-white" : "text-neutral-400"}`} size={currentIndex === index ? 10 : 7} /></button>
-                ))}
-            </div>
-        </div>
-    )
-}
+  const nextSlide = () => {
+    scrollRef.current.scrollBy({
+      left: 0,
+      top: scrollRef.current.clientHeight,
+      behavior: "smooth",
+    });
+  };
 
-export default Slider
+  const prevSlide = () => {
+    scrollRef.current.scrollBy({
+      left: 0,
+      top: -scrollRef.current.clientHeight,
+      behavior: "smooth",
+    });
+  };
+
+  return (
+    <div className="relative">
+      <div
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+        className="h-[90vh] overflow-y-hidden"
+        ref={scrollRef}
+      >
+        {children}
+      </div>
+      {currentSlide == length - 1 || (
+        <button
+          onClick={() => {
+            nextSlide();
+            setCurrentSlide((prevCurrentSlide) => prevCurrentSlide + 1);
+          }}
+          className="absolute top-0 bottom-0 right-0 p-6 text-white opacity-0 md:opacity-100"
+        >
+          <FaCircleChevronRight size={30} />
+        </button>
+      )}
+      {currentSlide == 0 || (
+        <button
+          onClick={() => {
+            prevSlide();
+            setCurrentSlide((prevCurrentSlide) => prevCurrentSlide - 1);
+          }}
+          className="absolute top-0 bottom-0 left-0 p-6 text-white opacity-0 md:opacity-100"
+        >
+          <FaCircleChevronLeft size={30} />
+        </button>
+      )}
+      <ul className="absolute bottom-4 w-full flex flex-row justify-center gap-1">
+        {Array.from({ length }).map((_, index) => (
+          <li key={index} className="text-white">
+            <FaCircle size={8} />
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default Slider;

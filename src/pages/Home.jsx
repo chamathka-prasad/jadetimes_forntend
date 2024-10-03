@@ -4,6 +4,7 @@ import H1 from "../components/H1";
 import H2 from "../components/H2";
 import LatestUpdates from "../components/LatestUpdates";
 import Article from "../components/Article";
+import Slider from "../components/Slider";
 
 import Articles from "../routes/Articles";
 
@@ -26,10 +27,9 @@ const Home = () => {
   const articlesSeven = Articles.slice(0, 5);
   const articlesEight = Articles.slice(0, 3);
 
-  const scrollRef = useRef();
+  const scrollRef = useRef(null);
 
-  const [showLeftButton, setShowLeftButton] = useState(false);
-  const [showRightButton, setShowRightButton] = useState(true);
+  const [showButton, setShowButton] = useState(true);
 
   return (
     <div>
@@ -248,8 +248,8 @@ const Home = () => {
             heading="What's Trending"
             className="border-b-4 border-b-red-600"
           />
-          <div className="lg:grid lg:grid-cols-4 lg:p-4 lg:gap-4">
-            <div className="lg:col-span-2 lg:border lg:border-neutral-300 lg:relative">
+          <div className="lg:grid lg:grid-cols-4 lg:p-4">
+            <div className="lg:col-span-2 lg:border lg:border-neutral-300 lg:mr-4 lg:relative non-focus">
               <div className="lg:overflow-x-hidden lg:h-full" ref={scrollRef}>
                 <div className="pt-4 px-4 flex flex-col gap-4 md:flex-row lg:p-0 lg:flex-row lg:gap-0 lg:h-full">
                   <Article
@@ -314,7 +314,7 @@ const Home = () => {
                   </Article>
                 </div>
               </div>
-              {showRightButton && (
+              {showButton && (
                 <button
                   className={`hidden lg:block lg:absolute lg:right-4 lg:top-1/2 lg:text-white lg:border lg:border-black lg:rounded-full lg:bg-black lg:opacity-75`}
                   onClick={() => {
@@ -323,15 +323,14 @@ const Home = () => {
                       left: scrollRef.current.clientWidth,
                       behavior: "smooth",
                     });
-                    setShowLeftButton(true);
-                    setShowRightButton(false);
+                    setShowButton(false);
                   }}
                   tabIndex="1"
                 >
                   <FaCircleChevronRight size={40} />
                 </button>
               )}
-              {showLeftButton && (
+              {showButton || (
                 <button
                   className="hidden lg:block lg:absolute lg:left-4 lg:top-1/2 lg:text-white lg:border lg:border-black lg:rounded-full lg:bg-black"
                   onClick={() => {
@@ -340,8 +339,7 @@ const Home = () => {
                       left: -scrollRef.current.clientWidth,
                       behavior: "smooth",
                     });
-                    setShowLeftButton(false);
-                    setShowRightButton(true);
+                    setShowButton(true);
                   }}
                   tabIndex="1"
                 >
@@ -349,7 +347,7 @@ const Home = () => {
                 </button>
               )}
             </div>
-            <div className="md:grid md:grid-cols-2 md:p-4 md:gap-4 lg:col-span-2 lg:grid-cols-2 lg:p-0">
+            <div className="md:grid md:grid-cols-2 md:p-4 md:gap-4 lg:col-span-2 lg:grid-cols-2 lg:p-0 lg:pl-4 lg:border-l lg:border-neutral-300">
               {articlesSix.map((article) => (
                 <Article
                   key={article.title}
@@ -541,8 +539,7 @@ const Home = () => {
                 title="How Sri Lanka's 2024 Election Could Shape the Future of Entrepreneurs | Exclusive Pulse | Jadetimes"
                 width="640px"
                 height="100%"
-                src="https://www.youtube.com/embed/4W7SjwdQS64?autoplay=0&amp;mute=0&amp;controls=1&amp;loop=0&amp;origin=https%3A%2F%2Fwww.jadetimes.com&amp;playsinline=1&amp;enablejsapi=1&amp;widgetid=1"
-                id="widget2"
+                src="https://www.youtube.com/embed/4W7SjwdQS64?autoplay=0&amp;mute=0&amp;controls=1&amp;loop=0&amp;origin=https%3A%2F%2Fwww.jadetimes.com&amp;playsinline=1&amp;enablejsapi=1&amp;"
               ></iframe>
               <div className="lg:w-96 lg:mx-auto">
                 <h3 className="text-sm mb-3 lg:text-base">
@@ -709,6 +706,104 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <div>
+        <Slider length="2">
+          <article
+            style={{
+              backgroundImage: `url(${articlesFive[0].image})`,
+            }}
+            className="h-full w-full bg-center bg-cover bg-no-repeat"
+          >
+            <div className="h-full bg-gradient-to-t from-black to-transparent p-4 flex">
+              <div className="mt-auto mb-8 md:grid md:grid-cols-2 md:gap-4 md:items-center md:max-w-screen-md md:mx-auto">
+                <iframe
+                  title="What We Know About Trump Shooting Suspect Thomas Matthew Crooks | JadeTimes"
+                  width="208"
+                  height="215"
+                  src="https://www.youtube.com/embed/uHcsQKx6AzY?autoplay=0&amp;mute=0&amp;controls=1&amp;loop=0&amp;origin=https%3A%2F%2Fwww.jadetimes.com&amp;playsinline=1&amp;enablejsapi=1&amp;"
+                  className="border border-neutral-300 w-full"
+                ></iframe>
+                <div className="text-white">
+                  <h3 className="text-sm my-3 lg:text-base md:mt-0">
+                    How Sri Lanka's 2024 Election Could Shape the Future of
+                    Entrepreneurs
+                  </h3>
+                  <p className="text-xs">
+                    We explore how the upcoming election could shape opportunities
+                    and challenges for business owners and startups across the
+                    country. A shocking revelation about the connection between
+                    these two groups, shedding light on hidden influences and
+                    funding sources.
+                  </p>
+                  <div className="mt-4">
+                    <a
+                      href="https://www.youtube.com/@JadeTimes"
+                      className="bg-neutral-800 inline-block uppercase font-medium text-xs px-3 py-2 mr-4 lg:px-2 lg:py-1 duration-300 hover:bg-white hover:text-black"
+                    >
+                      Youtube updates
+                    </a>
+                    <a
+                      href="https://www.jadetimes.com/post/shocking-revelations-mr-neomal-perera-on-hidden-influences-in-sri-lanka-s-political-sphere"
+                      className="text-xs capitalize duration-300 hover:opacity-50"
+                      aria-label="read more about this article"
+                    >
+                      Read more
+                      <FaChevronRight className="inline" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article
+            style={{
+              backgroundImage: `url(${articlesFive[0].image})`,
+            }}
+            className="h-full w-full bg-center bg-cover bg-no-repeat"
+          >
+            <div className="h-full bg-gradient-to-t from-black to-transparent p-4 flex">
+              <div className="mt-auto mb-8 md:grid md:grid-cols-2 md:gap-4 md:items-center md:max-w-screen-md md:mx-auto">
+                <iframe
+                  title="What We Know About Trump Shooting Suspect Thomas Matthew Crooks | JadeTimes"
+                  width="208"
+                  height="215"
+                  src="https://www.youtube.com/embed/uHcsQKx6AzY?autoplay=0&amp;mute=0&amp;controls=1&amp;loop=0&amp;origin=https%3A%2F%2Fwww.jadetimes.com&amp;playsinline=1&amp;enablejsapi=1&amp;"
+                  className="border border-neutral-300 w-full"
+                ></iframe>
+                <div className="text-white">
+                  <h3 className="text-sm my-3 lg:text-base md:mt-0">
+                    How Sri Lanka's 2024 Election Could Shape the Future of
+                    Entrepreneurs
+                  </h3>
+                  <p className="text-xs">
+                    We explore how the upcoming election could shape opportunities
+                    and challenges for business owners and startups across the
+                    country. A shocking revelation about the connection between
+                    these two groups, shedding light on hidden influences and
+                    funding sources.
+                  </p>
+                  <div className="mt-4">
+                    <a
+                      href="https://www.youtube.com/@JadeTimes"
+                      className="bg-neutral-800 inline-block uppercase font-medium text-xs px-3 py-2 mr-4 lg:px-2 lg:py-1 duration-300 hover:bg-white hover:text-black"
+                    >
+                      Youtube updates
+                    </a>
+                    <a
+                      href="https://www.jadetimes.com/post/shocking-revelations-mr-neomal-perera-on-hidden-influences-in-sri-lanka-s-political-sphere"
+                      className="text-xs capitalize duration-300 hover:opacity-50"
+                      aria-label="read more about this article"
+                    >
+                      Read more
+                      <FaChevronRight className="inline" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </Slider>
+      </div>
     </div>
   );
 };
