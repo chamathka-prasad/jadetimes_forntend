@@ -24,10 +24,10 @@ const Slider = ({ children, length }) => {
   const handleSwipe = () => {
     const distance = touchStartRef.current - touchEndRef.current;
 
-    if (distance > 50) {
+    if (distance > 50 && currentSlide < length - 1) {
       nextSlide();
-    } else if (distance < -50) {
-      prevSlide();
+    } else if (distance < -50 && currentSlide > 0) {
+        prevSlide();
     }
   };
 
@@ -37,6 +37,7 @@ const Slider = ({ children, length }) => {
       top: scrollRef.current.clientHeight,
       behavior: "smooth",
     });
+    setCurrentSlide((prevCurrentSlide) => prevCurrentSlide + 1);
   };
 
   const prevSlide = () => {
@@ -45,6 +46,7 @@ const Slider = ({ children, length }) => {
       top: -scrollRef.current.clientHeight,
       behavior: "smooth",
     });
+    setCurrentSlide((prevCurrentSlide) => prevCurrentSlide - 1);
   };
 
   return (
@@ -52,40 +54,35 @@ const Slider = ({ children, length }) => {
       <div
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
-        className="h-[90vh] overflow-y-hidden"
+        className="h-[90vh] overflow-y-hidden snap-y snap-mandatory"
         ref={scrollRef}
       >
         {children}
       </div>
-      {currentSlide == length - 1 || (
-        <button
-          onClick={() => {
-            nextSlide();
-            setCurrentSlide((prevCurrentSlide) => prevCurrentSlide + 1);
-          }}
-          className="absolute top-0 bottom-0 right-0 p-6 text-white opacity-0 md:opacity-100"
-        >
-          <FaCircleChevronRight size={30} />
-        </button>
-      )}
-      {currentSlide == 0 || (
-        <button
-          onClick={() => {
-            prevSlide();
-            setCurrentSlide((prevCurrentSlide) => prevCurrentSlide - 1);
-          }}
-          className="absolute top-0 bottom-0 left-0 p-6 text-white opacity-0 md:opacity-100"
-        >
-          <FaCircleChevronLeft size={30} />
-        </button>
-      )}
-      <ul className="absolute bottom-4 w-full flex flex-row justify-center gap-1">
-        {Array.from({ length }).map((_, index) => (
-          <li key={index} className="text-white">
-            <FaCircle size={8} />
-          </li>
-        ))}
-      </ul>
+      <button
+        onClick={() => {
+          nextSlide();
+        }}
+        className={`absolute bottom-4 right-4 text-white ${
+          currentSlide === length - 1 ? "opacity-50" : "opacity-100"
+        }`}
+        tabIndex="1"
+        disabled={currentSlide === length - 1}
+      >
+        <FaCircleChevronRight size={30} />
+      </button>
+      <button
+        onClick={() => {
+          prevSlide();
+        }}
+        className={`absolute bottom-4 right-14 text-white ${
+          currentSlide <= 0 ? "opacity-50" : "opacity-100"
+        }`}
+        tabIndex="1"
+        disabled={currentSlide <= 0}
+      >
+        <FaCircleChevronLeft size={30} />
+      </button>
     </div>
   );
 };

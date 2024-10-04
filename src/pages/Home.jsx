@@ -316,7 +316,7 @@ const Home = () => {
               </div>
               {showButton && (
                 <button
-                  className={`hidden lg:block lg:absolute lg:right-4 lg:top-1/2 lg:text-white lg:border lg:border-black lg:rounded-full lg:bg-black lg:opacity-75`}
+                  className="hidden lg:block lg:absolute lg:right-4 lg:top-1/2 lg:text-white"
                   onClick={() => {
                     scrollRef.current.scrollBy({
                       top: 0,
@@ -332,7 +332,7 @@ const Home = () => {
               )}
               {showButton || (
                 <button
-                  className="hidden lg:block lg:absolute lg:left-4 lg:top-1/2 lg:text-white lg:border lg:border-black lg:rounded-full lg:bg-black"
+                  className="hidden lg:block lg:absolute lg:left-4 lg:top-1/2 lg:text-white"
                   onClick={() => {
                     scrollRef.current.scrollBy({
                       top: 0,
@@ -707,12 +707,59 @@ const Home = () => {
         </div>
       </section>
       <div>
-        <Slider length="2">
+        <Slider length="3">
           <article
             style={{
               backgroundImage: `url(${articlesFive[0].image})`,
             }}
-            className="h-full w-full bg-center bg-cover bg-no-repeat"
+            className="h-full w-full bg-center bg-cover bg-no-repeat snap-start"
+          >
+            <div className="h-full bg-gradient-to-t from-black to-transparent p-4 flex">
+              <div className="mt-auto mb-8 md:grid md:grid-cols-2 md:gap-4 md:items-center md:max-w-screen-md md:mx-auto">
+                <iframe
+                  title="What We Know About Trump Shooting Suspect Thomas Matthew Crooks | JadeTimes"
+                  width="208"
+                  height="215"
+                  src="https://www.youtube.com/embed/uHcsQKx6AzY?autoplay=0&amp;mute=0&amp;controls=1&amp;loop=0&amp;origin=https%3A%2F%2Fwww.jadetimes.com&amp;playsinline=1&amp;enablejsapi=1&amp;"
+                  className="border border-neutral-300 w-full"
+                ></iframe>
+                <div className="text-white">
+                  <h3 className="text-sm my-3 lg:text-base md:mt-0">
+                    How Sri Lanka's 2024 Election Could Shape the Future of
+                    Entrepreneurs
+                  </h3>
+                  <p className="text-xs">
+                    We explore how the upcoming election could shape opportunities
+                    and challenges for business owners and startups across the
+                    country. A shocking revelation about the connection between
+                    these two groups, shedding light on hidden influences and
+                    funding sources.
+                  </p>
+                  <div className="mt-4">
+                    <a
+                      href="https://www.youtube.com/@JadeTimes"
+                      className="bg-neutral-800 inline-block uppercase font-medium text-xs px-3 py-2 mr-4 lg:px-2 lg:py-1 duration-300 hover:bg-white hover:text-black"
+                    >
+                      Youtube updates
+                    </a>
+                    <a
+                      href="https://www.jadetimes.com/post/shocking-revelations-mr-neomal-perera-on-hidden-influences-in-sri-lanka-s-political-sphere"
+                      className="text-xs capitalize duration-300 hover:opacity-50"
+                      aria-label="read more about this article"
+                    >
+                      Read more
+                      <FaChevronRight className="inline" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article
+            style={{
+              backgroundImage: `url(${articlesFive[1].image})`,
+            }}
+            className="h-full w-full bg-center bg-cover bg-no-repeat snap-start"
           >
             <div className="h-full bg-gradient-to-t from-black to-transparent p-4 flex">
               <div className="mt-auto mb-8 md:grid md:grid-cols-2 md:gap-4 md:items-center md:max-w-screen-md md:mx-auto">
@@ -759,7 +806,7 @@ const Home = () => {
             style={{
               backgroundImage: `url(${articlesFive[0].image})`,
             }}
-            className="h-full w-full bg-center bg-cover bg-no-repeat"
+            className="h-full w-full bg-center bg-cover bg-no-repeat snap-start"
           >
             <div className="h-full bg-gradient-to-t from-black to-transparent p-4 flex">
               <div className="mt-auto mb-8 md:grid md:grid-cols-2 md:gap-4 md:items-center md:max-w-screen-md md:mx-auto">
