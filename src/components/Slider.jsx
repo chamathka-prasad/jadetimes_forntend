@@ -66,7 +66,8 @@ const Slider = ({ children, length }) => {
         className={`absolute bottom-4 right-4 text-white ${
           currentSlide === length - 1 ? "opacity-50" : "opacity-100"
         }`}
-        tabIndex="1"
+        tabIndex="-1"
+        aria-hidden="true"
         disabled={currentSlide === length - 1}
       >
         <FaCircleChevronRight size={30} />
@@ -78,7 +79,8 @@ const Slider = ({ children, length }) => {
         className={`absolute bottom-4 right-14 text-white ${
           currentSlide <= 0 ? "opacity-50" : "opacity-100"
         }`}
-        tabIndex="1"
+        tabIndex="-1"
+        aria-hidden="true"
         disabled={currentSlide <= 0}
       >
         <FaCircleChevronLeft size={30} />

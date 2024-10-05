@@ -10,17 +10,17 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto p-4">
         <div className="flex flex-col gap-8 items-center my-8 mb-12 md:flex-row md:justify-between">
           <div>
-            <Link to="/" className="block min-w-32 max-w-48 order-2 px-4">
+            <Link to="/" className="block min-w-32 max-w-60 order-2 px-4">
               <img src={Logo} alt="jadetimes logo" />
             </Link>
-            <div className="text-sm text-neutral-800 flex flex-row items-center mt-2 whitespace-nowrap">
+            <div className="text-sm text-neutral-800 flex flex-row items-center justify-center mt-2 whitespace-nowrap">
               <Link to="/advertise-with-us" className="hover:underline">Advertise with us</Link>
               <span className="w-[1px] h-5 bg-neutral-800 mx-2"></span>
               <Link to="/talk-to-us" className="hover:underline">Talk to us</Link>
             </div>
           </div>
           <form className="w-full max-w-lg">
-            <label htmlFor="email" className="uppercase block text-center text-sm mb-2 font-medium">Sign up for our newsletter</label>
+            <label htmlFor="email" className="uppercase block text-center text-sm mb-2">Sign up for our newsletter</label>
             <div className="flex flex-col gap-2 md:flex-row md:gap-1">
               <input
                 className="py-2 px-3 border border-neutral-400 w-full duration-500 hover:bg-neutral-300 hover:border-neutral-300 hover:border-b-black"
@@ -35,17 +35,8 @@ const Footer = () => {
           </form>
         </div>
         <div>
-          <nav className="border-t border-b border-neutral-200 py-4">
-            <ul className="text-neutral-800 flex flex-wrap items-center gap-4 justify-center text-xl mb-4">
-              <li className="flex"><Link to="https://www.whatsapp.com/channel/0029VaevKQj35fM4n9S7ub1c" aria-label="whatsapp" target="_black" className="p-2 inline-block rounded-full duration-500 border border-white hover:text-black hover:border-neutral-800"><FaWhatsapp /></Link></li>
-              <li className="flex"><Link to="https://www.tiktok.com/@jadetimes_officials" aria-label="tiktok" target="_blank" className="p-2 inline-block rounded-full duration-500 border border-white hover:text-black hover:border-neutral-800"><FaTiktok /></Link></li>
-              <li className="flex"><Link to="https://x.com/jade_times" aria-label="x-twitter" target="_blank" className="p-2 inline-block rounded-full duration-500 border border-white hover:text-black hover:border-neutral-800"><FaXTwitter /></Link></li>
-              <li className="flex"><Link to="https://www.facebook.com/officialJadetimes" aria-label="facebook" target="_blank" className="p-2 inline-block rounded-full duration-500 border border-white hover:text-black hover:border-neutral-800"><FaFacebookF /></Link></li>
-              <li className="flex"><Link to="https://www.youtube.com/channel/UCh3RLLVBaEeBRRZBbnnVWWA" aria-label="youtube" target="_blank" className="p-2 inline-block rounded-full duration-500 border border-white hover:text-black hover:border-neutral-800"><FaYoutube /></Link></li>
-              <li className="flex"><Link to="https://www.instagram.com/jadetimes_official/" aria-label="instagram" target="_blank" className="p-2 inline-block rounded-full duration-500 border border-white hover:text-black hover:border-neutral-800"><FaInstagram /></Link></li>
-              <li className="flex"><Link to="https://www.linkedin.com/company/99353290/admin/feed/posts/" aria-label="linkedin" target="_blank" className="p-2 inline-block rounded-full duration-500 border border-white hover:text-black hover:border-neutral-800"><FaLinkedinIn /></Link></li>
-            </ul>
-            <ul className="text-xs text-neutral-800 flex flex-row items-center justify-center gap-4 flex-wrap">
+          <nav className="border-t border-b border-neutral-200 py-4 flex flex-col gap-4 lg:flex-row">
+            <ul className="text-xs text-neutral-600 flex flex-row items-center justify-center gap-4 flex-wrap font-medium">
               {Paths.map(Path => (
                 <li key={Path.key} className="contents gap-4">
                   <Link to={Path.to} className="duration-500 hover:underline">{Path.name}</Link>
@@ -58,6 +49,15 @@ const Footer = () => {
                   </ul>}
                 </li>
               ))}
+            </ul>
+            <ul className="text-neutral-600 flex items-center gap-2 justify-center text-xl flex-nowrap">
+              <li className="flex"><Link to="https://www.whatsapp.com/channel/0029VaevKQj35fM4n9S7ub1c" aria-label="whatsapp" target="_black" className="inline-block"><FaWhatsapp /></Link></li>
+              <li className="flex"><Link to="https://www.tiktok.com/@jadetimes_officials" aria-label="tiktok" target="_blank" className="inline-block"><FaTiktok /></Link></li>
+              <li className="flex"><Link to="https://x.com/jade_times" aria-label="x-twitter" target="_blank" className="inline-block"><FaXTwitter /></Link></li>
+              <li className="flex"><Link to="https://www.facebook.com/officialJadetimes" aria-label="facebook" target="_blank" className="inline-block"><FaFacebookF /></Link></li>
+              <li className="flex"><Link to="https://www.youtube.com/channel/UCh3RLLVBaEeBRRZBbnnVWWA" aria-label="youtube" target="_blank" className="inline-block"><FaYoutube /></Link></li>
+              <li className="flex"><Link to="https://www.instagram.com/jadetimes_official/" aria-label="instagram" target="_blank" className="inline-block"><FaInstagram /></Link></li>
+              <li className="flex"><Link to="https://www.linkedin.com/company/99353290/admin/feed/posts/" aria-label="linkedin" target="_blank" className="inline-block"><FaLinkedinIn /></Link></li>
             </ul>
           </nav>
         </div>

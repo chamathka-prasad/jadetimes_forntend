@@ -12,7 +12,7 @@ const Aside = (props) => {
             <Link to="/log-in" onClick={props.handleToggle}>
               Log In
             </Link>
-            <Link to="/membership" onClick={props.handleToggle} className="sm:hidden bg-red-600 font-medium text-xs py-1 px-2 duration-500 hover:bg-white hover:text-black text-center uppercase">
+            <Link to="/membership" onClick={props.handleToggle} className="sm:hidden bg-red-700 font-medium text-xs py-1 px-2 duration-500 hover:bg-white hover:text-black text-center uppercase">
               Subscribe : 49.99/Year
             </Link>
           </li>
@@ -31,7 +31,7 @@ const Aside = (props) => {
             </li>
           ))}
         </ul>
-        <button className="inline-block mt-5 mx-4 self-end" onClick={props.handleToggle}>
+        <button className="inline-block mt-5 mx-4 self-end" onClick={props.handleToggle} aria-label="close">
           <FaX size={24} />
         </button>
       </nav>

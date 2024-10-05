@@ -13,9 +13,8 @@ import DigitUsTecGlobal from "../assets/Adds/add-1.gif";
 import SpecialPrinters from "../assets/Adds/add-2.gif";
 
 import {
-  FaCircleChevronLeft,
-  FaCircleChevronRight,
-  FaChevronRight,
+  FaChevronLeft,
+  FaChevronRight
 } from "react-icons/fa6";
 
 const Home = () => {
@@ -37,10 +36,10 @@ const Home = () => {
         <H1 className="h-0 overflow-hidden" heading="Headlines" />
         <section className="md:p-4 2xl:grid 2xl:grid-cols-12 2xl:gap-4">
           <LatestUpdates />
-          <div className="md:grid md:grid-cols-2 md:gap-4 lg:grid-cols-10 xl:col-start-2 xl:col-span-10 xl:row-start-2">
+          <div className="md:grid md:grid-cols-2 md:gap-4 lg:grid-cols-12 xl:col-start-2 xl:col-span-10 xl:row-start-2">
             <Article
               link={Articles[0].link}
-              className="block md:border md:border-neutral-300 md:col-span-2 md:row-span-2 lg:col-span-7 lg:row-start-2 lg:row-span-3"
+              className="block md:border md:border-neutral-300 md:col-span-2 md:row-span-2 lg:col-span-9 lg:row-start-2 lg:row-span-3"
             >
               <article className="md:grid md:grid-cols-2 lg:h-full">
                 <picture>
@@ -51,7 +50,7 @@ const Home = () => {
                   />
                 </picture>
                 <p
-                  className="text-white uppercase text-xs text-center absolute left-0 right-0 -translate-y-5 md:hidden"
+                  className="text-white uppercase text-xs text-center absolute left-0 right-0 -translate-y-4 md:hidden"
                   aria-hidden="true"
                 >
                   <span className="bg-neutral-900 inline-block px-3 py-2 tracking-wider text-nowrap">
@@ -67,12 +66,12 @@ const Home = () => {
                 </div>
               </article>
             </Article>
-            <div className="md:grid md:grid-cols-2 md:col-span-2 md:gap-4 lg:grid-cols-8 lg:col-span-8">
+            <div className="md:grid md:grid-cols-2 md:col-span-2 md:gap-4 lg:grid-cols-12 lg:col-span-9">
               {articlesTwo.map((article) => (
                 <Article
                   key={article.title}
                   link={article.link}
-                  className="border border-neutral-300 block mx-4 mb-4 md:m-0 lg:col-span-2"
+                  className="border border-neutral-300 block mx-4 mb-4 md:m-0 lg:col-span-3"
                 >
                   <article className="flex flex-row p-4 gap-4 justify-between lg:p-0 lg:flex-col">
                     <picture className="order-2 lg:order-none">
@@ -99,12 +98,13 @@ const Home = () => {
             </div>
             <Article
               link="https://specialgraphics.us/"
-              className="block md:row-span-3 lg:col-start-9 lg:col-span-2 lg:row-start-5 lg:row-span-1"
+              className="block md:row-span-3 lg:col-start-10 lg:col-span-3 lg:row-start-5 lg:row-span-1"
               target="_blank"
+              aria-label="visit special graphics website"
             >
               <img
                 src={SpecialGraphics}
-                alt=""
+                alt="special graphics representation"
                 className="md:h-[272px] lg:h-full"
               />
             </Article>
@@ -113,7 +113,7 @@ const Home = () => {
                 <Article
                   key={article.title}
                   link={article.link}
-                  className="block lg:pr-4 lg:pl-4 lg:border-r lg:border-neutral-300 lg:first:pl-0 lg:last:pr-0 lg:last:border-none"
+                  className="block lg:pr-4 lg:pl-4 lg:border-r-2 lg:border-neutral-300 lg:first:pl-0 lg:last:pr-0 lg:last:border-none"
                 >
                   <article className="flex flex-col justify-between gap-4">
                     <picture className="lg:hidden">
@@ -200,21 +200,26 @@ const Home = () => {
           </div>
           <Article
             link="http://www.digitustecglobal.com/"
-            className="hidden 2xl:block 2xl:col-start-1 2xl:mt-28 h-fit"
+            className="hidden 2xl:block 2xl:col-start-1 2xl:mt-24 h-fit"
             target="_blank"
+            aria-label="visit digit us tec global website"
           >
-            <img src={DigitUsTecGlobal} alt="" />
+            <img
+              src={DigitUsTecGlobal}
+              alt="digit us tec global representation"
+            />
           </Article>
           <Article
             link="https://www.specialprinters.us/"
-            className="hidden 2xl:block 2xl:col-start-12 2xl:mt-28 h-fit"
+            className="hidden 2xl:block 2xl:col-start-12 2xl:mt-24 h-fit"
             target="_blank"
+            aria-label="visit special printers website"
           >
-            <img src={SpecialPrinters} alt="" />
+            <img src={SpecialPrinters} alt="special printers representation" />
           </Article>
         </section>
         <section className="mt-8 md:mt-4 max-w-screen-xl mx-auto">
-          <H2 heading="More News" className="border-b-4 border-b-red-600" />
+          <H2 heading="More News" className="border-b-[3px] border-b-red-700" />
           <div className="md:grid md:grid-cols-2 md:gap-4 md:p-4 lg:grid-cols-10">
             {articlesFour.map((article) => (
               <Article
@@ -246,7 +251,7 @@ const Home = () => {
         <section className="mt-8 md:mt-4 max-w-screen-xl mx-auto">
           <H2
             heading="What's Trending"
-            className="border-b-4 border-b-red-600"
+            className="border-b-[3px] border-b-red-700"
           />
           <div className="lg:grid lg:grid-cols-4 lg:p-4">
             <div className="lg:col-span-2 lg:border lg:border-neutral-300 lg:mr-4 lg:relative non-focus">
@@ -254,7 +259,7 @@ const Home = () => {
                 <div className="pt-4 px-4 flex flex-col gap-4 md:flex-row lg:p-0 lg:flex-row lg:gap-0 lg:h-full">
                   <Article
                     link={articlesFive[0].link}
-                    className="block border border-neutral-300 md:w-full lg:min-w-full lg:overflow-hidden lg:border-none"
+                    className={`block duration-300 border border-neutral-300 md:w-full ${showButton ? "lg:visible" : "lg:invisible"} lg:min-w-full lg:overflow-hidden lg:border-none`}
                   >
                     <article
                       style={{
@@ -284,7 +289,7 @@ const Home = () => {
                   </Article>
                   <Article
                     link={articlesFive[1].link}
-                    className="block border border-neutral-300 md:w-full lg:min-w-full lg:overflow-hidden lg:border-none"
+                    className={`block duration-300 border border-neutral-300 md:w-full ${showButton ? "lg:invisible" : "lg:visible"} lg:min-w-full lg:overflow-hidden lg:border-none`}
                   >
                     <article
                       style={{
@@ -316,7 +321,7 @@ const Home = () => {
               </div>
               {showButton && (
                 <button
-                  className="hidden lg:block lg:absolute lg:right-4 lg:top-1/2 lg:text-white"
+                  className="hidden lg:block lg:absolute lg:right-4 lg:top-1/2 lg:text-neutral-500"
                   onClick={() => {
                     scrollRef.current.scrollBy({
                       top: 0,
@@ -325,14 +330,14 @@ const Home = () => {
                     });
                     setShowButton(false);
                   }}
-                  tabIndex="1"
+                  aria-label="next article"
                 >
-                  <FaCircleChevronRight size={40} />
+                  <FaChevronRight size={40} />
                 </button>
               )}
               {showButton || (
                 <button
-                  className="hidden lg:block lg:absolute lg:left-4 lg:top-1/2 lg:text-white"
+                  className="hidden lg:block lg:absolute lg:left-4 lg:top-1/2 lg:text-neutral-500"
                   onClick={() => {
                     scrollRef.current.scrollBy({
                       top: 0,
@@ -341,13 +346,13 @@ const Home = () => {
                     });
                     setShowButton(true);
                   }}
-                  tabIndex="1"
+                  aria-label="previous article"
                 >
-                  <FaCircleChevronLeft size={40} />
+                  <FaChevronLeft size={40} />
                 </button>
               )}
             </div>
-            <div className="md:grid md:grid-cols-2 md:p-4 md:gap-4 lg:col-span-2 lg:grid-cols-2 lg:p-0 lg:pl-4 lg:border-l lg:border-neutral-300">
+            <div className="md:grid md:grid-cols-2 md:p-4 md:gap-4 lg:col-span-2 lg:grid-cols-2 lg:p-0 lg:pl-4 lg:border-l lg:border-black">
               {articlesSix.map((article) => (
                 <Article
                   key={article.title}
@@ -386,7 +391,7 @@ const Home = () => {
               <Article
                 key={article.title}
                 link={article.link}
-                className="block m-4 md:m-0 md:mt-4"
+                className="block m-4 md:m-0 md:mt-4 md:odd:my-8"
               >
                 <article className="flex flex-col justify-between gap-4">
                   <picture className="sm:hidden">
@@ -413,7 +418,7 @@ const Home = () => {
               <Article
                 key={article.title}
                 link={article.link}
-                className="block m-4 md:m-0 md:mt-4"
+                className="block m-4 md:m-0 md:mt-4 md:odd:my-8"
               >
                 <article className="flex flex-col justify-between gap-4">
                   <picture className="sm:hidden">
@@ -440,7 +445,7 @@ const Home = () => {
               <Article
                 key={article.title}
                 link={article.link}
-                className="block m-4 md:m-0 md:mt-4"
+                className="block m-4 md:m-0 md:mt-4 md:odd:my-8"
               >
                 <article className="flex flex-col justify-between gap-4">
                   <picture className="sm:hidden">
@@ -467,7 +472,7 @@ const Home = () => {
               <Article
                 key={article.title}
                 link={article.link}
-                className="block m-4 md:m-0 md:mt-4"
+                className="block m-4 md:m-0 md:mt-4 md:odd:my-8"
               >
                 <article className="flex flex-col justify-between gap-4">
                   <picture className="sm:hidden">
@@ -487,7 +492,7 @@ const Home = () => {
           </section>
         </div>
         <section className="mt-8 md:mt-4 max-w-screen-xl mx-auto">
-          <H2 heading="News Updates" className="border-b-4 border-b-red-600">
+          <H2 heading="News Updates" className="border-b-[3px] border-b-red-700">
             {" "}
             | Sports
           </H2>
@@ -528,18 +533,20 @@ const Home = () => {
           <div className="max-w-screen-xl mx-auto py-3 pb-4">
             <H2
               heading="Exclusive Pulse"
-              className="text-white border-b-4 border-b-red-600"
+              className="text-white border-b-[3px] border-b-red-700"
             >
               {" "}
               | Jadetimes
             </H2>
             <div className="p-4 pb-1 text-white flex flex-col gap-4 md:grid md:grid-cols-2 items-center">
               <iframe
-                className="block border border-neutral-300 w-full h-52 lg:h-72 xl:h-80"
+                className="block aspect-video"
                 title="How Sri Lanka's 2024 Election Could Shape the Future of Entrepreneurs | Exclusive Pulse | Jadetimes"
-                width="640px"
-                height="100%"
-                src="https://www.youtube.com/embed/4W7SjwdQS64?autoplay=0&amp;mute=0&amp;controls=1&amp;loop=0&amp;origin=https%3A%2F%2Fwww.jadetimes.com&amp;playsinline=1&amp;enablejsapi=1&amp;"
+                width="100%"
+                src="https://www.youtube.com/embed/4W7SjwdQS64?autoplay=0&mute=0&controls=1&loop=0&origin=https://www.jadetimes.com&playsinline=1&enablejsapi=1"
+                sandbox="allow-same-origin allow-scripts allow-popups"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                loading="lazy"
               ></iframe>
               <div className="lg:w-96 lg:mx-auto">
                 <h3 className="text-sm mb-3 lg:text-base">
@@ -553,21 +560,22 @@ const Home = () => {
                   these two groups, shedding light on hidden influences and
                   funding sources.
                 </p>
-                <div className="mt-4">
+                <div className="mt-4 flex items-center gap-4">
                   <a
                     href="https://www.youtube.com/@JadeTimes"
-                    className="bg-neutral-800 inline-block uppercase font-medium text-xs px-3 py-2 mr-4 lg:px-2 lg:py-1 duration-300 hover:bg-white hover:text-black"
+                    className="bg-neutral-800 inline-block uppercase text-nowrap font-medium text-xs px-3 py-2 lg:px-2 lg:py-1 duration-300 hover:bg-white hover:text-black"
                   >
                     Youtube updates
                   </a>
-                  <a
-                    href="https://www.jadetimes.com/post/shocking-revelations-mr-neomal-perera-on-hidden-influences-in-sri-lanka-s-political-sphere"
-                    className="text-xs capitalize duration-300 hover:opacity-50"
-                    aria-label="read more about this article"
-                  >
-                    Read more
-                    <FaChevronRight className="inline" />
-                  </a>
+                  <p>
+                    <a
+                      href="https://www.jadetimes.com/post/shocking-revelations-mr-neomal-perera-on-hidden-influences-in-sri-lanka-s-political-sphere"
+                      className="text-xs text-nowrap capitalize duration-300 hover:opacity-50"
+                    >
+                      Read more
+                      <FaChevronRight className="inline" />
+                    </a>
+                  </p>
                 </div>
               </div>
             </div>
@@ -718,22 +726,25 @@ const Home = () => {
               <div className="mt-auto mb-8 md:grid md:grid-cols-2 md:gap-4 md:items-center md:max-w-screen-md md:mx-auto">
                 <iframe
                   title="What We Know About Trump Shooting Suspect Thomas Matthew Crooks | JadeTimes"
-                  width="208"
-                  height="215"
-                  src="https://www.youtube.com/embed/uHcsQKx6AzY?autoplay=0&amp;mute=0&amp;controls=1&amp;loop=0&amp;origin=https%3A%2F%2Fwww.jadetimes.com&amp;playsinline=1&amp;enablejsapi=1&amp;"
-                  className="border border-neutral-300 w-full"
+                  width="100%"
+                  src="https://www.youtube.com/embed/uHcsQKx6AzY?autoplay=0&mute=0&controls=1&loop=0&origin=https://www.jadetimes.com&playsinline=1&enablejsapi=1"
+                  className="aspect-video"
+                  sandbox="allow-same-origin allow-scripts allow-popups"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  loading="lazy"
                 ></iframe>
+
                 <div className="text-white">
                   <h3 className="text-sm my-3 lg:text-base md:mt-0">
                     How Sri Lanka's 2024 Election Could Shape the Future of
                     Entrepreneurs
                   </h3>
                   <p className="text-xs">
-                    We explore how the upcoming election could shape opportunities
-                    and challenges for business owners and startups across the
-                    country. A shocking revelation about the connection between
-                    these two groups, shedding light on hidden influences and
-                    funding sources.
+                    We explore how the upcoming election could shape
+                    opportunities and challenges for business owners and
+                    startups across the country. A shocking revelation about the
+                    connection between these two groups, shedding light on
+                    hidden influences and funding sources.
                   </p>
                   <div className="mt-4">
                     <a
@@ -765,22 +776,25 @@ const Home = () => {
               <div className="mt-auto mb-8 md:grid md:grid-cols-2 md:gap-4 md:items-center md:max-w-screen-md md:mx-auto">
                 <iframe
                   title="What We Know About Trump Shooting Suspect Thomas Matthew Crooks | JadeTimes"
-                  width="208"
-                  height="215"
-                  src="https://www.youtube.com/embed/uHcsQKx6AzY?autoplay=0&amp;mute=0&amp;controls=1&amp;loop=0&amp;origin=https%3A%2F%2Fwww.jadetimes.com&amp;playsinline=1&amp;enablejsapi=1&amp;"
-                  className="border border-neutral-300 w-full"
+                  width="100%"
+                  src="https://www.youtube.com/embed/uHcsQKx6AzY?autoplay=0&mute=0&controls=1&loop=0&origin=https://www.jadetimes.com&playsinline=1&enablejsapi=1"
+                  className="aspect-video"
+                  sandbox="allow-same-origin allow-scripts allow-popups"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  loading="lazy"
                 ></iframe>
+
                 <div className="text-white">
                   <h3 className="text-sm my-3 lg:text-base md:mt-0">
                     How Sri Lanka's 2024 Election Could Shape the Future of
                     Entrepreneurs
                   </h3>
                   <p className="text-xs">
-                    We explore how the upcoming election could shape opportunities
-                    and challenges for business owners and startups across the
-                    country. A shocking revelation about the connection between
-                    these two groups, shedding light on hidden influences and
-                    funding sources.
+                    We explore how the upcoming election could shape
+                    opportunities and challenges for business owners and
+                    startups across the country. A shocking revelation about the
+                    connection between these two groups, shedding light on
+                    hidden influences and funding sources.
                   </p>
                   <div className="mt-4">
                     <a
@@ -812,22 +826,25 @@ const Home = () => {
               <div className="mt-auto mb-8 md:grid md:grid-cols-2 md:gap-4 md:items-center md:max-w-screen-md md:mx-auto">
                 <iframe
                   title="What We Know About Trump Shooting Suspect Thomas Matthew Crooks | JadeTimes"
-                  width="208"
-                  height="215"
-                  src="https://www.youtube.com/embed/uHcsQKx6AzY?autoplay=0&amp;mute=0&amp;controls=1&amp;loop=0&amp;origin=https%3A%2F%2Fwww.jadetimes.com&amp;playsinline=1&amp;enablejsapi=1&amp;"
-                  className="border border-neutral-300 w-full"
+                  width="100%"
+                  src="https://www.youtube.com/embed/uHcsQKx6AzY?autoplay=0&mute=0&controls=1&loop=0&origin=https://www.jadetimes.com&playsinline=1&enablejsapi=1"
+                  className="aspect-video"
+                  sandbox="allow-same-origin allow-scripts allow-popups"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  loading="lazy"
                 ></iframe>
+
                 <div className="text-white">
                   <h3 className="text-sm my-3 lg:text-base md:mt-0">
                     How Sri Lanka's 2024 Election Could Shape the Future of
                     Entrepreneurs
                   </h3>
                   <p className="text-xs">
-                    We explore how the upcoming election could shape opportunities
-                    and challenges for business owners and startups across the
-                    country. A shocking revelation about the connection between
-                    these two groups, shedding light on hidden influences and
-                    funding sources.
+                    We explore how the upcoming election could shape
+                    opportunities and challenges for business owners and
+                    startups across the country. A shocking revelation about the
+                    connection between these two groups, shedding light on
+                    hidden influences and funding sources.
                   </p>
                   <div className="mt-4">
                     <a
