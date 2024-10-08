@@ -6,7 +6,7 @@ import Paths from "../routes/Paths";
 const Header = (props) => {
   return (
     <header className="bg-neutral-900 text-white sticky top-0 z-10">
-      <div className="px-6 py-4 flex items-center max-w-[1410px] mx-auto">
+      <div className="px-6 py-4 flex items-center max-w-[1430px] mx-auto lg:py-3">
         <Link
           to="/"
           className="block min-w-32 max-w-52 order-2 px-4 mx-auto md:order-3"
@@ -19,14 +19,14 @@ const Header = (props) => {
           onClick={props.handleToggle}
           aria-label="Menu"
         >
-          <FaBarsStaggered className="text-[1.6rem]" />
+          <FaBarsStaggered className="text-[1.6rem] lg:text-[1.45rem]" />
         </button>
         <Link
           to="/search"
           className="block order-5"
           aria-label="search jadetimes"
         >
-          <FaMagnifyingGlass className="text-[1.6rem]" />
+          <FaMagnifyingGlass className="text-[1.6rem] lg:text-[1.2rem]" />
         </Link>
         <Link
           to="/membership"
