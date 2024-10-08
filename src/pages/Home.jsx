@@ -32,9 +32,9 @@ const Home = () => {
 
   return (
     <div>
-      <div className="max-w-screen-xl mx-auto 2xl:max-w-[1535px]">
+      <div className="max-w-screen-xl mx-auto 2xl:max-w-[1555px]">
         <H1 className="h-0 overflow-hidden" heading="Headlines" />
-        <section className="md:p-4 2xl:grid 2xl:grid-cols-12 2xl:gap-4">
+        <section className="md:p-4 lg:pt-6 2xl:grid 2xl:grid-cols-12 2xl:gap-4">
           <LatestUpdates />
           <div className="md:grid md:grid-cols-2 md:gap-4 lg:grid-cols-12 xl:col-start-2 xl:col-span-10 xl:row-start-2">
             <Article

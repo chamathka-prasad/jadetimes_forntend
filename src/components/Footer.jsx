@@ -23,14 +23,14 @@ const Footer = () => {
             <label htmlFor="email" className="uppercase block text-center text-sm mb-2">Sign up for our newsletter</label>
             <div className="flex flex-col gap-2 md:flex-row md:gap-1">
               <input
-                className="py-2 px-3 border border-neutral-400 w-full duration-500 hover:bg-neutral-300 hover:border-neutral-300 hover:border-b-black"
+                className="py-2 px-3 border border-neutral-400 w-full duration-300 hover:bg-neutral-300 hover:border-neutral-300 hover:border-b-black"
                 id="email"
                 name="email"
                 type="email"
                 placeholder="Enter your email"
                 autoComplete="off"
                 required />
-              <button className="uppercase bg-neutral-800 text-white text-sm border border-neutral-800 duration-500 font-medium py-[0.625rem] px-8 hover:bg-transparent hover:text-black">Subscribe</button>
+              <button className="uppercase bg-neutral-800 text-white text-sm border border-neutral-800 duration-300 font-medium py-[0.625rem] px-8 hover:bg-transparent hover:text-black">Subscribe</button>
             </div>
           </form>
         </div>
@@ -39,11 +39,11 @@ const Footer = () => {
             <ul className="text-xs text-neutral-600 flex flex-row items-center justify-center gap-4 flex-wrap font-medium">
               {Paths.map(Path => (
                 <li key={Path.key} className="contents gap-4">
-                  <Link to={Path.to} className="duration-500 hover:underline">{Path.name}</Link>
+                  <Link to={Path.to} className="duration-300 hover:underline">{Path.name}</Link>
                   {Path.submenus && <ul className="flex flex-row items-center justify-center gap-4 flex-wrap">
                     {Path.submenus.map(submenu => (
                       <li key={submenu.key} className="contents">
-                        <Link to={submenu.to} className="whitespace-nowrap duration-500 hover:underline">{submenu.name}</Link>
+                        <Link to={submenu.to} className="whitespace-nowrap duration-300 hover:underline">{submenu.name}</Link>
                       </li>
                     ))}
                   </ul>}
@@ -65,34 +65,34 @@ const Footer = () => {
           <p className="text-center">© 2024 Jadetimes Media LLC. All Rights Reserved</p>
           <ul className="flex flex-wrap gap-4 justify-center">
             <li>
-              <Link to="/terms-and-conditions" className="duration-500 hover:underline">Terms & Conditions</Link>
+              <Link to="/terms-and-conditions" className="duration-300 hover:underline">Terms & Conditions</Link>
             </li>
             <li>
-              <Link to="/about" className="duration-500 hover:underline">About Jadetimes</Link>
+              <Link to="/about" className="duration-300 hover:underline">About Jadetimes</Link>
             </li>
             <li>
-              <Link to="/privacy-policy" className="duration-500 hover:underline">Privacy Policy</Link>
+              <Link to="/privacy-policy" className="duration-300 hover:underline">Privacy Policy</Link>
             </li>
             <li>
-              <Link to="/careers" className="duration-500 hover:underline">Join Jadetimes Media</Link>
+              <Link to="/careers" className="duration-300 hover:underline">Join Jadetimes Media</Link>
             </li>
             <li>
-              <Link to="/cookies" className="duration-500 hover:underline">Cookies</Link>
+              <Link to="/cookies" className="duration-300 hover:underline">Cookies</Link>
             </li>
             <li>
-              <Link to="/faq" className="duration-500 hover:underline">FAQ</Link>
+              <Link to="/faq" className="duration-300 hover:underline">FAQ</Link>
             </li>
             <li>
-              <Link to="/shop" className="duration-500 hover:underline">Jadetimes Shop</Link>
+              <Link to="/shop" className="duration-300 hover:underline">Jadetimes Shop</Link>
             </li>
             <li>
-              <Link to="/blog" className="duration-500 hover:underline">Blog</Link>
+              <Link to="/blog" className="duration-300 hover:underline">Blog</Link>
             </li>
             <li>
-              <Link to="mailto:info@jadetimes.com" className="duration-500 hover:underline">info@jadetimes.com</Link>
+              <Link to="mailto:info@jadetimes.com" className="duration-300 hover:underline">info@jadetimes.com</Link>
             </li>
             <li>
-              <Link to="/accessibility-help" className="duration-500 hover:underline">Accessibility Help</Link>
+              <Link to="/accessibility-help" className="duration-300 hover:underline">Accessibility Help</Link>
             </li>
             <li className="text-center">The JadeTimes holds no responsibility for the content of external websites. For more information, please review our policy on external linking</li>
           </ul>

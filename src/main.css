@@ -38,20 +38,8 @@ img {
   width: 100%;
 }
 
-.full-hide {
-  visibility: hidden;
-}
-
-.bg-transparent-black {
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
 .active {
-  color: #b91c1c;
-}
-
-aside .active {
-  color: #ff1111;
+  color: #FF322E;
 }
 
 .overflow-anywhere {

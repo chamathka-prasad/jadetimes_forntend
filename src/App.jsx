@@ -19,8 +19,8 @@ const App = () => {
       <Aside
         handleToggle={handleToggle}
         handleToggleStop={handleToggleStop}
-        navClassName={toggleMenu && "visible translate-x-0"}
-        asideClassName={toggleMenu && "visible opacity-100"}
+        navClassName={toggleMenu}
+        asideClassName={toggleMenu}
       />
       <main>
         <Routes>
