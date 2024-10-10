@@ -13,7 +13,7 @@ import SpecialGraphics from "../assets/Adds/add-3.webp";
 import DigitUsTecGlobal from "../assets/Adds/add-1.gif";
 import SpecialPrinters from "../assets/Adds/add-2.gif";
 
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
+import { FaChevronLeft, FaChevronRight, FaCircle } from "react-icons/fa6";
 
 const Home = () => {
   const articlesTwo = Articles.slice(1, 5);
@@ -28,82 +28,96 @@ const Home = () => {
 
   const [showButton, setShowButton] = useState(true);
 
+  const navigateToLink = (link) => {
+    window.location.href = link;
+  };
+
   return (
     <div>
       <div className="max-w-screen-xl mx-auto 2xl:max-w-[1560px]">
-        <H1 className="h-0 overflow-hidden" heading="Headlines" />
+        <H1 className="h-0 overflow-hidden" heading="Jadetimes" />
         <section className="md:p-4 lg:pt-6 2xl:grid 2xl:grid-cols-12 2xl:gap-4">
-          <LatestUpdates />
+          <LatestUpdates className="hidden md:block md:mb-4 md:px-2 md:py-[0.15rem] 2xl:mb-0 lg:col-start-2" />
           <div className="md:grid md:grid-cols-2 md:gap-4 lg:grid-cols-[repeat(17,_minmax(0,_1fr))] lg:gap-6 xl:col-start-2 xl:col-span-10 xl:row-start-2 text-neutral-900">
-            <Article
-              link={Articles[0].link}
-              className="block md:border md:border-neutral-300 md:col-span-2 md:row-span-2 lg:col-[13_span_/_13_span] lg:row-start-2 lg:row-span-3"
-            >
-              <article className="md:grid md:grid-cols-2 lg:h-full">
-                <picture>
+            <article className="md:grid md:grid-cols-2 md:border md:border-neutral-300 md:col-span-2 md:row-span-2 lg:col-[13_span_/_13_span] lg:row-start-2 lg:row-span-3">
+              <div className="relative">
+                <picture
+                  className="cursor-pointer"
+                  onClick={() => navigateToLink(Articles[0].link)}
+                >
                   <img
                     src={Articles[0].image}
-                    alt=""
+                    alt={Articles[0].title}
                     className="object-cover object-center md:h-full"
                   />
                 </picture>
-                <p
-                  className="text-white uppercase text-xs text-center absolute left-0 right-0 -translate-y-4 md:hidden"
-                  aria-hidden="true"
-                >
-                  <span className="bg-neutral-900 inline-block px-3 py-2 tracking-wider text-nowrap">
-                    Latest Updates
-                  </span>
-                </p>
-                <div className="pt-8 py-6 px-4 flex flex-col justify-between gap-2 md:justify-start md:p-4 md:gap-4 lg:p-8">
+                <LatestUpdates className="block px-3 py-2 text-sm absolute left-1/2 -translate-x-1/2 -translate-y-1/2 md:hidden" />
+              </div>
+              <div className="pt-8 py-6 px-4 flex flex-col justify-between gap-2 md:justify-start md:p-4 md:gap-4 lg:p-8">
+                <div>
+                  <Link className="hidden lg:block lg:text-xs">
+                    {Articles[0].authorName}
+                  </Link>
                   <p className="whitespace-nowrap lg:text-xs">
-                    {Articles[0].posted}
-                  </p>
-                  <h3 className="text-2xl lg:text-3xl lg:line-clamp-3 lg:leading-[2.8rem]">
-                    {Articles[0].title}
-                  </h3>
-                  <p className="lg:text-sm lg:line-clamp-3">
-                    {Articles[0].title}
+                    <span>{Articles[0].posted}</span>
+                    <FaCircle className="text-[2px] inline-block mx-2" />
+                    <span></span>
+                    <span>{Articles[0].readTime}</span>
                   </p>
                 </div>
-              </article>
-            </Article>
+                <Link
+                  to={Articles[0].link}
+                  className="text-2xl line-clamp-3 lg:text-3xl lg:leading-[2.8rem]"
+                >
+                  {Articles[0].title}
+                </Link>
+                <p className="line-clamp-2 lg:text-sm lg:line-clamp-3">
+                  {Articles[0].title}
+                </p>
+              </div>
+            </article>
             <div className="md:grid md:grid-cols-2 md:col-span-2 md:gap-4 lg:grid-cols-12 lg:gap-5 lg:col-[13_span_/_13_span]">
               {articlesTwo.map((article, index) => (
-                <Article
+                <article
                   key={index}
-                  link={article.link}
-                  className="border border-neutral-300 block mx-4 mb-4 md:m-0 lg:col-span-3"
+                  className="flex flex-row p-4 gap-4 justify-between lg:p-0 lg:flex-col border border-neutral-300 mx-4 mb-4 md:m-0 lg:col-span-3"
                 >
-                  <article className="flex flex-row p-4 gap-4 justify-between lg:p-0 lg:flex-col">
-                    <picture className="order-2 lg:order-none">
-                      <img
-                        src={article.image}
-                        alt=""
-                        className="min-w-20 w-20 min-h-20 h-20 object-cover object-center lg:w-full lg:h-full"
-                      />
-                    </picture>
-                    <div className="flex flex-col justify-between gap-4 lg:p-4 lg:pt-0">
-                      <h3 className="overflow-anywhere line-clamp-2 lg:text-sm lg:line-clamp-3">
-                        {article.title}
-                      </h3>
-                      <p className="hidden lg:line-clamp-2 lg:text-[0.6875rem]">
-                        {article.title}
-                      </p>
-                      <p className="whitespace-nowrap lg:text-xs lg:hidden">
-                        {article.posted}
-                      </p>
-                      <Link className="hidden lg:block text-sm font-light text-[#686868] lg:order-[-1]">
-                        {article.category}
-                      </Link>
-                    </div>
-                  </article>
-                </Article>
+                  <picture
+                    className="order-2 lg:order-none cursor-pointer"
+                    onClick={() => navigateToLink(article.link)}
+                  >
+                    <img
+                      src={article.image}
+                      alt={article.title}
+                      className="min-w-24 w-24 min-h-24 h-24 object-cover object-center lg:w-full lg:h-full"
+                    />
+                  </picture>
+                  <div className="flex flex-col justify-between gap-4 lg:p-4 lg:pt-0">
+                    <Link
+                      to={article.categoryLink}
+                      className="hidden lg:block text-sm font-light text-[#686868] lg:order-[-1]"
+                    >
+                      {article.categoryTitle}
+                    </Link>
+                    <Link
+                      to={article.link}
+                      className="overflow-anywhere line-clamp-2 lg:text-sm lg:line-clamp-3"
+                    >
+                      {article.title}
+                    </Link>
+                    <p className="hidden lg:line-clamp-2 lg:text-[0.6875rem]">
+                      {article.title}
+                    </p>
+                    <p className="whitespace-nowrap lg:text-xs lg:hidden">
+                      {article.posted}
+                    </p>
+                  </div>
+                </article>
               ))}
             </div>
             <div className="lg:col-start-[14] lg:col-span-4 lg:row-start-5 lg:row-span-1">
-              <Article
-                link="https://specialgraphics.us/"
+              <a
+                href="https://specialgraphics.us/"
                 className="block"
                 target="_blank"
                 aria-label="visit special graphics website"
@@ -113,102 +127,127 @@ const Home = () => {
                   alt="special graphics representation"
                   className="md:h-[272px] lg:h-auto"
                 />
-              </Article>
+              </a>
+              <div className="hidden lg:mt-3 lg:flex lg:flex-row lg:gap-4 lg:items-center">
+                <LatestUpdates className="block px-3 py-2 w-1/2 text-center" />
+                <a
+                  href=""
+                  className="text-sm group flex flex-row items-center justify-center w-1/2 py-[0.4rem]"
+                >
+                  Read More
+                  <FaChevronRight className="inline-block duration-300 opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100" />
+                </a>
+              </div>
             </div>
             <div className="flex flex-col gap-4 px-4 pt-4 md:p-0 md:col-span-2 md:grid md:grid-cols-2 md:row-span-2 lg:grid-cols-4 lg:col-span-full lg:row-start-1 lg:row-span-1 lg:gap-0">
               {articlesThree.map((article, index) => (
-                <Article
+                <article
                   key={index}
-                  link={article.link}
-                  className="block lg:pr-6 lg:pl-6 lg:border-r-2 lg:border-[#51515137] lg:first:pl-0 lg:last:pr-0 lg:last:border-none"
+                  className="flex flex-col justify-between gap-4 lg:pr-6 lg:pl-6 lg:border-r-2 lg:border-[#51515137] lg:first:pl-0 lg:last:pr-0 lg:last:border-none"
                 >
-                  <article className="flex flex-col justify-between gap-4">
-                    <picture className="lg:hidden">
-                      <img src={article.image} alt="" />
-                    </picture>
-                    <div className="flex flex-col justify-between gap-4">
-                      <p className="whitespace-nowrap lg:text-xs">
-                        {article.posted}
-                      </p>
-                      <h3 className="text-lg line-clamp-2 lg:text-base">
-                        {article.title}
-                      </h3>
-                    </div>
-                  </article>
-                </Article>
+                  <picture
+                    className="lg:hidden cursor-pointer"
+                    onClick={() => navigateToLink(article.link)}
+                  >
+                    <img src={article.image} alt={article.title} />
+                  </picture>
+                  <div className="flex flex-col justify-between gap-4">
+                    <p className="whitespace-nowrap lg:text-xs">
+                      {article.posted}
+                    </p>
+                    <Link
+                      to={article.link}
+                      className="text-lg line-clamp-2 lg:text-base"
+                    >
+                      {article.title}
+                    </Link>
+                  </div>
+                </article>
               ))}
             </div>
-            <div className="p-4 pb-0 flex flex-col gap-4 md:p-0 md:pb-0 md:col-start-2 md:row-start-4 lg:row-start-2 lg:row-span-3 lg:col-span-4">
-              <Article
-                link={Articles[0].link}
-                className="block lg:border lg:border-neutral-300"
-              >
-                <article className="flex flex-row gap-4 lg:p-4">
-                  <picture className="lg:order-2">
-                    <img
-                      src={Articles[0].image}
-                      alt=""
-                      className="min-w-20 w-20 min-h-20 h-20 lg:min-w-[4.5rem] lg:w-[4.5rem] lg:min-h-[4.5rem] lg:h-[4.5rem] object-cover object-center"
-                    />
-                  </picture>
-                  <div className="flex flex-col justify-center lg:justify-between">
-                    <h3 className="line-clamp-3 overflow-anywhere lg:text-sm lg:line-clamp-2">
-                      {Articles[0].title}
-                    </h3>
-                    <Link className="hidden lg:block text-sm text-[#686868] font-light">
-                      {Articles[0].category}
-                    </Link>
-                  </div>
-                </article>
-              </Article>
-              <Article
-                link={Articles[1].link}
-                className="block lg:border lg:border-neutral-300"
-              >
-                <article className="flex flex-row gap-4 lg:p-4">
-                  <picture className="lg:order-2">
-                    <img
-                      src={Articles[1].image}
-                      alt=""
-                      className="min-w-20 w-20 min-h-20 h-20 lg:min-w-[4.5rem] lg:w-[4.5rem] lg:min-h-[4.5rem] lg:h-[4.5rem] object-cover object-center"
-                    />
-                  </picture>
-                  <div className="flex flex-col justify-center lg:justify-between">
-                    <h3 className="line-clamp-3 overflow-anywhere lg:text-sm lg:line-clamp-2">
-                      {Articles[1].title}
-                    </h3>
-                    <Link className="hidden lg:block text-sm text-[#686868] font-light">
-                      {Articles[1].category}
-                    </Link>
-                  </div>
-                </article>
-              </Article>
-              <Article
-                link={Articles[2].link}
-                className="block lg:border lg:border-neutral-300"
-              >
-                <article className="flex flex-row gap-4 lg:p-4">
-                  <picture className="lg:order-2">
-                    <img
-                      src={Articles[2].image}
-                      alt=""
-                      className="min-w-20 w-20 min-h-20 h-20 lg:min-w-[4.5rem] lg:w-[4.5rem] lg:min-h-[4.5rem] lg:h-[4.5rem] object-cover object-center"
-                    />
-                  </picture>
-                  <div className="flex flex-col justify-center lg:justify-between">
-                    <h3 className="line-clamp-3 overflow-anywhere lg:text-sm lg:line-clamp-2">
-                      {Articles[2].title}
-                    </h3>
-                    <Link className="hidden lg:block text-sm text-[#686868] font-light">
-                      {Articles[2].category}
-                    </Link>
-                  </div>
-                </article>
-              </Article>
+            <div className="p-4 pb-0 flex flex-col gap-4 md:p-0 md:pb-0 md:col-start-2 md:row-start-4 lg:row-start-2 lg:row-span-3 lg:col-span-4 lg:gap-5">
+              <article className="flex flex-row gap-4 lg:p-4 lg:border lg:border-neutral-300">
+                <picture
+                  className="lg:order-2 cursor-pointer"
+                  onClick={() => navigateToLink(Articles[0].link)}
+                >
+                  <img
+                    src={Articles[0].image}
+                    alt={Articles[0].title}
+                    className="min-w-20 w-20 min-h-20 h-20 lg:min-w-[4.5rem] lg:w-[4.5rem] lg:min-h-[4.5rem] lg:h-[4.5rem] object-cover object-center"
+                  />
+                </picture>
+                <div className="flex flex-col justify-center lg:justify-between">
+                  <Link
+                    to={Articles[0].link}
+                    className="line-clamp-3 overflow-anywhere lg:text-sm lg:line-clamp-2"
+                  >
+                    {Articles[0].title}
+                  </Link>
+                  <Link
+                    to={Articles[0].categoryLink}
+                    className="hidden lg:block text-sm text-[#686868] font-light"
+                  >
+                    {Articles[0].categoryTitle}
+                  </Link>
+                </div>
+              </article>
+              <article className="flex flex-row gap-4 lg:p-4 lg:border lg:border-neutral-300">
+                <picture
+                  className="lg:order-2 cursor-pointer"
+                  onClick={() => navigateToLink(Articles[1].link)}
+                >
+                  <img
+                    src={Articles[1].image}
+                    alt={Articles[1].title}
+                    className="min-w-20 w-20 min-h-20 h-20 lg:min-w-[4.5rem] lg:w-[4.5rem] lg:min-h-[4.5rem] lg:h-[4.5rem] object-cover object-center"
+                  />
+                </picture>
+                <div className="flex flex-col justify-center lg:justify-between">
+                  <Link
+                    to={Articles[1].link}
+                    className="line-clamp-3 overflow-anywhere lg:text-sm lg:line-clamp-2"
+                  >
+                    {Articles[1].title}
+                  </Link>
+                  <Link
+                    to={Articles[1].categoryLink}
+                    className="hidden lg:block text-sm text-[#686868] font-light"
+                  >
+                    {Articles[1].categoryTitle}
+                  </Link>
+                </div>
+              </article>
+              <article className="flex flex-row gap-4 lg:p-4 lg:border lg:border-neutral-300">
+                <picture
+                  className="lg:order-2 cursor-pointer"
+                  onClick={() => navigateToLink(Articles[2].link)}
+                >
+                  <img
+                    src={Articles[2].image}
+                    alt={Articles[2].title}
+                    className="min-w-20 w-20 min-h-20 h-20 lg:min-w-[4.5rem] lg:w-[4.5rem] lg:min-h-[4.5rem] lg:h-[4.5rem] object-cover object-center"
+                  />
+                </picture>
+                <div className="flex flex-col justify-center lg:justify-between">
+                  <Link
+                    to={Articles[2].link}
+                    className="line-clamp-3 overflow-anywhere lg:text-sm lg:line-clamp-2"
+                  >
+                    {Articles[2].title}
+                  </Link>
+                  <Link
+                    to={Articles[2].categoryLink}
+                    className="hidden lg:block text-sm text-[#686868] font-light"
+                  >
+                    {Articles[2].categoryTitle}
+                  </Link>
+                </div>
+              </article>
             </div>
           </div>
-          <Article
-            link="http://www.digitustecglobal.com/"
+          <a
+            href="http://www.digitustecglobal.com/"
             className="hidden 2xl:block 2xl:col-start-1 2xl:mt-[6.5rem] h-fit"
             target="_blank"
             aria-label="visit digit us tec global website"
@@ -217,15 +256,15 @@ const Home = () => {
               src={DigitUsTecGlobal}
               alt="digit us tec global representation"
             />
-          </Article>
-          <Article
-            link="https://www.specialprinters.us/"
+          </a>
+          <a
+            href="https://www.specialprinters.us/"
             className="hidden 2xl:block 2xl:col-start-12 2xl:mt-[6.5rem] h-fit"
             target="_blank"
             aria-label="visit special printers website"
           >
             <img src={SpecialPrinters} alt="special printers representation" />
-          </Article>
+          </a>
         </section>
         <section className="mt-8 md:mt-4 max-w-screen-xl mx-auto">
           <H2 heading="More News" className="border-b-[3px] border-b-red-700" />
