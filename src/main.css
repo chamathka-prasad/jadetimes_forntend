@@ -51,10 +51,8 @@ img {
 }
 
 @media screen and (min-width: 1024px) {
-  .non-focus:has(a:focus-visible) {
-    outline: 2px solid dodgerblue;
-    transition: none;
-    border-radius: 0px;
+  .bg-image-none {
+    background-image: none !important;
   }
 }
 

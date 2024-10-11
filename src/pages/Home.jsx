@@ -34,7 +34,7 @@ const Home = () => {
 
   return (
     <div>
-      <div className="max-w-screen-xl mx-auto 2xl:max-w-[1560px]">
+      <div className="max-w-[1305px] 2xl:max-w-[1560px] mx-auto">
         <H1 className="h-0 overflow-hidden" heading="Jadetimes" />
         <section className="md:p-4 lg:pt-6 2xl:grid 2xl:grid-cols-12 2xl:gap-4">
           <LatestUpdates className="hidden md:block md:mb-4 md:px-2 md:py-[0.15rem] 2xl:mb-0 lg:col-start-2" />
@@ -125,14 +125,14 @@ const Home = () => {
                 <img
                   src={SpecialGraphics}
                   alt="special graphics representation"
-                  className="md:h-[272px] lg:h-auto"
+                  className="md:h-[320px] lg:h-auto"
                 />
               </a>
               <div className="hidden lg:mt-3 lg:flex lg:flex-row lg:gap-4 lg:items-center">
-                <LatestUpdates className="block px-3 py-2 w-1/2 text-center" />
+                <LatestUpdates className="block px-3 py-2 w-full text-center" />
                 <a
                   href=""
-                  className="text-sm group flex flex-row items-center justify-center w-1/2 py-[0.4rem]"
+                  className="text-sm group flex flex-row items-center justify-center w-full py-[0.4rem] text-nowrap"
                 >
                   Read More
                   <FaChevronRight className="inline-block duration-300 opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100" />
@@ -166,7 +166,7 @@ const Home = () => {
               ))}
             </div>
             <div className="p-4 pb-0 flex flex-col gap-4 md:p-0 md:pb-0 md:col-start-2 md:row-start-4 lg:row-start-2 lg:row-span-3 lg:col-span-4 lg:gap-5">
-              <article className="flex flex-row gap-4 lg:p-4 lg:border lg:border-neutral-300">
+              <article className="flex flex-row gap-4 lg:p-3 lg:border lg:border-neutral-300">
                 <picture
                   className="lg:order-2 cursor-pointer"
                   onClick={() => navigateToLink(Articles[0].link)}
@@ -174,13 +174,13 @@ const Home = () => {
                   <img
                     src={Articles[0].image}
                     alt={Articles[0].title}
-                    className="min-w-20 w-20 min-h-20 h-20 lg:min-w-[4.5rem] lg:w-[4.5rem] lg:min-h-[4.5rem] lg:h-[4.5rem] object-cover object-center"
+                    className="min-w-24 w-24 min-h-24 h-24 lg:min-w-[4.25rem] lg:w-[4.25rem] lg:min-h-[4.25rem] lg:h-[4.25rem] object-cover object-center"
                   />
                 </picture>
-                <div className="flex flex-col justify-center lg:justify-between">
+                <div className="flex flex-col justify-center lg:justify-between lg:gap-2">
                   <Link
                     to={Articles[0].link}
-                    className="line-clamp-3 overflow-anywhere lg:text-sm lg:line-clamp-2"
+                    className="line-clamp-3 overflow-anywhere lg:text-sm"
                   >
                     {Articles[0].title}
                   </Link>
@@ -192,7 +192,7 @@ const Home = () => {
                   </Link>
                 </div>
               </article>
-              <article className="flex flex-row gap-4 lg:p-4 lg:border lg:border-neutral-300">
+              <article className="flex flex-row gap-4 lg:p-3 lg:border lg:border-neutral-300">
                 <picture
                   className="lg:order-2 cursor-pointer"
                   onClick={() => navigateToLink(Articles[1].link)}
@@ -200,13 +200,13 @@ const Home = () => {
                   <img
                     src={Articles[1].image}
                     alt={Articles[1].title}
-                    className="min-w-20 w-20 min-h-20 h-20 lg:min-w-[4.5rem] lg:w-[4.5rem] lg:min-h-[4.5rem] lg:h-[4.5rem] object-cover object-center"
+                    className="min-w-24 w-24 min-h-24 h-24 lg:min-w-[4.25rem] lg:w-[4.25rem] lg:min-h-[4.25rem] lg:h-[4.25rem] object-cover object-center"
                   />
                 </picture>
-                <div className="flex flex-col justify-center lg:justify-between">
+                <div className="flex flex-col justify-center lg:justify-between lg:gap-2">
                   <Link
                     to={Articles[1].link}
-                    className="line-clamp-3 overflow-anywhere lg:text-sm lg:line-clamp-2"
+                    className="line-clamp-3 overflow-anywhere lg:text-sm"
                   >
                     {Articles[1].title}
                   </Link>
@@ -218,7 +218,7 @@ const Home = () => {
                   </Link>
                 </div>
               </article>
-              <article className="flex flex-row gap-4 lg:p-4 lg:border lg:border-neutral-300">
+              <article className="flex flex-row gap-4 lg:p-3 lg:border lg:border-neutral-300">
                 <picture
                   className="lg:order-2 cursor-pointer"
                   onClick={() => navigateToLink(Articles[2].link)}
@@ -226,13 +226,13 @@ const Home = () => {
                   <img
                     src={Articles[2].image}
                     alt={Articles[2].title}
-                    className="min-w-20 w-20 min-h-20 h-20 lg:min-w-[4.5rem] lg:w-[4.5rem] lg:min-h-[4.5rem] lg:h-[4.5rem] object-cover object-center"
+                    className="min-w-24 w-24 min-h-24 h-24 lg:min-w-[4.25rem] lg:w-[4.25rem] lg:min-h-[4.25rem] lg:h-[4.25rem] object-cover object-center"
                   />
                 </picture>
-                <div className="flex flex-col justify-center lg:justify-between">
+                <div className="flex flex-col justify-center lg:justify-between lg:gap-2">
                   <Link
                     to={Articles[2].link}
-                    className="line-clamp-3 overflow-anywhere lg:text-sm lg:line-clamp-2"
+                    className="line-clamp-3 overflow-anywhere lg:text-sm"
                   >
                     {Articles[2].title}
                   </Link>
@@ -266,114 +266,116 @@ const Home = () => {
             <img src={SpecialPrinters} alt="special printers representation" />
           </a>
         </section>
-        <section className="mt-8 md:mt-4 max-w-screen-xl mx-auto">
-          <H2 heading="More News" className="border-b-[3px] border-b-red-700" />
-          <div className="md:grid md:grid-cols-2 md:gap-4 md:p-4 lg:grid-cols-10">
+        <section className="mt-8 md:mt-0 max-w-[1305px] mx-auto text-neutral-900">
+          <p className="border-b-[3px] border-b-[#FF322E] mx-4 pb-1 text-[#111111]"><Link className="font-semibold text-lg lg:text-xl">More News</Link></p>
+          <div className="md:grid md:grid-cols-2 md:gap-4 md:p-4 lg:grid-cols-10 lg:gap-5 lg:pt-8">
             {articlesFour.map((article, index) => (
-              <Article
+              <article
                 key={index}
-                link={article.link}
-                className="border border-neutral-300 block m-4 md:m-0 lg:col-span-2"
+                className="flex flex-row p-4 gap-4 justify-between border border-neutral-300 m-4 md:m-0 lg:col-span-2 lg:flex-col lg:p-0"
               >
-                <article className="flex flex-row p-4 gap-4 justify-between lg:flex-col lg:p-0">
-                  <picture className="order-2 lg:order-none">
-                    <img
-                      src={article.image}
-                      alt=""
-                      className="min-w-20 w-20 min-h-20 h-20 object-cover object-center lg:w-full lg:h-full"
-                    />
-                  </picture>
-                  <div className="flex flex-col justify-between gap-4 lg:p-4 lg:pt-0">
-                    <h3 className="overflow-anywhere line-clamp-2 lg:text-sm lg:line-clamp-3">
-                      {article.title}
-                    </h3>
-                    <p className="whitespace-nowrap lg:hidden">
-                      {article.posted}
-                    </p>
-                  </div>
-                </article>
-              </Article>
+                <picture
+                  className="order-2 lg:order-none cursor-pointer"
+                  onClick={() => navigateToLink(article.link)}
+                >
+                  <img
+                    src={article.image}
+                    alt={article.title}
+                    className="min-w-24 w-24 min-h-24 h-24 object-cover object-center lg:w-full lg:h-full"
+                  />
+                </picture>
+                <div className="flex flex-col justify-between gap-4 lg:p-4 lg:pt-0">
+                  <Link className="overflow-anywhere line-clamp-2 lg:text-sm lg:line-clamp-3">
+                    {article.title}
+                  </Link>
+                  <p className="whitespace-nowrap lg:hidden">
+                    {article.posted}
+                  </p>
+                </div>
+              </article>
             ))}
           </div>
         </section>
-        <section className="mt-8 md:mt-4 max-w-screen-xl mx-auto">
-          <H2
-            heading="What's Trending"
-            className="border-b-[3px] border-b-red-700"
-          />
-          <div className="lg:grid lg:grid-cols-4 lg:p-4">
-            <div className="lg:col-span-2 lg:border lg:border-neutral-300 lg:mr-4 lg:relative non-focus">
-              <div className="lg:overflow-x-hidden lg:h-full" ref={scrollRef}>
-                <div className="pt-4 px-4 flex flex-col gap-4 md:flex-row lg:p-0 lg:flex-row lg:gap-0 lg:h-full">
-                  <Article
-                    link={articlesFive[0].link}
-                    className={`block duration-300 border border-neutral-300 md:w-full ${
-                      showButton ? "lg:visible" : "lg:invisible"
-                    } lg:min-w-full lg:overflow-hidden lg:border-none`}
+        <section className="mt-8 md:mt-4 max-w-[1305px] mx-auto text-neutral-900">
+          <div className="lg:grid lg:grid-cols-10 lg:p-4">
+            <div className="lg:col-span-6 lg:border lg:border-neutral-300 lg:mr-10 lg:relative">
+              <div className="lg:overflow-x-hidden lg:h-full snap-mandatory snap-x" ref={scrollRef}>
+                <div className="p-4 flex flex-col gap-4 md:flex-row lg:p-0 lg:flex-row lg:gap-0 lg:h-full">
+                  <article
+                    className="block duration-300 border border-neutral-300 bg-center snap-start bg-cover bg-no-repeat md:w-full aspect-square lg:aspect-auto lg:min-w-full lg:overflow-hidden lg:border-none bg-image-none"
+                    style={{
+                      backgroundImage: `url(${articlesFive[0].image})`
+                    }}
                   >
-                    <article
-                      style={{
-                        backgroundImage: `url(${articlesFive[0].image})`,
-                      }}
-                      className="h-72 bg-center bg-cover bg-no-repeat"
-                    >
-                      <picture className="hidden lg:block">
-                        <img
-                          src={articlesFive[0].image}
-                          alt=""
-                          className="lg:h-80"
-                        />
-                      </picture>
-                      <div className="flex flex-col justify-between h-full p-8 bg-[#000000aa] text-white lg:h-auto lg:bg-white lg:text-black lg:gap-4 lg:p-4">
-                        <h3 className="order-2 text-lg lg:text-2xl lg:line-clamp-2">
-                          {articlesFive[0].title}
-                        </h3>
-                        <p className="hidden lg:line-clamp-2 lg:text-sm lg:order-3">
-                          {articlesFive[0].title}
-                        </p>
+                    <picture className="hidden lg:block lg:cursor-pointer" onClick={() => navigateToLink(articlesFive[0].link)}>
+                      <img
+                        src={articlesFive[0].image}
+                        alt={articlesFive[0].title}
+                      />
+                    </picture>
+                    <div className="flex flex-col justify-between h-full p-8 bg-[#000000aa] text-white lg:h-auto lg:bg-white lg:text-black lg:gap-4 lg:p-4">
+                      <div>
+                        <Link className="hidden lg:block lg:text-xs">
+                          {articlesFive[0].authorName}
+                        </Link>
                         <p className="whitespace-nowrap lg:text-xs">
                           {articlesFive[0].posted}
                         </p>
                       </div>
-                    </article>
-                  </Article>
-                  <Article
-                    link={articlesFive[1].link}
-                    className={`block duration-300 border border-neutral-300 md:w-full ${
-                      showButton ? "lg:invisible" : "lg:visible"
-                    } lg:min-w-full lg:overflow-hidden lg:border-none`}
+                      <Link
+                        to={articlesFive[0].categoryLink}
+                        className="hidden lg:block text-sm text-[#686868] font-light"
+                      >
+                        {articlesFive[0].categoryTitle}
+                      </Link>
+                      <Link className="order-2 text-lg line-clamp-3 lg:text-[1.375rem] lg:line-clamp-2">
+                        {articlesFive[0].title}
+                      </Link>
+                      <p className="hidden lg:line-clamp-1 lg:text-base lg:order-3">
+                        {articlesFive[0].title}
+                      </p>
+                    </div>
+                  </article>
+                  <article
+                    className="block duration-300 border border-neutral-300 bg-center snap-start bg-cover bg-no-repeat md:w-full aspect-square lg:aspect-auto lg:min-w-full lg:overflow-hidden lg:border-none bg-image-none"
+                    style={{
+                      backgroundImage: `url(${articlesFive[1].image})`,
+                    }}
                   >
-                    <article
-                      style={{
-                        backgroundImage: `url(${articlesFive[1].image})`,
-                      }}
-                      className="h-72 bg-center bg-cover bg-no-repeat"
-                    >
-                      <picture className="hidden lg:block">
-                        <img
-                          src={articlesFive[1].image}
-                          alt=""
-                          className="lg:h-80"
-                        />
-                      </picture>
-                      <div className="flex flex-col justify-between h-full p-8 bg-[#000000aa] text-white lg:h-auto lg:bg-white lg:text-black lg:gap-4 lg:p-4">
-                        <h3 className="order-2 text-lg lg:text-2xl lg:line-clamp-2">
-                          {articlesFive[1].title}
-                        </h3>
-                        <p className="hidden lg:line-clamp-2 lg:text-sm lg:order-3">
-                          {articlesFive[1].title}
-                        </p>
+                    <picture className="hidden lg:block lg:cursor-pointer" onClick={() => navigateToLink(articlesFive[1].link)}>
+                      <img
+                        src={articlesFive[1].image}
+                        alt={articlesFive[1].title}
+                      />
+                    </picture>
+                    <div className="flex flex-col justify-between h-full p-8 bg-[#000000aa] text-white lg:h-auto lg:bg-white lg:text-black lg:gap-4 lg:p-4">
+                      <div>
+                        <Link className="hidden lg:block lg:text-xs">
+                          {articlesFive[1].authorName}
+                        </Link>
                         <p className="whitespace-nowrap lg:text-xs">
                           {articlesFive[1].posted}
                         </p>
                       </div>
-                    </article>
-                  </Article>
+                      <Link
+                        to={articlesFive[1].categoryLink}
+                        className="hidden lg:block text-sm text-[#686868] font-light"
+                      >
+                        {articlesFive[1].categoryTitle}
+                      </Link>
+                      <Link className="order-2 text-lg line-clamp-3 lg:text-[1.375rem] lg:line-clamp-2">
+                        {articlesFive[1].title}
+                      </Link>
+                      <p className="hidden lg:line-clamp-1 lg:text-base lg:order-3">
+                        {articlesFive[1].title}
+                      </p>
+                    </div>
+                  </article>
                 </div>
               </div>
               {showButton && (
                 <button
-                  className="hidden lg:block lg:absolute lg:right-4 lg:top-1/2 lg:text-neutral-500"
+                  className="hidden lg:block lg:absolute lg:right-4 lg:top-1/3 lg:text-neutral-900"
                   onClick={() => {
                     scrollRef.current.scrollBy({
                       top: 0,
@@ -384,12 +386,12 @@ const Home = () => {
                   }}
                   aria-label="next article"
                 >
-                  <FaChevronRight size={40} />
+                  <FaChevronRight size={32} />
                 </button>
               )}
               {showButton || (
                 <button
-                  className="hidden lg:block lg:absolute lg:left-4 lg:top-1/2 lg:text-neutral-500"
+                  className="hidden lg:block lg:absolute lg:left-4 lg:top-1/3 lg:text-neutral-900"
                   onClick={() => {
                     scrollRef.current.scrollBy({
                       top: 0,
@@ -400,36 +402,50 @@ const Home = () => {
                   }}
                   aria-label="previous article"
                 >
-                  <FaChevronLeft size={40} />
+                  <FaChevronLeft size={32} />
                 </button>
               )}
             </div>
-            <div className="md:grid md:grid-cols-2 md:p-4 md:gap-4 lg:col-span-2 lg:grid-cols-2 lg:p-0 lg:pl-4 lg:border-l lg:border-black">
-              {articlesSix.map((article, index) => (
-                <Article
-                  key={index}
-                  link={article.link}
-                  className="border border-neutral-300 block m-4 md:m-0"
+            <div className="lg:pl-10 lg:border-l lg:border-[#515151] lg:col-span-4 lg:grid  lg:grid-rows-[repeat(14,_minmax(0,_auto))] lg:gap-4">
+              <div className="mx-4 lg:mx-0 lg:flex lg:flex-row lg:gap-4 lg:items-center">
+                <Link className="text-[#111111] text-lg lg:text-xl font-semibold">Whats <span className="font-normal">Trending</span></Link>
+                <Link
+                  to="/membership"
+                  className="hidden lg:block lg:bg-[#FF322F] lg:font-semibold lg:text-[0.625rem] lg:py-[0.35rem] lg:px-[0.938rem] lg:whitespace-nowrap lg:tracking-wide lg:text-white lg:border lg:border-[#FF322F] lg:duration-300 lg:hover:bg-white lg:hover:text-black lg:hover:border-neutral-900"
                 >
-                  <article className="flex flex-row p-4 gap-4">
-                    <picture className="lg:order-2">
-                      <img
-                        src={article.image}
-                        alt=""
-                        className="min-w-20 w-20 min-h-20 h-20 object-cover object-center"
-                      />
-                    </picture>
-                    <div className="flex flex-col justify-between gap-4">
-                      <h3 className="line-clamp-2 overflow-anywhere lg:text-sm">
-                        {article.title}
-                      </h3>
-                      <p className="whitespace-nowrap lg:text-xs">
-                        {article.posted}
-                      </p>
-                    </div>
+                  Subscribe : 49.99/Year
+                </Link>
+              </div>
+              <div className="md:grid md:grid-cols-2 md:p-4 md:gap-4 lg:grid-cols-2 lg:p-0 lg:row-[span_13_/_span_13]">
+                {articlesSix.map((article, index) => (
+                  <article
+                    key={index}
+                    className="flex flex-row p-4 gap-4 border border-neutral-300 m-4 md:m-0 lg:p-3"
+                  >
+                      <picture className="lg:order-2 cursor-pointer" onClick={() => navigateToLink(article.link)}>
+                        <img
+                          src={article.image}
+                          alt={article.title}
+                          className="min-w-24 w-24 min-h-24 h-24 object-cover object-center lg:min-w-14 lg:w-14 lg:min-h-14 lg:h-14"
+                        />
+                      </picture>
+                      <div className="flex flex-col justify-between gap-4 lg:justify-normal lg:gap-2">
+                        <Link className="line-clamp-2 overflow-anywhere lg:text-sm xl:line-clamp-3">
+                          {article.title}
+                        </Link>
+                        <p className="whitespace-nowrap lg:text-xs lg:hidden">
+                          {article.posted}
+                        </p>
+                        <Link
+                          to={article.categoryLink}
+                          className="hidden lg:block text-sm font-light text-[#686868]"
+                        >
+                          {article.categoryTitle}
+                        </Link>
+                      </div>
                   </article>
-                </Article>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </section>
