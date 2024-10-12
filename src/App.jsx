@@ -2,13 +2,16 @@ import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Aside from "./components/Aside";
-import Footer from "./components/Footer"
+import Footer from "./components/Footer";
 import Pages from "./routes/Pages";
+
+import ImageSlider from "./components/ImageSlider";
+import Articles from "./routes/Articles";
 
 const App = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const handleToggle = () => {
-    setToggleMenu(prevToggleMenu => !prevToggleMenu);
+    setToggleMenu((prevToggleMenu) => !prevToggleMenu);
   };
   const handleToggleStop = (event) => {
     event.stopPropagation();
@@ -23,7 +26,7 @@ const App = () => {
         asideClassName={toggleMenu}
       />
       <main>
-        <Routes>
+        {/* <Routes>
           {Pages.map(page => (
             <Route
               key={page.id}
@@ -32,7 +35,8 @@ const App = () => {
               exact={page.exact}
             />
           ))}
-        </Routes>
+        </Routes> */}
+        <ImageSlider articles={Articles.slice(0, 3)} />
       </main>
       <Footer />
     </>

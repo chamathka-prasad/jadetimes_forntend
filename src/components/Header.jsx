@@ -10,9 +10,8 @@ const Header = (props) => {
         <Link
           to="/"
           className="block min-w-32 max-w-52 order-2 px-4 mx-auto md:order-3"
-          aria-label="jadetimes home"
         >
-          <img src={Logo} alt="jadetimes home" />
+          <img src={Logo} alt="jadetimes" />
         </Link>
         <button
           className="block order-1"
@@ -25,6 +24,7 @@ const Header = (props) => {
           to="/search"
           className="block order-5"
           aria-label="search jadetimes"
+          role="button"
         >
           <FaMagnifyingGlass className="text-[1.6rem] lg:text-[1.2rem]" />
         </Link>
