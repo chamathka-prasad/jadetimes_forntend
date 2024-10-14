@@ -1,10 +1,12 @@
-import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 import H2 from "../components/H2";
 import LatestUpdates from "../components/LatestUpdates";
 import Article from "../components/Article";
-import Slider from "../components/Slider";
+import PictureLink from "../components/PictureLink";
+import ImageSlider from "../components/ImageSlider";
+import FirstSlider from "../components/FirstSlider";
+import SecondSlider from "../components/SecondSlider";
 
 import Articles from "../routes/Articles";
 
@@ -12,7 +14,7 @@ import SpecialGraphics from "../assets/Adds/add-3.webp";
 import DigitUsTecGlobal from "../assets/Adds/add-1.gif";
 import SpecialPrinters from "../assets/Adds/add-2.gif";
 
-import { FaChevronLeft, FaChevronRight, FaCircle } from "react-icons/fa6";
+import { FaCircle, FaChevronRight } from "react-icons/fa6";
 
 const Home = () => {
   const articlesTwo = Articles.slice(1, 5);
@@ -22,10 +24,6 @@ const Home = () => {
   const articlesSix = Articles.slice(0, 8);
   const articlesSeven = Articles.slice(0, 5);
   const articlesEight = Articles.slice(0, 3);
-
-  const scrollRef = useRef(null);
-
-  const [showButton, setShowButton] = useState(true);
 
   const navigateToLink = (link) => {
     window.location.href = link;
@@ -40,16 +38,13 @@ const Home = () => {
             <article className="md:grid md:grid-cols-2 md:border md:border-neutral-300 md:col-span-2 md:row-span-2 lg:col-[13_span_/_13_span] lg:row-start-2 lg:row-span-3">
               <div className="relative">
                 <LatestUpdates className="block px-3 py-2 text-sm absolute -bottom-9 left-1/2 -translate-x-1/2 -translate-y-1/2 md:hidden" />
-                <picture
-                  className="cursor-pointer"
-                  onClick={() => navigateToLink(Articles[0].link)}
-                >
+                <PictureLink link={Articles[0].link}>
                   <img
                     src={Articles[0].image}
                     alt={Articles[0].title}
                     className="object-cover object-center md:h-full"
                   />
-                </picture>
+                </PictureLink>
               </div>
               <div className="pt-8 py-6 px-4 flex flex-col justify-between gap-2 md:justify-start md:p-4 md:gap-4 lg:p-8">
                 <div>
@@ -81,16 +76,16 @@ const Home = () => {
                   key={index}
                   className="flex flex-row p-4 gap-4 justify-between lg:p-0 lg:flex-col border border-neutral-300 mx-4 mb-4 md:m-0 lg:col-span-3"
                 >
-                  <picture
-                    className="order-2 lg:order-none cursor-pointer"
-                    onClick={() => navigateToLink(article.link)}
+                  <PictureLink
+                    link={article.link}
+                    className="order-2 lg:order-none"
                   >
                     <img
                       src={article.image}
                       alt={article.title}
                       className="min-w-24 w-24 min-h-24 h-24 object-cover object-center lg:w-full lg:h-full"
                     />
-                  </picture>
+                  </PictureLink>
                   <div className="flex flex-col justify-between gap-4 lg:p-4 lg:pt-0">
                     <Link
                       to={article.categoryLink}
@@ -146,12 +141,9 @@ const Home = () => {
                   key={index}
                   className="flex flex-col justify-between gap-4 lg:pr-6 lg:pl-6 lg:border-r-2 lg:border-[#51515137] lg:first:pl-0 lg:last:pr-0 lg:last:border-none"
                 >
-                  <picture
-                    className="lg:hidden cursor-pointer"
-                    onClick={() => navigateToLink(article.link)}
-                  >
+                  <PictureLink link={article.link} className="lg:hidden">
                     <img src={article.image} alt={article.title} />
-                  </picture>
+                  </PictureLink>
                   <div className="flex flex-col justify-between gap-4">
                     <div className="whitespace-nowrap lg:text-xs">
                       {article.posted}
@@ -174,16 +166,13 @@ const Home = () => {
                   className="flex flex-row gap-4 lg:p-3 lg:border lg:border-neutral-300"
                   key={index}
                 >
-                  <picture
-                    className="lg:order-2 cursor-pointer"
-                    onClick={() => navigateToLink(article.link)}
-                  >
+                  <PictureLink link={article.link} className="lg:order-2">
                     <img
                       src={article.image}
                       alt={article.title}
                       className="min-w-24 w-24 min-h-24 h-24 lg:min-w-[4.25rem] lg:w-[4.25rem] lg:min-h-[4.25rem] lg:h-[4.25rem] object-cover object-center"
                     />
-                  </picture>
+                  </PictureLink>
                   <div className="flex flex-col justify-center lg:justify-between lg:gap-2">
                     <h2>
                       <Link
@@ -225,7 +214,7 @@ const Home = () => {
           </a>
         </div>
         <section className="mt-8 md:mt-0 max-w-[1305px] mx-auto text-neutral-900">
-          <h2 className="border-b-[3px] border-b-[#FF322E] mx-4 pb-1 text-[#111111]">
+          <h2 className="mt-4 border-b-[3px] border-b-[#FF322E] mx-4 pb-1 text-[#111111] lg:mt-0">
             <Link className="font-semibold text-lg lg:text-xl">More News</Link>
           </h2>
           <div className="md:grid md:grid-cols-2 md:gap-4 md:p-4 lg:grid-cols-10 lg:gap-5 lg:pt-8">
@@ -234,16 +223,16 @@ const Home = () => {
                 key={index}
                 className="flex flex-row p-4 gap-4 justify-between border border-neutral-300 m-4 md:m-0 lg:col-span-2 lg:flex-col lg:p-0"
               >
-                <picture
-                  className="order-2 lg:order-none cursor-pointer"
-                  onClick={() => navigateToLink(article.link)}
+                <PictureLink
+                  link={article.link}
+                  className="order-2 lg:order-none"
                 >
                   <img
                     src={article.image}
                     alt={article.title}
                     className="min-w-24 w-24 min-h-24 h-24 object-cover object-center lg:w-full lg:h-full"
                   />
-                </picture>
+                </PictureLink>
                 <div className="flex flex-col justify-between gap-4 lg:p-4 lg:pt-0">
                   <h3>
                     <Link className="overflow-anywhere line-clamp-2 lg:text-sm lg:line-clamp-3">
@@ -258,137 +247,37 @@ const Home = () => {
             ))}
           </div>
         </section>
-        <div className="mt-8 md:mt-4 max-w-[1305px] mx-auto text-neutral-900">
+        <div className="max-w-[1305px] mx-auto text-neutral-900">
           <div className="lg:grid lg:grid-cols-10 lg:p-4">
-            <div className="lg:col-span-6 lg:border lg:border-neutral-300 lg:mr-10">
-              <div
-                className="lg:overflow-x-hidden lg:h-full snap-mandatory snap-x"
-                ref={scrollRef}
-              >
-                <div className="p-4 flex flex-col gap-4 md:flex-row lg:p-0 lg:flex-row lg:gap-0 lg:h-full lg:relative">
-                  <article
-                    className={`block duration-500 border border-neutral-300 bg-center snap-start bg-cover bg-no-repeat md:w-full aspect-square lg:aspect-auto lg:min-w-full lg:overflow-hidden lg:border-none bg-image-none ${
-                      showButton ? "lg:visible" : "lg:invisible"
-                    }`}
-                    style={{
-                      backgroundImage: `url(${articlesFive[0].image})`,
-                    }}
-                    aria-hidden={showButton}
-                  >
-                    <picture
-                      className="hidden lg:block lg:cursor-pointer"
-                      onClick={() => navigateToLink(articlesFive[0].link)}
-                    >
-                      <img
-                        src={articlesFive[0].image}
-                        alt={articlesFive[0].title}
-                      />
-                    </picture>
-                    <div className="flex flex-col justify-between h-full p-8 bg-[#000000aa] text-white lg:h-auto lg:bg-white lg:text-black lg:gap-4 lg:p-4">
-                      <div>
-                        <Link className="hidden lg:inline-block lg:text-xs">
-                          {articlesFive[0].authorName}
-                        </Link>
-                        <div className="whitespace-nowrap lg:text-xs">
-                          {articlesFive[0].posted}
-                        </div>
-                      </div>
-                      <Link
-                        to={articlesFive[0].categoryLink}
-                        className="hidden lg:block lg:w-fit text-sm text-[#686868] font-light"
-                      >
-                        {articlesFive[0].categoryTitle}
-                      </Link>
-                      <h3>
-                        <Link className="order-2 text-lg line-clamp-3 lg:text-[1.375rem] lg:line-clamp-2">
-                          {articlesFive[0].title}
-                        </Link>
-                      </h3>
-                      <p className="hidden lg:line-clamp-1 lg:text-base lg:order-3">
-                        {articlesFive[0].title}
-                      </p>
+            <div className="lg:hidden px-4 flex flex-col gap-4 md:flex-row">
+              {articlesFive.map((article, index) => (
+                <article
+                  className="border border-neutral-300 bg-center bg-cover bg-no-repeat aspect-square"
+                  style={{
+                    backgroundImage: `url(${article.image})`,
+                  }}
+                  key={index}
+                >
+                  <div className="flex flex-col justify-between h-full p-8 bg-[#000000aa] text-white">
+                    <div className="whitespace-nowrap text-xs">
+                      {article.posted}
                     </div>
-                  </article>
-                  {showButton && (
-                    <button
-                      className="hidden lg:block lg:absolute lg:right-[2%] lg:top-1/3 lg:text-neutral-900"
-                      onClick={() => {
-                        scrollRef.current.scrollBy({
-                          top: 0,
-                          left: scrollRef.current.clientWidth,
-                          behavior: "smooth",
-                        });
-                        setShowButton(false);
-                      }}
-                      aria-label="next"
-                    >
-                      <FaChevronRight size={32} />
-                    </button>
-                  )}
-                  {showButton || (
-                    <button
-                      className="hidden lg:block lg:absolute lg:left-[102%] lg:top-1/3 lg:text-neutral-900"
-                      onClick={() => {
-                        scrollRef.current.scrollBy({
-                          top: 0,
-                          left: -scrollRef.current.clientWidth,
-                          behavior: "smooth",
-                        });
-                        setShowButton(true);
-                      }}
-                      aria-label="previous"
-                    >
-                      <FaChevronLeft size={32} />
-                    </button>
-                  )}
-                  <article
-                    className={`block duration-500 border border-neutral-300 bg-center snap-start bg-cover bg-no-repeat md:w-full aspect-square lg:aspect-auto lg:min-w-full lg:overflow-hidden lg:border-none bg-image-none ${
-                      showButton ? "lg:invisible" : "lg:visible"
-                    }`}
-                    style={{
-                      backgroundImage: `url(${articlesFive[0].image})`,
-                    }}
-                  >
-                    <picture
-                      className="hidden lg:block lg:cursor-pointer"
-                      onClick={() => navigateToLink(articlesFive[0].link)}
-                    >
-                      <img
-                        src={articlesFive[0].image}
-                        alt={articlesFive[0].title}
-                      />
-                    </picture>
-                    <div className="flex flex-col justify-between h-full p-8 bg-[#000000aa] text-white lg:h-auto lg:bg-white lg:text-black lg:gap-4 lg:p-4">
-                      <div>
-                        <Link className="hidden lg:inline-block lg:text-xs">
-                          {articlesFive[0].authorName}
-                        </Link>
-                        <div className="whitespace-nowrap lg:text-xs">
-                          {articlesFive[0].posted}
-                        </div>
-                      </div>
-                      <Link
-                        to={articlesFive[0].categoryLink}
-                        className="hidden lg:block lg:w-fit text-sm text-[#686868] font-light"
-                      >
-                        {articlesFive[0].categoryTitle}
+                    <h3>
+                      <Link className="text-lg line-clamp-3">
+                        {article.title}
                       </Link>
-                      <h3>
-                        <Link className="order-2 text-lg line-clamp-3 lg:text-[1.375rem] lg:line-clamp-2">
-                          {articlesFive[0].title}
-                        </Link>
-                      </h3>
-                      <p className="hidden lg:line-clamp-1 lg:text-base lg:order-3">
-                        {articlesFive[0].title}
-                      </p>
-                    </div>
-                  </article>
-                </div>
-              </div>
+                    </h3>
+                  </div>
+                </article>
+              ))}
             </div>
-            <section className="lg:pl-10 lg:border-l lg:border-[#515151] lg:col-span-4 lg:grid  lg:grid-rows-[repeat(14,_minmax(0,_auto))] lg:gap-4">
+            <FirstSlider
+              className="hidden lg:block lg:col-span-6 lg:border lg:border-neutral-300 lg:mr-10"
+              articles={articlesFive}
+            />
+            <section className="lg:pl-10 lg:border-l lg:border-[#515151] lg:col-span-4 lg:flex lg:flex-col lg:gap-4">
               <div className="mx-4 lg:mx-0 lg:flex lg:flex-row lg:gap-4 lg:items-center">
-                <h3>
+                <h3 className="mt-4 lg:mt-0">
                   <Link className="text-[#111111] text-lg lg:text-xl font-semibold">
                     Whats <span className="font-normal">Trending</span>
                   </Link>
@@ -400,7 +289,7 @@ const Home = () => {
                   Subscribe : 49.99/Year
                 </Link>
               </div>
-              <div className="md:grid md:grid-cols-2 md:p-4 md:gap-4 lg:grid-cols-2 lg:p-0 lg:row-[span_13_/_span_13]">
+              <div className="md:grid md:grid-cols-2 md:p-4 md:gap-4 lg:grid-cols-2 lg:p-0 lg:h-full">
                 {articlesSix.map((article, index) => (
                   <article
                     key={index}
@@ -437,6 +326,108 @@ const Home = () => {
               </div>
             </section>
           </div>
+          <section className="hidden lg:block">
+            <h3 className="mt-4 lg:mt-0">
+              <Link className="text-[#111111] text-lg lg:text-xl font-semibold mx-4">
+                Must Watch{" "}
+                <span className="font-normal">Top 10 Ranking Segments</span>
+              </Link>
+            </h3>
+            <div className="p-4 grid grid-cols-[repeat(19,_minmax(0,_1fr))]">
+              {/* <div className="col-[span_14_/_span_14]">
+                <div className="aspect-video bg-black mb-5"></div>
+                <div className="flex flex-row overflow-x-scroll snap-x snap-mandatory">
+                  <div className="flex flex-row w-full grow-0 shrink-0 h-fit gap-3 snap-start">
+                    <div className="text-sm">
+                      <div className="aspect-video bg-black"></div>
+                      <h5 className="line-clamp-1 mt-2">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Facere, eaque?
+                      </h5>
+                      <div className="text-[#17171780]">Jadetimes</div>
+                    </div>
+                    <div className="text-sm">
+                      <div className="aspect-video bg-black"></div>
+                      <h5 className="line-clamp-1 mt-2">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Facere, eaque?
+                      </h5>
+                      <div className="text-[#17171780]">Jadetimes</div>
+                    </div>
+                    <div className="text-sm">
+                      <div className="aspect-video bg-black"></div>
+                      <h5 className="line-clamp-1 mt-2">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Facere, eaque?
+                      </h5>
+                      <div className="text-[#17171780]">Jadetimes</div>
+                    </div>
+                    <div className="text-sm">
+                      <div className="aspect-video bg-black"></div>
+                      <h5 className="line-clamp-1 mt-2">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Facere, eaque?
+                      </h5>
+                      <div className="text-[#17171780]">Jadetimes</div>
+                    </div>
+                  </div>
+                  <div className="flex flex-row w-full grow-0 shrink-0 h-fit gap-3 snap-start mx-3">
+                    <div className="text-sm">
+                      <div className="aspect-video bg-black"></div>
+                      <h5 className="line-clamp-1 mt-2">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Facere, eaque?
+                      </h5>
+                      <div className="text-[#17171780]">Jadetimes</div>
+                    </div>
+                    <div className="text-sm">
+                      <div className="aspect-video bg-black"></div>
+                      <h5 className="line-clamp-1 mt-2">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Facere, eaque?
+                      </h5>
+                      <div className="text-[#17171780]">Jadetimes</div>
+                    </div>
+                    <div className="text-sm">
+                      <div className="aspect-video bg-black"></div>
+                      <h5 className="line-clamp-1 mt-2">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Facere, eaque?
+                      </h5>
+                      <div className="text-[#17171780]">Jadetimes</div>
+                    </div>
+                    <div className="text-sm">
+                      <div className="aspect-video bg-black"></div>
+                      <h5 className="line-clamp-1 mt-2">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Facere, eaque?
+                      </h5>
+                      <div className="text-[#17171780]">Jadetimes</div>
+                    </div>
+                  </div>
+                  <div className="flex flex-row grow-0 shrink-0 h-fit gap-3 snap-start w-1/2">
+                    <div className="text-sm">
+                      <div className="aspect-video bg-black"></div>
+                      <h5 className="line-clamp-1 mt-2">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Facere, eaque?
+                      </h5>
+                      <div className="text-[#17171780]">Jadetimes</div>
+                    </div>
+                    <div className="text-sm">
+                      <div className="aspect-video bg-black"></div>
+                      <h5 className="line-clamp-1 mt-2">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Facere, eaque?
+                      </h5>
+                      <div className="text-[#17171780]">Jadetimes</div>
+                    </div>
+                  </div>
+                </div>
+              </div> */}
+              <SecondSlider />
+            </div>
+          </section>
         </div>
         <div className="mt-8 max-w-screen-xl mx-auto md:p-4 md:my-0 md:mx-auto md:grid md:gap-4 md:grid-cols-2 lg:grid-cols-4">
           <section>
@@ -604,11 +595,17 @@ const Home = () => {
                 title="How Sri Lanka's 2024 Election Could Shape the Future of Entrepreneurs | Exclusive Pulse | Jadetimes"
                 width="100%"
                 src="https://www.youtube.com/embed/4W7SjwdQS64?autoplay=0&mute=0&controls=1&loop=0&origin=https://www.jadetimes.com&playsinline=1&enablejsapi=1"
-                sandbox="allow-same-origin allow-scripts allow-popups"
+                sandbox="allow-same-origin allow-scripts allow-popups allow-presentation"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 loading="lazy"
               ></iframe>
               <div className="lg:w-96 lg:mx-auto">
+                <a
+                  href="https://www.youtube.com/@JadeTimes"
+                  className="hidden md:bg-neutral-800 md:inline-block md:tracking-widest md:mb-4 md:text-nowrap md:uppercase md:font-medium md:text-xs md:px-2 md:py-1 md:duration-300 md:hover:bg-white md:hover:text-black"
+                >
+                  Youtube updates
+                </a>
                 <h3 className="text-sm mb-3 lg:text-base">
                   How Sri Lanka's 2024 Election Could Shape the Future of
                   Entrepreneurs
@@ -623,7 +620,7 @@ const Home = () => {
                 <div className="mt-4 flex items-center gap-4">
                   <a
                     href="https://www.youtube.com/@JadeTimes"
-                    className="bg-neutral-800 inline-block uppercase text-nowrap font-medium text-xs px-3 py-2 lg:px-2 lg:py-1 duration-300 hover:bg-white hover:text-black"
+                    className="bg-neutral-800 inline-block uppercase tracking-widest text-nowrap font-medium text-xs px-3 py-2 duration-300 hover:bg-white hover:text-black md:hidden"
                   >
                     Youtube updates
                   </a>
@@ -677,7 +674,7 @@ const Home = () => {
                       <img
                         src={article.image}
                         alt=""
-                        className="min-w-20 w-20 min-h-20 h-20 object-cover object-center"
+                        className="min-w-28 w-28 min-h-20 h-20 object-cover object-center"
                       />
                     </picture>
                     <div className="flex flex-col justify-center gap-4">
@@ -754,7 +751,7 @@ const Home = () => {
                       <img
                         src={article.image}
                         alt=""
-                        className="min-w-20 w-20 min-h-20 h-20 object-cover object-center"
+                        className="min-w-28 w-28 min-h-20 h-20 object-cover object-center"
                       />
                     </picture>
                     <div className="flex flex-col justify-center gap-4">
@@ -772,160 +769,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <div>
-        <Slider length="3">
-          <article
-            style={{
-              backgroundImage: `url(${articlesFive[0].image})`,
-            }}
-            className="h-full w-full bg-center bg-cover bg-no-repeat snap-start"
-          >
-            <div className="h-full bg-gradient-to-t from-black to-transparent p-4 flex">
-              <div className="mt-auto mb-8 md:grid md:grid-cols-2 md:gap-4 md:items-center md:max-w-screen-md md:mx-auto">
-                <iframe
-                  title="What We Know About Trump Shooting Suspect Thomas Matthew Crooks | JadeTimes"
-                  width="100%"
-                  src="https://www.youtube.com/embed/uHcsQKx6AzY?autoplay=0&mute=0&controls=1&loop=0&origin=https://www.jadetimes.com&playsinline=1&enablejsapi=1"
-                  className="aspect-video"
-                  sandbox="allow-same-origin allow-scripts allow-popups"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  loading="lazy"
-                ></iframe>
-
-                <div className="text-white">
-                  <h3 className="text-sm my-3 lg:text-base md:mt-0">
-                    How Sri Lanka's 2024 Election Could Shape the Future of
-                    Entrepreneurs
-                  </h3>
-                  <p className="text-xs">
-                    We explore how the upcoming election could shape
-                    opportunities and challenges for business owners and
-                    startups across the country. A shocking revelation about the
-                    connection between these two groups, shedding light on
-                    hidden influences and funding sources.
-                  </p>
-                  <div className="mt-4">
-                    <a
-                      href="https://www.youtube.com/@JadeTimes"
-                      className="bg-neutral-800 inline-block uppercase font-medium text-xs px-3 py-2 mr-4 lg:px-2 lg:py-1 duration-300 hover:bg-white hover:text-black"
-                    >
-                      Youtube updates
-                    </a>
-                    <a
-                      href="https://www.jadetimes.com/post/shocking-revelations-mr-neomal-perera-on-hidden-influences-in-sri-lanka-s-political-sphere"
-                      className="text-xs capitalize duration-300 hover:opacity-50"
-                      aria-label="read more about this article"
-                    >
-                      Read more
-                      <FaChevronRight className="inline" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </article>
-          <article
-            style={{
-              backgroundImage: `url(${articlesFive[1].image})`,
-            }}
-            className="h-full w-full bg-center bg-cover bg-no-repeat snap-start"
-          >
-            <div className="h-full bg-gradient-to-t from-black to-transparent p-4 flex">
-              <div className="mt-auto mb-8 md:grid md:grid-cols-2 md:gap-4 md:items-center md:max-w-screen-md md:mx-auto">
-                <iframe
-                  title="What We Know About Trump Shooting Suspect Thomas Matthew Crooks | JadeTimes"
-                  width="100%"
-                  src="https://www.youtube.com/embed/uHcsQKx6AzY?autoplay=0&mute=0&controls=1&loop=0&origin=https://www.jadetimes.com&playsinline=1&enablejsapi=1"
-                  className="aspect-video"
-                  sandbox="allow-same-origin allow-scripts allow-popups"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  loading="lazy"
-                ></iframe>
-
-                <div className="text-white">
-                  <h3 className="text-sm my-3 lg:text-base md:mt-0">
-                    How Sri Lanka's 2024 Election Could Shape the Future of
-                    Entrepreneurs
-                  </h3>
-                  <p className="text-xs">
-                    We explore how the upcoming election could shape
-                    opportunities and challenges for business owners and
-                    startups across the country. A shocking revelation about the
-                    connection between these two groups, shedding light on
-                    hidden influences and funding sources.
-                  </p>
-                  <div className="mt-4">
-                    <a
-                      href="https://www.youtube.com/@JadeTimes"
-                      className="bg-neutral-800 inline-block uppercase font-medium text-xs px-3 py-2 mr-4 lg:px-2 lg:py-1 duration-300 hover:bg-white hover:text-black"
-                    >
-                      Youtube updates
-                    </a>
-                    <a
-                      href="https://www.jadetimes.com/post/shocking-revelations-mr-neomal-perera-on-hidden-influences-in-sri-lanka-s-political-sphere"
-                      className="text-xs capitalize duration-300 hover:opacity-50"
-                      aria-label="read more about this article"
-                    >
-                      Read more
-                      <FaChevronRight className="inline" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </article>
-          <article
-            style={{
-              backgroundImage: `url(${articlesFive[0].image})`,
-            }}
-            className="h-full w-full bg-center bg-cover bg-no-repeat snap-start"
-          >
-            <div className="h-full bg-gradient-to-t from-black to-transparent p-4 flex">
-              <div className="mt-auto mb-8 md:grid md:grid-cols-2 md:gap-4 md:items-center md:max-w-screen-md md:mx-auto">
-                <iframe
-                  title="What We Know About Trump Shooting Suspect Thomas Matthew Crooks | JadeTimes"
-                  width="100%"
-                  src="https://www.youtube.com/embed/uHcsQKx6AzY?autoplay=0&mute=0&controls=1&loop=0&origin=https://www.jadetimes.com&playsinline=1&enablejsapi=1"
-                  className="aspect-video"
-                  sandbox="allow-same-origin allow-scripts allow-popups"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  loading="lazy"
-                ></iframe>
-
-                <div className="text-white">
-                  <h3 className="text-sm my-3 lg:text-base md:mt-0">
-                    How Sri Lanka's 2024 Election Could Shape the Future of
-                    Entrepreneurs
-                  </h3>
-                  <p className="text-xs">
-                    We explore how the upcoming election could shape
-                    opportunities and challenges for business owners and
-                    startups across the country. A shocking revelation about the
-                    connection between these two groups, shedding light on
-                    hidden influences and funding sources.
-                  </p>
-                  <div className="mt-4">
-                    <a
-                      href="https://www.youtube.com/@JadeTimes"
-                      className="bg-neutral-800 inline-block uppercase font-medium text-xs px-3 py-2 mr-4 lg:px-2 lg:py-1 duration-300 hover:bg-white hover:text-black"
-                    >
-                      Youtube updates
-                    </a>
-                    <a
-                      href="https://www.jadetimes.com/post/shocking-revelations-mr-neomal-perera-on-hidden-influences-in-sri-lanka-s-political-sphere"
-                      className="text-xs capitalize duration-300 hover:opacity-50"
-                      aria-label="read more about this article"
-                    >
-                      Read more
-                      <FaChevronRight className="inline" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </article>
-        </Slider>
-      </div>
+      <ImageSlider articles={articlesEight} />
     </div>
   );
 };
