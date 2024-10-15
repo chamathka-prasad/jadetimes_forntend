@@ -1,26 +1,31 @@
 import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
+
 import Header from "./components/Header";
 import Aside from "./components/Aside";
 import Footer from "./components/Footer";
+
 import Pages from "./routes/Pages";
 
 const App = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
-  const handleToggle = () => {
+
+  function handleToggle() {
     setToggleMenu((prevToggleMenu) => !prevToggleMenu);
-  };
-  const handleToggleStop = (event) => {
+  }
+
+  function stopHandleToggle(event) {
     event.stopPropagation();
-  };
+  }
+
   return (
     <>
       <Header handleToggle={handleToggle} />
       <Aside
         handleToggle={handleToggle}
-        handleToggleStop={handleToggleStop}
-        navClassName={toggleMenu}
-        asideClassName={toggleMenu}
+        stopHandleToggle={stopHandleToggle}
+        isNav={toggleMenu}
+        isAside={toggleMenu}
       />
       <main>
         <Routes>

@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 
 import H2 from "../components/H2";
-import LatestUpdates from "../components/LatestUpdates";
+import UpdatesBadge from "../components/UpdatesBadge";
 import Article from "../components/Article";
 import PictureLink from "../components/PictureLink";
-import ImageSlider from "../components/ImageSlider";
 import FirstSlider from "../components/FirstSlider";
 import SecondSlider from "../components/SecondSlider";
+import ImageSlider from "../components/ImageSlider";
 
 import Articles from "../routes/Articles";
 
@@ -30,14 +30,17 @@ const Home = () => {
   };
 
   return (
-    <div>
-      <div className="max-w-[1305px] 2xl:max-w-[1560px] mx-auto">
-        <div className="md:p-4 lg:pt-6 2xl:grid 2xl:grid-cols-12 2xl:gap-4">
-          <LatestUpdates className="hidden md:block md:mb-4 md:px-2 md:py-[0.15rem] 2xl:mb-0 lg:col-start-2" />
-          <div className="md:grid md:grid-cols-2 md:gap-4 lg:grid-cols-[repeat(17,_minmax(0,_1fr))] lg:gap-6 xl:col-start-2 xl:col-span-10 xl:row-start-2 text-neutral-900">
+    <>
+        <div className="max-w-[1305px] mx-auto md:p-4 2xl:grid 2xl:grid-cols-12 2xl:gap-4 2xl:max-w-[1560px]">
+          <UpdatesBadge className="hidden md:block md:mb-4 md:px-2 md:py-[0.15rem] lg:col-start-2 2xl:mb-0">
+            Latest Updates
+          </UpdatesBadge>
+          <div className="text-neutral-900 md:grid md:grid-cols-2 md:gap-4 lg:grid-cols-[repeat(17,_minmax(0,_1fr))] lg:gap-6 xl:col-start-2 xl:col-span-10 xl:row-start-2">
             <article className="md:grid md:grid-cols-2 md:border md:border-neutral-300 md:col-span-2 md:row-span-2 lg:col-[13_span_/_13_span] lg:row-start-2 lg:row-span-3">
               <div className="relative">
-                <LatestUpdates className="block px-3 py-2 text-sm absolute -bottom-9 left-1/2 -translate-x-1/2 -translate-y-1/2 md:hidden" />
+                <UpdatesBadge className="block px-3 py-2 text-sm absolute -bottom-9 left-1/2 -translate-x-1/2 -translate-y-1/2 md:hidden">
+                  Latest Updates
+                </UpdatesBadge>
                 <PictureLink link={Articles[0].link}>
                   <img
                     src={Articles[0].image}
@@ -46,7 +49,7 @@ const Home = () => {
                   />
                 </PictureLink>
               </div>
-              <div className="pt-8 py-6 px-4 flex flex-col justify-between gap-2 md:justify-start md:p-4 md:gap-4 lg:p-8">
+              <div className="p-4 pt-8 flex flex-col justify-between gap-2 md:justify-start md:p-4 md:gap-4 lg:p-8">
                 <div>
                   <Link className="hidden lg:inline-block lg:text-xs">
                     {Articles[0].authorName}
@@ -70,11 +73,11 @@ const Home = () => {
                 </p>
               </div>
             </article>
-            <div className="md:grid md:grid-cols-2 md:col-span-2 md:gap-4 lg:grid-cols-12 lg:gap-5 lg:col-[13_span_/_13_span]">
+            <div className="p-4 flex flex-col gap-4 md:p-0 md:grid md:grid-cols-2 md:col-span-2 md:gap-4 lg:grid-cols-12 lg:gap-5 lg:col-[13_span_/_13_span]">
               {articlesTwo.map((article, index) => (
                 <article
                   key={index}
-                  className="flex flex-row p-4 gap-4 justify-between lg:p-0 lg:flex-col border border-neutral-300 mx-4 mb-4 md:m-0 lg:col-span-3"
+                  className="flex flex-row p-4 gap-4 justify-between border border-neutral-300 lg:p-0 lg:flex-col lg:col-span-3"
                 >
                   <PictureLink
                     link={article.link}
@@ -124,18 +127,20 @@ const Home = () => {
                   className="md:h-[320px] lg:h-auto"
                 />
               </a>
-              <div className="hidden lg:mt-3 lg:flex lg:flex-row lg:gap-4 lg:items-center">
-                <LatestUpdates className="block px-3 py-2 w-full text-center" />
+              <div className="hidden lg:mt-3 lg:flex lg:flex-wrap lg:flex-row lg:items-center xl:flex-nowrap xl:gap-4">
+                <UpdatesBadge className="block px-3 py-2 text-center w-full">
+                  Latest Updates
+                </UpdatesBadge>
                 <a
                   href=""
-                  className="text-sm group flex flex-row items-center justify-center w-full py-[0.4rem] text-nowrap"
+                  className="w-full text-sm group flex flex-row items-center justify-center py-[0.4rem] text-nowrap"
                 >
                   Read More
                   <FaChevronRight className="inline-block duration-300 opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100" />
                 </a>
               </div>
             </div>
-            <div className="flex flex-col gap-4 px-4 pt-4 md:p-0 md:col-span-2 md:grid md:grid-cols-2 md:row-span-2 lg:grid-cols-4 lg:col-span-full lg:row-start-1 lg:row-span-1 lg:gap-0">
+            <div className="flex flex-col gap-4 p-4 md:p-0 md:col-span-2 md:grid md:grid-cols-2 md:row-span-2 lg:grid-cols-4 lg:col-span-full lg:row-start-1 lg:row-span-1 lg:gap-0">
               {articlesThree.map((article, index) => (
                 <article
                   key={index}
@@ -160,7 +165,7 @@ const Home = () => {
                 </article>
               ))}
             </div>
-            <div className="p-4 pb-0 flex flex-col gap-4 md:p-0 md:pb-0 md:col-start-2 md:row-start-4 lg:row-start-2 lg:row-span-3 lg:col-span-4 lg:gap-5">
+            <div className="p-4 flex flex-col gap-4 md:p-0 md:col-start-2 md:row-start-4 lg:row-start-2 lg:row-span-3 lg:col-span-4 lg:gap-5">
               {articlesEight.map((article, index) => (
                 <article
                   className="flex flex-row gap-4 lg:p-3 lg:border lg:border-neutral-300"
@@ -213,15 +218,15 @@ const Home = () => {
             <img src={SpecialPrinters} alt="special printers representation" />
           </a>
         </div>
-        <section className="mt-8 md:mt-0 max-w-[1305px] mx-auto text-neutral-900">
-          <h2 className="mt-4 border-b-[3px] border-b-[#FF322E] mx-4 pb-1 text-[#111111] lg:mt-0">
+        <section className="p-4 max-w-[1305px] mx-auto text-neutral-900">
+          <h2 className="border-b-[3px] border-b-[#FF322E] pb-1 text-[#111111] lg:mt-0">
             <Link className="font-semibold text-lg lg:text-xl">More News</Link>
           </h2>
-          <div className="md:grid md:grid-cols-2 md:gap-4 md:p-4 lg:grid-cols-10 lg:gap-5 lg:pt-8">
+          <div className="py-4 flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-4 lg:grid-cols-10 lg:gap-5 lg:py-5">
             {articlesFour.map((article, index) => (
               <article
                 key={index}
-                className="flex flex-row p-4 gap-4 justify-between border border-neutral-300 m-4 md:m-0 lg:col-span-2 lg:flex-col lg:p-0"
+                className="flex flex-row p-4 gap-4 justify-between border border-neutral-300 lg:col-span-2 lg:flex-col lg:p-0"
               >
                 <PictureLink
                   link={article.link}
@@ -246,10 +251,8 @@ const Home = () => {
               </article>
             ))}
           </div>
-        </section>
-        <div className="max-w-[1305px] mx-auto text-neutral-900">
-          <div className="lg:grid lg:grid-cols-10 lg:p-4">
-            <div className="lg:hidden px-4 flex flex-col gap-4 md:flex-row">
+          <div className="lg:grid lg:grid-cols-10 lg:py-4">
+            <div className="flex flex-col gap-4 md:flex-row lg:hidden">
               {articlesFive.map((article, index) => (
                 <article
                   className="border border-neutral-300 bg-center bg-cover bg-no-repeat aspect-square"
@@ -259,7 +262,7 @@ const Home = () => {
                   key={index}
                 >
                   <div className="flex flex-col justify-between h-full p-8 bg-[#000000aa] text-white">
-                    <div className="whitespace-nowrap text-xs">
+                    <div className="whitespace-nowrap">
                       {article.posted}
                     </div>
                     <h3>
@@ -276,7 +279,7 @@ const Home = () => {
               articles={articlesFive}
             />
             <section className="lg:pl-10 lg:border-l lg:border-[#515151] lg:col-span-4 lg:flex lg:flex-col lg:gap-4">
-              <div className="mx-4 lg:mx-0 lg:flex lg:flex-row lg:gap-4 lg:items-center">
+              <div className="mb-4 lg:mx-0 lg:flex lg:flex-row lg:gap-4 lg:items-center lg:mb-0">
                 <h3 className="mt-4 lg:mt-0">
                   <Link className="text-[#111111] text-lg lg:text-xl font-semibold">
                     Whats <span className="font-normal">Trending</span>
@@ -289,11 +292,11 @@ const Home = () => {
                   Subscribe : 49.99/Year
                 </Link>
               </div>
-              <div className="md:grid md:grid-cols-2 md:p-4 md:gap-4 lg:grid-cols-2 lg:p-0 lg:h-full">
+              <div className="flex flex-col gap-4 md:grid md:grid-cols-2 lg:grid-cols-2 lg:p-0 lg:h-full">
                 {articlesSix.map((article, index) => (
                   <article
                     key={index}
-                    className="flex flex-row p-4 gap-4 border border-neutral-300 m-4 md:m-0 lg:p-3"
+                    className="flex flex-row p-4 gap-4 border border-neutral-300 lg:p-3"
                   >
                     <picture
                       className="lg:order-2 cursor-pointer"
@@ -307,7 +310,7 @@ const Home = () => {
                     </picture>
                     <div className="flex flex-col justify-between gap-4 lg:justify-normal lg:gap-2">
                       <h4>
-                        <Link className="line-clamp-2 overflow-anywhere lg:text-sm xl:line-clamp-3">
+                        <Link className="line-clamp-2 overflow-anywhere lg:text-sm lg:line-clamp-3">
                           {article.title}
                         </Link>
                       </h4>
@@ -327,108 +330,17 @@ const Home = () => {
             </section>
           </div>
           <section className="hidden lg:block">
-            <h3 className="mt-4 lg:mt-0">
-              <Link className="text-[#111111] text-lg lg:text-xl font-semibold mx-4">
+            <h3 className="mb-4">
+              <Link className="text-[#111111] font-semibold text-lg lg:text-xl">
                 Must Watch{" "}
                 <span className="font-normal">Top 10 Ranking Segments</span>
               </Link>
             </h3>
-            <div className="p-4 grid grid-cols-[repeat(19,_minmax(0,_1fr))]">
-              {/* <div className="col-[span_14_/_span_14]">
-                <div className="aspect-video bg-black mb-5"></div>
-                <div className="flex flex-row overflow-x-scroll snap-x snap-mandatory">
-                  <div className="flex flex-row w-full grow-0 shrink-0 h-fit gap-3 snap-start">
-                    <div className="text-sm">
-                      <div className="aspect-video bg-black"></div>
-                      <h5 className="line-clamp-1 mt-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Facere, eaque?
-                      </h5>
-                      <div className="text-[#17171780]">Jadetimes</div>
-                    </div>
-                    <div className="text-sm">
-                      <div className="aspect-video bg-black"></div>
-                      <h5 className="line-clamp-1 mt-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Facere, eaque?
-                      </h5>
-                      <div className="text-[#17171780]">Jadetimes</div>
-                    </div>
-                    <div className="text-sm">
-                      <div className="aspect-video bg-black"></div>
-                      <h5 className="line-clamp-1 mt-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Facere, eaque?
-                      </h5>
-                      <div className="text-[#17171780]">Jadetimes</div>
-                    </div>
-                    <div className="text-sm">
-                      <div className="aspect-video bg-black"></div>
-                      <h5 className="line-clamp-1 mt-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Facere, eaque?
-                      </h5>
-                      <div className="text-[#17171780]">Jadetimes</div>
-                    </div>
-                  </div>
-                  <div className="flex flex-row w-full grow-0 shrink-0 h-fit gap-3 snap-start mx-3">
-                    <div className="text-sm">
-                      <div className="aspect-video bg-black"></div>
-                      <h5 className="line-clamp-1 mt-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Facere, eaque?
-                      </h5>
-                      <div className="text-[#17171780]">Jadetimes</div>
-                    </div>
-                    <div className="text-sm">
-                      <div className="aspect-video bg-black"></div>
-                      <h5 className="line-clamp-1 mt-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Facere, eaque?
-                      </h5>
-                      <div className="text-[#17171780]">Jadetimes</div>
-                    </div>
-                    <div className="text-sm">
-                      <div className="aspect-video bg-black"></div>
-                      <h5 className="line-clamp-1 mt-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Facere, eaque?
-                      </h5>
-                      <div className="text-[#17171780]">Jadetimes</div>
-                    </div>
-                    <div className="text-sm">
-                      <div className="aspect-video bg-black"></div>
-                      <h5 className="line-clamp-1 mt-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Facere, eaque?
-                      </h5>
-                      <div className="text-[#17171780]">Jadetimes</div>
-                    </div>
-                  </div>
-                  <div className="flex flex-row grow-0 shrink-0 h-fit gap-3 snap-start w-1/2">
-                    <div className="text-sm">
-                      <div className="aspect-video bg-black"></div>
-                      <h5 className="line-clamp-1 mt-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Facere, eaque?
-                      </h5>
-                      <div className="text-[#17171780]">Jadetimes</div>
-                    </div>
-                    <div className="text-sm">
-                      <div className="aspect-video bg-black"></div>
-                      <h5 className="line-clamp-1 mt-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Facere, eaque?
-                      </h5>
-                      <div className="text-[#17171780]">Jadetimes</div>
-                    </div>
-                  </div>
-                </div>
-              </div> */}
+            <div className="grid grid-cols-[repeat(19,_minmax(0,_1fr))]">
               <SecondSlider />
             </div>
           </section>
-        </div>
+        </section>
         <div className="mt-8 max-w-screen-xl mx-auto md:p-4 md:my-0 md:mx-auto md:grid md:gap-4 md:grid-cols-2 lg:grid-cols-4">
           <section>
             <H2
@@ -578,7 +490,6 @@ const Home = () => {
             ))}
           </div>
         </section>
-      </div>
       <section>
         <div className="mt-8 md:mt-4 bg-black">
           <div className="max-w-screen-xl mx-auto py-3 pb-4">
@@ -770,7 +681,7 @@ const Home = () => {
         </div>
       </section>
       <ImageSlider articles={articlesEight} />
-    </div>
+    </>
   );
 };
 

@@ -1,9 +1,13 @@
 import { NavLink, Link } from "react-router-dom";
 import { FaBarsStaggered, FaMagnifyingGlass } from "react-icons/fa6";
-import Logo from "/logo-white.png";
-import Paths from "../routes/Paths";
 
-const Header = (props) => {
+import Logo from "/logo-white.png";
+
+import { navPaths } from "../routes/Paths";
+
+import PropTypes from "prop-types";
+
+const Header = ({ handleToggle }) => {
   return (
     <header className="bg-neutral-900 text-white sticky top-0 z-10">
       <div className="px-6 py-4 flex items-center max-w-[1430px] mx-auto lg:py-3">
@@ -15,7 +19,7 @@ const Header = (props) => {
         </Link>
         <button
           className="block order-1"
-          onClick={props.handleToggle}
+          onClick={handleToggle}
           aria-label="Menu"
         >
           <FaBarsStaggered className="text-[1.6rem] lg:text-[1.45rem]" />
@@ -39,11 +43,14 @@ const Header = (props) => {
         </div>
       </div>
       <nav className="hidden bg-neutral-50 text-[#111111] lg:block">
-        <ul className="flex flex-row flex-wrap gap-7 p-3 justify-center text-[0.813rem] font-semibold">
-          {Paths.map((Path) => (
-            <li key={Path.key}>
-              <NavLink className="duration-300 hover:text-[#FF322F]" to={Path.to}>
-                {Path.name}
+        <ul className="flex flex-row flex-wrap gap-7 p-3 px-6 justify-center text-[0.813rem] font-semibold">
+          {navPaths.map((path) => (
+            <li key={path.key}>
+              <NavLink
+                className="duration-300 hover:text-[#FF322F]"
+                to={path.to}
+              >
+                {path.name}
               </NavLink>
             </li>
           ))}
@@ -52,5 +59,9 @@ const Header = (props) => {
     </header>
   );
 };
+
+Header.protoTypes = {
+  handleToggle: PropTypes.func.isRequired
+}
 
 export default Header;

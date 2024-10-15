@@ -62,7 +62,10 @@ const ImageSlider = ({ articles }) => {
           >
             <div className="h-full bg-gradient-to-t from-black to-transparent">
               <div className="h-[800px] flex flex-col p-4">
-                <div className="mt-auto mb-16 flex flex-col gap-4 max-w-[850px] md:gap-8 mx-auto md:flex-row md:items-center">
+                <div
+                  className={`mt-auto mb-16 flex flex-col gap-4 max-w-[850px] md:gap-8 mx-auto md:flex-row md:items-center ${index !== currentIndex ? "invisible opacity-0" : ""}`}
+                  style={{ transition: `visibility 1s, opacity 1s` }}
+                >
                   <iframe
                     title="What We Know About Trump Shooting Suspect Thomas Matthew Crooks | JadeTimes"
                     width="100%"
