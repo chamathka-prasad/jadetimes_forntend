@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useState, useRef } from "react";
 import { FaChevronRight } from "react-icons/fa6";
 
-const ImageSlider = ({ articles }) => {
+const ThirdSlider = ({ articles }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const touchStartRef = useRef(0);
   const touchEndRef = useRef(0);
@@ -132,4 +132,4 @@ const ImageSlider = ({ articles }) => {
   );
 };
 
-export default ImageSlider;
+export default ThirdSlider;

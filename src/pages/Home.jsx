@@ -6,7 +6,7 @@ import Article from "../components/Article";
 import PictureLink from "../components/PictureLink";
 import FirstSlider from "../components/FirstSlider";
 import SecondSlider from "../components/SecondSlider";
-import ImageSlider from "../components/ImageSlider";
+import ThirdSlider from "../components/ThirdSlider";
 
 import Articles from "../routes/Articles";
 
@@ -680,7 +680,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <ImageSlider articles={articlesEight} />
+      <ThirdSlider articles={articlesEight} />
     </>
   );
 };

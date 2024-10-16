@@ -1,26 +1,84 @@
 import { useState, useRef } from "react";
 
-import { FaPlay, FaArrowRightLong, FaArrowLeftLong } from "react-icons/fa6";
+import {
+  FaPlay,
+  FaArrowRightLong,
+  FaArrowLeftLong,
+  FaRegCirclePlay,
+} from "react-icons/fa6";
 
 const articles = [
   {
-    title: "Discover the world's top 10 highest-paid athletes | Jadetimes",
-    link: "KqaLqKYUp-M",
-    index: 0
+    title:
+      "Top 10 Challenges Threatening Donald Trump’s 2024 Election Campaign | Jadetimes",
+    link: "e4RYz0Kq5wY",
+    index: 0,
   },
   {
-    title: "Top 10 Strategic Decisions That Saved Sri Lanka by president Ranil Wickremesinghe | Jadetimes",
+    title: "Discover the world's top 10 highest-paid athletes | Jadetimes",
+    link: "KqaLqKYUp-M",
+    index: 1,
+  },
+  {
+    title:
+      "Top 10 Strategic Decisions That Saved Sri Lanka by president Ranil Wickremesinghe | Jadetimes",
     link: "4HAoFwSfupk",
-    index: 1
+    index: 2,
+  },
+  {
+    title: "World top 10 Cities | Jadetimes",
+    link: "OrEexOPbynE",
+    index: 3,
+  },
+  {
+    title:
+      "Top 10 key moves kamala haris will make to secure the election success | Jadetimes",
+    link: "e4RYz0Kq5wY",
+    index: 4,
+  },
+  {
+    title: "Discover the world's top 10 highest-paid athletes | Jadetimes",
+    link: "KqaLqKYUp-M",
+    index: 5,
+  },
+  {
+    title:
+      "Paris Olympics 2024 | Discover The Most Common Types of Sport Injuries | Jadetimes",
+    link: "4HAoFwSfupk",
+    index: 6,
+  },
+  {
+    title:
+      "Golden Pheasant Have 24k Gold? Discover World’s Top 10 Beautiful Birds | JadeTimes",
+    link: "OrEexOPbynE",
+    index: 7,
+  },
+  {
+    title:
+      "Met Gala 2024 Top Ten Looks: Discover the Indian Celebrity beats all | Jadetimes",
+    link: "4HAoFwSfupk",
+    index: 8,
+  },
+  {
+    title:
+      "Discover Top 10 Achievements of PM Narendra Modi Government | Jadetimes",
+    link: "OrEexOPbynE",
+    index: 9,
   },
 ];
+
+const youtubeArticles = [];
+
+for (let i = 0; i < articles.length; i += 4) {
+  youtubeArticles.push(articles.slice(i, i + 4));
+}
 
 const SecondSlider = () => {
   const [currentVideo, setCurrentVideo] = useState({
     title: articles[0].title,
     image: articles[0].image,
     link: articles[0].link,
-    index: articles[0].index
+    index: articles[0].index,
   });
 
   const [isPlaying, setIsPlaying] = useState(false);
@@ -56,22 +114,45 @@ const SecondSlider = () => {
   }
 
   function handleCurrentVideo(index) {
+    if (currentVideo.index !== index) {
+      setCurrentVideo({
+        title: articles[index].title,
+        image: articles[index].image,
+        link: articles[index].link,
+        index: articles[index].index,
+      });
+      setIsPlaying(false);
+    }
+  }
+
+  function playCurrentVideo(index) {
     setCurrentVideo({
       title: articles[index].title,
       image: articles[index].image,
       link: articles[index].link,
-      index: articles[index].index
+      index: articles[index].index,
     });
+    handlePlay();
   }
 
   return (
     <div className="col-[span_14_/_span_14]">
       <div className="aspect-video mb-5 bg-black">
-        {isPlaying || (
+        {isPlaying ? (
+          <iframe
+            title="What We Know About Trump Shooting Suspect Thomas Matthew Crooks | JadeTimes"
+            width="100%"
+            src={`https://www.youtube.com/embed/${currentVideo.link}?autoplay=1&mute=0&controls=1&loop=0&rel=0&origin=https://www.jadetimes.com&playsinline=1&enablejsapi=1`}
+            className="aspect-video"
+            sandbox="allow-same-origin allow-scripts allow-popups allow-presentation"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            loading="lazy"
+          ></iframe>
+        ) : (
           <div
             className="h-full bg-cover bg-center"
             style={{
-              backgroundImage: `url("https://i.ytimg.com/vi/${currentVideo.link}/maxresdefault.jpg")`,
+              backgroundImage: `url("https://i.ytimg.com/vi/${currentVideo.link}/sddefault.jpg")`,
             }}
           >
             <div className="bg-[#000000aa] text-white h-full flex flex-col items-center justify-center">
@@ -87,112 +168,62 @@ const SecondSlider = () => {
             </div>
           </div>
         )}
-        {isPlaying && (
-          <iframe
-            title="What We Know About Trump Shooting Suspect Thomas Matthew Crooks | JadeTimes"
-            width="100%"
-            src={`https://www.youtube.com/embed/${currentVideo.link}?autoplay=1&mute=0&controls=1&loop=0&rel=0&origin=https://www.jadetimes.com&playsinline=1&enablejsapi=1`}
-            className="aspect-video"
-            sandbox="allow-same-origin allow-scripts allow-popups allow-presentation"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            loading="lazy"
-          ></iframe>
-        )}
       </div>
       <div
-        className="flex flex-row overflow-x-hidden snap-x snap-mandatory gap-3"
+        className="flex flex-row overflow-x-hidden snap-x snap-mandatory"
         ref={scrollRef}
       >
-        <div className="flex flex-row w-full grow-0 shrink-0 h-fit gap-3 snap-start">
-          {articles.map((article, index) => (
-            <div
-              className="text-sm w-full"
-              onClick={() => handleCurrentVideo(index)}
-              key={index}
-            >
-              <div
-                className="aspect-video bg-cover bg-center cursor-pointer"
-                style={{
-                  backgroundImage: `url("https://i.ytimg.com/vi/${article.link}/maxresdefault.jpg")`,
-                }}
+        {youtubeArticles.map((articles, index) => (
+          <div
+            className={`grid grid-cols-4 w-full flex-none gap-3 duration-500 ${currentIndex !== index ? "opacity-0 invisible" : ""
+              }`}
+            key={index}
+          >
+            {articles.map((article) => (
+              <article
+                className="text-sm w-full h-full cursor-pointer group p-[2px]"
+                onClick={() => handleCurrentVideo(article.index)}
+                key={article.index}
               >
-                <div className={`h-full ${index === currentVideo.index ? "bg-[#00000080]" : ""}`}></div>
-              </div>
-              <h5 className="line-clamp-1 mt-2">
-                {article.title}
-              </h5>
-              <div className="text-[#17171780]">Jadetimes</div>
-            </div>
-          ))}
-          <div className="text-sm w-full">
-            <div className="aspect-video bg-black"></div>
-            <h5 className="line-clamp-1 mt-2">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere,
-              eaque?
-            </h5>
-            <div className="text-[#17171780]">Jadetimes</div>
+                <div
+                  className="aspect-video bg-cover bg-center w-full relative group/2"
+                  style={{
+                    backgroundImage: `url("https://i.ytimg.com/vi/${article.link}/mqdefault.jpg")`,
+                  }}
+                >
+                  <div
+                    className={`w-full h-full duration-300 group-hover:bg-[#00000080] focus-within:bg-[#00000080] ${currentVideo.index === article.index
+                        ? "bg-[#00000080]"
+                        : ""
+                      }`}
+                  >
+                    <div
+                      className={`absolute text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 duration-300 group-hover:opacity-100 focus-within:opacity-100 ${isPlaying && currentVideo.index === article.index
+                          ? "opacity-100"
+                          : "opacity-0"
+                        }`}
+                    >
+                      {isPlaying && currentVideo.index === article.index ? (
+                        <div>Now Playing</div>
+                      ) : (
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            playCurrentVideo(article.index);
+                          }}
+                        >
+                          <FaRegCirclePlay size={35} />
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                </div>
+                <h5 className="line-clamp-1 mt-2">{article.title}</h5>
+                <div className="text-[#17171780]">Jadetimes</div>
+              </article>
+            ))}
           </div>
-          <div className="text-sm w-full">
-            <div className="aspect-video bg-black"></div>
-            <h5 className="line-clamp-1 mt-2">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere,
-              eaque?
-            </h5>
-            <div className="text-[#17171780]">Jadetimes</div>
-          </div>
-        </div>
-        <div className="flex flex-row w-full grow-0 shrink-0 h-fit gap-3 snap-start mx-3">
-          <div className="text-sm">
-            <div className="aspect-video bg-black"></div>
-            <h5 className="line-clamp-1 mt-2">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere,
-              eaque?
-            </h5>
-            <div className="text-[#17171780]">Jadetimes</div>
-          </div>
-          <div className="text-sm">
-            <div className="aspect-video bg-black"></div>
-            <h5 className="line-clamp-1 mt-2">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere,
-              eaque?
-            </h5>
-            <div className="text-[#17171780]">Jadetimes</div>
-          </div>
-          <div className="text-sm">
-            <div className="aspect-video bg-black"></div>
-            <h5 className="line-clamp-1 mt-2">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere,
-              eaque?
-            </h5>
-            <div className="text-[#17171780]">Jadetimes</div>
-          </div>
-          <div className="text-sm">
-            <div className="aspect-video bg-black"></div>
-            <h5 className="line-clamp-1 mt-2">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere,
-              eaque?
-            </h5>
-            <div className="text-[#17171780]">Jadetimes</div>
-          </div>
-        </div>
-        <div className="flex flex-row grow-0 shrink-0 h-fit gap-3 snap-start w-1/2">
-          <div className="text-sm">
-            <div className="aspect-video bg-black"></div>
-            <h5 className="line-clamp-1 mt-2">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere,
-              eaque?
-            </h5>
-            <div className="text-[#17171780]">Jadetimes</div>
-          </div>
-          <div className="text-sm">
-            <div className="aspect-video bg-black"></div>
-            <h5 className="line-clamp-1 mt-2">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere,
-              eaque?
-            </h5>
-            <div className="text-[#17171780]">Jadetimes</div>
-          </div>
-        </div>
+        ))}
       </div>
       <div className="relative flex mt-6">
         {currentIndex !== 0 && (
@@ -204,7 +235,7 @@ const SecondSlider = () => {
             Prev
           </button>
         )}
-        {currentIndex !== 2 && (
+        {currentIndex !== youtubeArticles.length - 1 && (
           <button
             className={`flex flex-row flex-nowrap items-center gap-3 text-sm ml-auto`}
             onClick={nextSlide}
