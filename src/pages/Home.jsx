@@ -15,6 +15,7 @@ import DigitUsTecGlobal from "../assets/Adds/add-1.gif";
 import SpecialPrinters from "../assets/Adds/add-2.gif";
 
 import { FaCircle, FaChevronRight } from "react-icons/fa6";
+import MembershipBadge from "../components/MembershipBadge";
 
 const Home = () => {
   const articlesTwo = Articles.slice(1, 5);
@@ -31,202 +32,53 @@ const Home = () => {
 
   return (
     <>
-        <div className="max-w-[1305px] mx-auto md:p-4 2xl:grid 2xl:grid-cols-12 2xl:gap-4 2xl:max-w-[1560px]">
-          <UpdatesBadge className="hidden md:block md:mb-4 md:px-2 md:py-[0.15rem] lg:col-start-2 2xl:mb-0">
-            Latest Updates
-          </UpdatesBadge>
-          <div className="text-neutral-900 md:grid md:grid-cols-2 md:gap-4 lg:grid-cols-[repeat(17,_minmax(0,_1fr))] lg:gap-6 xl:col-start-2 xl:col-span-10 xl:row-start-2">
-            <article className="md:grid md:grid-cols-2 md:border md:border-neutral-300 md:col-span-2 md:row-span-2 lg:col-[13_span_/_13_span] lg:row-start-2 lg:row-span-3">
-              <div className="relative">
-                <UpdatesBadge className="block px-3 py-2 text-sm absolute -bottom-9 left-1/2 -translate-x-1/2 -translate-y-1/2 md:hidden">
-                  Latest Updates
-                </UpdatesBadge>
-                <PictureLink link={Articles[0].link}>
-                  <img
-                    src={Articles[0].image}
-                    alt={Articles[0].title}
-                    className="object-cover object-center md:h-full"
-                  />
-                </PictureLink>
-              </div>
-              <div className="p-4 pt-8 flex flex-col justify-between gap-2 md:justify-start md:p-4 md:gap-4 lg:p-8">
-                <div>
-                  <Link className="hidden lg:inline-block lg:text-xs">
-                    {Articles[0].authorName}
-                  </Link>
-                  <div className="whitespace-nowrap lg:text-xs">
-                    <span>{Articles[0].posted}</span>
-                    <FaCircle className="text-[2px] inline-block mx-2" />
-                    <span>{Articles[0].readTime}</span>
-                  </div>
-                </div>
-                <h2>
-                  <Link
-                    to={Articles[0].link}
-                    className="text-2xl line-clamp-3 lg:text-3xl lg:leading-[2.8rem]"
-                  >
-                    {Articles[0].title}
-                  </Link>
-                </h2>
-                <p className="line-clamp-2 lg:text-sm lg:line-clamp-3">
-                  {Articles[0].title}
-                </p>
-              </div>
-            </article>
-            <div className="p-4 flex flex-col gap-4 md:p-0 md:grid md:grid-cols-2 md:col-span-2 md:gap-4 lg:grid-cols-12 lg:gap-5 lg:col-[13_span_/_13_span]">
-              {articlesTwo.map((article, index) => (
-                <article
-                  key={index}
-                  className="flex flex-row p-4 gap-4 justify-between border border-neutral-300 lg:p-0 lg:flex-col lg:col-span-3"
-                >
-                  <PictureLink
-                    link={article.link}
-                    className="order-2 lg:order-none"
-                  >
-                    <img
-                      src={article.image}
-                      alt={article.title}
-                      className="min-w-24 w-24 min-h-24 h-24 object-cover object-center lg:w-full lg:h-full"
-                    />
-                  </PictureLink>
-                  <div className="flex flex-col justify-between gap-4 lg:p-4 lg:pt-0">
-                    <Link
-                      to={article.categoryLink}
-                      className="hidden lg:inline-block lg:w-fit text-sm font-light text-[#686868] lg:order-[-1]"
-                    >
-                      {article.categoryTitle}
-                    </Link>
-                    <h2>
-                      <Link
-                        to={article.link}
-                        className="overflow-anywhere line-clamp-2 lg:text-sm lg:line-clamp-3"
-                      >
-                        {article.title}
-                      </Link>
-                    </h2>
-                    <p className="hidden lg:line-clamp-2 lg:text-[0.6875rem]">
-                      {article.title}
-                    </p>
-                    <div className="whitespace-nowrap lg:text-xs lg:hidden">
-                      {article.posted}
-                    </div>
-                  </div>
-                </article>
-              ))}
-            </div>
-            <div className="lg:col-start-[14] lg:col-span-4 lg:row-start-5 lg:row-span-1">
-              <a
-                href="https://specialgraphics.us/"
-                className="block"
-                target="_blank"
-                aria-label="visit special graphics website"
-              >
+      <div className="max-w-[1300px] mx-auto md:p-4 2xl:grid 2xl:gap-4 2xl:max-w-[1540px]">
+        <UpdatesBadge className="hidden md:block md:mb-4 md:px-2 md:py-[0.15rem] lg:col-start-2 2xl:mb-0">
+          Latest Updates
+        </UpdatesBadge>
+        <div className="text-neutral-900 md:grid md:grid-cols-2 md:gap-4 lg:grid-cols-[repeat(17,_minmax(0,_1fr))] lg:gap-5 xl:col-start-2 xl:col-span-10 xl:row-start-2">
+          <article className="md:grid md:grid-cols-2 md:border md:border-neutral-300 md:col-span-2 lg:col-[13_span_/_13_span] lg:row-start-2">
+            <div className="relative">
+              <UpdatesBadge className="block px-3 py-2 text-sm absolute -bottom-9 left-1/2 -translate-x-1/2 -translate-y-1/2 md:hidden">
+                Latest Updates
+              </UpdatesBadge>
+              <PictureLink link={Articles[0].link}>
                 <img
-                  src={SpecialGraphics}
-                  alt="special graphics representation"
-                  className="md:h-[320px] lg:h-auto"
+                  src={Articles[0].image}
+                  alt={Articles[0].title}
+                  className="object-cover object-center md:h-full"
                 />
-              </a>
-              <div className="hidden lg:mt-3 lg:flex lg:flex-wrap lg:flex-row lg:items-center xl:flex-nowrap xl:gap-4">
-                <UpdatesBadge className="block px-3 py-2 text-center w-full">
-                  Latest Updates
-                </UpdatesBadge>
-                <a
-                  href=""
-                  className="w-full text-sm group flex flex-row items-center justify-center py-[0.4rem] text-nowrap"
-                >
-                  Read More
-                  <FaChevronRight className="inline-block duration-300 opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100" />
-                </a>
+              </PictureLink>
+            </div>
+            <div className="p-4 pt-8 flex flex-col justify-between gap-2 md:justify-start md:p-4 md:gap-4 lg:p-8">
+              <div>
+                <Link className="hidden lg:inline-block lg:text-xs">
+                  {Articles[0].authorName}
+                </Link>
+                <div className="whitespace-nowrap lg:text-xs">
+                  <span>{Articles[0].posted}</span>
+                  <FaCircle className="text-[2px] inline-block mx-2" />
+                  <span>{Articles[0].readTime}</span>
+                </div>
               </div>
-            </div>
-            <div className="flex flex-col gap-4 p-4 md:p-0 md:col-span-2 md:grid md:grid-cols-2 md:row-span-2 lg:grid-cols-4 lg:col-span-full lg:row-start-1 lg:row-span-1 lg:gap-0">
-              {articlesThree.map((article, index) => (
-                <article
-                  key={index}
-                  className="flex flex-col justify-between gap-4 lg:pr-6 lg:pl-6 lg:border-r-2 lg:border-[#51515137] lg:first:pl-0 lg:last:pr-0 lg:last:border-none"
+              <h2>
+                <Link
+                  to={Articles[0].link}
+                  className="text-2xl line-clamp-3 lg:text-3xl lg:leading-[2.8rem]"
                 >
-                  <PictureLink link={article.link} className="lg:hidden">
-                    <img src={article.image} alt={article.title} />
-                  </PictureLink>
-                  <div className="flex flex-col justify-between gap-4">
-                    <div className="whitespace-nowrap lg:text-xs">
-                      {article.posted}
-                    </div>
-                    <h2>
-                      <Link
-                        to={article.link}
-                        className="text-lg line-clamp-2 lg:text-base"
-                      >
-                        {article.title}
-                      </Link>
-                    </h2>
-                  </div>
-                </article>
-              ))}
+                  {Articles[0].title}
+                </Link>
+              </h2>
+              <p className="line-clamp-2 lg:text-sm lg:line-clamp-3">
+                {Articles[0].title}
+              </p>
             </div>
-            <div className="p-4 flex flex-col gap-4 md:p-0 md:col-start-2 md:row-start-4 lg:row-start-2 lg:row-span-3 lg:col-span-4 lg:gap-5">
-              {articlesEight.map((article, index) => (
-                <article
-                  className="flex flex-row gap-4 lg:p-3 lg:border lg:border-neutral-300"
-                  key={index}
-                >
-                  <PictureLink link={article.link} className="lg:order-2">
-                    <img
-                      src={article.image}
-                      alt={article.title}
-                      className="min-w-24 w-24 min-h-24 h-24 lg:min-w-[4.25rem] lg:w-[4.25rem] lg:min-h-[4.25rem] lg:h-[4.25rem] object-cover object-center"
-                    />
-                  </PictureLink>
-                  <div className="flex flex-col justify-center lg:justify-between lg:gap-2">
-                    <h2>
-                      <Link
-                        to={article.link}
-                        className="line-clamp-3 overflow-anywhere lg:text-sm"
-                      >
-                        {article.title}
-                      </Link>
-                    </h2>
-                    <Link
-                      to={article.categoryLink}
-                      className="hidden lg:inline-block lg:w-fit text-sm text-[#686868] font-light"
-                    >
-                      {article.categoryTitle}
-                    </Link>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-          <a
-            href="http://www.digitustecglobal.com/"
-            className="hidden 2xl:block 2xl:col-start-1 2xl:mt-[6.5rem] h-fit"
-            target="_blank"
-            aria-label="visit digit us tec global website"
-          >
-            <img
-              src={DigitUsTecGlobal}
-              alt="digit us tec global representation"
-            />
-          </a>
-          <a
-            href="https://www.specialprinters.us/"
-            className="hidden 2xl:block 2xl:col-start-12 2xl:mt-[6.5rem] h-fit"
-            target="_blank"
-            aria-label="visit special printers website"
-          >
-            <img src={SpecialPrinters} alt="special printers representation" />
-          </a>
-        </div>
-        <section className="p-4 max-w-[1305px] mx-auto text-neutral-900">
-          <h2 className="border-b-[3px] border-b-[#FF322E] pb-1 text-[#111111] lg:mt-0">
-            <Link className="font-semibold text-lg lg:text-xl">More News</Link>
-          </h2>
-          <div className="py-4 flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-4 lg:grid-cols-10 lg:gap-5 lg:py-5">
-            {articlesFour.map((article, index) => (
+          </article>
+          <div className="p-4 flex flex-col gap-4 md:p-0 md:grid md:grid-cols-2 md:col-span-2 md:gap-4 lg:grid-cols-12 lg:gap-5 lg:col-[13_span_/_13_span]">
+            {articlesTwo.map((article, index) => (
               <article
                 key={index}
-                className="flex flex-row p-4 gap-4 justify-between border border-neutral-300 lg:col-span-2 lg:flex-col lg:p-0"
+                className="flex flex-row p-4 gap-4 justify-between border border-neutral-300 lg:p-0 lg:flex-col lg:col-span-3"
               >
                 <PictureLink
                   link={article.link}
@@ -239,257 +91,396 @@ const Home = () => {
                   />
                 </PictureLink>
                 <div className="flex flex-col justify-between gap-4 lg:p-4 lg:pt-0">
-                  <h3>
-                    <Link className="overflow-anywhere line-clamp-2 lg:text-sm lg:line-clamp-3">
+                  <Link
+                    to={article.categoryLink}
+                    className="hidden lg:inline-block lg:w-fit text-sm font-light text-[#686868] lg:order-[-1]"
+                  >
+                    {article.categoryTitle}
+                  </Link>
+                  <h2>
+                    <Link
+                      to={article.link}
+                      className="overflow-anywhere line-clamp-2 lg:text-sm lg:line-clamp-3"
+                    >
                       {article.title}
                     </Link>
-                  </h3>
-                  <div className="whitespace-nowrap lg:hidden">
+                  </h2>
+                  <p className="hidden lg:line-clamp-2 lg:text-[0.6875rem]">
+                    {article.title}
+                  </p>
+                  <div className="whitespace-nowrap lg:text-xs lg:hidden">
                     {article.posted}
                   </div>
                 </div>
               </article>
             ))}
           </div>
-          <div className="lg:grid lg:grid-cols-10 lg:py-4">
-            <div className="flex flex-col gap-4 md:flex-row lg:hidden">
-              {articlesFive.map((article, index) => (
+          <div className="lg:col-start-[14] lg:col-span-4 lg:row-start-3 lg:row-span-1">
+            <a
+              href="https://specialgraphics.us/"
+              className="block"
+              target="_blank"
+              aria-label="visit special graphics website"
+            >
+              <img
+                src={SpecialGraphics}
+                alt="special graphics representation"
+                className="md:h-[320px] lg:h-auto"
+              />
+            </a>
+            <div className="hidden lg:mt-4 lg:flex lg:flex-wrap lg:flex-row lg:items-center xl:flex-nowrap xl:gap-4">
+              <UpdatesBadge className="block px-3 py-2 text-center w-full">
+                Latest Updates
+              </UpdatesBadge>
+              <a
+                href=""
+                className="w-full text-sm group flex flex-row items-center justify-center py-[0.4rem] text-nowrap"
+              >
+                Read More
+                <FaChevronRight className="inline-block duration-300 opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100" />
+              </a>
+            </div>
+          </div>
+          <div className="flex flex-col gap-4 p-4 md:p-0 md:col-span-2 md:grid md:grid-cols-2 md:row-span-2 lg:grid-cols-4 lg:col-span-full lg:row-start-1 lg:row-span-1 lg:gap-0">
+            {articlesThree.map((article, index) => (
+              <article
+                key={index}
+                className="flex flex-col justify-between gap-4 lg:pr-6 lg:pl-6 lg:border-r-2 lg:border-[#51515137] lg:first:pl-0 lg:last:pr-0 lg:last:border-none"
+              >
+                <PictureLink link={article.link} className="lg:hidden">
+                  <img src={article.image} alt={article.title} />
+                </PictureLink>
+                <div className="flex flex-col justify-between gap-4">
+                  <div className="whitespace-nowrap lg:text-xs">
+                    {article.posted}
+                  </div>
+                  <h2>
+                    <Link
+                      to={article.link}
+                      className="text-lg line-clamp-2 lg:text-base"
+                    >
+                      {article.title}
+                    </Link>
+                  </h2>
+                </div>
+              </article>
+            ))}
+          </div>
+          <div className="p-4 flex flex-col gap-4 md:p-0 md:col-start-2 md:row-start-3 lg:row-start-2 lg:col-span-4 lg:gap-5">
+            {articlesEight.map((article, index) => (
+              <article
+                className="flex flex-row gap-4 lg:p-3 lg:border lg:border-neutral-300"
+                key={index}
+              >
+                <PictureLink link={article.link} className="lg:order-2">
+                  <img
+                    src={article.image}
+                    alt={article.title}
+                    className="min-w-24 w-24 min-h-24 h-24 lg:min-w-[4.25rem] lg:w-[4.25rem] lg:min-h-[4.25rem] lg:h-[4.25rem] object-cover object-center"
+                  />
+                </PictureLink>
+                <div className="flex flex-col justify-center lg:justify-between lg:gap-2">
+                  <h2>
+                    <Link
+                      to={article.link}
+                      className="line-clamp-3 overflow-anywhere lg:text-sm"
+                    >
+                      {article.title}
+                    </Link>
+                  </h2>
+                  <Link
+                    to={article.categoryLink}
+                    className="hidden lg:inline-block lg:w-fit text-sm text-[#686868] font-light"
+                  >
+                    {article.categoryTitle}
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+        <a
+          href="http://www.digitustecglobal.com/"
+          className="hidden 2xl:block 2xl:col-start-1 2xl:mt-[6.3rem] h-fit"
+          target="_blank"
+          aria-label="visit digit us tec global website"
+        >
+          <img
+            src={DigitUsTecGlobal}
+            alt="digit us tec global representation"
+          />
+        </a>
+        <a
+          href="https://www.specialprinters.us/"
+          className="hidden 2xl:block 2xl:col-start-12 2xl:mt-[6.3rem] h-fit"
+          target="_blank"
+          aria-label="visit special printers website"
+        >
+          <img src={SpecialPrinters} alt="special printers representation" />
+        </a>
+      </div>
+      <section className="p-4 max-w-[1300px] mx-auto text-neutral-900">
+        <h2 className="border-b-[3px] border-b-[#FF322E] pb-1 text-[#111111] lg:mt-0">
+          <Link className="font-semibold text-lg lg:text-xl">More News</Link>
+        </h2>
+        <div className="py-4 flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-4 lg:grid-cols-10 lg:gap-5 lg:py-5">
+          {articlesFour.map((article, index) => (
+            <article
+              key={index}
+              className="flex flex-row p-4 gap-4 justify-between border border-neutral-300 lg:col-span-2 lg:flex-col lg:p-0"
+            >
+              <PictureLink
+                link={article.link}
+                className="order-2 lg:order-none"
+              >
+                <img
+                  src={article.image}
+                  alt={article.title}
+                  className="min-w-24 w-24 min-h-24 h-24 object-cover object-center lg:w-full lg:h-full"
+                />
+              </PictureLink>
+              <div className="flex flex-col justify-between gap-4 lg:p-4 lg:pt-0">
+                <h3>
+                  <Link className="overflow-anywhere line-clamp-2 lg:text-sm lg:line-clamp-3">
+                    {article.title}
+                  </Link>
+                </h3>
+                <div className="whitespace-nowrap lg:hidden">
+                  {article.posted}
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+        <div className="lg:grid lg:grid-cols-10 lg:py-4">
+          <div className="flex flex-col gap-4 md:flex-row lg:hidden">
+            {articlesFive.map((article, index) => (
+              <article
+                className="border border-neutral-300 bg-center bg-cover bg-no-repeat aspect-square"
+                style={{
+                  backgroundImage: `url(${article.image})`,
+                }}
+                key={index}
+              >
+                <div className="flex flex-col justify-between h-full p-8 bg-[#000000aa] text-white">
+                  <div className="whitespace-nowrap">{article.posted}</div>
+                  <h3>
+                    <Link className="text-lg line-clamp-3">
+                      {article.title}
+                    </Link>
+                  </h3>
+                </div>
+              </article>
+            ))}
+          </div>
+          <FirstSlider
+            className="hidden lg:block lg:col-span-6 lg:border lg:border-neutral-300 lg:mr-10"
+            articles={articlesFive}
+          />
+          <section className="lg:pl-10 lg:border-l lg:border-[#515151] lg:col-span-4 lg:flex lg:flex-col lg:gap-4">
+            <div className="mb-4 lg:mx-0 lg:flex lg:flex-row lg:gap-4 lg:items-center lg:mb-0">
+              <h3 className="mt-4 lg:mt-0">
+                <Link className="text-[#111111] text-lg lg:text-xl font-semibold">
+                  Whats <span className="font-normal">Trending</span>
+                </Link>
+              </h3>
+              <MembershipBadge className="hidden lg:block" />
+            </div>
+            <div className="flex flex-col gap-4 md:grid md:grid-cols-2 lg:grid-cols-2 lg:p-0 lg:h-full">
+              {articlesSix.map((article, index) => (
                 <article
-                  className="border border-neutral-300 bg-center bg-cover bg-no-repeat aspect-square"
-                  style={{
-                    backgroundImage: `url(${article.image})`,
-                  }}
                   key={index}
+                  className="flex flex-row p-4 gap-4 border border-neutral-300 lg:p-3"
                 >
-                  <div className="flex flex-col justify-between h-full p-8 bg-[#000000aa] text-white">
-                    <div className="whitespace-nowrap">
-                      {article.posted}
-                    </div>
-                    <h3>
-                      <Link className="text-lg line-clamp-3">
+                  <picture
+                    className="lg:order-2 cursor-pointer"
+                    onClick={() => navigateToLink(article.link)}
+                  >
+                    <img
+                      src={article.image}
+                      alt={article.title}
+                      className="min-w-24 w-24 min-h-24 h-24 object-cover object-center lg:min-w-14 lg:w-14 lg:min-h-14 lg:h-14"
+                    />
+                  </picture>
+                  <div className="flex flex-col justify-between gap-4 lg:justify-normal lg:gap-2">
+                    <h4>
+                      <Link className="line-clamp-2 overflow-anywhere lg:text-sm lg:line-clamp-3">
                         {article.title}
                       </Link>
-                    </h3>
+                    </h4>
+                    <div className="whitespace-nowrap lg:text-xs lg:hidden">
+                      {article.posted}
+                    </div>
+                    <Link
+                      to={article.categoryLink}
+                      className="hidden lg:block text-sm font-light text-[#686868]"
+                    >
+                      {article.categoryTitle}
+                    </Link>
                   </div>
                 </article>
               ))}
             </div>
-            <FirstSlider
-              className="hidden lg:block lg:col-span-6 lg:border lg:border-neutral-300 lg:mr-10"
-              articles={articlesFive}
-            />
-            <section className="lg:pl-10 lg:border-l lg:border-[#515151] lg:col-span-4 lg:flex lg:flex-col lg:gap-4">
-              <div className="mb-4 lg:mx-0 lg:flex lg:flex-row lg:gap-4 lg:items-center lg:mb-0">
-                <h3 className="mt-4 lg:mt-0">
-                  <Link className="text-[#111111] text-lg lg:text-xl font-semibold">
-                    Whats <span className="font-normal">Trending</span>
-                  </Link>
-                </h3>
-                <Link
-                  to="/membership"
-                  className="hidden lg:block lg:bg-[#FF322F] lg:font-semibold lg:text-[0.625rem] lg:py-[0.35rem] lg:px-[0.938rem] lg:whitespace-nowrap lg:tracking-wide lg:text-white lg:border lg:border-[#FF322F] lg:duration-300 lg:hover:bg-white lg:hover:text-black lg:hover:border-neutral-900"
-                >
-                  Subscribe : 49.99/Year
-                </Link>
-              </div>
-              <div className="flex flex-col gap-4 md:grid md:grid-cols-2 lg:grid-cols-2 lg:p-0 lg:h-full">
-                {articlesSix.map((article, index) => (
-                  <article
-                    key={index}
-                    className="flex flex-row p-4 gap-4 border border-neutral-300 lg:p-3"
-                  >
-                    <picture
-                      className="lg:order-2 cursor-pointer"
-                      onClick={() => navigateToLink(article.link)}
-                    >
-                      <img
-                        src={article.image}
-                        alt={article.title}
-                        className="min-w-24 w-24 min-h-24 h-24 object-cover object-center lg:min-w-14 lg:w-14 lg:min-h-14 lg:h-14"
-                      />
-                    </picture>
-                    <div className="flex flex-col justify-between gap-4 lg:justify-normal lg:gap-2">
-                      <h4>
-                        <Link className="line-clamp-2 overflow-anywhere lg:text-sm lg:line-clamp-3">
-                          {article.title}
-                        </Link>
-                      </h4>
-                      <div className="whitespace-nowrap lg:text-xs lg:hidden">
-                        {article.posted}
-                      </div>
-                      <Link
-                        to={article.categoryLink}
-                        className="hidden lg:block text-sm font-light text-[#686868]"
-                      >
-                        {article.categoryTitle}
-                      </Link>
-                    </div>
-                  </article>
-                ))}
-              </div>
-            </section>
-          </div>
-          <section className="hidden lg:block">
-            <h3 className="mb-4">
-              <Link className="text-[#111111] font-semibold text-lg lg:text-xl">
-                Must Watch{" "}
-                <span className="font-normal">Top 10 Ranking Segments</span>
-              </Link>
-            </h3>
-            <div className="grid grid-cols-[repeat(19,_minmax(0,_1fr))]">
-              <SecondSlider />
-            </div>
-          </section>
-        </section>
-        <div className="mt-8 max-w-screen-xl mx-auto md:p-4 md:my-0 md:mx-auto md:grid md:gap-4 md:grid-cols-2 lg:grid-cols-4">
-          <section>
-            <H2
-              heading="Asia"
-              className="border-b-2 border-b-neutral-700 md:mx-0"
-            />
-            {articlesEight.map((article, index) => (
-              <Article
-                key={index}
-                link={article.link}
-                className="block m-4 md:m-0 md:mt-4 md:odd:my-8"
-              >
-                <article className="flex flex-col justify-between gap-4">
-                  <picture className="sm:hidden">
-                    <img src={article.image} alt="" />
-                  </picture>
-                  <div className="flex flex-col justify-between gap-4">
-                    <p className="whitespace-nowrap lg:text-xs lg:order-2">
-                      {article.posted}
-                    </p>
-                    <h3 className="text-lg line-clamp-2 lg:text-base lg:line-clamp-3">
-                      {article.title}
-                    </h3>
-                  </div>
-                </article>
-              </Article>
-            ))}
-          </section>
-          <section>
-            <H2
-              heading="Australia"
-              className="border-b-2 border-b-neutral-700 md:mx-0"
-            />
-            {articlesEight.map((article, index) => (
-              <Article
-                key={index}
-                link={article.link}
-                className="block m-4 md:m-0 md:mt-4 md:odd:my-8"
-              >
-                <article className="flex flex-col justify-between gap-4">
-                  <picture className="sm:hidden">
-                    <img src={article.image} alt="" />
-                  </picture>
-                  <div className="flex flex-col justify-between gap-4">
-                    <p className="whitespace-nowrap lg:text-xs lg:order-2">
-                      {article.posted}
-                    </p>
-                    <h3 className="text-lg line-clamp-2 lg:text-base lg:line-clamp-3">
-                      {article.title}
-                    </h3>
-                  </div>
-                </article>
-              </Article>
-            ))}
-          </section>
-          <section>
-            <H2
-              heading="USA"
-              className="border-b-2 border-b-neutral-700 md:mx-0"
-            />
-            {articlesEight.map((article, index) => (
-              <Article
-                key={index}
-                link={article.link}
-                className="block m-4 md:m-0 md:mt-4 md:odd:my-8"
-              >
-                <article className="flex flex-col justify-between gap-4">
-                  <picture className="sm:hidden">
-                    <img src={article.image} alt="" />
-                  </picture>
-                  <div className="flex flex-col justify-between gap-4">
-                    <p className="whitespace-nowrap lg:text-xs lg:order-2">
-                      {article.posted}
-                    </p>
-                    <h3 className="text-lg line-clamp-2 lg:text-base lg:line-clamp-3">
-                      {article.title}
-                    </h3>
-                  </div>
-                </article>
-              </Article>
-            ))}
-          </section>
-          <section>
-            <H2
-              heading="Europe"
-              className="border-b-2 border-b-neutral-700 md:mx-0"
-            />
-            {articlesEight.map((article, index) => (
-              <Article
-                key={index}
-                link={article.link}
-                className="block m-4 md:m-0 md:mt-4 md:odd:my-8"
-              >
-                <article className="flex flex-col justify-between gap-4">
-                  <picture className="sm:hidden">
-                    <img src={article.image} alt="" />
-                  </picture>
-                  <div className="flex flex-col justify-between gap-4">
-                    <p className="whitespace-nowrap lg:text-xs lg:order-2">
-                      {article.posted}
-                    </p>
-                    <h3 className="text-lg line-clamp-2 lg:text-base lg:line-clamp-3">
-                      {article.title}
-                    </h3>
-                  </div>
-                </article>
-              </Article>
-            ))}
           </section>
         </div>
-        <section className="mt-8 md:mt-4 max-w-screen-xl mx-auto">
-          <H2
-            heading="News Updates"
-            className="border-b-[3px] border-b-red-700"
-          >
-            {" "}
-            | Sports
-          </H2>
-          <div className="md:grid md:grid-cols-2 md:gap-4 md:p-4 lg:grid-cols-10">
-            {articlesSeven.map((article, index) => (
-              <Article
-                key={index}
-                link={article.link}
-                className="border border-neutral-300 block m-4 md:m-0 lg:col-span-2"
-              >
-                <article className="flex flex-row p-4 gap-4 justify-between lg:p-0 lg:flex-col">
-                  <picture className="order-2 lg:order-none">
-                    <img
-                      src={article.image}
-                      alt=""
-                      className="min-w-20 w-20 min-h-20 h-20 object-cover object-center lg:w-full lg:h-full"
-                    />
-                  </picture>
-                  <div className="flex flex-col justify-between gap-4 lg:p-4 lg:pt-0">
-                    <h3 className="overflow-anywhere line-clamp-2 lg:text-sm lg:line-clamp-3">
-                      {article.title}
-                    </h3>
-                    <p className="hidden lg:line-clamp-2 lg:text-xs">
-                      {article.title}
-                    </p>
-                    <p className="whitespace-nowrap lg:text-xs lg:order-[-1] lg:hidden">
-                      {article.posted}
-                    </p>
-                  </div>
-                </article>
-              </Article>
-            ))}
+        <section className="hidden lg:block">
+          <h3 className="mb-4">
+            <Link className="text-[#111111] font-semibold text-lg lg:text-xl">
+              Must Watch{" "}
+              <span className="font-normal">Top 10 Ranking Segments</span>
+            </Link>
+          </h3>
+          <div className="grid grid-cols-[repeat(19,_minmax(0,_1fr))]">
+            <SecondSlider />
           </div>
         </section>
+      </section>
+      <div className="mt-8 max-w-screen-xl mx-auto md:p-4 md:my-0 md:mx-auto md:grid md:gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <section>
+          <H2
+            heading="Asia"
+            className="border-b-2 border-b-neutral-700 md:mx-0"
+          />
+          {articlesEight.map((article, index) => (
+            <Article
+              key={index}
+              link={article.link}
+              className="block m-4 md:m-0 md:mt-4 md:odd:my-8"
+            >
+              <article className="flex flex-col justify-between gap-4">
+                <picture className="sm:hidden">
+                  <img src={article.image} alt="" />
+                </picture>
+                <div className="flex flex-col justify-between gap-4">
+                  <p className="whitespace-nowrap lg:text-xs lg:order-2">
+                    {article.posted}
+                  </p>
+                  <h3 className="text-lg line-clamp-2 lg:text-base lg:line-clamp-3">
+                    {article.title}
+                  </h3>
+                </div>
+              </article>
+            </Article>
+          ))}
+        </section>
+        <section>
+          <H2
+            heading="Australia"
+            className="border-b-2 border-b-neutral-700 md:mx-0"
+          />
+          {articlesEight.map((article, index) => (
+            <Article
+              key={index}
+              link={article.link}
+              className="block m-4 md:m-0 md:mt-4 md:odd:my-8"
+            >
+              <article className="flex flex-col justify-between gap-4">
+                <picture className="sm:hidden">
+                  <img src={article.image} alt="" />
+                </picture>
+                <div className="flex flex-col justify-between gap-4">
+                  <p className="whitespace-nowrap lg:text-xs lg:order-2">
+                    {article.posted}
+                  </p>
+                  <h3 className="text-lg line-clamp-2 lg:text-base lg:line-clamp-3">
+                    {article.title}
+                  </h3>
+                </div>
+              </article>
+            </Article>
+          ))}
+        </section>
+        <section>
+          <H2
+            heading="USA"
+            className="border-b-2 border-b-neutral-700 md:mx-0"
+          />
+          {articlesEight.map((article, index) => (
+            <Article
+              key={index}
+              link={article.link}
+              className="block m-4 md:m-0 md:mt-4 md:odd:my-8"
+            >
+              <article className="flex flex-col justify-between gap-4">
+                <picture className="sm:hidden">
+                  <img src={article.image} alt="" />
+                </picture>
+                <div className="flex flex-col justify-between gap-4">
+                  <p className="whitespace-nowrap lg:text-xs lg:order-2">
+                    {article.posted}
+                  </p>
+                  <h3 className="text-lg line-clamp-2 lg:text-base lg:line-clamp-3">
+                    {article.title}
+                  </h3>
+                </div>
+              </article>
+            </Article>
+          ))}
+        </section>
+        <section>
+          <H2
+            heading="Europe"
+            className="border-b-2 border-b-neutral-700 md:mx-0"
+          />
+          {articlesEight.map((article, index) => (
+            <Article
+              key={index}
+              link={article.link}
+              className="block m-4 md:m-0 md:mt-4 md:odd:my-8"
+            >
+              <article className="flex flex-col justify-between gap-4">
+                <picture className="sm:hidden">
+                  <img src={article.image} alt="" />
+                </picture>
+                <div className="flex flex-col justify-between gap-4">
+                  <p className="whitespace-nowrap lg:text-xs lg:order-2">
+                    {article.posted}
+                  </p>
+                  <h3 className="text-lg line-clamp-2 lg:text-base lg:line-clamp-3">
+                    {article.title}
+                  </h3>
+                </div>
+              </article>
+            </Article>
+          ))}
+        </section>
+      </div>
+      <section className="mt-8 md:mt-4 max-w-screen-xl mx-auto">
+        <H2 heading="News Updates" className="border-b-[3px] border-b-red-700">
+          {" "}
+          | Sports
+        </H2>
+        <div className="md:grid md:grid-cols-2 md:gap-4 md:p-4 lg:grid-cols-10">
+          {articlesSeven.map((article, index) => (
+            <Article
+              key={index}
+              link={article.link}
+              className="border border-neutral-300 block m-4 md:m-0 lg:col-span-2"
+            >
+              <article className="flex flex-row p-4 gap-4 justify-between lg:p-0 lg:flex-col">
+                <picture className="order-2 lg:order-none">
+                  <img
+                    src={article.image}
+                    alt=""
+                    className="min-w-20 w-20 min-h-20 h-20 object-cover object-center lg:w-full lg:h-full"
+                  />
+                </picture>
+                <div className="flex flex-col justify-between gap-4 lg:p-4 lg:pt-0">
+                  <h3 className="overflow-anywhere line-clamp-2 lg:text-sm lg:line-clamp-3">
+                    {article.title}
+                  </h3>
+                  <p className="hidden lg:line-clamp-2 lg:text-xs">
+                    {article.title}
+                  </p>
+                  <p className="whitespace-nowrap lg:text-xs lg:order-[-1] lg:hidden">
+                    {article.posted}
+                  </p>
+                </div>
+              </article>
+            </Article>
+          ))}
+        </div>
+      </section>
       <section>
         <div className="mt-8 md:mt-4 bg-black">
           <div className="max-w-screen-xl mx-auto py-3 pb-4">
@@ -603,19 +594,19 @@ const Home = () => {
           </div>
           <Article
             link={articlesFive[0].link}
-            className="block border border-neutral-300 md:w-full lg:col-span-4 lg:border-none"
+            className="block aspect-square border border-neutral-300 h-full md:w-full lg:aspect-auto lg:col-span-4 lg:border-none"
           >
             <article
               style={{
                 backgroundImage: `url(${articlesFive[0].image})`,
               }}
-              className="h-72 bg-center bg-cover bg-no-repeat"
+              className="h-full bg-center bg-cover bg-no-repeat bg-image-none"
             >
               <picture className="hidden lg:block">
-                <img src={articlesFive[0].image} alt="" className="lg:h-80" />
+                <img src={articlesFive[0].image} alt="" />
               </picture>
               <div className="flex flex-col justify-between h-full p-8 bg-[#000000aa] text-white lg:h-auto lg:bg-white lg:text-black lg:gap-2 lg:p-0 lg:pt-8">
-                <h3 className="order-2 text-lg lg:text-2xl lg:line-clamp-2 lg:font-medium">
+                <h3 className="line-clamp-3 order-2 text-lg lg:text-2xl lg:line-clamp-2 lg:font-medium">
                   {articlesFive[0].title}
                 </h3>
                 <p className="hidden lg:line-clamp-2 lg:text-lg lg:order-3">

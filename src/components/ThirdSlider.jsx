@@ -56,14 +56,14 @@ const ThirdSlider = ({ articles }) => {
               transform: `translateY(${-100 * currentIndex}%)`,
               transition: `transform 1s cubic-bezier(0.75, 0, 0.25, 1)`,
             }}
-            className="h-full w-full bg-center bg-cover bg-no-repeat snap-start"
+            className="w-full bg-center bg-cover bg-no-repeat snap-start"
             key={index}
             aria-hidden={index !== currentIndex}
           >
-            <div className="h-full bg-gradient-to-t from-black to-transparent">
+            <div className="bg-gradient-to-t from-black to-transparent">
               <div className="h-[800px] flex flex-col p-4">
                 <div
-                  className={`mt-auto mb-16 flex flex-col gap-4 max-w-[850px] md:gap-8 mx-auto md:flex-row md:items-center ${index !== currentIndex ? "invisible opacity-0" : ""}`}
+                  className={`mt-auto mb-16 flex flex-col gap-4 max-w-[850px] md:gap-8 mx-auto md:flex-row md:items-center ${currentIndex !== index ? "invisible opacity-0" : ""}`}
                   style={{ transition: `visibility 1s, opacity 1s` }}
                 >
                   <iframe

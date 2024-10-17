@@ -81,74 +81,74 @@ const Footer = () => {
             </ul>
             <ul className="text-neutral-600 flex items-center gap-2 justify-center text-xl flex-nowrap">
               <li className="flex">
-                <Link
-                  to="https://www.whatsapp.com/channel/0029VaevKQj35fM4n9S7ub1c"
+                <a
+                  href="https://www.whatsapp.com/channel/0029VaevKQj35fM4n9S7ub1c"
                   aria-label="whatsapp"
                   target="_black"
                   className="inline-block"
                 >
                   <FaWhatsapp />
-                </Link>
+                </a>
               </li>
               <li className="flex">
-                <Link
-                  to="https://www.tiktok.com/@jadetimes_officials"
+                <a
+                  href="https://www.tiktok.com/@jadetimes_officials"
                   aria-label="tiktok"
                   target="_blank"
                   className="inline-block"
                 >
                   <FaTiktok />
-                </Link>
+                </a>
               </li>
               <li className="flex">
-                <Link
-                  to="https://x.com/jade_times"
+                <a
+                  href="https://x.com/jade_times"
                   aria-label="x-twitter"
                   target="_blank"
                   className="inline-block"
                 >
                   <FaXTwitter />
-                </Link>
+                </a>
               </li>
               <li className="flex">
-                <Link
-                  to="https://www.facebook.com/officialJadetimes"
+                <a
+                  href="https://www.facebook.com/officialJadetimes"
                   aria-label="facebook"
                   target="_blank"
                   className="inline-block"
                 >
                   <FaFacebookF />
-                </Link>
+                </a>
               </li>
               <li className="flex">
-                <Link
-                  to="https://www.youtube.com/channel/UCh3RLLVBaEeBRRZBbnnVWWA"
+                <a
+                  href="https://www.youtube.com/channel/UCh3RLLVBaEeBRRZBbnnVWWA"
                   aria-label="youtube"
                   target="_blank"
                   className="inline-block"
                 >
                   <FaYoutube />
-                </Link>
+                </a>
               </li>
               <li className="flex">
-                <Link
-                  to="https://www.instagram.com/jadetimes_official/"
+                <a
+                  href="https://www.instagram.com/jadetimes_official/"
                   aria-label="instagram"
                   target="_blank"
                   className="inline-block"
                 >
                   <FaInstagram />
-                </Link>
+                </a>
               </li>
               <li className="flex">
-                <Link
-                  to="https://www.linkedin.com/company/99353290/admin/feed/posts/"
+                <a
+                  href="https://www.linkedin.com/company/99353290/admin/feed/posts/"
                   aria-label="linkedin"
                   target="_blank"
                   className="inline-block"
                 >
                   <FaLinkedinIn />
-                </Link>
+                </a>
               </li>
             </ul>
           </nav>

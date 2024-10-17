@@ -1,10 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaX, FaChevronDown, FaChevronUp } from "react-icons/fa6";
-
 import { navPaths, mobileNavPaths, desktopNavPaths } from "../routes/Paths";
-
-import PropTypes from "prop-types";
 
 const Aside = ({
   handleToggle,
@@ -45,19 +42,19 @@ const Aside = ({
         <div className="flex flex-col px-6 py-4 overflow-auto h-full lg:py-4 lg:px-9">
           <Link
             to="/log-in"
-            className="text-sm my-2 self-end md:hidden"
+            className="text-sm my-[0.6rem] self-end lg:hidden"
             onClick={handleToggleItem}
           >
             Log In
           </Link>
           <Link
             to="/membership"
-            className="w-fit text-sm text-nowrap bg-[#FF0D0D] px-3 py-1 my-4 md:hidden"
+            className="w-fit text-sm text-nowrap bg-[#FF0D0D] px-3 py-1 my-4 lg:hidden"
             onClick={handleToggleItem}
           >
             Join Premium : 80% OFF
           </Link>
-          <ul className="md:mt-10 lg:mt-0">
+          <ul className="lg:mt-0">
             <li>
               <Link
                 to=""
@@ -149,7 +146,7 @@ const Aside = ({
           </p>
         </div>
         <button
-          className="absolute top-[1.4rem] left-[1.55rem] lg:left-[16.4rem] lg:top-[1.1rem]"
+          className="absolute top-[1.43rem] left-[1.4rem] lg:left-[16.4rem] lg:top-[1.1rem]"
           onClick={handleToggleItem}
           aria-label="close the menu"
         >
@@ -159,12 +156,5 @@ const Aside = ({
     </aside>
   );
 };
-
-Aside.protoTypes = {
-  handleToggle: PropTypes.func.isRequired,
-  stopHandleToggle: PropTypes.func.isRequired,
-  isNav: PropTypes.bool.isRequired,
-  isAside: PropTypes.bool.isRequired
-}
 
 export default Aside;

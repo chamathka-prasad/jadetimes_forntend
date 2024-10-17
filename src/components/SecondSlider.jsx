@@ -140,7 +140,7 @@ const SecondSlider = () => {
       <div className="aspect-video mb-5 bg-black">
         {isPlaying ? (
           <iframe
-            title="What We Know About Trump Shooting Suspect Thomas Matthew Crooks | JadeTimes"
+            title={currentVideo.title}
             width="100%"
             src={`https://www.youtube.com/embed/${currentVideo.link}?autoplay=1&mute=0&controls=1&loop=0&rel=0&origin=https://www.jadetimes.com&playsinline=1&enablejsapi=1`}
             className="aspect-video"
@@ -155,7 +155,7 @@ const SecondSlider = () => {
               backgroundImage: `url("https://i.ytimg.com/vi/${currentVideo.link}/sddefault.jpg")`,
             }}
           >
-            <div className="bg-[#000000aa] text-white h-full flex flex-col items-center justify-center">
+            <div className="bg-[#000000d1] text-white h-full flex flex-col items-center justify-center">
               <h4 className="text-[0.9375rem] mb-2">{currentVideo.title}</h4>
               <div className="text-lg">Jadetimes</div>
               <button
@@ -181,7 +181,7 @@ const SecondSlider = () => {
           >
             {articles.map((article) => (
               <article
-                className="text-sm w-full h-full cursor-pointer group p-[2px]"
+                className="text-sm w-full h-full cursor-pointer group"
                 onClick={() => handleCurrentVideo(article.index)}
                 key={article.index}
               >
