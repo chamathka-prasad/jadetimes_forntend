@@ -39,7 +39,7 @@ const FirstSlider = ({ articles, className }) => {
           {articles.map((article, index) => (
             <article
               className={`snap-start shrink-0 grow-0 w-full duration-500 ${
-                currentIndex === index ? "visible" : "invisible"
+                currentIndex === index ? "" : "invisible"
               }`}
               aria-hidden={currentIndex !== index}
               key={index}

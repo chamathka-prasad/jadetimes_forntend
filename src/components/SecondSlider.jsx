@@ -175,7 +175,7 @@ const SecondSlider = () => {
       >
         {youtubeArticles.map((articles, index) => (
           <div
-            className={`grid grid-cols-4 w-full flex-none gap-3 duration-500 ${currentIndex !== index ? "opacity-0 invisible" : ""
+            className={`grid grid-cols-4 w-full flex-none gap-5 duration-500 ${currentIndex !== index ? "invisible" : ""
               }`}
             key={index}
           >

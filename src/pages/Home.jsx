@@ -32,8 +32,8 @@ const Home = () => {
 
   return (
     <>
-      <div className="max-w-[1300px] mx-auto md:p-4 2xl:grid 2xl:gap-4 2xl:max-w-[1540px]">
-        <UpdatesBadge className="hidden md:block md:mb-4 md:px-2 md:py-[0.15rem] lg:col-start-2 2xl:mb-0">
+      <div className="max-w-[1300px] mx-auto md:p-4">
+        <UpdatesBadge className="hidden md:block md:mb-4 md:px-2 md:py-[0.15rem]">
           Latest Updates
         </UpdatesBadge>
         <div className="text-neutral-900 md:grid md:grid-cols-2 md:gap-4 lg:grid-cols-[repeat(17,_minmax(0,_1fr))] lg:gap-5 xl:col-start-2 xl:col-span-10 xl:row-start-2">
@@ -134,7 +134,7 @@ const Home = () => {
               </UpdatesBadge>
               <a
                 href=""
-                className="w-full text-sm group flex flex-row items-center justify-center py-[0.4rem] text-nowrap"
+                className="w-full text-[#282626] text-sm group flex flex-row items-center justify-center py-[0.4rem] text-nowrap"
               >
                 Read More
                 <FaChevronRight className="inline-block duration-300 opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100" />
@@ -201,7 +201,7 @@ const Home = () => {
         </div>
         <a
           href="http://www.digitustecglobal.com/"
-          className="hidden 2xl:block 2xl:col-start-1 2xl:mt-[6.3rem] h-fit"
+          className="hidden"
           target="_blank"
           aria-label="visit digit us tec global website"
         >
@@ -212,7 +212,7 @@ const Home = () => {
         </a>
         <a
           href="https://www.specialprinters.us/"
-          className="hidden 2xl:block 2xl:col-start-12 2xl:mt-[6.3rem] h-fit"
+          className="hidden"
           target="_blank"
           aria-label="visit special printers website"
         >
@@ -277,7 +277,7 @@ const Home = () => {
             className="hidden lg:block lg:col-span-6 lg:border lg:border-neutral-300 lg:mr-10"
             articles={articlesFive}
           />
-          <section className="lg:pl-10 lg:border-l lg:border-[#515151] lg:col-span-4 lg:flex lg:flex-col lg:gap-4">
+          <section className="lg:pl-10 lg:border-l lg:border-[#515151] lg:col-span-4 lg:flex lg:flex-col lg:gap-5">
             <div className="mb-4 lg:mx-0 lg:flex lg:flex-row lg:gap-4 lg:items-center lg:mb-0">
               <h3 className="mt-4 lg:mt-0">
                 <Link className="text-[#111111] text-lg lg:text-xl font-semibold">
@@ -286,7 +286,7 @@ const Home = () => {
               </h3>
               <MembershipBadge className="hidden lg:block" />
             </div>
-            <div className="flex flex-col gap-4 md:grid md:grid-cols-2 lg:grid-cols-2 lg:p-0 lg:h-full">
+            <div className="flex flex-col gap-4 md:grid md:grid-cols-2 lg:grid-cols-2 lg:gap-5 lg:p-0 lg:h-full">
               {articlesSix.map((article, index) => (
                 <article
                   key={index}
@@ -335,154 +335,159 @@ const Home = () => {
           </div>
         </section>
       </section>
-      <div className="mt-8 max-w-screen-xl mx-auto md:p-4 md:my-0 md:mx-auto md:grid md:gap-4 md:grid-cols-2 lg:grid-cols-4">
-        <section>
-          <H2
-            heading="Asia"
-            className="border-b-2 border-b-neutral-700 md:mx-0"
-          />
-          {articlesEight.map((article, index) => (
-            <Article
-              key={index}
-              link={article.link}
-              className="block m-4 md:m-0 md:mt-4 md:odd:my-8"
-            >
-              <article className="flex flex-col justify-between gap-4">
-                <picture className="sm:hidden">
-                  <img src={article.image} alt="" />
-                </picture>
+      <div className="bg-neutral-50">
+        <div className="text-neutral-900 p-4 pt-2 max-w-[1300px] mx-auto md:grid md:gap-4 md:grid-cols-2 lg:grid-cols-4 lg:gap-5">
+          <section>
+            <h3 className="mb-4 border-b-2 border-[#424242] pb-1 text-lg text-[#111111] font-semibold">
+              <Link>Asia</Link>
+            </h3>
+            {articlesEight.map((article, index) => (
+              <article
+                key={index}
+                link={article.link}
+                className="mb-4 md:last-of-type:mb-0"
+              >
                 <div className="flex flex-col justify-between gap-4">
-                  <p className="whitespace-nowrap lg:text-xs lg:order-2">
-                    {article.posted}
-                  </p>
-                  <h3 className="text-lg line-clamp-2 lg:text-base lg:line-clamp-3">
-                    {article.title}
-                  </h3>
+                  <PictureLink link={article.link} className="lg:hidden">
+                    <img src={article.image} alt="" />
+                  </PictureLink>
+                  <div className="flex flex-col justify-between gap-4">
+                    <p className="whitespace-nowrap lg:text-xs lg:order-2">
+                      {article.posted}
+                    </p>
+                    <h4>
+                      <Link className="text-lg line-clamp-2 lg:text-base lg:line-clamp-3">
+                        {article.title}
+                      </Link>
+                    </h4>
+                  </div>
                 </div>
               </article>
-            </Article>
-          ))}
-        </section>
-        <section>
-          <H2
-            heading="Australia"
-            className="border-b-2 border-b-neutral-700 md:mx-0"
-          />
-          {articlesEight.map((article, index) => (
-            <Article
-              key={index}
-              link={article.link}
-              className="block m-4 md:m-0 md:mt-4 md:odd:my-8"
-            >
-              <article className="flex flex-col justify-between gap-4">
-                <picture className="sm:hidden">
-                  <img src={article.image} alt="" />
-                </picture>
+            ))}
+          </section>
+          <section>
+            <h3 className="mb-4 border-b-2 border-[#424242] pb-1 text-lg text-[#111111] font-semibold">
+              <Link>Australia</Link>
+            </h3>
+            {articlesEight.map((article, index) => (
+              <article
+                key={index}
+                link={article.link}
+                className="mb-4 md:last-of-type:mb-0"
+              >
                 <div className="flex flex-col justify-between gap-4">
-                  <p className="whitespace-nowrap lg:text-xs lg:order-2">
-                    {article.posted}
-                  </p>
-                  <h3 className="text-lg line-clamp-2 lg:text-base lg:line-clamp-3">
-                    {article.title}
-                  </h3>
+                  <PictureLink link={article.link} className="lg:hidden">
+                    <img src={article.image} alt="" />
+                  </PictureLink>
+                  <div className="flex flex-col justify-between gap-4">
+                    <p className="whitespace-nowrap lg:text-xs lg:order-2">
+                      {article.posted}
+                    </p>
+                    <h4>
+                      <Link className="text-lg line-clamp-2 lg:text-base lg:line-clamp-3">
+                        {article.title}
+                      </Link>
+                    </h4>
+                  </div>
                 </div>
               </article>
-            </Article>
-          ))}
-        </section>
-        <section>
-          <H2
-            heading="USA"
-            className="border-b-2 border-b-neutral-700 md:mx-0"
-          />
-          {articlesEight.map((article, index) => (
-            <Article
-              key={index}
-              link={article.link}
-              className="block m-4 md:m-0 md:mt-4 md:odd:my-8"
-            >
-              <article className="flex flex-col justify-between gap-4">
-                <picture className="sm:hidden">
-                  <img src={article.image} alt="" />
-                </picture>
+            ))}
+          </section>
+          <section>
+            <h3 className="mb-4 border-b-2 border-[#424242] pb-1 text-lg text-[#111111] font-semibold">
+              <Link>USA</Link>
+            </h3>
+            {articlesEight.map((article, index) => (
+              <article
+                key={index}
+                link={article.link}
+                className="mb-4 md:last-of-type:mb-0"
+              >
                 <div className="flex flex-col justify-between gap-4">
-                  <p className="whitespace-nowrap lg:text-xs lg:order-2">
-                    {article.posted}
-                  </p>
-                  <h3 className="text-lg line-clamp-2 lg:text-base lg:line-clamp-3">
-                    {article.title}
-                  </h3>
+                  <PictureLink link={article.link} className="lg:hidden">
+                    <img src={article.image} alt="" />
+                  </PictureLink>
+                  <div className="flex flex-col justify-between gap-4">
+                    <p className="whitespace-nowrap lg:text-xs lg:order-2">
+                      {article.posted}
+                    </p>
+                    <h4>
+                      <Link className="text-lg line-clamp-2 lg:text-base lg:line-clamp-3">
+                        {article.title}
+                      </Link>
+                    </h4>
+                  </div>
                 </div>
               </article>
-            </Article>
-          ))}
-        </section>
-        <section>
-          <H2
-            heading="Europe"
-            className="border-b-2 border-b-neutral-700 md:mx-0"
-          />
-          {articlesEight.map((article, index) => (
-            <Article
-              key={index}
-              link={article.link}
-              className="block m-4 md:m-0 md:mt-4 md:odd:my-8"
-            >
-              <article className="flex flex-col justify-between gap-4">
-                <picture className="sm:hidden">
-                  <img src={article.image} alt="" />
-                </picture>
+            ))}
+          </section>
+          <section>
+            <h3 className="mb-4 border-b-2 border-[#424242] pb-1 text-lg text-[#111111] font-semibold">
+              <Link>Europe</Link>
+            </h3>
+            {articlesEight.map((article, index) => (
+              <article
+                key={index}
+                link={article.link}
+                className="mb-4 last-of-type:mb-0"
+              >
                 <div className="flex flex-col justify-between gap-4">
-                  <p className="whitespace-nowrap lg:text-xs lg:order-2">
-                    {article.posted}
-                  </p>
-                  <h3 className="text-lg line-clamp-2 lg:text-base lg:line-clamp-3">
-                    {article.title}
-                  </h3>
+                  <PictureLink link={article.link} className="lg:hidden">
+                    <img src={article.image} alt="" />
+                  </PictureLink>
+                  <div className="flex flex-col justify-between gap-4">
+                    <p className="whitespace-nowrap lg:text-xs lg:order-2">
+                      {article.posted}
+                    </p>
+                    <h4>
+                      <Link className="text-lg line-clamp-2 lg:text-base lg:line-clamp-3">
+                        {article.title}
+                      </Link>
+                    </h4>
+                  </div>
                 </div>
               </article>
-            </Article>
-          ))}
+            ))}
+          </section>
+        </div>
+        <section className="max-w-[1300px] mx-auto p-4 lg:pb-5">
+          <h2 className="border-b-[3px] border-b-[#FF322E] pb-1 text-[#111111] lg:mt-0">
+            <Link className="font-semibold text-lg lg:text-xl">News Updates | Sports</Link>
+          </h2>
+          <div className="pt-4 md:grid md:grid-cols-2 md:gap-4 lg:grid-cols-10 lg:gap-5 lg:pt-5">
+            {articlesSeven.map((article, index) => (
+              <Article
+                key={index}
+                link={article.link}
+                className="border border-neutral-300 block md:m-0 lg:col-span-2"
+              >
+                <article className="flex flex-row p-4 gap-4 justify-between lg:p-0 lg:flex-col">
+                  <picture className="order-2 lg:order-none">
+                    <img
+                      src={article.image}
+                      alt=""
+                      className="min-w-20 w-20 min-h-20 h-20 object-cover object-center lg:w-full lg:h-full"
+                    />
+                  </picture>
+                  <div className="flex flex-col justify-between gap-4 lg:p-4 lg:pt-0">
+                    <h3 className="overflow-anywhere line-clamp-2 lg:text-sm lg:line-clamp-3">
+                      {article.title}
+                    </h3>
+                    <p className="hidden lg:line-clamp-2 lg:text-xs">
+                      {article.title}
+                    </p>
+                    <p className="whitespace-nowrap lg:text-xs lg:order-[-1] lg:hidden">
+                      {article.posted}
+                    </p>
+                  </div>
+                </article>
+              </Article>
+            ))}
+          </div>
         </section>
       </div>
-      <section className="mt-8 md:mt-4 max-w-screen-xl mx-auto">
-        <H2 heading="News Updates" className="border-b-[3px] border-b-red-700">
-          {" "}
-          | Sports
-        </H2>
-        <div className="md:grid md:grid-cols-2 md:gap-4 md:p-4 lg:grid-cols-10">
-          {articlesSeven.map((article, index) => (
-            <Article
-              key={index}
-              link={article.link}
-              className="border border-neutral-300 block m-4 md:m-0 lg:col-span-2"
-            >
-              <article className="flex flex-row p-4 gap-4 justify-between lg:p-0 lg:flex-col">
-                <picture className="order-2 lg:order-none">
-                  <img
-                    src={article.image}
-                    alt=""
-                    className="min-w-20 w-20 min-h-20 h-20 object-cover object-center lg:w-full lg:h-full"
-                  />
-                </picture>
-                <div className="flex flex-col justify-between gap-4 lg:p-4 lg:pt-0">
-                  <h3 className="overflow-anywhere line-clamp-2 lg:text-sm lg:line-clamp-3">
-                    {article.title}
-                  </h3>
-                  <p className="hidden lg:line-clamp-2 lg:text-xs">
-                    {article.title}
-                  </p>
-                  <p className="whitespace-nowrap lg:text-xs lg:order-[-1] lg:hidden">
-                    {article.posted}
-                  </p>
-                </div>
-              </article>
-            </Article>
-          ))}
-        </div>
-      </section>
       <section>
-        <div className="mt-8 md:mt-4 bg-black">
+        <div className="bg-black">
           <div className="max-w-screen-xl mx-auto py-3 pb-4">
             <H2
               heading="Exclusive Pulse"
@@ -540,8 +545,8 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="p-4 flex flex-col gap-4 md:grid md:grid-cols-3 lg:grid-cols-8 max-w-screen-xl mx-auto">
-          <div className="lg:col-span-2 lg:flex lg:flex-col lg:gap-4">
+        <div className="p-4 flex flex-col gap-4 md:grid md:grid-cols-3 lg:grid-cols-8 lg:gap-5 lg:py-5 max-w-screen-xl mx-auto">
+          <div className="lg:col-span-2 lg:flex lg:flex-col lg:gap-5">
             <Article
               link={Articles[0].link}
               className="border border-neutral-300 block lg:col-span-2 h-full lg:h-auto lg:border-none"
@@ -564,7 +569,7 @@ const Home = () => {
                 </div>
               </article>
             </Article>
-            <div className="hidden lg:flex lg:flex-col lg:gap-4">
+            <div className="hidden lg:flex lg:flex-col lg:gap-5">
               {articlesEight.map((article, index) => (
                 <Article
                   key={index}
@@ -618,7 +623,7 @@ const Home = () => {
               </div>
             </article>
           </Article>
-          <div className="lg:col-span-2 lg:flex lg:flex-col lg:gap-4">
+          <div className="lg:col-span-2 lg:flex lg:flex-col lg:gap-5">
             <Article
               link={Articles[1].link}
               className="border border-neutral-300 block lg:col-span-2 h-full lg:h-auto lg:border-none"
@@ -641,7 +646,7 @@ const Home = () => {
                 </div>
               </article>
             </Article>
-            <div className="hidden lg:flex lg:flex-col lg:gap-4">
+            <div className="hidden lg:flex lg:flex-col lg:gap-5">
               {articlesEight.map((article, index) => (
                 <Article
                   key={index}

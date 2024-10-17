@@ -81,7 +81,7 @@ const Aside = ({
                 </Link>
                 {path?.submenus && (
                   <button
-                    className="lg:opacity-0 lg:focus-visible:opacity-100"
+                    className="pl-2 lg:opacity-0 lg:focus-visible:opacity-100"
                     onClick={() => handleToggleSubMenu(path.key)}
                     aria-label="sub navigations"
                     aria-expanded={toggleSubMenu === path.key}
