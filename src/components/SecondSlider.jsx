@@ -1,11 +1,5 @@
 import { useState, useRef } from "react";
-
-import {
-  FaPlay,
-  FaArrowRightLong,
-  FaArrowLeftLong,
-  FaRegCirclePlay,
-} from "react-icons/fa6";
+import { BsPlayFill, BsArrowRight, BsArrowLeft, BsPlayCircle } from "react-icons/bs";
 
 const articles = [
   {
@@ -159,10 +153,10 @@ const SecondSlider = () => {
               <h4 className="text-[0.9375rem] mb-2">{currentVideo.title}</h4>
               <div className="text-lg">Jadetimes</div>
               <button
-                className="flex flex-row flex-nowrap items-center gap-3 bg-[#FF322E] px-7 py-2 mt-8 text-sm"
+                className="flex flex-row flex-nowrap items-center gap-2 bg-[#FF322E] px-7 py-2 mt-8 text-sm"
                 onClick={handlePlay}
               >
-                <FaPlay />
+                <BsPlayFill size={25} />
                 Play Video
               </button>
             </div>
@@ -212,7 +206,7 @@ const SecondSlider = () => {
                             playCurrentVideo(article.index);
                           }}
                         >
-                          <FaRegCirclePlay size={35} />
+                          <BsPlayCircle size={35} />
                         </button>
                       )}
                     </div>
@@ -231,7 +225,7 @@ const SecondSlider = () => {
             className={`flex flex-row flex-nowrap items-center gap-3 text-sm`}
             onClick={prevSlide}
           >
-            <FaArrowLeftLong />
+            <BsArrowLeft size={24} />
             Prev
           </button>
         )}
@@ -241,7 +235,7 @@ const SecondSlider = () => {
             onClick={nextSlide}
           >
             Next
-            <FaArrowRightLong />
+            <BsArrowRight size={24} />
           </button>
         )}
       </div>

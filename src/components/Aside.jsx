@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaX, FaChevronDown, FaChevronUp } from "react-icons/fa6";
+import { BsXLg, BsChevronUp, BsChevronDown } from "react-icons/bs";
 import { navPaths, mobileNavPaths, desktopNavPaths } from "../routes/Paths";
 
 const Aside = ({
@@ -39,7 +39,7 @@ const Aside = ({
         }`}
         onClick={stopHandleToggle}
       >
-        <div className="flex flex-col px-6 py-4 overflow-auto h-full lg:py-4 lg:px-9">
+        <div className="flex flex-col p-4 overflow-auto h-full lg:py-4 lg:px-9">
           <Link
             to="/log-in"
             className="text-sm my-[0.6rem] self-end lg:hidden"
@@ -87,9 +87,9 @@ const Aside = ({
                     aria-expanded={toggleSubMenu === path.key}
                   >
                     {toggleSubMenu === path.key ? (
-                      <FaChevronUp />
+                      <BsChevronUp />
                     ) : (
-                      <FaChevronDown />
+                      <BsChevronDown />
                     )}
                   </button>
                 )}
@@ -146,11 +146,11 @@ const Aside = ({
           </p>
         </div>
         <button
-          className="absolute top-[1.43rem] left-[1.4rem] lg:left-[16.4rem] lg:top-[1.1rem]"
+          className="absolute top-[1.43rem] left-[1rem] lg:left-[16.4rem] lg:top-[1.1rem]"
           onClick={handleToggleItem}
           aria-label="close the menu"
         >
-          <FaX className="text-[1.6rem]" />
+          <BsXLg className="text-[1.6rem]" />
         </button>
       </nav>
     </aside>

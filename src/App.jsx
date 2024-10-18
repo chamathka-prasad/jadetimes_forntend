@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-
 import Header from "./components/Header";
 import Aside from "./components/Aside";
 import Footer from "./components/Footer";
-
 import Pages from "./routes/Pages";
 
 const App = () => {

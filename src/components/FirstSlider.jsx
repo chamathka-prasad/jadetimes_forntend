@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
+import { BsChevronRight, BsChevronLeft } from "react-icons/bs";
 import PictureLink from "./PictureLink";
 
 const FirstSlider = ({ articles, className }) => {
@@ -77,14 +77,14 @@ const FirstSlider = ({ articles, className }) => {
           onClick={nextSlide}
           aria-label="next slide"
         >
-          <FaChevronRight size={32} />
+          <BsChevronRight size={35} />
         </button>}
         {currentIndex !== 0 && <button
           className="text-neutral-900 absolute top-1/3 left-4"
           onClick={prevSlide}
           aria-label="previous slide"
         >
-          <FaChevronLeft size={32} />
+          <BsChevronLeft size={35} />
         </button>}
       </div>
     </div>
