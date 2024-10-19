@@ -42,7 +42,7 @@ const Aside = ({
         <div className="flex flex-col p-4 overflow-auto h-full lg:py-4 lg:px-9">
           <Link
             to="/log-in"
-            className="text-sm my-[0.6rem] self-end lg:hidden"
+            className="text-sm my-[0.6rem] self-end text-nowrap lg:hidden"
             onClick={handleToggleItem}
           >
             Log In

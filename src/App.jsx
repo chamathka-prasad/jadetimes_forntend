@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Aside from "./components/Aside";
 import Footer from "./components/Footer";
 import Pages from "./routes/Pages";
+import ScrollToTop from "./components/ScrollToTop";
 
 const App = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -19,21 +20,12 @@ const App = () => {
   return (
     <>
       <Header handleToggle={handleToggle} />
-      <Aside
-        handleToggle={handleToggle}
-        stopHandleToggle={stopHandleToggle}
-        isNav={toggleMenu}
-        isAside={toggleMenu}
-      />
+      <Aside handleToggle={handleToggle} stopHandleToggle={stopHandleToggle} isNav={toggleMenu} isAside={toggleMenu} />
       <main>
+        <ScrollToTop />
         <Routes>
           {Pages.map((page) => (
-            <Route
-              key={page.id}
-              path={page.path}
-              element={page.component}
-              exact={page.exact}
-            />
+            <Route key={page.id} path={page.path} element={page.component} exact={page.exact} />
           ))}
         </Routes>
       </main>

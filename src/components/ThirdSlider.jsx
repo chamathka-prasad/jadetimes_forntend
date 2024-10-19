@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useState, useRef } from "react";
 import { FaChevronRight } from "react-icons/fa6";
 
-const ThirdSlider = ({ articles }) => {
+const ThirdSlider = ({ articles, className = "" }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const touchStartRef = useRef(0);
   const touchEndRef = useRef(0);
@@ -28,27 +28,21 @@ const ThirdSlider = ({ articles }) => {
 
   const nextSlide = () => {
     setCurrentIndex((prevCurrentIndex) => {
-      const newCurrentIndex =
-        prevCurrentIndex === articles.length - 1 ? 0 : prevCurrentIndex + 1;
+      const newCurrentIndex = prevCurrentIndex === articles.length - 1 ? 0 : prevCurrentIndex + 1;
       return newCurrentIndex;
     });
   };
 
   const prevSlide = () => {
     setCurrentIndex((prevCurrentIndex) => {
-      const newCurrentIndex =
-        prevCurrentIndex === 0 ? articles.length - 1 : prevCurrentIndex - 1;
+      const newCurrentIndex = prevCurrentIndex === 0 ? articles.length - 1 : prevCurrentIndex - 1;
       return newCurrentIndex;
     });
   };
 
   return (
-    <div className="relative">
-      <div
-        className="flex flex-col overflow-y-hidden h-[800px] snap-y snap-mandatory"
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
-      >
+    <div className={`relative ${className}`}>
+      <div className="flex flex-col overflow-y-hidden h-[800px] snap-y snap-mandatory" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
         {articles.map((article, index) => (
           <article
             style={{
@@ -67,9 +61,9 @@ const ThirdSlider = ({ articles }) => {
                   style={{ transition: `visibility 1s, opacity 1s` }}
                 >
                   <iframe
-                    title="What We Know About Trump Shooting Suspect Thomas Matthew Crooks | JadeTimes"
+                    title={article.title}
                     width="100%"
-                    src="https://www.youtube.com/embed/uHcsQKx6AzY?autoplay=0&mute=0&controls=1&loop=0&origin=https://www.jadetimes.com&playsinline=1&enablejsapi=1"
+                    src="https://www.youtube.com/embed/?autoplay=0&mute=0&controls=1&loop=0&origin=https://www.jadetimes.com&playsinline=1&enablejsapi=1"
                     className="aspect-video md:w-1/2"
                     sandbox="allow-same-origin allow-scripts allow-popups allow-presentation"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -82,16 +76,10 @@ const ThirdSlider = ({ articles }) => {
                     >
                       Youtube updates
                     </a>
-                    <h3 className="text-sm mb-3 lg:text-base">
-                      How Sri Lanka's 2024 Election Could Shape the Future of
-                      Entrepreneurs
-                    </h3>
+                    <h3 className="text-sm mb-3 lg:text-base">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur, autem</h3>
                     <p className="text-xs mb-4">
-                      We explore how the upcoming election could shape
-                      opportunities and challenges for business owners and
-                      startups across the country. A shocking revelation about
-                      the connection between these two groups, shedding light on
-                      hidden influences and funding sources.
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam facere eos minus, non officia beatae molestiae laudantium ullam quasi nisi corporis voluptates hic vitae
+                      mollitia iste et itaque alias repellendus consectetur. Nisi tempore iste minima nam nostrum nulla repudiandae perspiciatis.
                     </p>
                     <div>
                       <a
@@ -102,7 +90,7 @@ const ThirdSlider = ({ articles }) => {
                       </a>
                       <Link
                         href="https://www.jadetimes.com/post/shocking-revelations-mr-neomal-perera-on-hidden-influences-in-sri-lanka-s-political-sphere"
-                        className="text-xs capitalize text-nowrap duration-300 hover:opacity-50"
+                        className="inline-flex items-center text-xs capitalize text-nowrap duration-300 hover:opacity-50"
                         aria-label="read more about this article"
                       >
                         Read more

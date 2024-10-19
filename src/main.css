@@ -38,7 +38,7 @@ img {
   width: 100%;
 }
 
-.active {
+header .active {
   color: #FF322E;
 }
 

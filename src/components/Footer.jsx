@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Logo from "/logo-black.png";
+import Logo from "/footer-logo.png";
 import {
   FaWhatsapp,
   FaTiktok,
@@ -16,12 +16,35 @@ const Footer = () => {
   return (
     <footer className="border-t border-t-black">
       <div className="max-w-[1407px] mx-auto p-4">
-        <div className="flex flex-col gap-8 items-center my-8 mb-12 lg:flex-row lg:justify-between">
-          <div>
-            <Link to="/" className="block min-w-32 max-w-44 order-2">
+        <div className="my-8 mb-12 lg:flex lg:flex-row lg:justify-between">
+          <div className="mb-4 lg:mb-0">
+            <Link to="/" className="block mx-auto min-w-32 max-w-44 lg:max-w-52 order-2">
               <img src={Logo} alt="jadetimes logo" />
             </Link>
-            <div className="text-xs flex flex-row items-center justify-center mt-2 whitespace-nowrap">
+            <ul className="lg:hidden flex flex-col gap-4 text-center text-[#282626] text-sm text-nowrap my-4">
+              <li>
+                <Link to="/about">About Jadetimes</Link>
+              </li>
+              <li>
+                <Link to="/privacy-policy">Privacy Policy</Link>
+              </li>
+              <li>
+                <Link to="/terms-and-conditions">Terms & Conditions</Link>
+              </li>
+              <li>
+                <Link to="/faq">FAQ</Link>
+              </li>
+              <li>
+                <Link to="/shop">Jadetimes Shop</Link>
+              </li>
+              <li>
+                <Link to="/careers">Jobs At Jadetimes</Link>
+              </li>
+              <li>
+                <Link to="/cookies">Get Published Online Articles</Link>
+              </li>
+            </ul>
+            <div className="text-sm flex flex-row items-center justify-center max-w-lg mx-auto whitespace-nowrap border-t border-t-[#17171724] pt-4 lg:text-xs lg:border-none lg:pt-0 lg:mt-3">
               <Link to="/advertise-with-us" className="hover:underline">
                 Advertise with us
               </Link>
@@ -34,13 +57,13 @@ const Footer = () => {
           <form className="flex flex-col items-center lg:flex-row">
             <label
               htmlFor="email"
-              className="uppercase block text-center text-[0.8125rem] text-nowrap mx-4 mb-4 lg:mb-0"
+              className="uppercase block text-center text-lg lg:text-[0.8125rem] text-nowrap mx-4 mb-4 lg:mb-0"
             >
               Sign up for our newsletter
             </label>
-            <div className="flex flex-col gap-[1px] md:flex-row">
+            <div className="flex flex-row gap-[1px] max-w-lg w-full">
               <input
-                className="text-sm w-full py-1 px-5 border border-neutral-400 hover:bg-neutral-300 hover:border-neutral-300 hover:border-b-2 hover:border-b-black lg:w-96"
+                className="text-sm w-full py-1 px-5 border border-neutral-400 hover:bg-neutral-300 hover:border-neutral-300 hover:border-b-2 hover:border-b-black lg:w-96 focus:bg-neutral-300 focus:border-neutral-300 focus:border-b-2 focus:border-b-black focus-visible:outline-none"
                 id="email"
                 name="email"
                 type="email"
@@ -48,7 +71,7 @@ const Footer = () => {
                 autoComplete="off"
                 required
               />
-              <button className="uppercase bg-neutral-800 text-white text-xs border border-neutral-800 duration-300 py-[0.625rem] px-9 hover:bg-[#FF322E] hover:border-[#FF322E]">
+              <button className="uppercase bg-neutral-800 text-white text-xs border border-neutral-800 duration-300 py-[0.625rem] px-3 hover:bg-[#FF322E] hover:border-[#FF322E] lg:px-9">
                 Subscribe
               </button>
             </div>
@@ -240,9 +263,13 @@ const Footer = () => {
             </Link>
           </li>
         </ul>
-        <div className="text-[0.6875rem] mt-4 text-center">
-          <p className="hidden lg:block">The JadeTimes holds no responsibility for the content of external websites. For more information, please review our policy on external linking.</p>
-          <div className="mt-4">&copy; 2024 Jadetimes Media LLC. All Rights Reserved</div>
+        <p className="text-[0.6875rem] hidden text-center mt-4 lg:block">
+          The JadeTimes holds no responsibility for the content of external
+          websites. For more information, please review our policy on external
+          linking.
+        </p>
+        <div className="mt-4 text-xs text-center lg:text-[0.6875rem]">
+          &copy; 2024 Jadetimes Media LLC. All Rights Reserved
         </div>
       </div>
     </footer>

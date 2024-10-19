@@ -63,8 +63,8 @@ export const navPaths = [
       },
       {
         key: 1,
-        to: "/sports/t20-world-cup-2024",
-        name: "T20 World Cup 2024",
+        to: "/sports/cricket",
+        name: "Cricket",
       },
     ],
   },
