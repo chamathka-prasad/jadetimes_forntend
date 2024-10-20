@@ -4,6 +4,7 @@ import { navPaths } from "../routes/Paths";
 import MainArticles from "../components/MainArticles";
 import ThirdSlider from "../components/ThirdSlider";
 import Articles from "../routes/Articles";
+import Pagination from "../components/Pagination";
 
 const Sports = () => {
   return (
@@ -32,6 +33,7 @@ const Sports = () => {
         <MainArticles articles={Articles} />
       </div>
       <ThirdSlider articles={Articles.slice(0, 2)} className="mt-4" />
+      <Pagination articles={Articles} />
     </>
   );
 };

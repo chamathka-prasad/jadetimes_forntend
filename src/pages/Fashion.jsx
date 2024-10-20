@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import MainArticles from "../components/MainArticles";
 import ThirdSlider from "../components/ThirdSlider";
 import Articles from "../routes/Articles";
+import Pagination from "../components/Pagination";
 
 const Fashion = () => {
   return (
@@ -16,6 +17,7 @@ const Fashion = () => {
         <MainArticles articles={Articles} />
       </div>
       <ThirdSlider articles={Articles.slice(0, 2)} className="mt-4" />
+      <Pagination articles={Articles} />
     </>
   );
 };
