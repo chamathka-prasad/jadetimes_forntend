@@ -9,7 +9,7 @@ import Pagination from "../components/Pagination";
 const Innovation = () => {
   return (
     <>
-      <nav className="">
+      <nav className="hidden lg:block">
         <ul className="text-[#111111] text-xs flex flex-row gap-3 items-center justify-center">
           {navPaths
             .filter((path) => path.key === 7 && path.submenus)
@@ -33,7 +33,10 @@ const Innovation = () => {
         <MainArticles articles={Articles} />
       </div>
       <ThirdSlider articles={Articles.slice(0, 2)} className="mt-4" />
-      <Pagination articles={Articles} />
+      <div className="max-w-[1300px] mx-auto p-4">
+        <h2 className="border-b border-[#424242] pb-1 text-xl font-semibold mb-2 text-[#111111]">More from <span className="font-normal">Innovation</span></h2>
+        <Pagination articles={Articles} />
+      </div>
     </>
   );
 };

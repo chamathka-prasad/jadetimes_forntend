@@ -41,25 +41,25 @@ const ThirdSlider = ({ articles, className = "" }) => {
   };
 
   return (
-    <div className={`relative ${className}`}>
-      <div className="flex flex-col overflow-y-hidden h-[800px] snap-y snap-mandatory" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
+    <div className={`relative h-[800px] ${className}`}>
+      <div className="flex flex-col overflow-y-hidden h-[800px] snap-y snap-mandatory relative" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
         {articles.map((article, index) => (
           <article
             style={{
               backgroundImage: `url(${article.image})`,
-              transform: `translateY(${-100 * currentIndex}%)`,
-              transition: `transform 1s cubic-bezier(0.75, 0, 0.25, 1)`,
             }}
-            className="w-full bg-center bg-cover bg-no-repeat snap-start"
+            className={`w-full bg-center bg-cover bg-no-repeat snap-start absolute z-0 duration-1000 ease-in-out ${
+              index === currentIndex ? "z-10 top-0" : index < currentIndex ? "-top-full" : "top-full"
+            }`}
             key={index}
             aria-hidden={index !== currentIndex}
           >
-            <div className="bg-gradient-to-t from-black to-transparent">
+            <div
+              className={`bg-gradient-to-t from-black to-transparent relative ${currentIndex !== index ? "invisible opacity-0" : ""}`}
+              style={{ transition: `visibility 1s ease-in-out, opacity 1s ease-in-out` }}
+            >
               <div className="h-[800px] flex flex-col p-4">
-                <div
-                  className={`mt-auto mb-16 flex flex-col gap-4 max-w-[850px] md:gap-8 mx-auto md:flex-row md:items-center ${currentIndex !== index ? "invisible opacity-0" : ""}`}
-                  style={{ transition: `visibility 1s, opacity 1s` }}
-                >
+                <div className="mt-auto mb-16 flex flex-col gap-4 max-w-[850px] md:gap-8 mx-auto md:flex-row md:items-center">
                   <iframe
                     title={article.title}
                     width="100%"
@@ -72,7 +72,7 @@ const ThirdSlider = ({ articles, className = "" }) => {
                   <div className="text-white md:w-1/2">
                     <a
                       href="https://www.youtube.com/@JadeTimes"
-                      className="hidden tracking-widest md:bg-neutral-800 md:inline-block md:mb-4 md:text-nowrap md:uppercase md:font-medium md:text-xs md:px-2 md:py-1 md:duration-300 md:hover:bg-white md:hover:text-black"
+                      className="hidden tracking-widest md:bg-neutral-800 md:block md:w-fit md:mb-4 md:text-nowrap md:uppercase md:text-[0.625rem] md:px-2 md:py-1 md:duration-300 md:hover:bg-white md:hover:text-black"
                     >
                       Youtube updates
                     </a>
@@ -81,16 +81,16 @@ const ThirdSlider = ({ articles, className = "" }) => {
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam facere eos minus, non officia beatae molestiae laudantium ullam quasi nisi corporis voluptates hic vitae
                       mollitia iste et itaque alias repellendus consectetur. Nisi tempore iste minima nam nostrum nulla repudiandae perspiciatis.
                     </p>
-                    <div>
+                    <div className="flex flex-row gap-4">
                       <a
                         href="https://www.youtube.com/@JadeTimes"
-                        className="bg-neutral-800 inline-block text-nowrap uppercase font-medium text-xs px-3 py-2 mr-4 duration-300 md:hidden hover:bg-white hover:text-black"
+                        className="bg-neutral-800 block w-fit text-nowrap uppercase text-sm px-3 py-2 duration-300 md:hidden hover:bg-white hover:text-black"
                       >
                         Youtube updates
                       </a>
                       <Link
                         href="https://www.jadetimes.com/post/shocking-revelations-mr-neomal-perera-on-hidden-influences-in-sri-lanka-s-political-sphere"
-                        className="inline-flex items-center text-xs capitalize text-nowrap duration-300 hover:opacity-50"
+                        className="flex w-fit items-center text-sm capitalize text-nowrap duration-300 hover:opacity-50"
                         aria-label="read more about this article"
                       >
                         Read more
@@ -100,11 +100,14 @@ const ThirdSlider = ({ articles, className = "" }) => {
                   </div>
                 </div>
               </div>
+              <div className="text-neutral-600 absolute bottom-4 left-0 text-sm right-0 max-w-[1300px] mx-auto px-4">
+                <Link>Photo By</Link>
+              </div>
             </div>
           </article>
         ))}
       </div>
-      <div className="flex flex-row gap-2 items-center justify-center absolute bottom-9 w-full">
+      <div className="flex flex-row gap-2 items-center justify-center absolute bottom-[2.3rem] w-full z-10">
         {articles.map((_, index) => (
           <button
             onClick={() => {

@@ -7,7 +7,7 @@ const Articles = [
     readTime: "Read Time",
     categoryTitle: "Category",
     categoryLink: "",
-    authorName: "Author Name"
+    authorName: "Author Name",
   },
   {
     link: "",
@@ -17,7 +17,7 @@ const Articles = [
     readTime: "Read Time",
     categoryTitle: "Category",
     categoryLink: "",
-    authorName: "Author Name"
+    authorName: "Author Name",
   },
   {
     link: "",
@@ -27,7 +27,7 @@ const Articles = [
     readTime: "Read Time",
     categoryTitle: "Category",
     categoryLink: "",
-    authorName: "Author Name"
+    authorName: "Author Name",
   },
   {
     link: "",
@@ -37,7 +37,7 @@ const Articles = [
     readTime: "Read Time",
     categoryTitle: "Category",
     categoryLink: "",
-    authorName: "Author Name"
+    authorName: "Author Name",
   },
   {
     link: "",
@@ -47,7 +47,7 @@ const Articles = [
     readTime: "Read Time",
     categoryTitle: "Category",
     categoryLink: "",
-    authorName: "Author Name"
+    authorName: "Author Name",
   },
   {
     link: "",
@@ -57,7 +57,7 @@ const Articles = [
     readTime: "Read Time",
     categoryTitle: "Category",
     categoryLink: "",
-    authorName: "Author Name"
+    authorName: "Author Name",
   },
   {
     link: "",
@@ -67,7 +67,7 @@ const Articles = [
     readTime: "Read Time",
     categoryTitle: "Category",
     categoryLink: "",
-    authorName: "Author Name"
+    authorName: "Author Name",
   },
   {
     link: "",
@@ -77,7 +77,7 @@ const Articles = [
     readTime: "Read Time",
     categoryTitle: "Category",
     categoryLink: "",
-    authorName: "Author Name"
+    authorName: "Author Name",
   },
   {
     link: "",
@@ -87,7 +87,7 @@ const Articles = [
     readTime: "Read Time",
     categoryTitle: "Category",
     categoryLink: "",
-    authorName: "Author Name"
+    authorName: "Author Name",
   },
   {
     link: "",
@@ -97,8 +97,8 @@ const Articles = [
     readTime: "Read Time",
     categoryTitle: "Category",
     categoryLink: "",
-    authorName: "Author Name"
-  }
-]
+    authorName: "Author Name",
+  },
+];
 
-export default Articles
+export default Articles;

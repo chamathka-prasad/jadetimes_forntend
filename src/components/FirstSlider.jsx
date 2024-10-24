@@ -49,7 +49,7 @@ const FirstSlider = ({ articles, className }) => {
               </PictureLink>
               <div className="flex flex-col p-4 gap-4">
                 <div>
-                  <Link className="inline-block text-xs">
+                  <Link className="block w-fit text-xs">
                     {article.authorName}
                   </Link>
                   <div className="whitespace-nowrap text-xs">

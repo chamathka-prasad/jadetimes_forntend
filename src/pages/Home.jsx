@@ -38,7 +38,7 @@ const Home = () => {
             </div>
             <div className="p-4 pt-8 flex flex-col justify-between gap-2 md:justify-start md:p-4 md:gap-4 lg:p-8">
               <div>
-                <Link className="hidden lg:inline-block lg:text-xs">{Articles[0].authorName}</Link>
+                <Link className="hidden lg:block lg:w-fit lg:text-xs">{Articles[0].authorName}</Link>
                 <div className="whitespace-nowrap lg:text-xs">{Articles[0].posted}</div>
               </div>
               <h2>
@@ -51,11 +51,11 @@ const Home = () => {
           </article>
           <div className="p-4 flex flex-col gap-4 md:p-0 md:grid md:grid-cols-2 md:col-span-2 md:gap-4 lg:grid-cols-12 lg:gap-5 lg:col-[13_span_/_13_span]">
             {articlesTwo.map((article, index) => (
-              <article key={index} className="flex flex-row p-4 gap-4 justify-between border border-neutral-300 lg:p-0 lg:flex-col lg:col-span-3">
+              <article key={index} className="flex flex-row p-4 gap-4 border border-neutral-300 lg:p-0 lg:flex-col lg:gap-0 lg:col-span-3">
                 <PictureLink link={article.link} className="order-2 lg:order-none">
                   <img src={article.image} alt={article.title} className="min-w-24 w-24 min-h-24 h-24 object-cover object-center lg:w-full lg:h-full" />
                 </PictureLink>
-                <div className="flex flex-col justify-between gap-4 lg:p-4 lg:pt-0">
+                <div className="flex flex-col justify-between gap-4 lg:p-4">
                   <Link to={article.categoryLink} className="hidden lg:inline-block lg:w-fit text-sm font-light text-[#686868] lg:order-[-1]">
                     {article.categoryTitle}
                   </Link>
@@ -74,7 +74,7 @@ const Home = () => {
             <a href="https://specialgraphics.us/" className="block" target="_blank" aria-label="visit special graphics website">
               <img src={SpecialGraphics} alt="special graphics representation" className="md:h-[320px] lg:h-auto" />
             </a>
-            <div className="hidden lg:mt-4 lg:flex lg:flex-wrap lg:flex-row lg:items-center xl:flex-nowrap xl:gap-4">
+            <div className="hidden lg:mt-4 lg:flex lg:flex-row lg:items-center xl:gap-4">
               <UpdatesBadge className="block px-3 py-2 text-center w-full">Latest Updates</UpdatesBadge>
               <a href="" className="w-full text-[#282626] text-sm group flex flex-row items-center justify-center py-[0.4rem] text-nowrap">
                 Read More
@@ -101,11 +101,11 @@ const Home = () => {
           </div>
           <div className="p-4 flex flex-col gap-4 md:p-0 md:col-start-2 md:row-start-3 lg:row-start-2 lg:col-span-4 lg:gap-5">
             {articlesEight.map((article, index) => (
-              <article className="flex flex-row gap-4 lg:p-3 lg:border lg:border-neutral-300" key={index}>
+              <article className="flex flex-row lg:p-3 lg:border lg:border-neutral-300 lg:gap-4" key={index}>
                 <PictureLink link={article.link} className="lg:order-2">
                   <img src={article.image} alt={article.title} className="min-w-24 w-24 min-h-24 h-24 lg:min-w-[4.25rem] lg:w-[4.25rem] lg:min-h-[4.25rem] lg:h-[4.25rem] object-cover object-center" />
                 </PictureLink>
-                <div className="flex flex-col justify-center lg:justify-between lg:gap-2">
+                <div className="flex flex-col p-4 justify-center lg:justify-between lg:p-0 lg:gap-2">
                   <h2>
                     <Link to={article.link} className="line-clamp-3 overflow-anywhere lg:text-sm">
                       {article.title}
@@ -119,10 +119,10 @@ const Home = () => {
             ))}
           </div>
         </div>
-        <a href="http://www.digitustecglobal.com/" className="hidden 2xl:block absolute top-[154px] -left-[117px] w-[117px]" target="_blank" aria-label="visit digit us tec global website">
+        <a href="http://www.digitustecglobal.com/" className="hidden 2xl:block absolute top-[154px] -left-[118px] w-[117px]" target="_blank" aria-label="visit digit us tec global website">
           <img src={DigitUsTecGlobal} alt="digit us tec global representation" />
         </a>
-        <a href="https://www.specialprinters.us/" className="hidden 2xl:block absolute top-[154px] -right-[117px] w-[117px]" target="_blank" aria-label="visit special printers website">
+        <a href="https://www.specialprinters.us/" className="hidden 2xl:block absolute top-[154px] -right-[118px] w-[117px]" target="_blank" aria-label="visit special printers website">
           <img src={SpecialPrinters} alt="special printers representation" />
         </a>
       </div>
@@ -132,11 +132,11 @@ const Home = () => {
         </h2>
         <div className="py-4 flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-4 lg:grid-cols-10 lg:gap-5 lg:py-5">
           {articlesFour.map((article, index) => (
-            <article key={index} className="flex flex-row p-4 gap-4 justify-between border border-neutral-300 lg:col-span-2 lg:flex-col lg:p-0">
+            <article key={index} className="flex flex-row p-4 gap-4 justify-between border border-neutral-300 lg:col-span-2 lg:flex-col lg:p-0 lg:gap-0">
               <PictureLink link={article.link} className="order-2 lg:order-none">
                 <img src={article.image} alt={article.title} className="min-w-24 w-24 min-h-24 h-24 object-cover object-center lg:w-full lg:h-full" />
               </PictureLink>
-              <div className="flex flex-col justify-between gap-4 lg:p-4 lg:pt-0">
+              <div className="flex flex-col justify-between gap-4 lg:p-4">
                 <h3>
                   <Link className="overflow-anywhere line-clamp-2 lg:text-sm lg:line-clamp-3">{article.title}</Link>
                 </h3>
@@ -168,8 +168,8 @@ const Home = () => {
           <section className="lg:pl-10 lg:border-l lg:border-[#515151] lg:col-span-4 lg:flex lg:flex-col lg:gap-5">
             <div className="mb-4 lg:mx-0 lg:flex lg:flex-row lg:gap-4 lg:items-center lg:mb-0">
               <h3 className="mt-4 lg:mt-0">
-                <Link className="text-[#111111] text-lg lg:text-xl font-semibold">
-                  Whats <span className="font-normal">Trending</span>
+                <Link className="text-[#111111] text-lg lg:text-xl font-semibold block w-fit">
+                  Whats <span className="font-normal inline-block">Trending</span>
                 </Link>
               </h3>
               <MembershipBadge className="hidden lg:block" />
@@ -177,15 +177,15 @@ const Home = () => {
             <div className="flex flex-col gap-4 md:grid md:grid-cols-2 lg:grid-cols-2 lg:gap-5 lg:p-0 lg:h-full">
               {articlesSix.map((article, index) => (
                 <article key={index} className="flex flex-row p-4 gap-4 border border-neutral-300 lg:p-3">
-                  <picture className="lg:order-2 cursor-pointer" onClick={() => navigateToLink(article.link)}>
+                  <PictureLink className="lg:order-2 cursor-pointer" link={article.link}>
                     <img src={article.image} alt={article.title} className="min-w-24 w-24 min-h-24 h-24 object-cover object-center lg:min-w-14 lg:w-14 lg:min-h-14 lg:h-14" />
-                  </picture>
-                  <div className="flex flex-col justify-between gap-4 lg:justify-normal lg:gap-2">
+                  </PictureLink>
+                  <div className="flex flex-col justify-between lg:h-fit gap-4 lg:justify-normal lg:gap-2">
                     <h4>
                       <Link className="line-clamp-2 overflow-anywhere lg:text-sm lg:line-clamp-3">{article.title}</Link>
                     </h4>
                     <div className="whitespace-nowrap lg:text-xs lg:hidden">{article.posted}</div>
-                    <Link to={article.categoryLink} className="hidden lg:block text-sm font-light text-[#686868]">
+                    <Link to={article.categoryLink} className="hidden lg:block text-sm font-light w-fit text-[#686868]">
                       {article.categoryTitle}
                     </Link>
                   </div>
@@ -209,7 +209,7 @@ const Home = () => {
                     <PictureLink link={article.link}>
                       <img src={article.image} alt={article.title} className="min-w-24 w-24 min-h-24 h-24 object-cover object-center" />
                     </PictureLink>
-                    <div className="flex flex-col gap-2">
+                    <div className="flex flex-col gap-2 h-fit">
                       <h4>
                         <Link to={article.link} className="line-clamp-3 overflow-anywhere text-sm">
                           {article.title}
@@ -239,7 +239,7 @@ const Home = () => {
         </section>
       </section>
       <div className="bg-neutral-50">
-        <div className="text-neutral-900 p-4 pt-2 max-w-[1300px] mx-auto md:grid md:gap-4 md:grid-cols-2 lg:grid-cols-4 lg:gap-16 lg:pt-3">
+        <div className="text-neutral-900 p-4 pt-2 max-w-[1300px] mx-auto md:grid md:gap-4 md:grid-cols-2 lg:grid-cols-4 lg:gap-16 lg:pt-4">
           <section>
             <h3 className="mb-4 border-b-2 border-[#424242] pb-1 text-lg text-[#111111] font-semibold">
               <Link>Asia</Link>
@@ -330,11 +330,11 @@ const Home = () => {
           <div className="pt-4 flex flex-col gap-4 md:grid md:grid-cols-2 lg:grid-cols-10 lg:gap-5 lg:pt-5 text-neutral-900">
             {articlesSeven.map((article, index) => (
               <article key={index} className="border border-neutral-300 block md:m-0 lg:col-span-2">
-                <div className="flex flex-row p-4 gap-4 justify-between lg:p-0 lg:flex-col">
+                <div className="flex flex-row p-4 gap-4 justify-between lg:p-0 lg:flex-col lg:gap-0">
                   <PictureLink className="order-2 lg:order-none">
                     <img src={article.image} alt="" className="min-w-20 w-20 min-h-20 h-20 object-cover object-center lg:w-full lg:h-full" />
                   </PictureLink>
-                  <div className="flex flex-col justify-between gap-4 lg:p-4 lg:pt-0">
+                  <div className="flex flex-col justify-between gap-4 lg:p-4">
                     <h3>
                       <Link className="overflow-anywhere line-clamp-2 lg:text-sm lg:line-clamp-3">{article.title}</Link>
                     </h3>
@@ -368,7 +368,7 @@ const Home = () => {
               <div className="lg:w-96 lg:mx-auto">
                 <a
                   href="https://www.youtube.com/@JadeTimes"
-                  className="hidden md:bg-neutral-800 md:inline-block md:tracking-widest md:mb-4 md:text-nowrap md:uppercase md:font-medium md:text-xs md:px-2 md:py-1 md:duration-300 md:hover:bg-white md:hover:text-black"
+                  className="hidden md:bg-neutral-800 md:block md:w-fit md:tracking-widest md:mb-4 md:text-nowrap md:uppercase md:text-[0.625rem] md:px-2 md:py-1 md:duration-300 md:hover:bg-white md:hover:text-black"
                 >
                   Youtube updates
                 </a>
@@ -377,16 +377,16 @@ const Home = () => {
                   We explore how the upcoming election could shape opportunities and challenges for business owners and startups across the country. A shocking revelation about the connection between
                   these two groups, shedding light on hidden influences and funding sources.
                 </p>
-                <div className="mt-4 flex items-center gap-4">
+                <div className="mt-4 flex items-center gap-4 text-sm">
                   <a
                     href="https://www.youtube.com/@JadeTimes"
-                    className="bg-neutral-800 inline-block uppercase tracking-widest text-nowrap font-medium text-xs px-3 py-2 duration-300 hover:bg-white hover:text-black md:hidden"
+                    className="bg-neutral-800 inline-block uppercase tracking-widest text-nowrap px-3 py-2 duration-300 hover:bg-white hover:text-black md:hidden"
                   >
                     Youtube updates
                   </a>
                   <a
                     href="https://www.jadetimes.com/post/shocking-revelations-mr-neomal-perera-on-hidden-influences-in-sri-lanka-s-political-sphere"
-                    className="text-xs text-nowrap capitalize duration-300 hover:opacity-50"
+                    className="text-nowrap flex items-center capitalize duration-300 hover:opacity-50"
                   >
                     Read more
                     <FaChevronRight className="inline" />
@@ -396,14 +396,14 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="p-4 flex flex-col gap-4 md:grid md:grid-cols-3 lg:grid-cols-8 lg:gap-5 lg:py-5 max-w-screen-xl mx-auto">
+        <div className="p-4 flex flex-col gap-4 md:grid md:grid-cols-3 lg:grid-cols-8 lg:gap-5 lg:py-5 max-w-[1300px] mx-auto">
           <div className="lg:col-span-2 lg:flex lg:flex-col lg:gap-5">
             <article className="border border-neutral-300 block lg:col-span-2 h-full lg:h-auto lg:border-none">
-              <div className="flex flex-row p-4 gap-4 justify-between md:p-0 md:flex-col">
+              <div className="flex flex-row p-4 justify-between gap-4 md:gap-0 md:p-0 md:flex-col">
                 <PictureLink className="order-2 md:order-none">
                   <img src={Articles[0].image} alt="" className="min-w-20 w-20 min-h-20 h-20 object-cover object-center md:w-full md:h-full" />
                 </PictureLink>
-                <div className="flex flex-col justify-between gap-4 md:p-4 md:pt-0 lg:p-0">
+                <div className="flex flex-col justify-between gap-4 md:p-4 lg:p-0">
                   <h3>
                     <Link className="overflow-anywhere line-clamp-2 lg:text-lg lg:font-medium">{Articles[0].title}</Link>
                   </h3>
@@ -413,18 +413,13 @@ const Home = () => {
             </article>
             <div className="hidden lg:flex lg:flex-col lg:gap-5">
               {articlesEight.map((article, index) => (
-                <article className="border border-neutral-300 block m-4 md:m-0 lg:border-none" key={index}>
-                  <div className="flex flex-row p-4 gap-4 lg:p-0">
-                    <PictureLink>
-                      <img src={article.image} alt="" className="min-w-28 w-28 min-h-20 h-20 object-cover object-center" />
-                    </PictureLink>
-                    <div className="flex flex-col justify-center gap-4">
-                      <h3>
-                        <Link className="line-clamp-2 overflow-anywhere lg:text-sm lg:line-clamp-3">{article.title}</Link>
-                      </h3>
-                      <div className="whitespace-nowrap lg:text-xs lg:hidden">{article.posted}</div>
-                    </div>
-                  </div>
+                <article className="flex flex-row gap-4 items-center" key={index}>
+                  <PictureLink>
+                    <img src={article.image} alt="" className="min-w-28 w-28 min-h-20 h-20 object-cover object-center" />
+                  </PictureLink>
+                  <h3>
+                    <Link className="overflow-anywhere text-sm line-clamp-3">{article.title}</Link>
+                  </h3>
                 </article>
               ))}
             </div>
@@ -450,11 +445,11 @@ const Home = () => {
           </div>
           <div className="lg:col-span-2 lg:flex lg:flex-col lg:gap-5">
             <article className="border border-neutral-300 block lg:col-span-2 h-full lg:h-auto lg:border-none">
-              <div className="flex flex-row p-4 gap-4 justify-between md:p-0 md:flex-col">
+              <div className="flex flex-row p-4 justify-between gap-4 md:gap-0 md:p-0 md:flex-col">
                 <PictureLink className="order-2 md:order-none">
                   <img src={Articles[1].image} alt="" className="min-w-20 w-20 min-h-20 h-20 object-cover object-center md:w-full md:h-full" />
                 </PictureLink>
-                <div className="flex flex-col justify-between gap-4 md:p-4 md:pt-0 lg:p-0">
+                <div className="flex flex-col justify-between gap-4 md:p-4 lg:p-0">
                   <h3>
                     <Link className="overflow-anywhere line-clamp-2 lg:text-lg lg:font-medium">{Articles[1].title}</Link>
                   </h3>
@@ -464,18 +459,13 @@ const Home = () => {
             </article>
             <div className="hidden lg:flex lg:flex-col lg:gap-5">
               {articlesEight.map((article, index) => (
-                <article key={index} className="border border-neutral-300 block m-4 md:m-0 lg:border-none">
-                  <div className="flex flex-row p-4 gap-4 lg:p-0">
-                    <PictureLink className="lg:order-2">
-                      <img src={article.image} alt="" className="min-w-28 w-28 min-h-20 h-20 object-cover object-center" />
-                    </PictureLink>
-                    <div className="flex flex-col justify-center gap-4">
-                      <h3>
-                        <Link className="line-clamp-2 overflow-anywhere lg:text-sm lg:line-clamp-3">{article.title}</Link>
-                      </h3>
-                      <div className="whitespace-nowrap lg:text-xs lg:hidden">{article.posted}</div>
-                    </div>
-                  </div>
+                <article className="flex flex-row gap-4 items-center" key={index}>
+                  <PictureLink className="order-2">
+                    <img src={article.image} alt="" className="min-w-28 w-28 min-h-20 h-20 object-cover object-center" />
+                  </PictureLink>
+                  <h3>
+                    <Link className="overflow-anywhere text-sm line-clamp-3">{article.title}</Link>
+                  </h3>
                 </article>
               ))}
             </div>

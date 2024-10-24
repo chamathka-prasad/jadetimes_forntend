@@ -17,7 +17,10 @@ const Business = () => {
         <MainArticles articles={Articles} />
       </div>
       <ThirdSlider articles={Articles.slice(0, 2)} className="mt-4" />
-      <Pagination articles={Articles} />
+      <div className="max-w-[1300px] mx-auto p-4">
+        <h2 className="border-b border-[#424242] pb-1 text-xl font-semibold mb-2 text-[#111111]">More from <span className="font-normal">Business</span></h2>
+        <Pagination articles={Articles} />
+      </div>
     </>
   );
 };

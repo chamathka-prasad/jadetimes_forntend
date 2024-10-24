@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { BsXLg, BsChevronUp, BsChevronDown } from "react-icons/bs";
 import { navPaths, mobileNavPaths, desktopNavPaths } from "../routes/Paths";
@@ -10,6 +10,8 @@ const Aside = ({
   isAside
 }) => {
   const [toggleSubMenu, setToggleSubMenu] = useState(null);
+
+  const scrollTopRef = useRef(null);
 
   function handleToggleSubMenu(key) {
     setToggleSubMenu((prev) => (prev === key ? null : key));
@@ -24,11 +26,16 @@ const Aside = ({
   function handleToggleItem() {
     handleToggle();
     setToggleSubMenu(null);
+    scrollTopRef.current.scrollTo({
+      left: 0,
+      top: 0,
+      behavior : "smooth"
+    })
   }
 
   return (
     <aside
-      className={`bg-transparent duration-300 fixed top-0 bottom-0 left-0 right-0 z-10 ${
+      className={`bg-transparent duration-300 fixed top-0 bottom-0 left-0 right-0 z-50 ${
         isAside ? "visible" : "invisible"
       }`}
       onClick={handleToggleItem}
@@ -39,7 +46,7 @@ const Aside = ({
         }`}
         onClick={stopHandleToggle}
       >
-        <div className="flex flex-col p-4 overflow-auto h-full lg:py-4 lg:px-9">
+        <div className="flex flex-col p-4 overflow-auto h-full lg:py-4 lg:px-9" ref={scrollTopRef}>
           <Link
             to="/log-in"
             className="text-sm my-[0.6rem] self-end text-nowrap lg:hidden"

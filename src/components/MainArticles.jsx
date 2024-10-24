@@ -17,7 +17,7 @@ const MainArticles = ({ articles }) => {
           </div>
           <div className="py-4 pb-5 flex flex-col justify-between gap-2 md:justify-start md:p-4 md:gap-4 lg:p-8">
             <div>
-              <Link className="hidden lg:inline-block lg:text-xs">{articles[0].authorName}</Link>
+              <Link className="hidden lg:block lg:w-fit lg:text-xs">{articles[0].authorName}</Link>
               <div className="flex flex-row items-center whitespace-nowrap lg:text-xs">{articles[0].posted}</div>
             </div>
             <h2>
@@ -30,11 +30,11 @@ const MainArticles = ({ articles }) => {
         </article>
         <div className="p-4 flex flex-col gap-4 md:p-0 md:grid md:grid-cols-2 md:col-span-2 md:gap-4 lg:grid-cols-10 lg:gap-5 lg:col-span-full">
           {articles.slice(0, 5).map((article, index) => (
-            <article key={index} className="flex flex-row p-4 gap-4 justify-between border border-neutral-300 lg:p-0 lg:flex-col lg:col-span-2">
+            <article key={index} className="flex flex-row p-4 gap-4 justify-between border border-neutral-300 lg:p-0 lg:flex-col lg:gap-0 lg:col-span-2">
               <PictureLink link={article.link} className="order-2 lg:order-none">
                 <img src={article.image} alt={article.title} className="min-w-24 w-24 min-h-24 h-24 object-cover object-center lg:w-full lg:h-full" />
               </PictureLink>
-              <div className="flex flex-col justify-between gap-4 lg:p-4 lg:pt-0">
+              <div className="flex flex-col justify-between gap-4 lg:p-4">
                 <Link to={article.categoryLink} className="hidden lg:inline-block lg:w-fit text-sm font-light text-[#686868] lg:order-[-1]">
                   {article.categoryTitle}
                 </Link>

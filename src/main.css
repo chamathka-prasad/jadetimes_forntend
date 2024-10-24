@@ -38,10 +38,12 @@ img {
   width: 100%;
 }
 
+/* Active class */
 header .active {
   color: #FF322E;
 }
 
+/* Custom classes */
 .overflow-anywhere {
   overflow-wrap: anywhere;
 }

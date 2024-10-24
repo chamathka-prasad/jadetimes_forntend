@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Suspense, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Aside from "./components/Aside";
@@ -21,13 +21,15 @@ const App = () => {
     <>
       <Header handleToggle={handleToggle} />
       <Aside handleToggle={handleToggle} stopHandleToggle={stopHandleToggle} isNav={toggleMenu} isAside={toggleMenu} />
-      <main>
-        <ScrollToTop />
-        <Routes>
-          {Pages.map((page) => (
-            <Route key={page.id} path={page.path} element={page.component} exact={page.exact} />
-          ))}
-        </Routes>
+      <main className="2xl:overflow-x-hidden">
+        <Suspense fallback>
+          <ScrollToTop />
+          <Routes>
+            {Pages.map((page) => (
+              <Route key={page.id} path={page.path} element={page.component} exact={page.exact} />
+            ))}
+          </Routes>
+        </Suspense>
       </main>
       <Footer />
     </>

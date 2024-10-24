@@ -1,15 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "/footer-logo.png";
-import {
-  FaWhatsapp,
-  FaTiktok,
-  FaXTwitter,
-  FaYoutube,
-  FaFacebookF,
-  FaInstagram,
-  FaLinkedinIn,
-} from "react-icons/fa6";
+import { FaWhatsapp, FaTiktok, FaXTwitter, FaYoutube, FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa6";
 import { navPaths } from "../routes/Paths";
 
 const Footer = () => {
@@ -54,11 +46,8 @@ const Footer = () => {
               </Link>
             </div>
           </div>
-          <form className="flex flex-col items-center lg:flex-row">
-            <label
-              htmlFor="email"
-              className="uppercase block text-center text-lg lg:text-[0.8125rem] text-nowrap mx-4 mb-4 lg:mb-0"
-            >
+          <form className="flex flex-col items-center gap-4 lg:flex-row">
+            <label htmlFor="email" className="uppercase block text-center text-lg lg:text-[0.8125rem] text-nowrap lg:mb-0">
               Sign up for our newsletter
             </label>
             <div className="flex flex-row gap-[1px] max-w-lg w-full">
@@ -87,14 +76,10 @@ const Footer = () => {
               </li>
             ))}
             <li className="gap-4">
-              <Link className="duration-300 hover:underline">
-                Israel-Gaza War
-              </Link>
+              <Link className="duration-300 hover:underline">Israel-Gaza War</Link>
             </li>
             <li className="gap-4">
-              <Link className="duration-300 hover:underline">
-                Ukraine-Russia War
-              </Link>
+              <Link className="duration-300 hover:underline">Ukraine-Russia War</Link>
             </li>
             <li className="gap-4">
               <Link className="duration-300 hover:underline">USA</Link>
@@ -114,162 +99,118 @@ const Footer = () => {
             <li className="gap-4">
               <Link className="duration-300 hover:underline">WWE</Link>
             </li>
-            <li className="flex">
-              <a
-                href="https://www.whatsapp.com/channel/0029VaevKQj35fM4n9S7ub1c"
-                aria-label="whatsapp"
-                target="_black"
-                className="inline-block text-lg"
-              >
-                <FaWhatsapp />
-              </a>
-            </li>
-            <li className="flex">
-              <a
-                href="https://www.tiktok.com/@jadetimes_officials"
-                aria-label="tiktok"
-                target="_blank"
-                className="inline-block text-lg"
-              >
-                <FaTiktok />
-              </a>
-            </li>
-            <li className="flex">
-              <a
-                href="https://x.com/jade_times"
-                aria-label="x-twitter"
-                target="_blank"
-                className="inline-block text-lg"
-              >
-                <FaXTwitter />
-              </a>
-            </li>
-            <li className="flex">
-              <a
-                href="https://www.facebook.com/officialJadetimes"
-                aria-label="facebook"
-                target="_blank"
-                className="inline-block text-lg"
-              >
-                <FaFacebookF />
-              </a>
-            </li>
-            <li className="flex">
-              <a
-                href="https://www.youtube.com/channel/UCh3RLLVBaEeBRRZBbnnVWWA"
-                aria-label="youtube"
-                target="_blank"
-                className="inline-block text-lg"
-              >
-                <FaYoutube />
-              </a>
-            </li>
-            <li className="flex">
-              <a
-                href="https://www.instagram.com/jadetimes_official/"
-                aria-label="instagram"
-                target="_blank"
-                className="inline-block text-lg"
-              >
-                <FaInstagram />
-              </a>
-            </li>
-            <li className="flex">
-              <a
-                href="https://www.linkedin.com/company/99353290/admin/feed/posts/"
-                aria-label="linkedin"
-                target="_blank"
-                className="inline-block text-lg"
-              >
-                <FaLinkedinIn />
-              </a>
-            </li>
+            <ul className="flex flex-row gap-3 w-full justify-center 2xl:w-auto 2xl:justify-normal">
+              <li className="flex">
+                <a href="https://www.whatsapp.com/channel/0029VaevKQj35fM4n9S7ub1c" aria-label="whatsapp" target="_black" className="inline-block text-lg">
+                  <FaWhatsapp />
+                </a>
+              </li>
+              <li className="flex">
+                <a href="https://www.tiktok.com/@jadetimes_officials" aria-label="tiktok" target="_blank" className="inline-block text-lg">
+                  <FaTiktok />
+                </a>
+              </li>
+              <li className="flex">
+                <a href="https://x.com/jade_times" aria-label="x-twitter" target="_blank" className="inline-block text-lg">
+                  <FaXTwitter />
+                </a>
+              </li>
+              <li className="flex">
+                <a href="https://www.facebook.com/officialJadetimes" aria-label="facebook" target="_blank" className="inline-block text-lg">
+                  <FaFacebookF />
+                </a>
+              </li>
+              <li className="flex">
+                <a href="https://www.youtube.com/channel/UCh3RLLVBaEeBRRZBbnnVWWA" aria-label="youtube" target="_blank" className="inline-block text-lg">
+                  <FaYoutube />
+                </a>
+              </li>
+              <li className="flex">
+                <a href="https://www.instagram.com/jadetimes_official/" aria-label="instagram" target="_blank" className="inline-block text-lg">
+                  <FaInstagram />
+                </a>
+              </li>
+              <li className="flex">
+                <a href="https://www.linkedin.com/company/99353290/admin/feed/posts/" aria-label="linkedin" target="_blank" className="inline-block text-lg">
+                  <FaLinkedinIn />
+                </a>
+              </li>
+            </ul>
           </ul>
         </nav>
-        <ul className="hidden text-[0.6875rem] mt-4 lg:flex flex-wrap flex-row text-nowrap w-full justify-center">
-          <li>
-            <Link
-              to="/terms-and-conditions"
-              className="duration-300 hover:underline"
-            >
-              Terms & Conditions
-            </Link>
-            <span className="mx-2">|</span>
-          </li>
-          <li>
-            <Link to="/about" className="duration-300 hover:underline">
-              About Jadetimes
-            </Link>
-            <span className="mx-2">|</span>
-          </li>
-          <li>
-            <Link to="/privacy-policy" className="duration-300 hover:underline">
-              Privacy Policy
-            </Link>
-            <span className="mx-2">|</span>
-          </li>
-          <li>
-            <Link to="/careers" className="duration-300 hover:underline">
-              Join Jadetimes Media
-            </Link>
-            <span className="mx-2">|</span>
-          </li>
-          <li>
-            <Link to="/cookies" className="duration-300 hover:underline">
-              Cookies
-            </Link>
-            <span className="mx-2">|</span>
-          </li>
-          <li>
-            <Link to="/cookies" className="duration-300 hover:underline">
-              Get Published Online Articles
-            </Link>
-            <span className="mx-2">|</span>
-          </li>
-          <li>
-            <Link
-              to="/accessibility-help"
-              className="duration-300 hover:underline"
-            >
-              Accessibility Help
-            </Link>
-            <span className="mx-2">|</span>
-          </li>
-          <li>
-            <Link to="/faq" className="duration-300 hover:underline">
-              FAQ
-            </Link>
-            <span className="mx-2">|</span>
-          </li>
-          <li>
-            To report security issues email us at{" "}
-            <Link
-              to="mailto:info@jadetimes.com"
-              className="duration-300 hover:underline"
-            >
-              info@jadetimes.com
-            </Link>
-            <span className="mx-2">|</span>
-          </li>
-          <li>
-            <Link to="/shop" className="duration-300 hover:underline">
-              Jadetimes Shop
-            </Link>
-            <span className="mx-2">|</span>
-          </li>
-          <li>
-            <Link to="/blog" className="duration-300 hover:underline">
-              Blog
-            </Link>
-          </li>
-        </ul>
-        <p className="text-[0.6875rem] hidden text-center mt-4 lg:block">
-          The JadeTimes holds no responsibility for the content of external
-          websites. For more information, please review our policy on external
-          linking.
-        </p>
-        <div className="mt-4 text-xs text-center lg:text-[0.6875rem]">
-          &copy; 2024 Jadetimes Media LLC. All Rights Reserved
+        <div className="flex flex-col items-center lg:mt-4 lg:gap-4 2xl:flex-row 2xl:justify-between">
+          <div className="text-xs lg:text-[0.6875rem] text-nowrap lg:order-2 2xl:order-none">
+            &copy; 2024 Jadetimes Media LLC. <span className="inline-block 2xl:block">All Rights Reserved</span>
+          </div>
+          <ul className="hidden text-[0.6875rem] lg:flex flex-row flex-wrap justify-center 2xl:justify-normal 2xl:max-w-[1063px]">
+            <li>
+              <Link to="/terms-and-conditions" className="duration-300 hover:underline">
+                Terms & Conditions
+              </Link>
+              <span className="mx-2">|</span>
+            </li>
+            <li>
+              <Link to="/about" className="duration-300 hover:underline">
+                About Jadetimes
+              </Link>
+              <span className="mx-2">|</span>
+            </li>
+            <li>
+              <Link to="/privacy-policy" className="duration-300 hover:underline">
+                Privacy Policy
+              </Link>
+              <span className="mx-2">|</span>
+            </li>
+            <li>
+              <Link to="/careers" className="duration-300 hover:underline">
+                Join Jadetimes Media
+              </Link>
+              <span className="mx-2">|</span>
+            </li>
+            <li>
+              <Link to="/cookies" className="duration-300 hover:underline">
+                Cookies
+              </Link>
+              <span className="mx-2">|</span>
+            </li>
+            <li>
+              <Link to="/cookies" className="duration-300 hover:underline">
+                Get Published Online Articles
+              </Link>
+              <span className="mx-2">|</span>
+            </li>
+            <li>
+              <Link to="/accessibility-help" className="duration-300 hover:underline">
+                Accessibility Help
+              </Link>
+              <span className="mx-2">|</span>
+            </li>
+            <li>
+              <Link to="/faq" className="duration-300 hover:underline">
+                FAQ
+              </Link>
+              <span className="mx-2">|</span>
+            </li>
+            <li>To report security issues email us at</li>
+            <li>
+              <Link to="mailto:info@jadetimes.com" className="duration-300 hover:underline">
+                info@jadetimes.com
+              </Link>
+              <span className="mx-2">|</span>
+            </li>
+            <li>
+              <Link to="/shop" className="duration-300 hover:underline">
+                Jadetimes Shop
+              </Link>
+              <span className="mx-2">|</span>
+            </li>
+            <li>
+              <Link to="/blog" className="duration-300 hover:underline">
+                Blog
+              </Link>
+            </li>
+            <li>The JadeTimes holds no responsibility for the content of external websites. For more information, please review our policy on external linking.</li>
+          </ul>
         </div>
       </div>
     </footer>

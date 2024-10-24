@@ -6,7 +6,7 @@ import { navPaths } from "../routes/Paths";
 
 const Header = ({ handleToggle }) => {
   return (
-    <header className="bg-neutral-900 text-white sticky top-0 z-10">
+    <header className="bg-neutral-900 text-white sticky top-0 z-40">
       <div className="px-4 py-[1.45rem] flex items-center relative max-w-[1407px] mx-auto lg:py-[1.032rem]">
         <Link
           to="/"
@@ -30,7 +30,7 @@ const Header = ({ handleToggle }) => {
           <FaMagnifyingGlass className="text-[1.6rem] lg:text-[1.2rem]" />
         </Link>
         <MembershipBadge className="hidden lg:block lg:order-2 lg:ml-8 lg:mr-auto" />
-        <Link to="/log-in" className="hidden lg:block lg:order-4 lg:mr-6 lg:text-right lg:text-[0.813rem] lg:ml-auto">Log In</Link>
+        <Link to="/log-in" className="hidden lg:block lg:order-4 lg:mr-8 lg:text-right lg:text-[0.813rem] lg:ml-auto">Log In</Link>
       </div>
       <nav className="hidden bg-neutral-50 text-[#111111] lg:block">
         <ul className="flex flex-row flex-wrap gap-7 p-3 px-4 justify-center text-[0.813rem] font-semibold">
