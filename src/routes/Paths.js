@@ -11,37 +11,37 @@ export const navPaths = [
     submenus: [
       {
         key: 0,
-        to: "/news/israel-gaza-war",
+        to: "/israel-gaza-war",
         name: "Israel-Gaza War",
       },
       {
         key: 1,
-        to: "/news/ukraine-russia-war",
+        to: "/ukraine-russia-war",
         name: "Ukraine-Russia War",
       },
       {
         key: 2,
-        to: "/news/usa",
+        to: "/usa",
         name: "USA",
       },
       {
         key: 3,
-        to: "/news/europe",
+        to: "/europe",
         name: "Europe",
       },
       {
         key: 4,
-        to: "/news/australia",
+        to: "/australia",
         name: "Australia",
       },
       {
         key: 5,
-        to: "/news/africa",
+        to: "/africa",
         name: "Africa",
       },
       {
         key: 6,
-        to: "/news/asia",
+        to: "/asia",
         name: "Asia",
       },
     ],

@@ -22,14 +22,12 @@ const App = () => {
       <Header handleToggle={handleToggle} />
       <Aside handleToggle={handleToggle} stopHandleToggle={stopHandleToggle} isNav={toggleMenu} isAside={toggleMenu} />
       <main className="2xl:overflow-x-hidden">
-        <Suspense fallback>
-          <ScrollToTop />
-          <Routes>
-            {Pages.map((page) => (
-              <Route key={page.id} path={page.path} element={page.component} exact={page.exact} />
-            ))}
-          </Routes>
-        </Suspense>
+        <ScrollToTop />
+        <Routes>
+          {Pages.map((page) => (
+            <Route key={page.id} path={page.path} element={<Suspense fallback={<div>Loading...</div>}>{page.component}</Suspense>} exact={page.exact} />
+          ))}
+        </Routes>
       </main>
       <Footer />
     </>

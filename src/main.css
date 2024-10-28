@@ -12,6 +12,7 @@
   border: none;
   color: unset;
   font: unset;
+  /* outline: 1px solid lime; */
 }
 
 *:focus-visible {
@@ -41,6 +42,10 @@ img {
 /* Active class */
 header .active {
   color: #FF322E;
+}
+
+.sub-page .active {
+  border-bottom: 2px solid #111111;
 }
 
 /* Custom classes */

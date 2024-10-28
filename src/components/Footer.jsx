@@ -76,7 +76,7 @@ const Footer = () => {
               </li>
             ))}
             <li className="gap-4">
-              <Link className="duration-300 hover:underline">Israel-Gaza War</Link>
+              <Link to="/israel-gaza-war" className="duration-300 hover:underline">Israel-Gaza War</Link>
             </li>
             <li className="gap-4">
               <Link className="duration-300 hover:underline">Ukraine-Russia War</Link>

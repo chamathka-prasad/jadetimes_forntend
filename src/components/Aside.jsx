@@ -86,7 +86,7 @@ const Aside = ({
                 >
                   {path.name}
                 </Link>
-                {path?.submenus && (
+                {path.submenus && (
                   <button
                     className="pl-2 lg:opacity-0 lg:focus-visible:opacity-100"
                     onClick={() => handleToggleSubMenu(path.key)}
@@ -100,7 +100,7 @@ const Aside = ({
                     )}
                   </button>
                 )}
-                {toggleSubMenu === path.key && path?.submenus && (
+                {toggleSubMenu === path.key && path.submenus && (
                   <ul className="w-full text-[#8B8B8B] lg:absolute lg:left-[17.8rem] lg:bg-neutral-900">
                     {path.submenus.map((submenu) => (
                       <li
