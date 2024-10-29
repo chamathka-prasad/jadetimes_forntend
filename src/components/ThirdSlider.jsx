@@ -72,7 +72,7 @@ const ThirdSlider = ({ articles, className = "" }) => {
                   <div className="text-white md:w-1/2">
                     <a
                       href="https://www.youtube.com/@JadeTimes"
-                      className="hidden tracking-widest md:bg-neutral-800 md:block md:w-fit md:mb-4 md:text-nowrap md:uppercase md:text-[0.625rem] md:px-2 md:py-1 md:duration-300 md:hover:bg-white md:hover:text-black"
+                      className="hidden md:tracking-widest md:bg-neutral-800 md:block md:w-fit md:mb-4 md:text-nowrap md:uppercase md:text-[0.625rem] md:px-2 md:py-1 lg:duration-300 lg:hover:bg-white lg:hover:text-black"
                     >
                       Youtube updates
                     </a>
@@ -84,13 +84,13 @@ const ThirdSlider = ({ articles, className = "" }) => {
                     <div className="flex flex-row gap-4">
                       <a
                         href="https://www.youtube.com/@JadeTimes"
-                        className="bg-neutral-800 block w-fit text-nowrap uppercase text-sm px-3 py-2 duration-300 md:hidden hover:bg-white hover:text-black"
+                        className="bg-neutral-800 block w-fit text-nowrap uppercase text-sm px-3 py-2 md:hidden"
                       >
                         Youtube updates
                       </a>
                       <Link
                         href="https://www.jadetimes.com/post/shocking-revelations-mr-neomal-perera-on-hidden-influences-in-sri-lanka-s-political-sphere"
-                        className="flex w-fit items-center text-sm capitalize text-nowrap duration-300 hover:opacity-50"
+                        className="flex w-fit items-center text-sm capitalize text-nowrap lg:duration-300 lg:hover:opacity-50"
                         aria-label="read more about this article"
                       >
                         Read more

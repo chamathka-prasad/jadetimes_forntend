@@ -10,7 +10,6 @@ const MainArticles = ({ articles }) => {
         <article className="relative p-4 border-b border-b-[#8B8B8B] mb-4 md:mb-0 md:p-0 md:grid md:grid-cols-2 md:border md:border-neutral-300 md:col-span-2 lg:col-[13_span_/_13_span] lg:row-start-2">
           <UpdatesBadge className="block px-3 py-2 text-sm absolute -bottom-9 left-1/2 -translate-x-1/2 -translate-y-1/2 md:hidden">Latest Updates</UpdatesBadge>
           <div className="relative">
-            {/* <UpdatesBadge className="block px-3 py-2 text-sm absolute -bottom-9 left-1/2 -translate-x-1/2 -translate-y-1/2 md:hidden">Latest Updates</UpdatesBadge> */}
             <PictureLink link={articles[0].link}>
               <img src={articles[0].image} alt={articles[0].title} className="object-cover object-center md:h-full" />
             </PictureLink>

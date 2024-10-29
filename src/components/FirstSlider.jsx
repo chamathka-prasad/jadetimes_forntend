@@ -7,7 +7,7 @@ const FirstSlider = ({ articles, className }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollRef = useRef(null);
 
-  function nextSlide() {
+  function handleNextSlide() {
     scrollRef.current.scrollBy({
       top: 0,
       left: scrollRef.current.clientWidth,
@@ -18,7 +18,7 @@ const FirstSlider = ({ articles, className }) => {
     });
   }
 
-  function prevSlide() {
+  function handlePreviousSlide() {
     scrollRef.current.scrollBy({
       top: 0,
       left: -scrollRef.current.clientWidth,
@@ -74,14 +74,14 @@ const FirstSlider = ({ articles, className }) => {
         </div>
         {currentIndex !== articles.length - 1 && <button
           className="text-neutral-900 absolute top-1/3 right-4"
-          onClick={nextSlide}
+          onClick={handleNextSlide}
           aria-label="next slide"
         >
           <BsChevronRight size={35} />
         </button>}
         {currentIndex !== 0 && <button
           className="text-neutral-900 absolute top-1/3 left-4"
-          onClick={prevSlide}
+          onClick={handlePreviousSlide}
           aria-label="previous slide"
         >
           <BsChevronLeft size={35} />

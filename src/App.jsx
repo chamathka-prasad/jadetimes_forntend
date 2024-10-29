@@ -9,18 +9,14 @@ import ScrollToTop from "./components/ScrollToTop";
 const App = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
-  function handleToggle() {
+  function handleToggleMenu() {
     setToggleMenu((prevToggleMenu) => !prevToggleMenu);
-  }
-
-  function stopHandleToggle(event) {
-    event.stopPropagation();
   }
 
   return (
     <>
-      <Header handleToggle={handleToggle} />
-      <Aside handleToggle={handleToggle} stopHandleToggle={stopHandleToggle} isNav={toggleMenu} isAside={toggleMenu} />
+      <Header onToggleMenu={handleToggleMenu} />
+      <Aside onToggleMenu={handleToggleMenu} isToggleMenu={toggleMenu} />
       <main className="2xl:overflow-x-hidden">
         <ScrollToTop />
         <Routes>

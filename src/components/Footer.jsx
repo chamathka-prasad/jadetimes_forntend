@@ -1,10 +1,17 @@
-import React from "react";
+import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import Logo from "/footer-logo.png";
 import { FaWhatsapp, FaTiktok, FaXTwitter, FaYoutube, FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa6";
 import { navPaths } from "../routes/Paths";
 
 const Footer = () => {
+  const [focused, setFocused] = useState(false);
+  const emailRef = useRef(null);
+  function handleSubmit(event) {
+    event.preventDefault();
+    setFocused(false);
+    emailRef.current.value = "";
+  }
   return (
     <footer className="border-t border-t-black">
       <div className="max-w-[1407px] mx-auto p-4">
@@ -37,37 +44,43 @@ const Footer = () => {
               </li>
             </ul>
             <div className="text-sm flex flex-row items-center justify-center max-w-lg mx-auto whitespace-nowrap border-t border-t-[#17171724] pt-4 lg:text-xs lg:border-none lg:pt-0 lg:mt-3">
-              <Link to="/advertise-with-us" className="hover:underline">
+              <Link to="/advertise-with-us" className="lg:hover:underline">
                 Advertise with us
               </Link>
               <span className="w-[1px] h-3 bg-neutral-800 mx-2"></span>
-              <Link to="/talk-to-us" className="hover:underline">
+              <Link to="/talk-to-us" className="lg:hover:underline">
                 Talk to us
               </Link>
             </div>
           </div>
-          <form className="flex flex-col items-center gap-4 lg:flex-row">
+          <form className="flex flex-col items-center gap-4 lg:flex-row" onSubmit={handleSubmit}>
             <label htmlFor="email" className="uppercase block text-center text-lg lg:text-[0.8125rem] text-nowrap lg:mb-0">
               Sign up for our newsletter
             </label>
             <div className="flex flex-row gap-[1px] max-w-lg w-full">
               <input
-                className="text-sm w-full py-1 px-5 border border-neutral-400 hover:bg-neutral-300 hover:border-neutral-300 hover:border-b-2 hover:border-b-black lg:w-96 focus:bg-neutral-300 focus:border-neutral-300 focus:border-b-2 focus:border-b-black focus-visible:outline-none"
+                className={`text-sm w-full py-1 px-5 border border-neutral-300 focus-visible:outline-none lg:w-96 focus:bg-neutral-300 focus:border-b-2 focus:border-b-black lg:hover:bg-neutral-300 lg:hover:border-b-2 lg:hover:border-b-black ${focused ? "bg-neutral-300 border-b-2 border-b-[#FF322E] focus:border-b-[#FF322E]" : ""}`}
                 id="email"
                 name="email"
                 type="email"
                 placeholder="Enter your email"
-                autoComplete="off"
+                autoComplete="on"
+                pattern="^.+@.+\.[a-zA-Z]{2,63}$"
                 required
+                onFocus={() => setFocused(true)}
+                ref={emailRef}
               />
-              <button className="uppercase bg-neutral-800 text-white text-xs border border-neutral-800 duration-300 py-[0.625rem] px-3 hover:bg-[#FF322E] hover:border-[#FF322E] lg:px-9">
+              <button
+                type="submit"
+                className="uppercase bg-neutral-800 text-white text-xs border border-neutral-800 duration-300 py-[0.625rem] px-3 lg:hover:bg-[#FF322E] lg:hover:border-[#FF322E] lg:px-9"
+              >
                 Subscribe
               </button>
             </div>
           </form>
         </div>
-        <nav className="hidden lg:block border-t border-b border-neutral-200 py-4">
-          <ul className="text-xs text-[#515151] flex flex-row items-center justify-center gap-3 flex-wrap font-semibold">
+        <nav className="hidden lg:block border-t border-b border-neutral-200 py-4 text-[#515151] 2xl:flex 2xl:items-center 2xl:justify-center 2xl:gap-3">
+          <ul className="text-xs flex flex-row items-center justify-center gap-3 flex-wrap font-semibold">
             {navPaths.map((path) => (
               <li key={path.key} className="gap-4 first:hidden">
                 <Link to={path.to} className="duration-300 hover:underline">
@@ -76,7 +89,9 @@ const Footer = () => {
               </li>
             ))}
             <li className="gap-4">
-              <Link to="/israel-gaza-war" className="duration-300 hover:underline">Israel-Gaza War</Link>
+              <Link to="/israel-gaza-war" className="duration-300 hover:underline">
+                Israel-Gaza War
+              </Link>
             </li>
             <li className="gap-4">
               <Link className="duration-300 hover:underline">Ukraine-Russia War</Link>
@@ -99,7 +114,8 @@ const Footer = () => {
             <li className="gap-4">
               <Link className="duration-300 hover:underline">WWE</Link>
             </li>
-            <ul className="flex flex-row gap-3 w-full justify-center 2xl:w-auto 2xl:justify-normal">
+          </ul>
+          <ul className="flex flex-row gap-3 w-full justify-center mt-3 2xl:w-auto 2xl:justify-normal 2xl:mt-0">
               <li className="flex">
                 <a href="https://www.whatsapp.com/channel/0029VaevKQj35fM4n9S7ub1c" aria-label="whatsapp" target="_black" className="inline-block text-lg">
                   <FaWhatsapp />
@@ -136,7 +152,6 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-          </ul>
         </nav>
         <div className="flex flex-col items-center lg:mt-4 lg:gap-4 2xl:flex-row 2xl:justify-between">
           <div className="text-xs lg:text-[0.6875rem] text-nowrap lg:order-2 2xl:order-none">
