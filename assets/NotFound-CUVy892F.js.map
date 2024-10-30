@@ -1,0 +1,1 @@
+{"version":3,"file":"NotFound-CUVy892F.js","sources":["../../src/pages/NotFound.jsx"],"sourcesContent":["import React from \"react\";\n\nconst NotFound = () => {\n  return <h1 className=\"text-4xl text-center py-20\">Not Found</h1>;\n};\n\nexport default NotFound;\n"],"names":["NotFound","jsx"],"mappings":"wCAEA,MAAMA,EAAW,IACPC,EAAAA,IAAA,KAAA,CAAG,UAAU,6BAA6B,SAAS,YAAA"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"Login-D1OJNVPS.js","sources":["../../src/pages/Login.jsx"],"sourcesContent":["import React from \"react\";\n\nconst Login = () => {\n  return <h1 className=\"text-4xl text-center py-20\">Login</h1>;\n};\n\nexport default Login;\n"],"names":["Login","jsx"],"mappings":"wCAEA,MAAMA,EAAQ,IACJC,EAAAA,IAAA,KAAA,CAAG,UAAU,6BAA6B,SAAK,QAAA"}
