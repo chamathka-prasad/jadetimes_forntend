@@ -63,7 +63,7 @@ const ThirdSlider = ({ articles, className = "" }) => {
                   <iframe
                     title={article.title}
                     width="100%"
-                    src="https://www.youtube.com/embed/?autoplay=0&mute=0&controls=1&loop=0&origin=https://www.jadetimes.com&playsinline=1&enablejsapi=1"
+                    src="https://www.youtube.com/embed/?autoplay=0&mute=0&controls=1&loop=0&rel=0&origin=https://www.jadetimes.com&playsinline=1&enablejsapi=1"
                     className="aspect-video md:w-1/2"
                     sandbox="allow-same-origin allow-scripts allow-popups allow-presentation"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
