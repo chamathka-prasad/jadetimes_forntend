@@ -7,32 +7,21 @@ const useYouTube = () => {
   const apiKey = "AIzaSyDz8pmSqNKcUC59JtwChWyfLPPNvsAfC38";
   const playlistId = "PL-5p6ii0pvVHcd_swLVii3Ry0mQBH4IEj";
 
-  const fetchVideos = async (pageToken = "", maxResults = 10) => {
+  const fetchVideos = async (pageToken = "") => {
     const allVideos = [];
-    const uniqueVideos = new Set();
 
     try {
       let response;
       do {
-        response = await fetch(
-          `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&playlistId=${playlistId}&key=${apiKey}&pageToken=${pageToken}&maxResults=${maxResults}`
-        );
+        response = await fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&playlistId=${playlistId}&key=${apiKey}&pageToken=${pageToken}`);
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 
         const data = await response.json();
-        const videoItems = data.items
-          .map((item) => ({
-            id: item.snippet.resourceId.videoId,
-            publishedAt: item.contentDetails.videoPublishedAt,
-            title: item.snippet.title,
-          }))
-          .filter((item) => {
-            if (!uniqueVideos.has(item.id)) {
-              uniqueVideos.add(item.id);
-              return true;
-            }
-            return false;
-          });
+        const videoItems = data.items.map((item) => ({
+          id: item.snippet.resourceId.videoId,
+          publishedAt: item.contentDetails.videoPublishedAt,
+          title: item.snippet.title,
+        }));
 
         allVideos.push(...videoItems);
         pageToken = data.nextPageToken;

@@ -1,23 +1,29 @@
 import { lazy } from "react";
 
 const Home = lazy(() => import("../pages/Home"));
-const News = lazy(() => import("../pages/News"));
+const News = lazy(() => import("../pages/news/News"));
+const NewsHome = lazy(() => import("../pages/news/NewsHome"));
+const IsraelGazaWar = lazy(() => import("../pages/news/IsraelGazaWar"));
+const UkraineRussiaWar = lazy(() => import("../pages/news/UkraineRussiaWar"));
+const Usa = lazy(() => import("../pages/news/Usa"));
+const Europe = lazy(() => import("../pages/news/Europe"));
+const Australia = lazy(() => import("../pages/news/Australia"));
+const Africa = lazy(() => import("../pages/news/Africa"));
+const Asia = lazy(() => import("../pages/news/Asia"));
 const Business = lazy(() => import("../pages/Business"));
-const Sports = lazy(() => import("../pages/Sports"));
+const Sports = lazy(() => import("../pages/sports/Sports"));
+const SportsHome = lazy(() => import("../pages/sports/SportsHome"));
+const Wwe = lazy(() => import("../pages/sports/Wwe"));
+const Cricket = lazy(() => import("../pages/sports/Cricket"));
 const Travel = lazy(() => import("../pages/Travel"));
 const Culture = lazy(() => import("../pages/Culture"));
 const Entertainment = lazy(() => import("../pages/Entertainment"));
-const Innovation = lazy(() => import("../pages/Innovation"));
+const Innovation = lazy(() => import("../pages/innovations/Innovation"));
+const InnovationHome = lazy(() => import("../pages/innovations/InnovationHome"));
+const Technology = lazy(() => import("../pages/innovations/Technology"));
 const Political = lazy(() => import("../pages/Political"));
 const Universe = lazy(() => import("../pages/Universe"));
 const Fashion = lazy(() => import("../pages/Fashion"));
-const IsraelGazaWar = lazy(() => import("../pages/IsraelGazaWar"));
-const UkraineRussiaWar = lazy(() => import("../pages/UkraineRussiaWar"));
-const Usa = lazy(() => import("../pages/Usa"));
-const Europe = lazy(() => import("../pages/Europe"));
-const Australia = lazy(() => import("../pages/Australia"));
-const Africa = lazy(() => import("../pages/Africa"));
-const Asia = lazy(() => import("../pages/Asia"));
 const Search = lazy(() => import("../pages/Search"));
 const Login = lazy(() => import("../pages/Login"));
 const Membership = lazy(() => import("../pages/Membership"));
@@ -30,12 +36,53 @@ const Pages = [
     id: 0,
     path: "/",
     component: <Home />,
-    exact: true,
   },
   {
     id: 1,
     path: "/news",
     component: <News />,
+    subpages: [
+      {
+        id: 0,
+        path: "/news",
+        component: <NewsHome />,
+      },
+      {
+        id: 1,
+        path: "israel-gaza-war",
+        component: <IsraelGazaWar />,
+      },
+      {
+        id: 2,
+        path: "ukraine-russia-war",
+        component: <UkraineRussiaWar />,
+      },
+      {
+        id: 3,
+        path: "usa",
+        component: <Usa />,
+      },
+      {
+        id: 4,
+        path: "europe",
+        component: <Europe />,
+      },
+      {
+        id: 5,
+        path: "australia",
+        component: <Australia />,
+      },
+      {
+        id: 6,
+        path: "africa",
+        component: <Africa />,
+      },
+      {
+        id: 7,
+        path: "asia",
+        component: <Asia />,
+      },
+    ],
   },
   {
     id: 2,
@@ -46,6 +93,23 @@ const Pages = [
     id: 3,
     path: "/sports",
     component: <Sports />,
+    subpages: [
+      {
+        id: 0,
+        path: "/sports",
+        component: <SportsHome />,
+      },
+      {
+        id: 1,
+        path: "wwe",
+        component: <Wwe />,
+      },
+      {
+        id: 2,
+        path: "cricket",
+        component: <Cricket />,
+      },
+    ],
   },
   {
     id: 4,
@@ -66,6 +130,18 @@ const Pages = [
     id: 7,
     path: "/innovation",
     component: <Innovation />,
+    subpages: [
+      {
+        id: 0,
+        path: "/innovation",
+        component: <InnovationHome />,
+      },
+      {
+        id: 1,
+        path: "technology",
+        component: <Technology />,
+      },
+    ],
   },
   {
     id: 8,
@@ -106,41 +182,6 @@ const Pages = [
     id: 15,
     path: "/talk-to-us",
     component: <TalkToUs />,
-  },
-  {
-    id: 16,
-    path: "/israel-gaza-war",
-    component: <IsraelGazaWar />,
-  },
-  {
-    id: 17,
-    path: "/ukraine-russia-war",
-    component: <UkraineRussiaWar />,
-  },
-  {
-    id: 18,
-    path: "/usa",
-    component: <Usa />,
-  },
-  {
-    id: 19,
-    path: "/europe",
-    component: <Europe />,
-  },
-  {
-    id: 20,
-    path: "/australia",
-    component: <Australia />,
-  },
-  {
-    id: 21,
-    path: "/africa",
-    component: <Africa />,
-  },
-  {
-    id: 22,
-    path: "/asia",
-    component: <Asia />,
   },
   {
     id: 30,

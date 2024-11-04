@@ -135,10 +135,10 @@ const SecondSlider = () => {
                     backgroundImage: `url("https://i.ytimg.com/vi/${article.id}/mqdefault.jpg")`,
                   }}
                 >
-                  <div className={`w-full h-full duration-300 group-hover:bg-[#00000080] focus-within:bg-[#00000080] ${currentVideo.index === article.index ? "bg-[#00000080]" : ""}`}>
+                  {
                     <div
-                      className={`text-white relative h-full flex items-center justify-center duration-300 group-hover:opacity-100 focus-within:opacity-100 ${
-                        isPlaying && currentVideo.index === article.index ? "opacity-100" : "opacity-0"
+                      className={`w-full h-full flex items-center justify-center text-white bg-[#000000d1] duration-300 ${
+                        currentVideo.index === article.index ? "opacity-100" : "opacity-0 group-focus-within:opacity-100 group-hover:opacity-100"
                       }`}
                     >
                       {isPlaying && currentVideo.index === article.index ? (
@@ -155,7 +155,7 @@ const SecondSlider = () => {
                         </button>
                       )}
                     </div>
-                  </div>
+                  }
                 </div>
                 <h5 className="line-clamp-1 mt-2">{article.title}</h5>
                 <div className="text-[#17171796]">Jadetimes</div>

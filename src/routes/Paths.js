@@ -11,37 +11,37 @@ export const navPaths = [
     submenus: [
       {
         key: 0,
-        to: "/israel-gaza-war",
+        to: "/news/israel-gaza-war",
         name: "Israel-Gaza War",
       },
       {
         key: 1,
-        to: "/ukraine-russia-war",
+        to: "ukraine-russia-war",
         name: "Ukraine-Russia War",
       },
       {
         key: 2,
-        to: "/usa",
+        to: "usa",
         name: "USA",
       },
       {
         key: 3,
-        to: "/europe",
+        to: "europe",
         name: "Europe",
       },
       {
         key: 4,
-        to: "/australia",
+        to: "australia",
         name: "Australia",
       },
       {
         key: 5,
-        to: "/africa",
+        to: "africa",
         name: "Africa",
       },
       {
         key: 6,
-        to: "/asia",
+        to: "asia",
         name: "Asia",
       },
     ],
@@ -58,12 +58,12 @@ export const navPaths = [
     submenus: [
       {
         key: 0,
-        to: "/sports/wwe",
+        to: "wwe",
         name: "WWE",
       },
       {
         key: 1,
-        to: "/sports/cricket",
+        to: "cricket",
         name: "Cricket",
       },
     ],
@@ -90,7 +90,7 @@ export const navPaths = [
     submenus: [
       {
         key: 0,
-        to: "/innovation/technology",
+        to: "technology",
         name: "Technology",
       },
     ],
@@ -110,22 +110,19 @@ export const navPaths = [
     to: "/fashion",
     name: "Fashion",
   },
-];
-
-export const desktopNavPaths = [
   {
     key: 11,
-    to: "/",
+    to: "/membership",
     name: "Plans & Pricing",
   },
   {
     key: 12,
-    to: "/",
+    to: "/all-products",
     name: "Shop",
   },
   {
     key: 13,
-    to: "/",
+    to: "/copy-of-about-jadetimes",
     name: "World Journalist Rankings",
   },
 ];

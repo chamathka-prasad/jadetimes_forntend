@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 
-const MembershipBadge = ({className}) => {
+const MembershipBadge = ({className, onClick}) => {
   return (
     <Link
       to="/membership"
-      className={`bg-[#FF322E] font-semibold text-[0.625rem] py-[0.3rem] px-[0.87rem] whitespace-nowrap tracking-wide text-white border border-[#FF322E] duration-300 hover:bg-white hover:text-black hover:border-neutral-900 ${className}`}
+      className={`bg-[#FF322E] py-[0.3rem] px-[0.87rem] whitespace-nowrap tracking-wide text-white border border-[#FF322E] lg:duration-300 lg:hover:bg-white lg:hover:text-black lg:hover:border-neutral-900 ${className}`}
+      onClick={onClick}
     >
       Subscribe : 49.99/Year
     </Link>

@@ -81,38 +81,38 @@ const Footer = () => {
         </div>
         <nav className="hidden lg:block border-t border-b border-neutral-200 py-4 text-[#515151] 2xl:flex 2xl:items-center 2xl:justify-center 2xl:gap-3">
           <ul className="text-xs flex flex-row items-center justify-center gap-3 flex-wrap font-semibold">
-            {navPaths.map((path) => (
-              <li key={path.key} className="gap-4 first:hidden">
+            {navPaths.slice(1, 11).map((path) => (
+              <li key={path.key} className="gap-4">
                 <Link to={path.to} className="duration-300 hover:underline">
                   {path.name}
                 </Link>
               </li>
             ))}
             <li className="gap-4">
-              <Link to="/israel-gaza-war" className="duration-300 hover:underline">
+              <Link to="/news/israel-gaza-war" className="duration-300 hover:underline">
                 Israel-Gaza War
               </Link>
             </li>
             <li className="gap-4">
-              <Link className="duration-300 hover:underline">Ukraine-Russia War</Link>
+              <Link to="/news/ukraine-russia-war" className="duration-300 hover:underline">Ukraine-Russia War</Link>
             </li>
             <li className="gap-4">
-              <Link className="duration-300 hover:underline">USA</Link>
+              <Link to="/news/usa" className="duration-300 hover:underline">USA</Link>
             </li>
             <li className="gap-4">
-              <Link className="duration-300 hover:underline">Europe</Link>
+              <Link to="/news/europe" className="duration-300 hover:underline">Europe</Link>
             </li>
             <li className="gap-4">
-              <Link className="duration-300 hover:underline">Australia</Link>
+              <Link to="/news/australia" className="duration-300 hover:underline">Australia</Link>
             </li>
             <li className="gap-4">
-              <Link className="duration-300 hover:underline">Africa</Link>
+              <Link to="/news/africa" className="duration-300 hover:underline">Africa</Link>
             </li>
             <li className="gap-4">
-              <Link className="duration-300 hover:underline">Asia</Link>
+              <Link to="/news/asia" className="duration-300 hover:underline">Asia</Link>
             </li>
             <li className="gap-4">
-              <Link className="duration-300 hover:underline">WWE</Link>
+              <Link to="/sports/wwe" className="duration-300 hover:underline">WWE</Link>
             </li>
           </ul>
           <ul className="flex flex-row gap-3 w-full justify-center mt-3 2xl:w-auto 2xl:justify-normal 2xl:mt-0">

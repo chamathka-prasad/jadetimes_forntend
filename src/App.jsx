@@ -1,29 +1,31 @@
-import React, { Suspense, useState } from "react";
+import React, { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
+
 import Header from "./components/Header";
 import Aside from "./components/Aside";
 import Footer from "./components/Footer";
+
 import Pages from "./routes/Pages";
-import ScrollToTop from "./components/ScrollToTop";
+
+import useOpen from "./hooks/useOpen";
 
 const App = () => {
-  const [toggleMenu, setToggleMenu] = useState(false);
-
-  function handleToggleMenu() {
-    setToggleMenu((prevToggleMenu) => !prevToggleMenu);
-  }
+  const [isMenu, handleMenuOpen, handleMenuClose] = useOpen();
 
   return (
     <>
-      <Header onToggleMenu={handleToggleMenu} />
-      <Aside onToggleMenu={handleToggleMenu} isToggleMenu={toggleMenu} />
+      <Header handleMenuOpen={handleMenuOpen} />
+      <Aside handleMenuClose={handleMenuClose} isMenu={isMenu} />
       <main className="2xl:overflow-x-hidden">
-        <ScrollToTop />
-        <Routes>
-          {Pages.map((page) => (
-            <Route key={page.id} path={page.path} element={<Suspense fallback={<div>Loading...</div>}>{page.component}</Suspense>} exact={page.exact} />
-          ))}
-        </Routes>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            {Pages.map((page) => (
+              <Route key={page.id} path={page.path} element={page.component}>
+                {page.subpages && page.subpages.map((subpage) => <Route key={subpage.id} path={subpage.path} element={subpage.component} />)}
+              </Route>
+            ))}
+          </Routes>
+        </Suspense>
       </main>
       <Footer />
     </>
