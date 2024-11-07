@@ -2,7 +2,10 @@ import { Link } from "react-router-dom";
 import { useState, useRef } from "react";
 import { FaChevronRight } from "react-icons/fa6";
 
-const ThirdSlider = ({ articles, className = "" }) => {
+import useWindowSize from "../hooks/useWindowSize";
+
+const ThirdSlider = ({ articles, className }) => {
+  const screen = useWindowSize();
   const [currentIndex, setCurrentIndex] = useState(0);
   const touchStartRef = useRef(0);
   const touchEndRef = useRef(0);
@@ -55,7 +58,7 @@ const ThirdSlider = ({ articles, className = "" }) => {
             aria-hidden={index !== currentIndex}
           >
             <div
-              className={`bg-gradient-to-t from-black to-transparent relative ${currentIndex !== index ? "invisible opacity-0" : ""}`}
+              className={`bg-gradient-to-t from-black to-transparent relative ${currentIndex !== index && "invisible opacity-0"}`}
               style={{ transition: `visibility 1s ease-in-out, opacity 1s ease-in-out` }}
             >
               <div className="h-[800px] flex flex-col p-4">
@@ -63,36 +66,33 @@ const ThirdSlider = ({ articles, className = "" }) => {
                   <iframe
                     title={article.title}
                     width="100%"
-                    src="https://www.youtube.com/embed/?autoplay=0&mute=0&controls=1&loop=0&rel=0&origin=https://www.jadetimes.com&playsinline=1&enablejsapi=1"
+                    src="https://www.youtube.com/embed/?autoplay=0&mute=0&controls=1&loop=0&rel=0&origin=https://www.jadetimes.com&playsinline=1"
                     className="aspect-video md:w-1/2"
                     sandbox="allow-same-origin allow-scripts allow-popups allow-presentation"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     loading="lazy"
                   ></iframe>
                   <div className="text-white md:w-1/2">
-                    <a
-                      href="https://www.youtube.com/@JadeTimes"
-                      className="hidden md:tracking-widest md:bg-neutral-800 md:block md:w-fit md:mb-4 md:text-nowrap md:uppercase md:text-[0.625rem] md:px-2 md:py-1 lg:duration-300 lg:hover:bg-white lg:hover:text-black"
-                    >
-                      Youtube updates
-                    </a>
+                    {screen !== "small" && (
+                      <a
+                        href="https://www.youtube.com/@JadeTimes"
+                        className="md:tracking-widest md:bg-neutral-800 md:block md:w-fit md:mb-4 md:text-nowrap md:uppercase md:text-[0.625rem] md:px-2 md:py-1 lg:duration-300 lg:hover:bg-white lg:hover:text-black"
+                      >
+                        Youtube updates
+                      </a>
+                    )}
                     <h3 className="text-sm mb-3 lg:text-base">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur, autem</h3>
                     <p className="text-xs mb-4">
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam facere eos minus, non officia beatae molestiae laudantium ullam quasi nisi corporis voluptates hic vitae
                       mollitia iste et itaque alias repellendus consectetur. Nisi tempore iste minima nam nostrum nulla repudiandae perspiciatis.
                     </p>
                     <div className="flex flex-row gap-4">
-                      <a
-                        href="https://www.youtube.com/@JadeTimes"
-                        className="bg-neutral-800 block w-fit text-nowrap uppercase text-sm px-3 py-2 md:hidden"
-                      >
-                        Youtube updates
-                      </a>
-                      <Link
-                        href="https://www.jadetimes.com/post/shocking-revelations-mr-neomal-perera-on-hidden-influences-in-sri-lanka-s-political-sphere"
-                        className="flex w-fit items-center text-sm capitalize text-nowrap lg:duration-300 lg:hover:opacity-50"
-                        aria-label="read more about this article"
-                      >
+                      {screen === "small" && (
+                        <a href="https://www.youtube.com/@JadeTimes" className="bg-neutral-800 block w-fit text-nowrap uppercase text-sm px-3 py-2">
+                          Youtube updates
+                        </a>
+                      )}
+                      <Link href={article.link} className="flex w-fit items-center text-sm capitalize text-nowrap lg:duration-300 lg:hover:opacity-50" aria-label="read more about this article">
                         Read more
                         <FaChevronRight className="inline" />
                       </Link>

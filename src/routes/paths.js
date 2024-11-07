@@ -16,32 +16,32 @@ export const navPaths = [
       },
       {
         key: 1,
-        to: "ukraine-russia-war",
+        to: "/news/ukraine-russia-war",
         name: "Ukraine-Russia War",
       },
       {
         key: 2,
-        to: "usa",
+        to: "/news/usa",
         name: "USA",
       },
       {
         key: 3,
-        to: "europe",
+        to: "/news/europe",
         name: "Europe",
       },
       {
         key: 4,
-        to: "australia",
+        to: "/news/australia",
         name: "Australia",
       },
       {
         key: 5,
-        to: "africa",
+        to: "/news/africa",
         name: "Africa",
       },
       {
         key: 6,
-        to: "asia",
+        to: "/news/asia",
         name: "Asia",
       },
     ],
@@ -58,12 +58,12 @@ export const navPaths = [
     submenus: [
       {
         key: 0,
-        to: "wwe",
+        to: "/sports/wwe",
         name: "WWE",
       },
       {
         key: 1,
-        to: "cricket",
+        to: "/sports/cricket",
         name: "Cricket",
       },
     ],
@@ -90,7 +90,7 @@ export const navPaths = [
     submenus: [
       {
         key: 0,
-        to: "technology",
+        to: "/innovation/technology",
         name: "Technology",
       },
     ],
@@ -125,36 +125,33 @@ export const navPaths = [
     to: "/copy-of-about-jadetimes",
     name: "World Journalist Rankings",
   },
-];
-
-export const mobileNavPaths = [
   {
-    key: 0,
+    key: 14,
     to: "/",
     name: "Advertise with Jadetimes",
   },
   {
-    key: 1,
+    key: 15,
     to: "/",
     name: "Report a Issue",
   },
   {
-    key: 2,
+    key: 16,
     to: "/",
     name: "Contact Us",
   },
   {
-    key: 3,
+    key: 17,
     to: "/",
     name: "Careers at Jadetimes",
   },
   {
-    key: 4,
+    key: 18,
     to: "/",
     name: "Privacy Policy",
   },
   {
-    key: 5,
+    key: 19,
     to: "/",
     name: "Terms & Conditions",
   },

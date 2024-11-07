@@ -1,17 +1,17 @@
 import { useState } from "react";
 
 function useOpen() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [value, setValue] = useState(false);
 
-  function handleOnTrue() {
-    setIsOpen(true);
+  function handleTrue() {
+    setValue(true);
   }
 
-  function handleOnFalse() {
-    setIsOpen(false);
+  function handleFalse() {
+    setValue(false);
   }
 
-  return [isOpen, handleOnTrue, handleOnFalse];
+  return [value, handleTrue, handleFalse];
 }
 
 export default useOpen;

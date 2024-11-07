@@ -2,15 +2,15 @@ import { NavLink, Link } from "react-router-dom";
 import { FaBarsStaggered, FaMagnifyingGlass } from "react-icons/fa6";
 
 import MembershipBadge from "./MembershipBadge";
-import Login from "./Login";
+import LoginButton from "./LoginButton";
 
 import Logo from "/logo-white.png";
 
-import { navPaths } from "../routes/Paths";
+import { navPaths } from "../routes/paths";
 
 import useWindowSize from "../hooks/useWindowSize";
 
-const Header = ({ handleMenuOpen }) => {
+const Header = ({ handleMenuOpen, handleLoginOpen }) => {
   const screen = useWindowSize();
   return (
     <header className="bg-neutral-900 text-white sticky top-0 z-40">
@@ -25,7 +25,7 @@ const Header = ({ handleMenuOpen }) => {
           <FaMagnifyingGlass className="text-[1.6rem] lg:text-[1.2rem]" />
         </Link>
         {screen === "large" && <MembershipBadge className="font-semibold text-[0.625rem] order-2 ml-8 mr-auto" />}
-        {screen === "large" && <Login className="order-4 mr-8 text-right text-[0.813rem] ml-auto" />}
+        {screen === "large" && <LoginButton className="order-4 mr-8 text-right text-[0.813rem] ml-auto" onClick={handleLoginOpen} />}
       </div>
       {screen === "large" && <nav className="bg-neutral-50 text-[#111111]">
         <ul className="flex flex-row flex-wrap gap-7 p-3 px-4 justify-center text-[0.813rem] font-semibold">

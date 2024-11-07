@@ -357,7 +357,7 @@ const Home = () => {
               <article key={index} className="border border-neutral-300 block md:m-0 lg:col-span-2">
                 <div className="flex flex-row p-4 gap-4 justify-between lg:p-0 lg:flex-col lg:gap-0">
                   <PictureLink className="order-2 lg:order-none">
-                    <img src={article.image} alt="" className="min-w-20 w-20 min-h-20 h-20 object-cover object-center lg:w-full lg:h-full" />
+                    <img src={article.image} alt="" className="min-w-24 w-24 min-h-24 h-24 object-cover object-center lg:w-full lg:h-full" />
                   </PictureLink>
                   <div className="flex flex-col justify-between gap-4 lg:p-4">
                     <h3>
@@ -426,7 +426,7 @@ const Home = () => {
             <article className="border border-neutral-300 block lg:col-span-2 h-full lg:h-auto lg:border-none">
               <div className="flex flex-row p-4 justify-between gap-4 md:gap-0 md:p-0 md:flex-col">
                 <PictureLink className="order-2 md:order-none">
-                  <img src={Articles[0].image} alt="" className="min-w-20 w-20 min-h-20 h-20 object-cover object-center md:w-full md:h-full" />
+                  <img src={Articles[0].image} alt="" className="min-w-24 w-24 min-h-24 h-24 object-cover object-center md:w-full md:h-full" />
                 </PictureLink>
                 <div className="flex flex-col justify-between gap-4 md:p-4 lg:p-0">
                   <h3>
@@ -476,7 +476,7 @@ const Home = () => {
             <article className="border border-neutral-300 block lg:col-span-2 h-full lg:h-auto lg:border-none">
               <div className="flex flex-row p-4 justify-between gap-4 md:gap-0 md:p-0 md:flex-col">
                 <PictureLink className="order-2 md:order-none">
-                  <img src={Articles[1].image} alt="" className="min-w-20 w-20 min-h-20 h-20 object-cover object-center md:w-full md:h-full" />
+                  <img src={Articles[1].image} alt="" className="min-w-24 w-24 min-h-24 h-24 object-cover object-center md:w-full md:h-full" />
                 </PictureLink>
                 <div className="flex flex-col justify-between gap-4 md:p-4 lg:p-0">
                   <h3>
@@ -486,18 +486,20 @@ const Home = () => {
                 </div>
               </div>
             </article>
-            {screen === "large" && <div className="lg:flex lg:flex-col lg:gap-5">
-              {articlesEight.map((article, index) => (
-                <article className="flex flex-row gap-4 items-center" key={index}>
-                  <PictureLink className="order-2">
-                    <img src={article.image} alt="" className="min-w-28 w-28 min-h-20 h-20 object-cover object-center" />
-                  </PictureLink>
-                  <h3>
-                    <Link className="overflow-anywhere text-sm line-clamp-3">{article.title}</Link>
-                  </h3>
-                </article>
-              ))}
-            </div>}
+            {screen === "large" && (
+              <div className="lg:flex lg:flex-col lg:gap-5">
+                {articlesEight.map((article, index) => (
+                  <article className="flex flex-row gap-4 items-center" key={index}>
+                    <PictureLink className="order-2">
+                      <img src={article.image} alt="" className="min-w-28 w-28 min-h-20 h-20 object-cover object-center" />
+                    </PictureLink>
+                    <h3>
+                      <Link className="overflow-anywhere text-sm line-clamp-3">{article.title}</Link>
+                    </h3>
+                  </article>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </section>

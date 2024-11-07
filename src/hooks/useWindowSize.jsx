@@ -1,17 +1,17 @@
 import { useState, useEffect } from "react";
 
 const useWindowSize = () => {
-  const getSizeCategory = (width) => {
-    if (width >= 1024) return 'large';
-    if (width >= 768) return 'medium';
-    return 'small';
-  };
+  const [size, setSize] = useState(getSize(window.innerWidth));
 
-  const [sizeCategory, setSizeCategory] = useState(getSizeCategory(window.innerWidth));
+  function getSize(width) {
+    if (width >= 1024) return "large";
+    if (width >= 768) return "medium";
+    return "small";
+  }
 
   useEffect(() => {
     const handleResize = () => {
-      setSizeCategory(getSizeCategory(window.innerWidth));
+      setSize(getSize(window.innerWidth));
     };
 
     window.addEventListener("resize", handleResize);
@@ -21,7 +21,7 @@ const useWindowSize = () => {
     };
   }, []);
 
-  return sizeCategory;
+  return size;
 };
 
 export default useWindowSize;

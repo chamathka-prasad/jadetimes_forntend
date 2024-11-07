@@ -1,33 +1,12 @@
-import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { BsChevronRight, BsChevronLeft } from "react-icons/bs";
+
 import PictureLink from "./PictureLink";
 
+import useCarousel from "../hooks/useCarousel";
+
 const FirstSlider = ({ articles, className }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const scrollRef = useRef(null);
-
-  function handleNextSlide() {
-    scrollRef.current.scrollBy({
-      top: 0,
-      left: scrollRef.current.clientWidth,
-      behavior: "smooth",
-    });
-    setCurrentIndex((prevCurrentIndex) => {
-      return prevCurrentIndex + 1;
-    });
-  }
-
-  function handlePreviousSlide() {
-    scrollRef.current.scrollBy({
-      top: 0,
-      left: -scrollRef.current.clientWidth,
-      behavior: "smooth",
-    });
-    setCurrentIndex((prevCurrentIndex) => {
-      return prevCurrentIndex - 1;
-    });
-  }
+  const [currentIndex, scrollRef, handleNextSlide, handlePreviousSlide] = useCarousel();
 
   return (
     <div className={className}>

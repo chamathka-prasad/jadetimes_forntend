@@ -25,8 +25,9 @@ const Political = lazy(() => import("../pages/Political"));
 const Universe = lazy(() => import("../pages/Universe"));
 const Fashion = lazy(() => import("../pages/Fashion"));
 const Search = lazy(() => import("../pages/Search"));
-const Login = lazy(() => import("../pages/Login"));
-const Membership = lazy(() => import("../pages/Membership"));
+const Membership = lazy(() => import("../pages/memberships/Membership"));
+const PricePlan = lazy(() => import("../pages/memberships/PricePlan"));
+const Payment = lazy(() => import("../pages/memberships/Payment"));
 const AdvertiseWithUs = lazy(() => import("../pages/AdvertiseWithUs"));
 const TalkToUs = lazy(() => import("../pages/TalkToUs"));
 const NotFound = lazy(() => import("../pages/NotFound"));
@@ -165,26 +166,33 @@ const Pages = [
   },
   {
     id: 12,
-    path: "/log-in",
-    component: <Login />,
+    path: "/membership",
+    component: <Membership />,
+    subpages: [
+      {
+        id: 0,
+        path: "/membership",
+        component: <PricePlan />,
+      },
+      {
+        id: 1,
+        path: "payment",
+        component: <Payment />,
+      },
+    ],
   },
   {
     id: 13,
-    path: "/membership",
-    component: <Membership />,
-  },
-  {
-    id: 14,
     path: "/advertise-with-us",
     component: <AdvertiseWithUs />,
   },
   {
-    id: 15,
+    id: 14,
     path: "/talk-to-us",
     component: <TalkToUs />,
   },
   {
-    id: 30,
+    id: 15,
     path: "*",
     component: <NotFound />,
   },

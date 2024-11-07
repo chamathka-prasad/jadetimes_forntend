@@ -1,13 +1,13 @@
 import { useState } from 'react';
 
 function useKey(initialValue = null) {
-  const [isKey, setIsKey] = useState(initialValue);
+  const [key, setKey] = useState(initialValue);
 
   function handleKey(key) {
-    setIsKey((previousKey) => (previousKey === key ? null : key));
+    setKey((previousKey) => (previousKey === key ? null : key));
   };
 
-  return [isKey, handleKey];
+  return [key, handleKey];
 }
 
 export default useKey;

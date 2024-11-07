@@ -25,6 +25,7 @@ html {
   font-size: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
 }
 
 h1,
