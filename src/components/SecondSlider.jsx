@@ -112,7 +112,7 @@ const SecondSlider = () => {
       </div>
       <div className="flex flex-row overflow-x-hidden snap-x snap-mandatory" ref={scrollRef}>
         {youTubeVideos.map((articles, index) => (
-          <div className={`grid grid-cols-4 w-full flex-none gap-5 duration-500 snap-start`} key={index}>
+          <div className={`grid grid-cols-4 w-full flex-none gap-5 duration-500 snap-start ${currentIndex !== index && "invisible"}`} key={index}>
             {articles.map((article) => (
               <article className="text-sm w-full h-full cursor-pointer group" onClick={() => handleCurrentVideo(article.index)} key={article.index}>
                 <div

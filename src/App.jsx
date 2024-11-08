@@ -16,20 +16,22 @@ const App = () => {
 
   return (
     <>
-      <Header handleMenuOpen={handleMenuOpen} handleLoginOpen={handleLoginOpen} />
-      <Aside handleMenuClose={handleMenuClose} handleLoginOpen={handleLoginOpen} isMenu={isMenu} />
-      <main className="2xl:overflow-x-hidden">
-        <Suspense fallback>
-          <Routes>
-            {pages.map((page) => (
-              <Route key={page.id} path={page.path} element={page.component}>
-                {page.subpages && page.subpages.map((subpage) => <Route key={subpage.id} path={subpage.path} element={subpage.component} />)}
-              </Route>
-            ))}
-          </Routes>
-        </Suspense>
-      </main>
-      <Footer />
+      <div className={isLogin && "invisible"} aria-hidden={isLogin}>
+        <Header handleMenuOpen={handleMenuOpen} handleLoginOpen={handleLoginOpen} />
+        <Aside handleMenuClose={handleMenuClose} handleLoginOpen={handleLoginOpen} isMenu={isMenu} />
+        <main className="2xl:overflow-x-hidden">
+          <Suspense fallback>
+            <Routes>
+              {pages.map((page) => (
+                <Route key={page.id} path={page.path} element={page.component}>
+                  {page.subpages && page.subpages.map((subpage) => <Route key={subpage.id} path={subpage.path} element={subpage.component} />)}
+                </Route>
+              ))}
+            </Routes>
+          </Suspense>
+        </main>
+        <Footer />
+      </div>
       {isLogin && <Login handleLoginClose={handleLoginClose} />}
     </>
   );
