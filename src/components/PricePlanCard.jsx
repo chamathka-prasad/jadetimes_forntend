@@ -29,8 +29,8 @@ const PricePlanCard = () => {
           <h2 className="uppercase text-lg lg:text-xl">{pricePlan.duration}</h2>
           <div className="my-6 md:mb-1">
             <div>
-              <span className="text-lg align-top mr-1">$</span>
-              <span className="text-4xl lg:text-5xl">{pricePlan.amount}</span>
+              <span className="text-lg align-top mr-1 inline-block">$</span>
+              <span className="text-4xl lg:text-5xl inline-block">{pricePlan.amount}</span>
             </div>
             <div className="text-sm md:text-xs">Every {pricePlan.date}</div>
           </div>

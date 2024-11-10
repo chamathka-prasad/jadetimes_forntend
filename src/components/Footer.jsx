@@ -88,20 +88,20 @@ const Footer = () => {
             <ul className="text-xs flex flex-row items-center justify-center gap-3 flex-wrap font-semibold">
               {navPaths.slice(1, 11).map((path) => (
                 <li key={path.key} className="gap-4">
-                  <Link to={path.to} className="duration-300 hover:underline">
+                  <Link to={path.to} className="inline-block duration-300 hover:underline">
                     {path.name}
                   </Link>
                 </li>
               ))}
               {navPaths[1].submenus.map((submenu) => (
                 <li key={submenu.key} className="gap-4">
-                  <Link to={submenu.to} className="duration-300 hover:underline">
+                  <Link to={submenu.to} className="inline-block duration-300 hover:underline">
                     {submenu.name}
                   </Link>
                 </li>
               ))}
               <li className="gap-4">
-                <Link to="/sports/wwe" className="duration-300 hover:underline">
+                <Link to="/sports/wwe" className="inline-block duration-300 hover:underline">
                   WWE
                 </Link>
               </li>

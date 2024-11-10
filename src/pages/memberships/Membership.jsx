@@ -98,7 +98,7 @@ const Membership = () => {
         </p>
         <div className="mt-4 text-xs">
           Can’t find what you’re looking for? Email us at{" "}
-          <a href="mailto:info@jadetimes.com" className="underline lg:no-underline lg:hover:underline">
+          <a href="mailto:info@jadetimes.com" className="underline inline-block lg:no-underline lg:hover:underline">
             info@jadetimes.com
           </a>{" "}
           for more information.

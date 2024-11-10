@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-function useKey(initialValue = null) {
-  const [key, setKey] = useState(initialValue);
+function useKey() {
+  const [key, setKey] = useState(null);
 
   function handleKey(key) {
     setKey((previousKey) => (previousKey === key ? null : key));

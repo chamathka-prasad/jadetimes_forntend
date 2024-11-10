@@ -13,14 +13,14 @@ const Login = ({ handleLoginClose }) => {
         <h1 className="font-bold text-[1.0625rem] text-neutral-800 mt-8 text-center md:text-4xl">Register for a Jadetimes Account</h1>
         <p className="text-neutral-900 text-sm text-center mt-2">You must be 18 or over to register for a Jadetimes account</p>
         <form className="text-neutral-900">
-          <div className="md:grid md:grid-cols-2 md:gap-8 mt-4">
+          <div className="md:grid md:grid-cols-2 md:gap-6 mt-4">
             <input
               type="text"
               name="firstname"
               placeholder="First name"
               autoComplete="off"
               aria-label="first name"
-              className="text-[1.15rem] md:text-base placeholder:text-neutral-900 border-b border-black py-2 block mb-3 pb-3 w-full focus-visible:outline-none focus-visible:border-b-2 lg:hover:border-b-2"
+              className="text-[1.15rem] md:text-base placeholder:text-neutral-900 border-b border-black py-2 block mb-3 md:mb-0 pb-3 w-full focus-visible:outline-none focus-visible:border-b-2 lg:hover:border-b-2"
             />
             <input
               type="text"
@@ -28,7 +28,7 @@ const Login = ({ handleLoginClose }) => {
               placeholder="Last name"
               autoComplete="off"
               aria-label="last name"
-              className="text-[1.15rem] md:text-base placeholder:text-neutral-900 border-b border-black py-2 block mb-3 pb-3 w-full focus-visible:outline-none focus-visible:border-b-2 lg:hover:border-b-2"
+              className="text-[1.15rem] md:text-base placeholder:text-neutral-900 border-b border-black py-2 block mb-3 md:mb-0 pb-3 w-full focus-visible:outline-none focus-visible:border-b-2 lg:hover:border-b-2"
             />
             <input
               type="email"
@@ -39,7 +39,7 @@ const Login = ({ handleLoginClose }) => {
               maxLength="250"
               autoComplete="off"
               aria-label="email"
-              className="text-[1.15rem] md:text-base placeholder:text-neutral-900 border-b border-black py-2 block mb-3 pb-3 w-full focus-visible:outline-none focus-visible:border-b-2 lg:hover:border-b-2"
+              className="text-[1.15rem] md:text-base placeholder:text-neutral-900 border-b border-black py-2 block mb-3 md:mb-0 pb-3 w-full focus-visible:outline-none focus-visible:border-b-2 lg:hover:border-b-2"
             />
             <input
               type="password"
@@ -48,7 +48,7 @@ const Login = ({ handleLoginClose }) => {
               required
               autoComplete="off"
               aria-label="password"
-              className="text-[1.15rem] md:text-base placeholder:text-neutral-900 border-b border-black py-2 block mb-3 pb-3 w-full focus-visible:outline-none focus-visible:border-b-2 lg:hover:border-b-2"
+              className="text-[1.15rem] md:text-base placeholder:text-neutral-900 border-b border-black py-2 block mb-3 md:mb-0 pb-3 w-full focus-visible:outline-none focus-visible:border-b-2 lg:hover:border-b-2"
             />
           </div>
           <div className="my-6 flex">

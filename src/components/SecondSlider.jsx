@@ -95,8 +95,8 @@ const SecondSlider = () => {
             <div className="bg-[#000000d1] text-white h-full flex flex-col items-center justify-center">
               <h4 className="text-[0.9375rem] mb-2">{currentVideo.title}</h4>
               <div className="text-lg">Jadetimes</div>
-              <div className="flex flex-row gap-4">
-                <button className="flex flex-row flex-nowrap items-center gap-2 bg-[#FF322E] px-7 py-2 mt-8 text-sm" onClick={handlePlayOpen}>
+              <div className="flex flex-row gap-4 mt-8">
+                <button className="flex flex-row flex-nowrap items-center gap-2 bg-[#FF322E] px-7 py-2 text-sm" onClick={handlePlayOpen}>
                   <BsPlayFill size={25} />
                   Play Video
                 </button>

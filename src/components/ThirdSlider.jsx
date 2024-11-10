@@ -72,17 +72,17 @@ const ThirdSlider = ({ articles, className }) => {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     loading="lazy"
                   ></iframe>
-                  <div className="text-white md:w-1/2">
+                  <div className="text-white md:w-1/2 flex flex-col gap-4 md:justify-between md:h-full">
                     {screen !== "small" && (
                       <a
                         href="https://www.youtube.com/@JadeTimes"
-                        className="md:tracking-widest md:bg-neutral-800 md:block md:w-fit md:mb-4 md:text-nowrap md:uppercase md:text-[0.625rem] md:px-2 md:py-1 lg:duration-300 lg:hover:bg-white lg:hover:text-black"
+                        className="md:tracking-widest md:bg-neutral-800 md:block md:w-fit md:text-nowrap md:uppercase md:text-[0.625rem] md:px-2 md:py-1 lg:duration-300 lg:hover:bg-white lg:hover:text-black"
                       >
                         Youtube updates
                       </a>
                     )}
-                    <h3 className="text-sm mb-3 lg:text-base">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur, autem</h3>
-                    <p className="text-xs mb-4">
+                    <h3 className="text-sm lg:text-base">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur, autem</h3>
+                    <p className="text-xs">
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam facere eos minus, non officia beatae molestiae laudantium ullam quasi nisi corporis voluptates hic vitae
                       mollitia iste et itaque alias repellendus consectetur. Nisi tempore iste minima nam nostrum nulla repudiandae perspiciatis.
                     </p>
@@ -107,13 +107,13 @@ const ThirdSlider = ({ articles, className }) => {
           </article>
         ))}
       </div>
-      <div className="flex flex-row gap-2 items-center justify-center absolute bottom-[2.3rem] w-full z-10">
+      <div className="flex flex-row gap-3 items-center justify-center absolute bottom-[2.3rem] w-full z-10">
         {articles.map((_, index) => (
           <button
             onClick={() => {
               setCurrentIndex(index);
             }}
-            className={`w-[6px] h-[6px] flex items-center justify-center rounded-full text-xs bg-white`}
+            className="w-[8px] h-[8px] flex items-center justify-center rounded-full text-xs bg-white lg:w-[6px] lg:h-[6px]"
             key={index}
             aria-label={`go to slide ${index + 1}`}
           ></button>

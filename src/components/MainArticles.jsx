@@ -18,7 +18,7 @@ const MainArticles = ({ articles }) => {
           </PictureLink>
           <div className="py-4 pb-5 flex flex-col justify-between gap-2 md:justify-start md:p-4 md:gap-4 lg:p-8">
             <div>
-              {screen === "large" && <Link className="lg:w-fit lg:text-xs">{articles[0].authorName}</Link>}
+              {screen === "large" && <Link className="lg:block lg:w-fit lg:text-xs">{articles[0].authorName}</Link>}
               <div className="flex flex-row items-center whitespace-nowrap lg:text-xs">{articles[0].posted}</div>
             </div>
             <h2>

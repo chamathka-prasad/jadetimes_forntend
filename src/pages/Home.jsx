@@ -41,7 +41,7 @@ const Home = () => {
             </div>
             <div className="p-4 pt-8 flex flex-col justify-between gap-2 md:justify-start md:p-4 md:gap-4 lg:p-8">
               <div>
-                {screen === "large" && <Link className="lg:w-fit lg:text-xs">{Articles[0].authorName}</Link>}
+                {screen === "large" && <Link className="lg:block lg:w-fit lg:text-xs">{Articles[0].authorName}</Link>}
                 <div className="whitespace-nowrap lg:text-xs">{Articles[0].posted}</div>
               </div>
               <h2>
@@ -380,7 +380,7 @@ const Home = () => {
                 Exclusive Pulse <span className="font-normal">| Jadetimes</span>
               </Link>
             </h2>
-            <div className="text-white flex flex-col gap-4 md:gap-8 md:grid md:grid-cols-2 items-center">
+            <div className="text-white flex flex-col gap-4 md:grid md:grid-cols-2 place-items-center">
               <iframe
                 className="block aspect-video"
                 title="How Sri Lanka's 2024 Election Could Shape the Future of Entrepreneurs | Exclusive Pulse | Jadetimes"
@@ -390,28 +390,28 @@ const Home = () => {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 loading="lazy"
               ></iframe>
-              <div className="lg:w-96 lg:mx-auto">
+              <div className="flex flex-col gap-4 lg:w-96">
                 <a
                   href="https://www.youtube.com/@JadeTimes"
-                  className="hidden md:bg-neutral-800 md:block md:w-fit md:tracking-widest md:mb-4 md:text-nowrap md:uppercase md:text-[0.625rem] md:px-2 md:py-1 md:duration-300 md:hover:bg-white md:hover:text-black"
+                  className="hidden md:bg-neutral-800 md:block md:w-fit md:tracking-widest md:text-nowrap md:uppercase md:text-[0.625rem] md:px-2 md:py-1 lg:duration-300 lg:hover:bg-white lg:hover:text-black"
                 >
                   Youtube updates
                 </a>
-                <h3 className="text-sm mb-3 lg:text-base">How Sri Lanka's 2024 Election Could Shape the Future of Entrepreneurs</h3>
+                <h3 className="text-sm lg:text-base">How Sri Lanka's 2024 Election Could Shape the Future of Entrepreneurs</h3>
                 <p className="text-xs">
                   We explore how the upcoming election could shape opportunities and challenges for business owners and startups across the country. A shocking revelation about the connection between
                   these two groups, shedding light on hidden influences and funding sources.
                 </p>
-                <div className="mt-4 flex items-center gap-4 text-sm">
+                <div className="flex items-center gap-4 text-sm">
                   <a
                     href="https://www.youtube.com/@JadeTimes"
-                    className="bg-neutral-800 inline-block uppercase tracking-widest text-nowrap px-3 py-2 duration-300 hover:bg-white hover:text-black md:hidden"
+                    className="bg-neutral-800 inline-block uppercase tracking-widest text-nowrap px-3 py-2 md:hidden"
                   >
                     Youtube updates
                   </a>
                   <a
                     href="https://www.jadetimes.com/post/shocking-revelations-mr-neomal-perera-on-hidden-influences-in-sri-lanka-s-political-sphere"
-                    className="text-nowrap flex items-center capitalize duration-300 hover:opacity-50"
+                    className="text-nowrap flex items-center capitalize lg:duration-300 lg:hover:opacity-50"
                   >
                     Read more
                     <FaChevronRight className="inline" />
