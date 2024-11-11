@@ -43,7 +43,7 @@ const Aside = ({ handleMenuClose, handleLoginOpen, isMenu }) => {
               </Link>
             </li>
             {navPaths.slice(1, 11).map((path) => (
-              <li className={`lg:text-sm lg:border-b lg:border-b-neutral-800 ${path.submenus && "flex flex-row flex-wrap"}`} key={path.key}>
+              <li className={`lg:text-sm lg:border-b lg:border-b-neutral-800 ${path.submenus && "flex flex-row flex-wrap" || undefined}`} key={path.key}>
                 <Link to={path.to} onClick={handleToggleMenuItem} className="block py-2 lg:duration-300 lg:hover:text-[#FF322F] flex-grow">
                   {path.name}
                 </Link>

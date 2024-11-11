@@ -1,18 +1,16 @@
 import { useEffect, useState } from "react";
-import apiClient from "../services/apiClient";
 
 const useYouTubePlaylist = () => {
   const [videos, setVideos] = useState([]);
   const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const allVideos = [];
 
     function fetchVideos(pageToken = "") {
-      const [BASE_URL, API_KEY] = apiClient();
       const playlistId = "PL-5p6ii0pvVHcd_swLVii3Ry0mQBH4IEj";
-
-      fetch(`${BASE_URL}playlistItems?part=snippet,contentDetails&playlistId=${playlistId}&key=${API_KEY}&pageToken=${pageToken}`)
+      fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&playlistId=${playlistId}&key=${import.meta.env.VITE_API_KEY}&pageToken=${pageToken}`)
         .then((response) => {
           if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -42,7 +40,7 @@ const useYouTubePlaylist = () => {
     fetchVideos();
   }, []);
 
-  return [videos, error];
+  return [videos, error, isLoading];
 };
 
 export default useYouTubePlaylist;

@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header";
@@ -16,7 +16,7 @@ const App = () => {
 
   return (
     <>
-      <div className={isLogin && "invisible"} aria-hidden={isLogin}>
+      <div className={isLogin && "invisible" || undefined}>
         <Header handleMenuOpen={handleMenuOpen} handleLoginOpen={handleLoginOpen} />
         <Aside handleMenuClose={handleMenuClose} handleLoginOpen={handleLoginOpen} isMenu={isMenu} />
         <main className="2xl:overflow-x-hidden">

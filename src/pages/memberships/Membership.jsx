@@ -1,7 +1,4 @@
-import React from "react";
 import { Link, Outlet } from "react-router-dom";
-
-// import PricePlan from "../components/PricePlan";
 
 import useWindowSize from "../../hooks/useWindowSize";
 
@@ -59,7 +56,7 @@ const Membership = () => {
         </ul>
       </section>
       <section className="bg-neutral-50 py-4">
-        <div className="flex flex-col gap-4 p-4 max-w-[1140px] mx-auto md:grid md:grid-cols-2 md:px-8 lg:px-4 items-center md:gap-8 lg:gap-20">
+        <div className="flex flex-col gap-4 p-4 max-w-[1032px] mx-auto md:grid md:grid-cols-2 md:px-8 lg:px-4 items-center md:gap-8 lg:gap-20">
           <picture className="w-full">
             <img src={membershipImage} alt="" />
           </picture>

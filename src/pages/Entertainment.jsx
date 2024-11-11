@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import MainArticles from "../components/MainArticles";
 import ThirdSlider from "../components/ThirdSlider";

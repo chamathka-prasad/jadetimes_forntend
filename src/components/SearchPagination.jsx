@@ -3,38 +3,29 @@ import { BsChevronRight, BsChevronDoubleRight, BsChevronLeft, BsChevronDoubleLef
 
 import PictureLink from "./PictureLink";
 
-import useWindowSize from "../hooks/useWindowSize";
 import usePagination from "../hooks/usePagination";
 
-const Pagination = ({ articles }) => {
-  const screen = useWindowSize();
-  const [currentIndex, visiblePages, pageItems, lastIndex, prevArticles, nextArticles, handlePrevDisabled, handleNextDisabled, handleCurrentArticle] = usePagination(1, articles.length);
-
+const SearchPagination = ({ articles }) => {
+  const [currentIndex, visiblePages, pageItems, lastIndex, prevArticles, nextArticles, handlePrevDisabled, handleNextDisabled, handleCurrentArticle] = usePagination(3, articles.length);
   return (
     <>
-      <div className="flex flex-col gap-4 py-4">
+      <div className="flex flex-col gap-4 py-4 lg:grid lg:grid-cols-3">
         {articles.slice(currentIndex * pageItems - pageItems, pageItems * currentIndex).map((article, index) => (
-          <article className="flex flex-row gap-4 border border-neutral-300 p-4 items-center lg:items-start lg:grid lg:grid-cols-4" key={index}>
-            <PictureLink link={article.link} className="lg:order-2">
-              <img src={article.image} alt={article.title} className="min-w-24 w-24 min-h-24 h-24 object-cover object-center lg:w-full lg:h-full" />
-            </PictureLink>
-            <div className="col-span-3">
+          <article key={index} className="border border-neutral-300 p-4">
+            <div className="flex flex-row gap-4">
               <h2>
-                <Link to={article.link} className="line-clamp-3 overflow-anywhere lg:text-lg lg:mb-2">
+                <Link to={article.link} className="text-lg line-clamp-3 overflow-anywhere lg:text-sm">
                   {article.title}
                 </Link>
               </h2>
-              {screen === "large" && (
-                <div>
-                  <Link className="lg:block lg:w-fit lg:text-xs">{article.authorName}</Link>
-                  <div className="whitespace-nowrap lg:text-xs">
-                    <span>{article.posted}</span>
-                    <span className="w-[2px] h-[2px] bg-neutral-900 inline-block mx-2 align-middle"></span>
-                    <span>{article.readTime}</span>
-                  </div>
-                </div>
-              )}
+              <PictureLink link={article.link}>
+                <img src={article.image} alt={article.title} className="min-w-20 w-20 min-h-20 h-20 object-cover object-center lg:min-w-16 lg:w-16 lg:min-h-16 lg:h-16" />
+              </PictureLink>
             </div>
+            <Link to={article.categoryLink} className="w-fit text-lg mt-2 block text-[#686868] font-light lg:text-sm">
+              {article.categoryTitle}
+            </Link>
+            <div className="whitespace-nowrap mt-2 lg:text-xs">{article.posted}</div>
           </article>
         ))}
       </div>
@@ -82,4 +73,4 @@ const Pagination = ({ articles }) => {
   );
 };
 
-export default Pagination;
+export default SearchPagination;

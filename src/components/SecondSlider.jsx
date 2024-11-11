@@ -7,7 +7,7 @@ import useCarousel from "../hooks/useCarousel";
 import useOpen from "../hooks/useOpen";
 
 const SecondSlider = () => {
-  const [videos, error] = useYouTubePlaylist();
+  const [videos, error, loading] = useYouTubePlaylist();
   const [currentVideo, setCurrentVideo] = useState({});
   const [youTubeVideos, setYouTubeVideos] = useState([]);
   const [currentIndex, scrollRef, handleNextSlide, handlePreviousSlide] = useCarousel();
@@ -67,6 +67,12 @@ const SecondSlider = () => {
     handleNextPlayOpen();
   }
 
+  if (loading) {
+    return (
+      <div>Loading...</div>
+    )
+  }
+
   return (
     <div className="col-[span_14_/_span_14]">
       <div className="aspect-video mb-5 bg-black">
@@ -101,7 +107,7 @@ const SecondSlider = () => {
                   Play Video
                 </button>
                 {isNextPlay && (
-                  <button className="bg-[#FF322E] px-7 py-2 mt-8 text-sm" onClick={() => playNextVideo(currentVideo.index)}>
+                  <button className="bg-[#FF322E] px-7 py-2 text-sm" onClick={() => playNextVideo(currentVideo.index)}>
                     Next Video
                   </button>
                 )}

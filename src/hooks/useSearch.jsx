@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import apiClient from "../services/apiClient";
 
 const useYouTubeShorts = () => {
   // const [videos, setVideos] = useState([]);
@@ -8,9 +7,8 @@ const useYouTubeShorts = () => {
 
   useEffect(() => {
     function fetchVideos(pageToken = "") {
-      const [BASE_URL, API_KEY] = apiClient();
 
-      fetch(`${BASE_URL}search?part=snippet&channelId=${channelId}&type=video&videoDuration=short&key=${API_KEY}&pageToken=${pageToken}`)
+      fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&type=video&videoDuration=short&key=${import.meta.env.VITE_API_KEY}&pageToken=${pageToken}`)
         .then((res) => {
           if (!res.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -23,7 +21,7 @@ const useYouTubeShorts = () => {
           }
           const videoIds = data.items.map((item) => item.id.videoId);
           const videoIdsStr = videoIds.join(",");
-          fetch(`${BASE_URL}videos?part=contentDetails,snippet&id=${videoIdsStr}&key=${API_KEY}`)
+          fetch(`https://www.googleapis.com/youtube/v3/videos?part=contentDetails,snippet&id=${videoIdsStr}&key=${import.meta.env.VITE_API_KEY}`)
             .then((res) => {
               if (!res.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
