@@ -1,1 +1,0 @@
-{"version":3,"file":"Search-DIvbygM1.js","sources":["../../src/pages/Search.jsx"],"sourcesContent":["import React from \"react\";\n\nconst Search = () => {\n  return <h1 className=\"text-4xl text-center py-20\">Search</h1>;\n};\n\nexport default Search;\n"],"names":["Search","jsx"],"mappings":"wCAEA,MAAMA,EAAS,IACLC,EAAAA,IAAA,KAAA,CAAG,UAAU,6BAA6B,SAAM,SAAA"}

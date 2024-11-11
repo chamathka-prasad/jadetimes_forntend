@@ -1,0 +1,1 @@
+{"version":3,"file":"TalkToUs-BDgzdcj1.js","sources":["../../src/pages/TalkToUs.jsx"],"sourcesContent":["const TalkToUs = () => {\n  return <h1 className=\"text-4xl text-center py-20\">Talk to us</h1>;\n};\n\nexport default TalkToUs;\n"],"names":["TalkToUs","jsx"],"mappings":"wCAAA,MAAMA,EAAW,IACPC,EAAAA,IAAA,KAAA,CAAG,UAAU,6BAA6B,SAAU,aAAA"}
