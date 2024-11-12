@@ -127,7 +127,7 @@ export const navPaths = [
   },
   {
     key: 14,
-    to: "/",
+    to: "/advertise-with-us",
     name: "Advertise with Jadetimes",
   },
   {

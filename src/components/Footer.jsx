@@ -76,7 +76,7 @@ const Footer = () => {
               />
               <button
                 type="submit"
-                className="uppercase bg-neutral-800 text-white text-xs border border-neutral-800 duration-300 py-[0.625rem] px-3 lg:hover:bg-[#FF322E] lg:hover:border-[#FF322E] lg:px-9"
+                className="uppercase text-nowrap bg-neutral-800 text-white text-xs border border-neutral-800 duration-300 py-[0.625rem] px-3 lg:hover:bg-[#FF322E] lg:hover:border-[#FF322E] lg:px-9"
               >
                 Subscribe
               </button>
@@ -182,7 +182,7 @@ const Footer = () => {
                 <span className="mx-2">|</span>
               </li>
               <li>
-                <Link to="/cookies" className="duration-300 hover:underline">
+                <Link to="/advertise-with-us" className="duration-300 hover:underline">
                   Get Published Online Articles
                 </Link>
                 <span className="mx-2">|</span>
