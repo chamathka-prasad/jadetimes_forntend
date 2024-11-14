@@ -10,7 +10,7 @@ const Search = () => {
           <h1 className="text-3xl font-semibold md:text-2xl">Search</h1>
           <div className="mt-5 relative md:mt-0 md:w-full">
             <input
-              className="border-2 border-[#2423233B] w-full block rounded-md text-xl placeholder:text-neutral-500 py-3 pl-4 pr-8 md:text-base"
+              className="border border-[#2423233B] w-full block rounded-md text-xl placeholder:text-neutral-500 py-3 pl-4 pr-8 md:text-base"
               type="search"
               placeholder="What are you looking for?"
             />

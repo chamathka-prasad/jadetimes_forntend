@@ -55,8 +55,8 @@ const Membership = () => {
           ))}
         </ul>
       </section>
-      <section className="bg-neutral-50 py-4">
-        <div className="flex flex-col gap-4 p-4 max-w-[1032px] mx-auto md:grid md:grid-cols-2 lg:px-4 items-center md:gap-8 lg:gap-20">
+      <section className="bg-neutral-50 p-4">
+        <div className="flex flex-col gap-4 max-w-[1000px] mx-auto md:grid md:grid-cols-2 items-center md:gap-8 lg:gap-20">
           <picture className="w-full">
             <img src={membershipImage} alt="" />
           </picture>

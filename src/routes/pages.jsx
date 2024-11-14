@@ -30,6 +30,7 @@ const PricePlan = lazy(() => import("../pages/memberships/PricePlan"));
 const Payment = lazy(() => import("../pages/memberships/Payment"));
 const AdvertiseWithUs = lazy(() => import("../pages/AdvertiseWithUs"));
 const TalkToUs = lazy(() => import("../pages/TalkToUs"));
+const TermsAndConditions = lazy(() => import("../pages/TermsAndConditions"));
 const NotFound = lazy(() => import("../pages/NotFound"));
 
 const Pages = [
@@ -193,6 +194,11 @@ const Pages = [
   },
   {
     id: 15,
+    path: "/terms-and-conditions",
+    component: <TermsAndConditions />,
+  },
+  {
+    id: 25,
     path: "*",
     component: <NotFound />,
   },
