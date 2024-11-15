@@ -31,6 +31,8 @@ const Payment = lazy(() => import("../pages/memberships/Payment"));
 const AdvertiseWithUs = lazy(() => import("../pages/AdvertiseWithUs"));
 const TalkToUs = lazy(() => import("../pages/TalkToUs"));
 const TermsAndConditions = lazy(() => import("../pages/TermsAndConditions"));
+const AboutUs = lazy(() => import("../pages/AboutUs"));
+const Privacy = lazy(() => import("../pages/Privacy"));
 const NotFound = lazy(() => import("../pages/NotFound"));
 
 const Pages = [
@@ -196,6 +198,16 @@ const Pages = [
     id: 15,
     path: "/terms-and-conditions",
     component: <TermsAndConditions />,
+  },
+  {
+    id: 16,
+    path: "/about-jadetimes",
+    component: <AboutUs />,
+  },
+  {
+    id: 17,
+    path: "/privacy-policy",
+    component: <Privacy />,
   },
   {
     id: 25,

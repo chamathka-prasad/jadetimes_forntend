@@ -20,7 +20,7 @@ const App = () => {
         <Header handleMenuOpen={handleMenuOpen} handleLoginOpen={handleLoginOpen} />
         <Aside handleMenuClose={handleMenuClose} handleLoginOpen={handleLoginOpen} isMenu={isMenu} />
         <main className="2xl:overflow-x-hidden">
-          <Suspense fallback>
+          <Suspense fallback={<div>Loading...</div>}>
             <Routes>
               {pages.map((page) => (
                 <Route key={page.id} path={page.path} element={page.component}>

@@ -1,0 +1,67 @@
+import ContactDetails from "../components/ContactDetails";
+import Form from "../components/Form";
+import ShowCard from "../components/ShowCard";
+
+const AboutUs = () => {
+  return (
+    <section className="text-neutral-900">
+      <div className="p-4">
+        <h1 className="text-center font-semibold text-xl lg:text-3xl lg:mb-1">Learn more about what we do</h1>
+        <p className="text-center text-xs lg:text-sm">where we go beyond the ordinary to bring you exclusive insights.</p>
+      </div>
+      <div className="p-4">
+        <div className="max-w-[1000px] mx-auto">
+          <section>
+            <div className="lg:flex lg:flex-row lg:gap-4 lg:justify-between lg:items-center">
+                <h2 className="font-semibold text-2xl mb-4 lg:text-3xl lg:text-nowrap lg:mb-0">Jadetimes Mission</h2>
+                <p className="text-sm lg:w-[600px]">At Jadetimes Media, our mission is to deliver high quality and engaging content, offering diverse perspectives on the issues that matter most to our readers.</p>
+            </div>
+            <section>
+              <h3 className="font-semibold text-[1.35rem] py-4 border-y border-y-[#17171724] mt-5 lg:text-base lg:py-8">Jadetimes Media By The Numbers</h3>
+              <ul className="py-5 flex flex-col gap-4 items-center border-b border-b-[#17171724] justify-center md:flex-row md:gap-0">
+                <li className="w-40 text-center border-b border-b-[#17171724] pb-4 md:pb-0 md:border-b-0 md:pr-8 md:border-r md:border-r-[#17171724] md:w-auto lg:pr-16">
+                  <div className="font-semibold text-5xl lg:text-4xl">250+</div>
+                  <div className="text-sm lg:text-xs">Overall Award Wins</div>
+                </li>
+                <li className="w-40 text-center border-b border-b-[#17171724] pb-4 md:pb-0 md:border-b-0 md:px-8 md:border-r md:border-r-[#17171724] md:w-auto lg:px-16">
+                  <div className="font-semibold text-5xl lg:text-4xl">250</div>
+                  <div className="text-sm lg:text-xs">Employees Worldwide</div>
+                </li>
+                <li className="w-40 text-center border-b border-b-[#17171724] pb-4 md:pb-0 md:border-b-0 md:px-8 md:border-r md:border-r-[#17171724] md:w-auto lg:px-16">
+                  <div className="font-semibold text-5xl lg:text-4xl">500k+</div>
+                  <div className="text-sm lg:text-xs">Readers</div>
+                </li>
+                <li className="w-40 text-center md:w-auto md:pl-8 lg:pl-16">
+                  <div className="font-semibold text-5xl lg:text-4xl">75+</div>
+                  <div className="text-sm lg:text-xs">Journalists</div>
+                </li>
+              </ul>
+            </section>
+            <section className="mb-5 lg:mt-8">
+              <h3 className="text-2xl font-semibold my-4">Who We Are</h3>
+              <p className="text-sm">
+                Jadetimes Media is a dynamic and innovative media company based in Albuquerque, New Mexico. We are committed to maintaining the highest standards of integrity and professionalism in
+                everything we do. Our team of dedicated journalists, editors, and creative professionals work tirelessly to produce content that is both compelling and credible.
+              </p>
+            </section>
+          </section>
+          <section className="lg:mt-8">
+            <h2 className="text-2xl text-neutral-900 font-semibold mb-4">What we do</h2>
+            <ShowCard className="mb-7 flex flex-col gap-8 md:grid md:grid-cols-2 lg:grid-cols-3" />
+          </section>
+          <section>
+            <h2 className="text-2xl text-neutral-900 font-semibold">How to Report News To Us</h2>
+            <div className="md:grid md:grid-cols-2 md:mb-4">
+              <Form className="text-sm flex flex-col gap-4 mt-4 md:pr-6 md:border-r md:border-r-[#17171724]" />
+              <div className="text-sm text-neutral-900 flex flex-col gap-6 mt-8 md:mt-4 md:pl-6">
+                <ContactDetails />
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default AboutUs;

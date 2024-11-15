@@ -132,7 +132,7 @@ export const navPaths = [
   },
   {
     key: 15,
-    to: "/",
+    to: "/talk-to-us",
     name: "Report a Issue",
   },
   {
@@ -147,12 +147,12 @@ export const navPaths = [
   },
   {
     key: 18,
-    to: "/",
+    to: "/privacy-policy",
     name: "Privacy Policy",
   },
   {
     key: 19,
-    to: "/",
+    to: "/terms-and-conditions",
     name: "Terms & Conditions",
   },
 ];

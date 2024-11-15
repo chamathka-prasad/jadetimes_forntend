@@ -26,7 +26,7 @@ const Footer = () => {
             {screen !== "large" && (
               <ul className="flex flex-col gap-4 text-center text-[#282626] text-sm text-nowrap my-4">
                 <li>
-                  <Link to="/about">About Jadetimes</Link>
+                  <Link to="/about-jadetimes">About Jadetimes</Link>
                 </li>
                 <li>
                   <Link to="/privacy-policy">Privacy Policy</Link>
@@ -158,7 +158,7 @@ const Footer = () => {
                 <span className="mx-2">|</span>
               </li>
               <li>
-                <Link to="/about" className="duration-300 hover:underline">
+                <Link to="/about-jadetimes" className="duration-300 hover:underline">
                   About Jadetimes
                 </Link>
                 <span className="mx-2">|</span>

@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 
-const TermsAndConditions = () => {
+const Privacy = () => {
   const section1Ref = useRef(null);
   const section2Ref = useRef(null);
   const section3Ref = useRef(null);
@@ -41,7 +41,7 @@ const TermsAndConditions = () => {
   return (
     <div className="p-4 text-neutral-900 max-w-[1300px] mx-auto">
       <h1 className="text-2xl">
-        <span className="font-semibold">Jadetimes</span>® Terms of Service
+        <span className="font-semibold">Jadetimes</span>® Privacy Policy
       </h1>
       <p className="text-sm mb-4">Revised and posted as of the Effective Date: June 01, 2024</p>
       <div className="pt-4 border-t border-t-[#17171724] lg:grid lg:grid-cols-7">
@@ -49,18 +49,14 @@ const TermsAndConditions = () => {
           <h2 className="text-2xl lg:text-4xl">Welcome to Jadetimes Media LLC!</h2>
           <div className="text-sm flex flex-col gap-4 mt-4 lg:gap-6 lg:mt-8">
             <p>
-              Welcome to Jadetimes Media LLC, where your experience is our priority. We appreciate your interest in our Terms of Service, which outline the rules and guidelines for using our website
-              and services. By accessing or using our platform, you agree to abide by these terms, ensuring a safe and enjoyable environment for all users.
+              Thank you for visiting Jadetimes Media's Privacy Policy page. We are committed to protecting your privacy and ensuring that your personal information is handled securely and responsibly.
+              Here, you can find detailed information about how we collect, use, and protect your data.
             </p>
             <p>
-              Our Terms of Service cover important aspects such as content usage, intellectual property rights, user conduct, and dispute resolution. It's essential to review these terms to understand
-              your rights and responsibilities while interacting with Jadetimes.
+              If you have any questions or concerns about our practices or your personal information, please don't hesitate to reach out to us using the contact information provided below. Your
+              privacy matters to us, and we strive to be transparent and clear in how we handle your data.
             </p>
-            <p>
-              If you have any questions or concerns about our Terms of Service, please don't hesitate to contact us. We're here to assist you and ensure your experience with Jadetimes is positive and
-              fulfilling.
-            </p>
-            <p>Thank you for choosing Jadetimes Media LLC. We look forward to serving you and providing you with valuable content and services.</p>
+            <p>Thank you for choosing Jadetimes Media LLC. We look forward to serving you and providing you with valuable content and services.</p>{" "}
           </div>
         </section>
         <section className="mt-4 lg:mt-0 lg:pr-8 lg:col-span-2">
@@ -220,20 +216,32 @@ const TermsAndConditions = () => {
       <section className="text-sm flex flex-col gap-4 mt-8" ref={section1Ref}>
         <h2 className="font-medium lg:text-base">1. Introduction</h2>
         <p>
-          Welcome to Jadetimes Media LLC's Terms of Service. These terms govern your use of our website{" "}
-          <a href="http://" className="underline" target="_blank">
-            (www.jadetimes.com)
-          </a>{" "}
-          and all related services provided by Jadetimes Media LLC ("Jadetimes," "we," "us," or "our"). By accessing or using our website and services, you agree to comply with these Terms of Service.
+          Welcome to Jadetimes Media. We are committed to protecting your privacy and ensuring the security of your personal data. This privacy policy explains how we collect, use, disclose, and
+          safeguard your information when you interact with our services. By using our services, you agree to the terms outlined in this policy.
         </p>
-        <p>Please read these terms carefully before accessing or using our website. If you do not agree with any part of these terms, you may not access the website or use any of our services.</p>
-        <p>
-          Jadetimes Media LLC reserves the right to modify these Terms of Service at any time. Any changes will be effective immediately upon posting on this page. Your continued use of our website
-          and services after any such modifications constitutes your acknowledgment of the modified terms and your agreement to abide and be bound by the modified terms.
-        </p>
-        <p>
-          If you have any questions or concerns regarding these terms, please contact us at info@jadetimes.com. Thank you for choosing Jadetimes Media LLC. We hope you enjoy your experience with us!
-        </p>
+        <ul className="list-outside list-disc ml-8 flex flex-col gap-2">
+          <li>The types of personal data we collect</li>
+          <li>How we use your personal data</li>
+          <li>Your rights regarding your personal data</li>
+          <li>How we secure your personal data</li>
+          <li>How to contact us with questions or concerns about your privacy</li>
+        </ul>
+        <section className="text-sm flex flex-col gap-4 ml-4" ref={section41Ref}>
+          <h3 className="font-medium lg:text-base">Scope of Policy</h3>
+          <p>This privacy policy applies to all personal data collected through:</p>
+          <ul className="list-outside list-disc ml-8 flex flex-col gap-2">
+            <li>
+              Our website{" "}
+              <a href="http://" className="underline" target="_blank">
+                (www.jadetimes.com)
+              </a>
+            </li>
+            <li>Mobile applications</li>
+            <li>Social media platforms</li>
+            <li>Other online and offline interactions</li>
+          </ul>
+          <p>It applies to all users, including visitors, customers, and business partners of Jadetimes Media LLC, registered as an LLC in the USA.</p>
+        </section>
       </section>
       <section className="text-sm flex flex-col gap-4 mt-8" ref={section2Ref}>
         <h2 className="font-medium lg:text-base">2. Acceptance of Terms</h2>
@@ -726,4 +734,4 @@ const TermsAndConditions = () => {
   );
 };
 
-export default TermsAndConditions;
+export default Privacy;
