@@ -1,2 +1,0 @@
-import{r as o}from"./index-BoxcpzF3.js";const p=(u,i)=>{const[l,n]=o.useState(1),[f,s]=o.useState([1,2,3,4,5]),c=u,t=Math.ceil(i/c);function I(){n(e=>{const r=e===1?1:e-1;return a(r),r})}function b(){n(e=>{const r=e===t?t:e+1;return a(r),r})}function a(e){e<=3?s([1,2,3,4,5]):e>=t-1?s([t-4,t-3,t-2,t-1,t]):s([e-2,e-1,e,e+1,e+2])}function g(){n(1),s([1,2,3,4,5])}function P(){n(t),s([t-4,t-3,t-2,t-1,t])}function d(e){n(e),a(e)}return[l,f,c,t,I,b,g,P,d]};export{p as u};
-//# sourceMappingURL=usePagination-BWgW0J_s.js.map
