@@ -33,6 +33,8 @@ const TalkToUs = lazy(() => import("../pages/TalkToUs"));
 const TermsAndConditions = lazy(() => import("../pages/TermsAndConditions"));
 const AboutUs = lazy(() => import("../pages/AboutUs"));
 const Privacy = lazy(() => import("../pages/Privacy"));
+const Careers = lazy(() => import("../pages/Careers"));
+const Cookie = lazy(() => import("../pages/Cookie"));
 const NotFound = lazy(() => import("../pages/NotFound"));
 
 const Pages = [
@@ -208,6 +210,16 @@ const Pages = [
     id: 17,
     path: "/privacy-policy",
     component: <Privacy />,
+  },
+  {
+    id: 18,
+    path: "/job-vacancies",
+    component: <Careers />,
+  },
+  {
+    id: 19,
+    path: "/cookie-policy",
+    component: <Cookie />,
   },
   {
     id: 25,

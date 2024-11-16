@@ -137,12 +137,12 @@ export const navPaths = [
   },
   {
     key: 16,
-    to: "/",
+    to: "/talk-to-us",
     name: "Contact Us",
   },
   {
     key: 17,
-    to: "/",
+    to: "/job-vacancies",
     name: "Careers at Jadetimes",
   },
   {

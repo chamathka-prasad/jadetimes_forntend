@@ -41,10 +41,10 @@ const Footer = () => {
                   <Link to="/shop">Jadetimes Shop</Link>
                 </li>
                 <li>
-                  <Link to="/careers">Jobs At Jadetimes</Link>
+                  <Link to="/job-vacancies">Jobs At Jadetimes</Link>
                 </li>
                 <li>
-                  <Link to="/cookies">Get Published Online Articles</Link>
+                  <Link to="/advertise-with-us">Get Published Online Articles</Link>
                 </li>
               </ul>
             )}
@@ -170,13 +170,13 @@ const Footer = () => {
                 <span className="mx-2">|</span>
               </li>
               <li>
-                <Link to="/careers" className="duration-300 hover:underline">
+                <Link to="/job-vacancies" className="duration-300 hover:underline">
                   Join Jadetimes Media
                 </Link>
                 <span className="mx-2">|</span>
               </li>
               <li>
-                <Link to="/cookies" className="duration-300 hover:underline">
+                <Link to="/cookie-policy" className="duration-300 hover:underline">
                   Cookies
                 </Link>
                 <span className="mx-2">|</span>

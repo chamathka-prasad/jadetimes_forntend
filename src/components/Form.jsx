@@ -1,6 +1,6 @@
 const Form = ({ className }) => {
   return (
-    <form action="" className={`text-sm flex flex-col gap-4 mt-4 md:pr-6 md:border-r md:border-r-[#17171724] ${className}`}>
+    <form action="" className={className}>
       <div>
         <label htmlFor="name">First name *</label>
         <input id="name" type="text" className="w-full border-b-2 border-b-black focus-visible:outline-none p-4" />
