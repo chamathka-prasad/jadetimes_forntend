@@ -1,1 +1,0 @@
-{"version":3,"file":"Payment-CnDqjM3S.js","sources":["../../src/pages/memberships/Payment.jsx"],"sourcesContent":["const Payment = () => {\n  return <h1>Checkout</h1>;\n};\n\nexport default Payment;"],"names":["Payment","jsx"],"mappings":"wCAAA,MAAMA,EAAU,IACPC,EAAA,IAAC,MAAG,SAAQ,UAAA,CAAA"}

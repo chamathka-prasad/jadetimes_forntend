@@ -1,0 +1,2 @@
+import{f as t,j as e,n,N as c}from"./index-DVQ2ADKl.js";const o=({item:a})=>{const r=t();return e.jsx(e.Fragment,{children:r==="large"&&e.jsx("nav",{className:"sub-page",children:e.jsx("ul",{className:"text-[#111111] text-xs flex flex-row gap-3 items-center justify-center",children:n[a].submenus.map(s=>e.jsx("li",{className:"my-2",children:e.jsx(c,{className:"block border-b-2 border-b-white hover:border-b-[#111111]",to:s.to,children:s.name})},s.key))})})})};export{o as S};
+//# sourceMappingURL=SubNav-BMN9bQIe.js.map
