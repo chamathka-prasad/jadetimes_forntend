@@ -4,32 +4,57 @@ import { Link } from "react-router-dom";
 const Privacy = () => {
   const section1Ref = useRef(null);
   const section2Ref = useRef(null);
+  const section21Ref = useRef(null);
+  const section22Ref = useRef(null);
+  const section23Ref = useRef(null);
   const section3Ref = useRef(null);
+  const section31Ref = useRef(null);
+  const section32Ref = useRef(null);
+  const section33Ref = useRef(null);
   const section4Ref = useRef(null);
   const section41Ref = useRef(null);
   const section42Ref = useRef(null);
   const section43Ref = useRef(null);
+  const section44Ref = useRef(null);
   const section5Ref = useRef(null);
   const section51Ref = useRef(null);
   const section52Ref = useRef(null);
+  const section53Ref = useRef(null);
   const section6Ref = useRef(null);
   const section61Ref = useRef(null);
   const section62Ref = useRef(null);
-  const section63Ref = useRef(null);
-  const section64Ref = useRef(null);
-  const section65Ref = useRef(null);
-  const section66Ref = useRef(null);
   const section7Ref = useRef(null);
+  const section71Ref = useRef(null);
+  const section72Ref = useRef(null);
   const section8Ref = useRef(null);
   const section81Ref = useRef(null);
   const section82Ref = useRef(null);
-  const section83Ref = useRef(null);
-  const section84Ref = useRef(null);
   const section9Ref = useRef(null);
+  const section91Ref = useRef(null);
+  const section92Ref = useRef(null);
+  const section93Ref = useRef(null);
+  const section94Ref = useRef(null);
+  const section95Ref = useRef(null);
+  const section96Ref = useRef(null);
+  const section97Ref = useRef(null);
   const section10Ref = useRef(null);
+  const section101Ref = useRef(null);
+  const section102Ref = useRef(null);
   const section11Ref = useRef(null);
+  const section111Ref = useRef(null);
+  const section112Ref = useRef(null);
+  const section113Ref = useRef(null);
   const section12Ref = useRef(null);
+  const section121Ref = useRef(null);
+  const section122Ref = useRef(null);
   const section13Ref = useRef(null);
+  const section131Ref = useRef(null);
+  const section132Ref = useRef(null);
+  const section14Ref = useRef(null);
+  const section141Ref = useRef(null);
+  const section142Ref = useRef(null);
+  const section15Ref = useRef(null);
+  const section16Ref = useRef(null);
 
   function scrollToSection(ref) {
     window.scrollTo({
@@ -69,145 +94,288 @@ const Privacy = () => {
             </li>
             <li className="mb-1">
               <Link className="underline" onClick={() => scrollToSection(section2Ref)}>
-                2. Acceptance of Terms
+                2. Information We Collect
               </Link>
+              <ul className="ml-10">
+                <li className="mb-1">
+                  <Link className="underline" onClick={() => scrollToSection(section21Ref)}>
+                    2.1. Personal Data
+                  </Link>
+                </li>
+                <li className="mb-1">
+                  <Link className="underline" onClick={() => scrollToSection(section22Ref)}>
+                    2.2. Non-Personal Data
+                  </Link>
+                </li>
+                <li className="mb-1">
+                  <Link className="underline" onClick={() => scrollToSection(section23Ref)}>
+                    2.3. Cookies and Tracking Technologies
+                  </Link>
+                </li>
+              </ul>
             </li>
             <li className="mb-1">
               <Link className="underline" onClick={() => scrollToSection(section3Ref)}>
-                3. Eligibility
+                3. How We Collect Your Information
               </Link>
+              <ul className="ml-10">
+                <li className="mb-1">
+                  <Link className="underline" onClick={() => scrollToSection(section31Ref)}>
+                    3.1. Direct Interactions
+                  </Link>
+                </li>
+                <li className="mb-1">
+                  <Link className="underline" onClick={() => scrollToSection(section32Ref)}>
+                    3.2. Automated Technologies
+                  </Link>
+                </li>
+                <li className="mb-1">
+                  <Link className="underline" onClick={() => scrollToSection(section33Ref)}>
+                    3.3. Third-Party Sources
+                  </Link>
+                </li>
+              </ul>
             </li>
             <li className="mb-1">
               <Link className="underline" onClick={() => scrollToSection(section4Ref)}>
-                4. Content and Intellectual Property
+                4. How We Use Your Information
               </Link>
               <ul className="ml-10">
                 <li className="mb-1">
                   <Link className="underline" onClick={() => scrollToSection(section41Ref)}>
-                    4.1. Ownership
+                    4.1. Service Delivery
                   </Link>
                 </li>
                 <li className="mb-1">
                   <Link className="underline" onClick={() => scrollToSection(section42Ref)}>
-                    4.2. Usage
+                    4.2. Marketing and Communications
                   </Link>
                 </li>
                 <li className="mb-1">
                   <Link className="underline" onClick={() => scrollToSection(section43Ref)}>
-                    4.3. User-Generated Content
+                    4.3. Legal Obligations
+                  </Link>
+                </li>
+                <li className="mb-1">
+                  <Link className="underline" onClick={() => scrollToSection(section44Ref)}>
+                    4.4. Legitimate Interests
                   </Link>
                 </li>
               </ul>
             </li>
             <li className="mb-1">
               <Link className="underline" onClick={() => scrollToSection(section5Ref)}>
-                5. User Conduct
+                5. Sharing Your Information
               </Link>
               <ul className="ml-10">
                 <li className="mb-1">
                   <Link className="underline" onClick={() => scrollToSection(section51Ref)}>
-                    5.1. Prohibited Activities
+                    5.1. Third-Party Service Providers
                   </Link>
                 </li>
                 <li className="mb-1">
                   <Link className="underline" onClick={() => scrollToSection(section52Ref)}>
-                    5.2. Account Security
+                    5.2. Legal Requirements
+                  </Link>
+                </li>
+                <li className="mb-1">
+                  <Link className="underline" onClick={() => scrollToSection(section53Ref)}>
+                    5.3. Business Transfers
                   </Link>
                 </li>
               </ul>
             </li>
             <li className="mb-1">
               <Link className="underline" onClick={() => scrollToSection(section6Ref)}>
-                6. Contributor Responsibilities
+                6. International Data Transfers
               </Link>
               <ul className="ml-10">
                 <li className="mb-1">
                   <Link className="underline" onClick={() => scrollToSection(section61Ref)}>
-                    6.1. Content Accuracy
+                    6.1. Cross-Border Data Transfer
                   </Link>
                 </li>
                 <li className="mb-1">
                   <Link className="underline" onClick={() => scrollToSection(section62Ref)}>
-                    6.2. Source Referencing
-                  </Link>
-                </li>
-                <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section63Ref)}>
-                    6.3. Editorial Oversight
-                  </Link>
-                </li>
-                <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section64Ref)}>
-                    6.4. Liability and Legal Compliance
-                  </Link>
-                </li>
-                <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section65Ref)}>
-                    6.5. Dispute Resolution
-                  </Link>
-                </li>
-                <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section66Ref)}>
-                    6.6. Contributor Agreement
+                    6.2. Safeguards
                   </Link>
                 </li>
               </ul>
             </li>
             <li className="mb-1">
               <Link className="underline" onClick={() => scrollToSection(section7Ref)}>
-                7. Advertising and Sponsorship
+                7. Data Security
               </Link>
+              <ul className="ml-10">
+                <li className="mb-1">
+                  <Link className="underline" onClick={() => scrollToSection(section71Ref)}>
+                    7.1. Security Measures
+                  </Link>
+                </li>
+                <li className="mb-1">
+                  <Link className="underline" onClick={() => scrollToSection(section72Ref)}>
+                    7.2. Data Breach Protocols
+                  </Link>
+                </li>
+              </ul>
             </li>
             <li className="mb-1">
               <Link className="underline" onClick={() => scrollToSection(section8Ref)}>
-                8. Dispute Resolution
+                8. Data Retention
               </Link>
               <ul className="ml-10">
                 <li className="mb-1">
                   <Link className="underline" onClick={() => scrollToSection(section81Ref)}>
-                    8.1. Negotiation and Informal Resolution
+                    8.1. Retention Periods
                   </Link>
                 </li>
                 <li className="mb-1">
                   <Link className="underline" onClick={() => scrollToSection(section82Ref)}>
-                    8.2. Arbitration
-                  </Link>
-                </li>
-                <li className="mb-1 text">
-                  <Link className="underline" onClick={() => scrollToSection(section83Ref)}>
-                    8.3. Waiver of Jury Trial and Class Action Waiver
-                  </Link>
-                </li>
-                <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section84Ref)}>
-                    8.4. Exceptions
+                    8.2. Deletion Procedures
                   </Link>
                 </li>
               </ul>
             </li>
             <li className="mb-1">
               <Link className="underline" onClick={() => scrollToSection(section9Ref)}>
-                9. Internship Opportunity
+                9. Your Rights
               </Link>
+              <ul className="ml-10">
+                <li className="mb-1">
+                  <Link className="underline" onClick={() => scrollToSection(section91Ref)}>
+                    9.1. Access
+                  </Link>
+                </li>
+                <li className="mb-1">
+                  <Link className="underline" onClick={() => scrollToSection(section92Ref)}>
+                    9.2. Correction
+                  </Link>
+                </li>
+                <li className="mb-1">
+                  <Link className="underline" onClick={() => scrollToSection(section93Ref)}>
+                    9.3. Erasure
+                  </Link>
+                </li>
+                <li className="mb-1">
+                  <Link className="underline" onClick={() => scrollToSection(section94Ref)}>
+                    9.4. Object to Processing
+                  </Link>
+                </li>
+                <li className="mb-1">
+                  <Link className="underline" onClick={() => scrollToSection(section95Ref)}>
+                    9.5. Restrict Processing
+                  </Link>
+                </li>
+                <li className="mb-1">
+                  <Link className="underline" onClick={() => scrollToSection(section96Ref)}>
+                    9.6. Data Portability
+                  </Link>
+                </li>
+                <li className="mb-1">
+                  <Link className="underline" onClick={() => scrollToSection(section97Ref)}>
+                    9.7. Withdraw Consent
+                  </Link>
+                </li>
+              </ul>
             </li>
             <li className="mb-1">
               <Link className="underline" onClick={() => scrollToSection(section10Ref)}>
-                10. Termination
+                10. Special Privacy Rights by Region
               </Link>
+              <ul className="ml-10">
+                <li className="mb-1">
+                  <Link className="underline" onClick={() => scrollToSection(section101Ref)}>
+                    10.1. European Union, Switzerland, and UK (GDPR)
+                  </Link>
+                </li>
+                <li className="mb-1">
+                  <Link className="underline" onClick={() => scrollToSection(section102Ref)}>
+                    10.2. People's Republic of China (PIPL)
+                  </Link>
+                </li>
+              </ul>
             </li>
             <li className="mb-1">
               <Link className="underline" onClick={() => scrollToSection(section11Ref)}>
-                11. Defamation and Legal Protections
+                11. Exercising Your Rights
               </Link>
+              <ul className="ml-10">
+                <li className="mb-1">
+                  <Link className="underline" onClick={() => scrollToSection(section111Ref)}>
+                    11.1. How to Make a Request
+                  </Link>
+                </li>
+                <li className="mb-1">
+                  <Link className="underline" onClick={() => scrollToSection(section112Ref)}>
+                    11.2. Identity Verification
+                  </Link>
+                </li>
+                <li className="mb-1">
+                  <Link className="underline" onClick={() => scrollToSection(section113Ref)}>
+                    11.3. Response Times
+                  </Link>
+                </li>
+              </ul>
             </li>
             <li className="mb-1">
               <Link className="underline" onClick={() => scrollToSection(section12Ref)}>
-                12. Changes to Terms
+                12. Children's Privacy
               </Link>
+              <ul className="ml-10">
+                <li className="mb-1">
+                  <Link className="underline" onClick={() => scrollToSection(section121Ref)}>
+                    12.1. Data Collection from Minors
+                  </Link>
+                </li>
+                <li className="mb-1">
+                  <Link className="underline" onClick={() => scrollToSection(section122Ref)}>
+                    12.2. Parental Controls
+                  </Link>
+                </li>
+              </ul>
             </li>
             <li className="mb-1">
               <Link className="underline" onClick={() => scrollToSection(section13Ref)}>
-                13. Contact Information
+                13. Third-Party Links
+              </Link>
+              <ul className="ml-10">
+                <li className="mb-1">
+                  <Link className="underline" onClick={() => scrollToSection(section131Ref)}>
+                    13.1. External Websites
+                  </Link>
+                </li>
+                <li className="mb-1">
+                  <Link className="underline" onClick={() => scrollToSection(section132Ref)}>
+                    13.2. Liability
+                  </Link>
+                </li>
+              </ul>
+            </li>
+            <li className="mb-1">
+              <Link className="underline" onClick={() => scrollToSection(section14Ref)}>
+                14. Changes to This Privacy Policy
+              </Link>
+              <ul className="ml-10">
+                <li className="mb-1">
+                  <Link className="underline" onClick={() => scrollToSection(section141Ref)}>
+                    14.1. Updates
+                  </Link>
+                </li>
+                <li className="mb-1">
+                  <Link className="underline" onClick={() => scrollToSection(section142Ref)}>
+                    14.2. Notification Procedures
+                  </Link>
+                </li>
+              </ul>
+            </li>
+            <li className="mb-1">
+              <Link className="underline" onClick={() => scrollToSection(section15Ref)}>
+                15. Contact Us
+              </Link>
+            </li>
+            <li className="mb-1">
+              <Link className="underline" onClick={() => scrollToSection(section16Ref)}>
+                16. Glossary
               </Link>
             </li>
           </ul>
@@ -226,7 +394,7 @@ const Privacy = () => {
           <li>How we secure your personal data</li>
           <li>How to contact us with questions or concerns about your privacy</li>
         </ul>
-        <section className="text-sm flex flex-col gap-4 ml-4" ref={section41Ref}>
+        <section className="text-sm flex flex-col gap-4 ml-4">
           <h3 className="font-medium lg:text-base">Scope of Policy</h3>
           <p>This privacy policy applies to all personal data collected through:</p>
           <ul className="list-outside list-disc ml-8 flex flex-col gap-2">
@@ -244,471 +412,453 @@ const Privacy = () => {
         </section>
       </section>
       <section className="text-sm flex flex-col gap-4 mt-8" ref={section2Ref}>
-        <h2 className="font-medium lg:text-base">2. Acceptance of Terms</h2>
-        <p>
-          By accessing or using Jadetimes Media LLC's website{" "}
-          <a href="http://" className="underline" target="_blank">
-            (www.jadetimes.com)
-          </a>{" "}
-          or any of our services, you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any part of these terms, you may not access the
-          website or use our services. These Terms of Service constitute a legally binding agreement between you and Jadetimes Media LLC. They govern your use of our website and services, including
-          any updates, enhancements, new features, and/or the addition of new properties. You acknowledge that your continued use of our website and services after any modifications to these Terms of
-          Service constitutes acceptance of those modifications. It is your responsibility to review these Terms of Service periodically for changes.
-        </p>
+        <h2 className="font-medium lg:text-base">2. Information We Collect</h2>
+        <section className="text-sm flex flex-col gap-4 ml-4" ref={section21Ref}>
+          <h3 className="font-medium lg:text-base">2.1. Personal Data</h3>
+          <p>
+            At Jadetimes Media, we collect personal data that you voluntarily provide to us when you interact with our services. Personal data refers to any information that can identify you directly
+            or indirectly. The types of personal data we collect may include:
+          </p>
+          <ul className="list-outside list-disc ml-8 flex flex-col gap-2">
+            <li>
+              <span className="font-medium">Contact Information:</span> Such as your name, email address, phone number, and mailing address.
+            </li>
+            <li>
+              <span className="font-medium">Account Information:</span> Such as username, password, and other credentials used to access our services.
+            </li>
+            <li>
+              <span className="font-medium">Payment Information:</span> Such as credit card details or other payment methods.
+            </li>
+            <li>
+              <span className="font-medium">Demographic Information:</span> Such as age, gender, and language preferences.
+            </li>
+            <li>
+              <span className="font-medium">Communication Preferences:</span> Such as your preferences in receiving marketing materials and communications from us.
+            </li>
+            <li>
+              <span className="font-medium">Content:</span> Such as comments, reviews, and other information you provide when interacting with our services.
+            </li>
+          </ul>
+        </section>
+        <section className="text-sm flex flex-col gap-4 ml-4" ref={section22Ref}>
+          <h3 className="font-medium lg:text-base">2.2. Non-Personal Data</h3>
+          <p>We also collect non-personal data that does not directly identify you. This may include:</p>
+          <ul className="list-outside list-disc ml-8 flex flex-col gap-2">
+            <li>
+              <span className="font-medium">Usage Data:</span> Such as information about your interactions with our website, mobile applications, and other services (e.g., pages visited, links
+              clicked, etc.).
+            </li>
+            <li>
+              <span className="font-medium">Device Information:</span> Such as your IP address, browser type, device type, operating system, and language settings.
+            </li>
+            <li>
+              <span className="font-medium">Aggregated Data:</span> Data that is combined or anonymized, which does not directly identify any individual.
+            </li>
+          </ul>
+        </section>
+        <section className="text-sm flex flex-col gap-4 ml-4" ref={section23Ref}>
+          <h3 className="font-medium lg:text-base">2.3. Cookies and Tracking Technologies</h3>
+          <p>
+            We use cookies and similar tracking technologies to enhance your experience and analyze how our services are used. Cookies are small text files stored on your device that contain data
+            about your browsing behavior. These technologies help us:
+          </p>
+          <ul className="list-outside list-disc ml-8 flex flex-col gap-2">
+            <li>
+              <span className="font-medium">Provide and Operate Our Services:</span> Cookies are essential for the functioning of certain features of our website and services.
+            </li>
+            <li>
+              <span className="font-medium">Improve Our Services:</span> Analyze trends, track user movements, and gather demographic information.
+            </li>
+            <li>
+              <span className="font-medium">Personalize Your Experience:</span> Remember your preferences and settings for a more personalized user experience.
+            </li>
+            <li>
+              <span className="font-medium">Marketing and Advertising:</span> Deliver relevant advertisements based on your interests and behavior.
+            </li>
+          </ul>
+          <p>
+            You have the option to manage cookies through your browser settings or by opting out where applicable. However, please note that disabling cookies may affect your ability to access certain
+            features of our services.
+          </p>
+        </section>
       </section>
       <section className="text-sm flex flex-col gap-4 mt-8" ref={section3Ref}>
-        <h2 className="font-medium lg:text-base">3. Eligibility</h2>
-        <p>
-          By accessing or using Jadetimes Media LLC's website{" "}
-          <a href="http://" className="underline" target="_blank">
-            (www.jadetimes.com)
-          </a>{" "}
-          or any of our services, you represent and warrant that you are at least 16 years old and have the legal capacity to enter into these Terms of Service. If you are under the age of 16, you may
-          only use our website and services with the consent and supervision of a parent or legal guardian who agrees to be bound by these Terms of Service. Our website and services are intended
-          solely for users who are 16 years of age or older. Any use of our website or services by individuals under the age of 16 is strictly prohibited.
-        </p>
-        <p>
-          If you are accessing or using our website and services on behalf of a company, organization, or other legal entity, you represent and warrant that you have the authority to bind such entity
-          to these Terms of Service. Jadetimes Media LLC reserves the right to refuse service, terminate accounts, or restrict access to our website and services in its sole discretion, including,
-          without limitation, if we believe that your use violates applicable laws or is harmful to our interests or the interests of others. ​
-        </p>
+        <h2 className="font-medium lg:text-base">3. How We Collect Your Information</h2>
+        <p>At Jadetimes Media, we utilize various methods to gather information that allows us to provide personalized services and enhance your overall experience.</p>
+        <section className="text-sm flex flex-col gap-4 ml-4" ref={section31Ref}>
+          <h3 className="font-medium lg:text-base">3.1. Direct Interactions</h3>
+          <p>
+            Direct interactions occur when you actively engage with us. This includes creating an account, updating your profile details, subscribing to our newsletters, participating in surveys or
+            contests, or reaching out to our customer support team for assistance. Through these interactions, you provide us with specific personal data voluntarily, enabling us to fulfill your
+            requests and improve our services to better meet your needs.
+          </p>
+        </section>
+        <section className="text-sm flex flex-col gap-4 ml-4" ref={section32Ref}>
+          <h3 className="font-medium lg:text-base">3.2. Automated Technologies</h3>
+          <p>
+            We employ automated technologies such as cookies, log files, and web beacons to collect information passively. These technologies automatically track and record certain data related to
+            your browsing behavior and preferences on our website. By analyzing this data, we gain insights into how you navigate our platform, which content interests you the most, and how we can
+            customize our offerings to enhance your user experience.
+          </p>
+        </section>
+        <section className="text-sm flex flex-col gap-4 ml-4" ref={section33Ref}>
+          <h3 className="font-medium lg:text-base">3.3. Third-Party Sources</h3>
+          <p>
+            In addition to direct interactions and automated technologies, we may obtain information from third-party sources. These sources may include social media platforms where you have chosen to
+            link your account with Jadetimes Media, analytics providers offering insights into user demographics and behavior patterns, and advertising partners helping us deliver relevant
+            advertisements to you. We ensure that our data collection from third-party sources complies with legal requirements and is conducted with your consent where necessary, maintaining
+            transparency and accountability in how we handle your information.
+          </p>
+        </section>
       </section>
       <section className="text-sm flex flex-col gap-4 mt-8" ref={section4Ref}>
-        <h2 className="font-medium lg:text-base">4. Content and Intellectual Property</h2>
+        <h2 className="font-medium lg:text-base">4. How We Use Your Information</h2>
+        <p>At Jadetimes Media, we utilize the information collected for various purposes to enhance our services and ensure a personalized user experience.</p>
         <section className="text-sm flex flex-col gap-4 ml-4" ref={section41Ref}>
-          <h3 className="font-medium lg:text-base">4.1 Ownership</h3>
+          <h3 className="font-medium lg:text-base">4.1. Service Delivery</h3>
           <p>
-            All content available on Jadetimes Media LLC's website{" "}
-            <a href="http://" className="underline" target="_blank">
-              (www.jadetimes.com)
-            </a>{" "}
-            including but not limited to text, graphics, logos, images, audio clips, video clips, data compilations, and software, is the property of Jadetimes Media LLC or its content suppliers and
-            is protected by United States and international copyright, trademark, and other intellectual property laws.
+            We use your information to provide, personalize, and improve our services. This includes processing transactions, delivering products or services you request, managing your account, and
+            responding to your inquiries and customer service requests effectively.
           </p>
         </section>
         <section className="text-sm flex flex-col gap-4 ml-4" ref={section42Ref}>
-          <h3 className="font-medium lg:text-base">4.2 Usage</h3>
+          <h3 className="font-medium lg:text-base">4.2. Marketing and Communications</h3>
           <p>
-            You may access and view the content on Jadetimes Media LLC's website solely for your personal, non-commercial use. You may not modify, reproduce, distribute, create derivative works of,
-            publicly display, publicly perform, republish, download, store, or transmit any of the content on our website without the prior written consent of Jadetimes Media LLC, except as provided
-            in these Terms of Service.
+            We may use your information to communicate with you about products, services, promotions, and events that may be of interest to you. This communication may occur through various channels
+            such as email, SMS, telephone, or targeted advertising on our website or third-party platforms. You have the option to opt-out of receiving marketing communications at any time.
           </p>
         </section>
         <section className="text-sm flex flex-col gap-4 ml-4" ref={section43Ref}>
-          <h3 className="font-medium lg:text-base">4.3 User-Generated Content</h3>
+          <h3 className="font-medium lg:text-base">4.3. Legal Obligations</h3>
           <p>
-            Jadetimes Media LLC may allow users to submit or upload content to our website, including but not limited to comments, reviews, and other user-generated content ("User Content"). By
-            submitting User Content to Jadetimes Media LLC, you grant us a non-exclusive, perpetual, irrevocable, royalty-free, worldwide license to use, reproduce, modify, adapt, publish, translate,
-            create derivative works from, distribute, and display such User Content in any media. You represent and warrant that you own or have the necessary rights, licenses, consents, and
-            permissions to grant the foregoing licenses to Jadetimes Media LLC.
+            In certain circumstances, we may be required to use or disclose your information to comply with legal obligations. This includes cooperating with regulatory authorities, law enforcement
+            agencies, or complying with court orders and legal processes.
+          </p>
+        </section>
+        <section className="text-sm flex flex-col gap-4 ml-4" ref={section44Ref}>
+          <h3 className="font-medium lg:text-base">4.4. Legitimate Interests</h3>
+          <p>
+            We may process your information for our legitimate business interests, provided that such processing does not outweigh your rights and freedoms. This includes improving our services,
+            conducting research and analytics to better understand our users' needs and preferences, detecting and preventing fraud or security incidents, and enhancing the safety and security of our
+            website and services.
           </p>
         </section>
       </section>
       <section className="text-sm flex flex-col gap-4 mt-8" ref={section5Ref}>
-        <h2 className="font-medium lg:text-base">5. User Conduct</h2>
+        <h2 className="font-medium lg:text-base">5. Sharing Your Information</h2>
+        <p>At Jadetimes Media, we value your privacy and are committed to ensuring your information is handled securely and responsibly. Here’s how we share your information.</p>
         <section className="text-sm flex flex-col gap-4 ml-4" ref={section51Ref}>
-          <h3 className="font-medium lg:text-base">5.1 Prohibited Activities</h3>
+          <h3 className="font-medium lg:text-base">5.1. Third-Party Service Providers</h3>
           <p>
-            When using Jadetimes Media LLC's website{" "}
-            <a href="http://" className="underline" target="_blank">
-              (www.jadetimes.com)
-            </a>{" "}
-            and services, you agree not to engage in any of the following prohibited activities:
+            We may share your information with trusted third-party service providers who assist us in delivering our services, such as payment processors, IT service providers, and marketing partners.
+            These third parties are contractually obligated to use your information only as necessary to provide the services we require and to comply with applicable legal requirements regarding data
+            protection.
           </p>
-          <ul className="list-outside list-disc ml-8 flex flex-col gap-2">
-            <li>
-              <span className="font-medium">Violating Laws and Regulations:</span> Use our website and services in any way that violates applicable local, state, national, or international laws or
-              regulations.
-            </li>
-            <li>
-              <span className="font-medium">Intellectual Property Infringement:</span> Infringe upon the intellectual property rights of others, including copyrights, trademarks, patents, trade
-              secrets, or other proprietary rights.
-            </li>
-            <li>
-              <span className="font-medium">Unauthorized Access:</span> Access, use, or attempt to access or use another user’s account, password, or personal information without permission.
-            </li>
-            <li>
-              <span className="font-medium">Interference:</span> Interfere with or disrupt the operation of Jadetimes Media LLC's website or services, including transmitting viruses, worms, or other
-              malicious code.
-            </li>
-            <li>
-              <span className="font-medium">Harassment or Harm:</span> Harass, abuse, threaten, or harm other users of our website or services.
-            </li>
-            <li>
-              <span className="font-medium">False Information:</span> Provide false, misleading, or inaccurate information when using our website or services.
-            </li>
-            <li>
-              <span className="font-medium">Commercial Use:</span> Use our website or services for commercial purposes without our prior written consent.
-            </li>
-            <li>
-              <span className="font-medium">Automated Use:</span> Use any automated system, including but not limited to bots, scripts, or spiders, to access or interact with our website or services.
-            </li>
-          </ul>
         </section>
         <section className="text-sm flex flex-col gap-4 ml-4" ref={section52Ref}>
-          <h3 className="font-medium lg:text-base">5.2 Account Security</h3>
+          <h3 className="font-medium lg:text-base">5.2. Legal Requirements</h3>
           <p>
-            You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. You agree to notify Jadetimes Media LLC
-            immediately of any unauthorized use of your account or any other breach of security.
+            We may disclose your information if required to do so by law, regulation, or legal process. This includes responding to lawful requests and legal obligations, such as court orders or
+            government agencies requesting information.
+          </p>
+        </section>
+        <section className="text-sm flex flex-col gap-4 ml-4" ref={section53Ref}>
+          <h3 className="font-medium lg:text-base">5.3. Business Transfers</h3>
+          <p>
+            In the event of a merger, acquisition, reorganization, or sale of assets, your information may be transferred as part of the transaction. We will notify you via email and/or prominent
+            notice on our website of any change in ownership or uses of your information, as well as any choices you may have regarding your information. We do not sell your personal information to
+            third parties for their own marketing purposes without your explicit consent.
           </p>
         </section>
       </section>
       <section className="text-sm flex flex-col gap-4 mt-8" ref={section6Ref}>
-        <h2 className="font-medium lg:text-base">6. Contributor Responsibilities</h2>
+        <h2 className="font-medium lg:text-base">6. International Data Transfers</h2>
+        <p>
+          At Jadetimes Media, we may transfer your information to countries outside of your jurisdiction for processing and storage. We take steps to ensure that your information is protected
+          regardless of where it is transferred.
+        </p>
         <section className="text-sm flex flex-col gap-4 ml-4" ref={section61Ref}>
-          <h3 className="font-medium lg:text-base">6.1. Content Accuracy</h3>
-          <ul className="list-outside list-disc ml-8 flex flex-col gap-2">
-            <li>
-              <span className="font-medium">Verification:</span> Contributors are responsible for ensuring that all content submitted for publication is accurate and fact-checked. This includes
-              verifying the authenticity of information, statistics, and quotes.
-            </li>
-            <li>
-              <span className="font-medium">Research:</span> Contributors must conduct thorough research and use reliable sources to support their claims and statements. Proper attribution to original
-              sources is required.
-            </li>
-            <li>
-              <span className="font-medium">Corrections:</span> If inaccuracies are discovered in published content, contributors must promptly notify JadeTimes Media and cooperate in making necessary
-              corrections or updates.
-            </li>
-          </ul>
+          <h3 className="font-medium lg:text-base">6.1. Cross-Border Data Transfer</h3>
+          <p>
+            Your personal information may be transferred to and stored in countries outside of your country of residence, where data protection laws may differ. By using our services, you consent to
+            the transfer of your information to these countries.
+          </p>
         </section>
         <section className="text-sm flex flex-col gap-4 ml-4" ref={section62Ref}>
-          <h3 className="font-medium lg:text-base">6.2. Source Referencing</h3>
-          <ul className="list-outside list-disc ml-8 flex flex-col gap-2">
-            <li>
-              <span className="font-medium">Attribution:</span> All sources of information used in articles must be cited accurately. This includes providing clear references to original sources and
-              attributing any third-party content appropriately.
-            </li>
-            <li>
-              <span className="font-medium">Transparency:</span> Contributors should ensure transparency in their reporting by disclosing any potential conflicts of interest and providing context
-              where necessary.
-            </li>
-          </ul>
-        </section>
-        <section className="text-sm flex flex-col gap-4 ml-4" ref={section63Ref}>
-          <h3 className="font-medium lg:text-base">6.3. Editorial Oversight</h3>
-          <ul className="list-outside list-disc ml-8 flex flex-col gap-2">
-            <li>
-              <span className="font-medium">Submission Process:</span> All content submitted by contributors will be reviewed by JadeTimes Media’s editorial team before publication. Contributors must
-              adhere to the review process and be open to feedback and revisions.
-            </li>
-            <li>
-              <span className="font-medium">Compliance:</span> Articles must comply with JadeTimes Media’s editorial guidelines and legal standards. Contributors are expected to adhere to these
-              standards to ensure the content meets our quality and compliance requirements.
-            </li>
-          </ul>
-        </section>
-        <section className="text-sm flex flex-col gap-4 ml-4" ref={section64Ref}>
-          <h3 className="font-medium lg:text-base">6.4. Liability and Legal Compliance</h3>
-          <ul className="list-outside list-disc ml-8 flex flex-col gap-2">
-            <li>
-              <span className="font-medium">Responsibility:</span> Contributors are legally responsible for the content they produce, including any claims of defamation, copyright infringement, or
-              other legal issues arising from their articles.
-            </li>
-            <li>
-              <span className="font-medium">Legal Standards:</span> Contributors must ensure that their content adheres to applicable laws and regulations, including defamation and intellectual
-              property laws. JadeTimes Media will provide general guidance but will not assume legal responsibility for contributors' content.
-            </li>
-          </ul>
-        </section>
-        <section className="text-sm flex flex-col gap-4 ml-4" ref={section65Ref}>
-          <h3 className="font-medium lg:text-base">6.5. Dispute Resolution</h3>
-          <ul className="list-outside list-disc ml-8 flex flex-col gap-2">
-            <li>
-              <span className="font-medium">Feedback Handling:</span> Contributors must be responsive to feedback and disputes related to their content. JadeTimes Media provides a mechanism for
-              readers to submit concerns or complaints, and contributors are expected to cooperate in resolving these issues.
-            </li>
-            <li>
-              <span className="font-medium">Content Review:</span> In case of disputes, JadeTimes Media will review the content and take appropriate action, which may include content removal or
-              revisions.
-            </li>
-          </ul>
-        </section>
-        <section className="text-sm flex flex-col gap-4 ml-4" ref={section66Ref}>
-          <h3 className="font-medium lg:text-base">6.6. Contributor Agreement</h3>
-          <ul className="list-outside list-disc ml-8 flex flex-col gap-2">
-            <li>
-              <span className="font-medium">Terms of Engagement:</span> By registering as a contributor, individuals agree to these responsibilities and acknowledge their commitment to maintaining
-              content accuracy and legal compliance.
-            </li>
-            <li>
-              <span className="font-medium">Agreement Acceptance:</span> Continued participation as a contributor signifies acceptance of these terms and conditions.
-            </li>
-          </ul>
+          <h3 className="font-medium lg:text-base">6.2. Safeguards</h3>
+          <p>
+            We implement appropriate safeguards to ensure the security and confidentiality of your information during international transfers. These safeguards may include contractual agreements with
+            recipients based on standard contractual clauses approved by relevant authorities, or ensuring recipients are Privacy Shield certified if transferring to the United States.
+          </p>
         </section>
       </section>
       <section className="text-sm flex flex-col gap-4 mt-8" ref={section7Ref}>
-        <h2 className="font-medium lg:text-base">7. Advertising and Sponsorship</h2>
-        <p>
-          Jadetimes Media LLC may display a variety of advertisements, promotions, sponsorships, and other forms of commercial content ("Advertising") on its website{" "}
-          <a href="http://" className="underline" target="_blank">
-            (www.jadetimes.com)
-          </a>{" "}
-          and within its services. These Advertising placements may be targeted based on various factors, including the content of information stored on the website, queries made through the website,
-          or other information collected.
-        </p>
-        <section className="text-sm flex flex-col gap-4 ml-4">
-          <h3 className="font-medium lg:text-base">Advertiser Responsibility</h3>
+        <h2 className="font-medium lg:text-base">7. Data Security</h2>
+        <p>At Jadetimes Media, safeguarding your personal information is a fundamental priority, and we have implemented comprehensive measures to ensure its security.</p>
+        <section className="text-sm flex flex-col gap-4 ml-4" ref={section71Ref}>
+          <h3 className="font-medium lg:text-base">7.1. Security Measures</h3>
           <p>
-            Advertisers and sponsors are solely responsible for ensuring that the material submitted for inclusion in Advertising on Jadetimes Media LLC's website complies with all applicable laws,
-            regulations, and industry standards. Jadetimes Media LLC does not endorse or guarantee the accuracy or reliability of any Advertising displayed on its website.
+            We utilize state of the art security technologies and rigorous protocols to protect your personal data against unauthorized access, misuse, or disclosure. Our infrastructure includes
+            robust encryption methods, secure servers, stringent access controls, and regular security audits to proactively identify and address vulnerabilities. By adhering to industry best
+            practices and standards, we maintain a secure environment for your information, ensuring that only authorized personnel have access and that your data remains protected throughout its
+            lifecycle.
           </p>
         </section>
-        <section className="text-sm flex flex-col gap-4 ml-4">
-          <h3 className="font-medium lg:text-base">Sponsored Content</h3>
+        <section className="text-sm flex flex-col gap-4 ml-4" ref={section72Ref}>
+          <h3 className="font-medium lg:text-base">7.2. Data Breach Protocols</h3>
           <p>
-            From time to time, Jadetimes Media LLC may publish sponsored content on its website. Sponsored content is created or commissioned by advertisers or sponsors and is intended to promote
-            products, services, or viewpoints. Sponsored content is distinct from editorial content and will be clearly labeled as "Sponsored" or with a similar disclosure to distinguish it from
-            regular content.
+            In the unlikely event of a data breach affecting your personal information, Jadetimes Media has established clear and swift response protocols. These protocols include immediate
+            investigation to determine the scope and impact of the breach, mitigation measures to minimize potential harm, and, if necessary, notification to you and relevant regulatory authorities in
+            accordance with legal requirements.
           </p>
           <p>
-            The views expressed in sponsored content are those of the advertiser or sponsor and do not necessarily reflect the views or opinions of Jadetimes Media LLC. However, Jadetimes Media LLC
-            strives to ensure that sponsored content meets our standards of quality, relevance, and transparency.
-          </p>
-        </section>
-        <section className="text-sm flex flex-col gap-4 ml-4">
-          <h3 className="font-medium lg:text-base">Disclosure and Compensation</h3>
-          <p>
-            Jadetimes Media LLC may receive compensation from advertisers or sponsors based on user interactions with Advertising or sponsored content displayed on the website. This compensation may
-            influence the placement, content, or availability of Advertising on our website. However, such compensation does not impact the independence, objectivity, or integrity of our editorial
-            content.
+            Our commitment to data security is ongoing, and we continuously review and enhance our security measures to adapt to emerging threats and technologies. By prioritizing the confidentiality
+            and integrity of your data, we strive to maintain your trust in Jadetimes Media's handling of your personal information.
           </p>
         </section>
       </section>
       <section className="text-sm flex flex-col gap-4 mt-8" ref={section8Ref}>
-        <h2 className="font-medium lg:text-base">8. Dispute Resolution</h2>
+        <h2 className="font-medium lg:text-base">8. Data Retention</h2>
+        <p>At Jadetimes Media, we adhere to clear policies regarding the retention and deletion of your personal information, ensuring responsible management throughout its lifecycle.</p>
         <section className="text-sm flex flex-col gap-4 ml-4" ref={section81Ref}>
-          <h3 className="font-medium lg:text-base">8.1 Negotiation and Informal Resolution</h3>
+          <h3 className="font-medium lg:text-base">8.1. Retention Periods</h3>
           <p>
-            In the event of any dispute, claim, or controversy arising out of or relating to your use of Jadetimes Media LLC's website{" "}
-            <a href="http://" className="underline" target="_blank">
-              (www.jadetimes.com)
-            </a>{" "}
-            or services, we encourage you to contact us first to seek a resolution informally.
+            We retain your personal data only for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law. The
+            retention periods vary depending on the type of information and the purposes for which it was collected. For example, we may retain personal data to comply with legal obligations, resolve
+            disputes, enforce our agreements, or support business operations.
           </p>
         </section>
         <section className="text-sm flex flex-col gap-4 ml-4" ref={section82Ref}>
-          <h3 className="font-medium lg:text-base">8.2 Arbitration</h3>
+          <h3 className="font-medium lg:text-base">8.2. Deletion Procedures</h3>
           <p>
-            If a resolution cannot be reached through negotiation or informal means, you agree that any dispute, claim, or controversy arising out of or relating to these Terms of Service or the
-            breach, termination, enforcement, interpretation, or validity thereof, including the determination of the scope or applicability of this agreement to arbitrate, shall be determined by
-            arbitration in New Mexico, USA before one arbitrator.
+            When personal data is no longer necessary for the purposes for which it was collected or if you withdraw consent (where applicable), we securely delete or anonymize it in accordance with
+            our data retention policies and procedures. Deletion methods are designed to prevent unauthorized access, misuse, or accidental loss of your personal information.
           </p>
-        </section>
-        <section className="text-sm flex flex-col gap-4 ml-4" ref={section83Ref}>
-          <h3 className="font-medium lg:text-base">8.3 Waiver of Jury Trial and Class Action Waiver</h3>
           <p>
-            You agree that by entering into these Terms of Service, you and Jadetimes Media LLC are each waiving the right to a trial by jury or to participate in a class action, collective action, or
-            representative proceeding.
-          </p>
-        </section>
-        <section className="text-sm flex flex-col gap-4 ml-4" ref={section84Ref}>
-          <h3 className="font-medium lg:text-base">8.4 Exceptions</h3>
-          <p>
-            Notwithstanding the above, Jadetimes Media LLC may seek injunctive relief or other equitable relief to protect its intellectual property rights or confidential information in any court of
-            competent jurisdiction.
+            By implementing these retention and deletion procedures, Jadetimes Media ensures that your personal data is retained only for as long as necessary and securely managed throughout its
+            lifecycle. This approach reflects our commitment to protecting your privacy and complying with legal obligations regarding data retention.
           </p>
         </section>
       </section>
       <section className="text-sm flex flex-col gap-4 mt-8" ref={section9Ref}>
-        <h2 className="font-medium lg:text-base">9. Internship Opportunity</h2>
-        <p>
-          We are excited to offer an exclusive opportunity for motivated and passionate individuals to join our team and gain invaluable experience in the media industry. Please review the following
-          guidelines to understand the program structure, requirements, and expectations.
-        </p>
-        <section className="text-sm flex flex-col gap-4 ml-4">
-          <h3 className="font-medium lg:text-base">Internship Duration</h3>
-          <p>Jadetimes Media LLC offers two internship duration options:</p>
-          <ul className="list-outside list-disc ml-8 flex flex-col gap-2">
-            <li>
-              <span className="font-medium">3 Month Program:</span> 90 Days
-            </li>
-            <li>
-              <span className="font-medium">6 Month Program:</span> 180 Days
-            </li>
-          </ul>
-          <p>Upon successful completion, interns will receive an official Internship Completion Letter from Jadetimes Media LLC, acknowledging their contribution and accomplishments.</p>
-        </section>
-        <section className="text-sm flex flex-col gap-4 ml-4">
-          <h3 className="font-medium lg:text-base">Work Requirements</h3>
-          <ul className="list-outside list-disc ml-8 flex flex-col gap-2">
-            <li>
-              <span className="font-medium">Daily Work Commitment:</span> Interns are required to work 1 hour daily (online) on assigned tasks.
-            </li>
-            <li>
-              <span className="font-medium">Attendance:</span> Attendance must be marked daily through the Jadetimes UMS platform. Failure to mark attendance may affect the internship record.
-            </li>
-            <li>
-              <span className="font-medium">Missed Attendance:</span> Interns who miss marking attendance may request HR to reinstate their attendance record within 3 days of the missed session.
-            </li>
-            <li>
-              <span className="font-medium">Unpaid Internship:</span> This program is unpaid, providing valuable exposure, hands-on experience, and the prestige of working with Jadetimes Media LLC.
-            </li>
-          </ul>
-        </section>
-        <section className="text-sm flex flex-col gap-4 ml-4">
-          <h3 className="font-medium lg:text-base">Leave Policy</h3>
-          <p>Interns are permitted 5 leaves per month:</p>
-          <ul className="list-outside list-disc ml-8 flex flex-col gap-2">
-            <li>
-              <span className="font-medium">3 Planned Leaves:</span> These must be applied for in advance through UMS.
-            </li>
-            <li>
-              <span className="font-medium">2 Emergency Leaves:</span> For unplanned events, interns must inform both HR and their current supervisor immediately.
-            </li>
-            <li>
-              <span className="font-medium">Special Emergency Leave:</span> Jadetimes acknowledges that unexpected situations or emergencies can arise. In such cases, interns may be granted special
-              emergency leave upon notifying HR and their supervisor. Upon returning, interns are required to provide appropriate evidence to HR supporting the emergency leave, ensuring transparency
-              and accountability.
-            </li>
-          </ul>
-        </section>
-        <section className="text-sm flex flex-col gap-4 ml-4">
-          <h3 className="font-medium lg:text-base">Notice of Resignation</h3>
+        <h2 className="font-medium lg:text-base">9. Your Rights</h2>
+        <p>At Jadetimes Media, safeguarding your personal data is paramount, and we are committed to ensuring transparency and facilitating the exercise of your data rights under applicable laws.</p>
+        <section className="text-sm flex flex-col gap-4 ml-4" ref={section91Ref}>
+          <h3 className="font-medium lg:text-base">9.1. Access</h3>
           <p>
-            If an intern wishes to leave the internship program, they are required to provide 2 months’ notice in advance, as per the terms of the internship agreement. This allows adequate time for
-            transitions and continuity of work.
+            You have the right to request access to the personal data we hold about you. This empowers you to confirm whether we process your personal data and to receive specific details about how
+            and why we process it, ensuring transparency and accountability in our data handling practices.
           </p>
         </section>
-        <section className="text-sm flex flex-col gap-4 ml-4">
-          <h3 className="font-medium lg:text-base">Code of Conduct and Agreement Compliance</h3>
-          <p>Adhering to the Jadetimes Media LLC Internship Agreement is mandatory. Breaking the agreement or failing to follow company guidelines will result in:</p>
-          <ul className="list-outside list-disc ml-8 flex flex-col gap-2">
-            <li>Immediate Termination.</li>
-            <li>A Disciplinary Inquiry, depending on the nature of the infraction.</li>
-          </ul>
+        <section className="text-sm flex flex-col gap-4 ml-4" ref={section92Ref}>
+          <h3 className="font-medium lg:text-base">9.2. Correction</h3>
+          <p>
+            Should you believe that any personal data we hold about you is inaccurate or incomplete, you have the right to request corrections. We prioritize the accuracy of your information and will
+            promptly update or rectify any inaccuracies upon verification, ensuring your data remains reliable and up-to-date.
+          </p>
         </section>
-        <section className="text-sm flex flex-col gap-4 ml-4">
-          <h3 className="font-medium lg:text-base">Professional Behavior and Conduct Expectations</h3>
-          <p>To maintain a productive and positive internship experience, please follow these additional guidelines:</p>
-          <ul className="list-outside list-disc ml-8 flex flex-col gap-2">
-            <li>
-              <span className="font-medium">Confidentiality and Discretion:</span> Interns are expected to handle all company information with confidentiality and are not permitted to disclose
-              internal discussions, project details, or sensitive information outside of Jadetimes Media LLC.
-            </li>
-            <li>
-              <span className="font-medium">Task Ownership and Completion:</span> Interns must take ownership of all assigned tasks, completing them punctually and with attention to quality. This not
-              only demonstrates responsibility but is also essential for personal growth and professional development.
-            </li>
-            <li>
-              <span className="font-medium">Special Emergency Leave:</span> Jadetimes acknowledges that unexpected situations or emergencies can arise. In such cases, interns may be granted special
-              emergency leave upon notifying HR and their supervisor. Upon returning, interns are required to provide appropriate evidence to HR supporting the emergency leave, ensuring transparency
-              and accountability.
-            </li>
-            <li>
-              <span className="font-medium">Feedback and Self-Improvement:</span> Interns are encouraged to seek feedback and consistently work on areas of improvement. Self-reflection and
-              adaptability are key to maximizing the learning experience.
-            </li>
-            <li>
-              <span className="font-medium">Professional Attitude:</span> Interns are representatives of Jadetimes, even online. Displaying a professional attitude in all interactions—whether with
-              teammates, supervisors, or clients—reflects positively on both the intern and the company.
-            </li>
-          </ul>
+        <section className="text-sm flex flex-col gap-4 ml-4" ref={section93Ref}>
+          <h3 className="font-medium lg:text-base">9.3. Erasure</h3>
+          <p>
+            You can request the deletion or removal of your personal data when it is no longer necessary for the purposes for which it was collected, if you withdraw consent (where applicable), or if
+            there are no overriding legitimate grounds for continued processing. This right enables you to have control over your data and its retention.
+          </p>
         </section>
-        <section className="text-sm flex flex-col gap-4 ml-4">
-          <h3 className="font-medium lg:text-base">Benefits of the Internship Experience</h3>
-          <p>This program offers:</p>
-          <ul className="list-outside list-disc ml-8 flex flex-col gap-2">
-            <li>
-              <span className="font-medium">Networking Opportunities:</span> Engage with seasoned professionals and expand your industry network.
-            </li>
-            <li>
-              <span className="font-medium">Skill Development:</span> Gain real-world experience in a media environment, fostering essential skills and professional growth.
-            </li>
-            <li>
-              <span className="font-medium">Professional Recognition:</span> Completing an internship with Jadetimes provides reputable experience and insight into media operations, a notable addition
-              to any resume.
-            </li>
-          </ul>
+        <section className="text-sm flex flex-col gap-4 ml-4" ref={section94Ref}>
+          <h3 className="font-medium lg:text-base">9.4. Object to Processing</h3>
+          <p>
+            In certain circumstances, you have the right to object to the processing of your personal data, including instances where we rely on legitimate interests as our legal basis for processing.
+            We will carefully assess your objection and cease processing unless we demonstrate compelling legitimate grounds that override your interests, rights, and freedoms, ensuring your concerns
+            are addressed respectfully.
+          </p>
         </section>
-        <section className="text-sm flex flex-col gap-4 ml-4">
-          <h3 className="font-medium lg:text-base">Reporting Concerns</h3>
-          <p>If interns have any concerns or issues to report, they are encouraged to contact Jadetimes directly:</p>
-          <ul className="list-outside list-disc ml-8 flex flex-col gap-2">
-            <li>
-              <span className="font-medium">Email:</span> info@jadetimes.com
-            </li>
-            <li>
-              <span className="font-medium">Website:</span> Visit our contact page on the official Jadetimes website
-            </li>
-          </ul>
+        <section className="text-sm flex flex-col gap-4 ml-4" ref={section95Ref}>
+          <h3 className="font-medium lg:text-base">9.5. Restrict Processing</h3>
+          <p>
+            Under specific conditions, you have the right to request the restriction of processing of your personal data, such as contesting the accuracy of your data or objecting to processing based
+            on legitimate interests. This right allows you to limit how your data is processed while issues are resolved or verified, ensuring your data's integrity and appropriate use.
+          </p>
+        </section>
+        <section className="text-sm flex flex-col gap-4 ml-4" ref={section96Ref}>
+          <h3 className="font-medium lg:text-base">9.6. Data Portability</h3>
+          <p>
+            Where technically feasible, you can request to receive your personal data in a structured, commonly used, and machine-readable format. This facilitates your ability to transfer your data
+            to another data controller without hindrance from us, promoting data interoperability and enhancing your control over your information.
+          </p>
+        </section>
+        <section className="text-sm flex flex-col gap-4 ml-4" ref={section97Ref}>
+          <h3 className="font-medium lg:text-base">9.7. Withdraw Consent</h3>
+          <p>
+            If we rely on your consent to process your personal data, you have the right to withdraw that consent at any time. This withdrawal does not affect the lawfulness of any processing based on
+            consent before its withdrawal, respecting your autonomy over how your data is used.
+          </p>
+          <p>
+            To exercise any of these rights or if you have any questions regarding the processing of your personal data, please contact us using the details provided in the "Contact Us" section below.
+            We are dedicated to responding to your requests promptly and within the timeframe stipulated by applicable data protection laws.
+          </p>
         </section>
       </section>
       <section className="text-sm flex flex-col gap-4 mt-8" ref={section10Ref}>
-        <h2 className="font-medium lg:text-base">10. Termination</h2>
-        <section className="text-sm flex flex-col gap-4 ml-4">
-          <h3 className="font-medium lg:text-base">Termination by Jadetimes Media LLC</h3>
-          <p>
-            Jadetimes Media LLC reserves the right to suspend or terminate your access to its website{" "}
-            <a href="http://" className="underline" target="_blank">
-              (www.jadetimes.com)
-            </a>{" "}
-            and services, in whole or in part, at any time and for any reason, without prior notice or liability to you. Reasons for such termination may include, but are not limited to, breaches of
-            these Terms of Service or violations of applicable laws or regulations.
-          </p>
-        </section>
-        <section className="text-sm flex flex-col gap-4 ml-4">
-          <h3 className="font-medium lg:text-base">Effect of Termination</h3>
-          <p>Upon termination of your access to Jadetimes Media LLC's website and services:</p>
+        <h2 className="font-medium lg:text-base">10. Special Privacy Rights by Region</h2>
+        <p>
+          At Jadetimes Media, we respect and uphold privacy rights as mandated by regional laws, ensuring that your personal data is handled with transparency and in compliance with applicable
+          regulations.
+        </p>
+        <section className="text-sm flex flex-col gap-4 ml-4" ref={section101Ref}>
+          <h3 className="font-medium lg:text-base">10.1. European Union, Switzerland, and UK (GDPR)</h3>
+          <p>If you are located in the European Union, Switzerland, or the UK, you are entitled to specific rights under the General Data Protection Regulation (GDPR):</p>
           <ul className="list-outside list-disc ml-8 flex flex-col gap-2">
-            <li>All rights and licenses granted to you under these Terms of Service will immediately cease.</li>
-            <li>You must immediately cease all use of the website and services.</li>
-            <li>Jadetimes Media LLC may delete or deactivate your account and all related information and files associated with your account.</li>
+            <li>
+              <span className="font-medium">Access:</span> You have the right to request access to your personal data and obtain information about how we process it.
+            </li>
+            <li>
+              <span className="font-medium">Correction:</span> You can request correction of inaccuracies or incomplete data we hold about you.
+            </li>
+            <li>
+              <span className="font-medium">Erasure:</span> You have the right to request deletion of your personal data under certain circumstances.
+            </li>
+            <li>
+              <span className="font-medium">Object to Processing:</span> You can object to the processing of your personal data, including for direct marketing purposes.
+            </li>
+            <li>
+              <span className="font-medium">Restrict Processing:</span> In certain situations, you can request restriction of the processing of your personal data.
+            </li>
+            <li>
+              <span className="font-medium">Data Portability:</span> You have the right to receive your personal data in a structured, commonly used, machine-readable format.
+            </li>
+            <li>
+              <span className="font-medium">Withdraw Consent:</span> Where we rely on consent for processing, you have the right to withdraw your consent at any time.
+            </li>
           </ul>
         </section>
-        <section className="text-sm flex flex-col gap-4 ml-4">
-          <h3 className="font-medium lg:text-base">Survival</h3>
-          <p>
-            Sections of these Terms of Service that by their nature should survive termination shall survive termination, including but not limited to Sections related to Intellectual Property,
-            Dispute Resolution, Limitation of Liability, and Miscellaneous Provisions.
-          </p>
+        <section className="text-sm flex flex-col gap-4 ml-4" ref={section102Ref}>
+          <h3 className="font-medium lg:text-base">10.2. People's Republic of China (PIPL)</h3>
+          <p>If you reside in the People's Republic of China, the Personal Information Protection Law (PIPL) grants you specific rights concerning your personal information:</p>
+          <ul className="list-outside list-disc ml-8 flex flex-col gap-2">
+            <li>
+              <span className="font-medium">Access, Correction, and Deletion:</span> You have the right to access, correct, and delete your personal information.
+            </li>
+            <li>
+              <span className="font-medium">Restrict or Object to Processing:</span> You can request restrictions on certain processing activities or object to the processing of your personal
+              information.
+            </li>
+            <li>
+              <span className="font-medium">Data Portability:</span> Upon request, you can obtain a copy of your personal information in a commonly used electronic format.
+            </li>
+            <li>
+              <span className="font-medium">Deceased Persons' Information:</span> Close relatives of deceased individuals can request access, correction, or deletion of their personal information held
+              by us.
+            </li>
+            <li>
+              <span className="font-medium">Third-Party Disclosures:</span> You have the right to inquire about third parties with whom we share your personal information.
+            </li>
+          </ul>
         </section>
+        <p>
+          These rights empower you to have control over your personal data and how it is processed. To exercise these rights or for any inquiries related to your privacy, please contact us using the
+          details provided in the "Contact Us" section below.
+        </p>
       </section>
       <section className="text-sm flex flex-col gap-4 mt-8" ref={section11Ref}>
-        <h2 className="font-medium lg:text-base">11. Defamation and Legal Protections</h2>
-        <ul className="list-outside list-disc ml-8 flex flex-col gap-2">
-          <li>
-            <span className="font-medium">Defamation Law:</span> JadeTimes Media LLC operates under the legal framework of New Mexico, which provides protections for freedom of speech and press under
-            the U.S. Constitution. Defamation claims must meet stringent legal standards, including proving falsity and actual malice.
-          </li>
-          <li>
-            <span className="font-medium">Freedom of Press:</span> As a U.S. - registered entity, JadeTimes Media LLC is protected by the First Amendment, which guarantees freedom of speech and press.
-            Articles published on JadeTimes.com are intended to foster public dialogue and may include critical commentary or reporting on public figures and issues.
-          </li>
-          <li>
-            <span className="font-medium">Publishing Rights:</span> Contributors grant JadeTimes Media LLC the right to publish, distribute, and promote their content across various platforms. This
-            includes the right to make necessary edits and modifications to ensure compliance with editorial standards and legal requirements.
-          </li>
-        </ul>
-      </section>
-      <section className="text-sm flex flex-col gap-4 mt-8" ref={section12Ref}>
-        <h2 className="font-medium lg:text-base">12. Changes to Terms</h2>
+        <h2 className="font-medium lg:text-base">11. Exercising Your Rights</h2>
         <p>
-          Jadetimes Media LLC reserves the right to modify or update these Terms of Service at any time. When we do, we will revise the "Effective Date" at the top of these Terms. We encourage you to
-          review these Terms periodically for any updates or changes. Your continued use of Jadetimes Media LLC's website{" "}
-          <a href="http://" className="underline" target="_blank">
-            (www.jadetimes.com)
-          </a>{" "}
-          and services after the posting of any revised Terms constitutes your acceptance of the revised Terms.
+          At Jadetimes Media, we are committed to ensuring that you can exercise your privacy rights effectively and securely. Depending on your location and the applicable laws, you have specific
+          rights regarding your personal data, and we are here to assist you in exercising those rights.
         </p>
-        <section className="text-sm flex flex-col gap-4 ml-4">
-          <h3 className="font-medium lg:text-base">Notification of Changes</h3>
+        <section className="text-sm flex flex-col gap-4 ml-4" ref={section111Ref}>
+          <h3 className="font-medium lg:text-base">11.1. How to Make a Request</h3>
           <p>
-            If we make material changes to these Terms, we may notify you by email or by posting a notice on our website prior to the effective date of the changes. It is your responsibility to ensure
-            that we have your current email address and to check for any such notices.
+            To make a request regarding your personal data, including accessing, correcting, deleting, or restricting its processing, please contact us using the information provided in the "Contact
+            Us" section of this Privacy Policy. We may ask you to specify the nature of your request to facilitate our response promptly.
           </p>
         </section>
-        <section className="text-sm flex flex-col gap-4 ml-4">
-          <h3 className="font-medium lg:text-base">Continuing to Use Services</h3>
+        <section className="text-sm flex flex-col gap-4 ml-4" ref={section112Ref}>
+          <h3 className="font-medium lg:text-base">11.2. Identity Verification</h3>
           <p>
-            If you do not agree with any changes to these Terms, your sole remedy is to discontinue your use of Jadetimes Media LLC's website and services. Continued use of the website and services
-            after the effective date of changes indicates your acceptance of the modified Terms.
+            To protect your privacy and security, and to ensure that your personal data is not disclosed to unauthorized parties, we may need to verify your identity before fulfilling your request.
+            This may require us to ask for specific information to confirm your identity. We will handle any personal data collected for verification purposes in accordance with our Privacy Policy.
+          </p>
+        </section>
+        <section className="text-sm flex flex-col gap-4 ml-4" ref={section113Ref}>
+          <h3 className="font-medium lg:text-base">11.3. Response Times</h3>
+          <p>
+            We strive to respond to all legitimate requests within a reasonable timeframe as required by applicable laws. The time required to process your request may vary depending on the complexity
+            and scope of your request. If we anticipate a delay or are unable to fulfill your request within a reasonable period, we will notify you and provide an explanation.
+          </p>
+        </section>
+      </section>
+      <section className="text-sm flex flex-col gap-4 mt-8" ref={section12Ref}>
+        <h2 className="font-medium lg:text-base">12. Children's Privacy</h2>
+        <p>
+          At Jadetimes Media, we recognize the importance of protecting children's privacy, especially in an online environment. We do not knowingly collect or solicit personal data from minors under
+          the age of 16 without verifiable parental consent. If we discover that we have inadvertently collected personal data from a minor without appropriate consent, we will take prompt steps to
+          delete such information from our records.
+        </p>
+        <section className="text-sm flex flex-col gap-4 ml-4" ref={section121Ref}>
+          <h3 className="font-medium lg:text-base">12.1. Data Collection from Minors</h3>
+          <p>
+            We do not intentionally collect personal data from individuals under the age of 16 without verifiable parental consent. If you believe that we may have collected personal data from a minor
+            without parental consent, please contact us immediately using the information provided in the "Contact Us" section of this Privacy Policy. We will take appropriate steps to investigate and
+            address the issue promptly.
+          </p>
+        </section>
+        <section className="text-sm flex flex-col gap-4 ml-4" ref={section122Ref}>
+          <h3 className="font-medium lg:text-base">12.2. Parental Controls</h3>
+          <p>
+            Parents and guardians play a crucial role in protecting the privacy of minors online. We encourage parents and guardians to monitor their children's online activities, implement parental
+            controls on devices and services they use, and guide their children on safe and responsible use of the internet. If you are a parent or guardian and believe that your child has provided
+            personal data to us without your consent, please contact us, and we will promptly take steps to delete such information.
           </p>
         </section>
       </section>
       <section className="text-sm flex flex-col gap-4 mt-8" ref={section13Ref}>
-        <h2 className="font-medium lg:text-base">13. Contact Information</h2>
-        <p>If you have any questions, concerns, or feedback regarding these Terms of Service, please contact Jadetimes Media LLC using the following information:</p>
+        <h2 className="font-medium lg:text-base">13. Third-Party Links</h2>
+        <p>
+          At Jadetimes Media, we may provide links to third-party websites or services that are not operated or controlled by us. This Privacy Policy applies solely to information collected by
+          Jadetimes Media through our own platforms and services. We encourage you to review the privacy policies of any third-party websites or services that you visit through links provided on our
+          platforms.
+        </p>
+        <section className="text-sm flex flex-col gap-4 ml-4" ref={section131Ref}>
+          <h3 className="font-medium lg:text-base">13.1. External Websites</h3>
+          <p>
+            Our platforms may contain links to external websites or services that are not operated or controlled by Jadetimes Media. We do not have control over the content, privacy policies, or
+            practices of these third-party websites or services. Therefore, we cannot be responsible for the protection and privacy of any information that you provide while visiting such websites. We
+            encourage you to review the privacy policies of these third-party websites before providing any personal data.
+          </p>
+        </section>
+        <section className="text-sm flex flex-col gap-4 ml-4" ref={section132Ref}>
+          <h3 className="font-medium lg:text-base">13.2. Liability</h3>
+          <p>
+            Jadetimes Media strives to ensure that any third-party links provided on our platforms are safe and reliable. However, we cannot guarantee the security and integrity of these third-party
+            websites or services. Visiting external links is at your own risk, and Jadetimes Media shall not be liable for any damages or losses arising from your use of third-party websites or
+            services linked from our platforms.
+          </p>
+        </section>
+      </section>
+      <section className="text-sm flex flex-col gap-4 mt-8" ref={section14Ref}>
+        <h2 className="font-medium lg:text-base">14. Changes to This Privacy Policy</h2>
+        <p>
+          Jadetimes Media reserves the right to update or modify this Privacy Policy at any time. Any changes we make will be posted on this page with an updated revision date. We encourage you to
+          review this Privacy Policy periodically for any updates.
+        </p>
+        <section className="text-sm flex flex-col gap-4 ml-4" ref={section141Ref}>
+          <h3 className="font-medium lg:text-base">14.1. Updates</h3>
+          <p>
+            We may update this Privacy Policy to reflect changes in our practices or for other operational, legal, or regulatory reasons. The updated Privacy Policy will be effective as soon as it is
+            posted unless otherwise stated. Your continued use of our services after the posting of the updated Privacy Policy constitutes your acceptance of the changes.
+          </p>
+        </section>
+        <section className="text-sm flex flex-col gap-4 ml-4" ref={section142Ref}>
+          <h3 className="font-medium lg:text-base">14.2. Notification Procedures</h3>
+          <p>
+            In the event of material changes to this Privacy Policy that may affect your rights or our data processing activities significantly, we will provide notice through our website or via email
+            (where we have your contact information). We encourage you to check our website periodically for any updates to our Privacy Policy.
+          </p>
+        </section>
+      </section>
+      <section className="text-sm flex flex-col gap-4 mt-8" ref={section15Ref}>
+        <h2 className="font-medium lg:text-base">15. Contact Us</h2>
+        <p>If you have any questions, concerns, or suggestions regarding this Privacy Policy or our privacy practices, please contact us using any of the following methods:</p>
         <ul className="list-outside list-disc ml-8 flex flex-col gap-2">
           <li>
             <span className="font-medium">Postal Address:</span>
@@ -728,8 +878,49 @@ const Privacy = () => {
             <div>Chat support is provided as a convenience and may not be available at all times.</div>
           </li>
         </ul>
+        <p>We are committed to addressing any inquiries or issues regarding the handling of your personal information promptly and thoroughly.</p>
       </section>
-      <p className="mt-8 text-sm">Please ensure to provide sufficient information so we can respond appropriately to your inquiry. We strive to address all inquiries promptly and effectively.</p>
+      <section className="text-sm flex flex-col gap-4 mt-8" ref={section16Ref}>
+        <h2 className="font-medium lg:text-base">16. Glossary</h2>
+        <p>To better understand the terms used in this Privacy Policy, please refer to the following definitions:</p>
+        <ul className="list-outside list-disc ml-8 flex flex-col gap-2">
+          <li>
+            <span className="font-medium">Personal Data:</span> Information that relates to an identified or identifiable individual.
+          </li>
+          <li>
+            <span className="font-medium">Non-Personal Data:</span> Data that does not directly or indirectly identify an individual and that may be aggregated for statistical analysis.
+          </li>
+          <li>
+            <span className="font-medium">Cookies:</span> Small files stored on your device that collect and store information about your browsing activities.
+          </li>
+          <li>
+            <span className="font-medium">Data Controller:</span> Entity that determines the purposes and means of processing personal data.
+          </li>
+          <li>
+            <span className="font-medium">Data Processor:</span> Entity that processes personal data on behalf of the data controller.
+          </li>
+          <li>
+            <span className="font-medium">GDPR:</span> General Data Protection Regulation, a European Union regulation that governs the processing of personal data.
+          </li>
+          <li>
+            <span className="font-medium">PIPL:</span> Personal Information Protection Law, applicable in the People's Republic of China, regulating the processing of personal information.
+          </li>
+          <li>
+            <span className="font-medium">Data Subject:</span> An identified or identifiable natural person whose personal data is processed.
+          </li>
+          <li>
+            <span className="font-medium">Processing:</span> Any operation or set of operations performed on personal data, such as collection, recording, organization, structuring, storage,
+            adaptation, or alteration.
+          </li>
+          <li>
+            <span className="font-medium">Third Party:</span> Any natural or legal person, public authority, agency, or body other than the data subject, data controller, data processor, and persons
+            who, under the direct authority of the data controller or data processor, are authorized to process personal data.
+          </li>
+        </ul>
+      </section>
+      <p className="mt-8 text-sm">
+        For any further clarification or questions regarding these definitions, please contact us using the information provided in Section 15 (Contact Us) of this Privacy Policy.
+      </p>
     </div>
   );
 };
