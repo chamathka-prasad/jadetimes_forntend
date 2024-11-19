@@ -5,7 +5,7 @@ import { FaChevronRight } from "react-icons/fa6";
 import useWindowSize from "../hooks/useWindowSize";
 
 const ThirdSlider = ({ articles, className }) => {
-  const screen = useWindowSize();
+  const screenSize = useWindowSize();
   const [currentIndex, setCurrentIndex] = useState(0);
   const touchStartRef = useRef(0);
   const touchEndRef = useRef(0);
@@ -73,7 +73,7 @@ const ThirdSlider = ({ articles, className }) => {
                     loading="lazy"
                   ></iframe>
                   <div className="text-white md:w-1/2 flex flex-col gap-4 md:justify-between md:h-full">
-                    {screen !== "small" && (
+                    {screenSize !== "small" && (
                       <a
                         href="https://www.youtube.com/@JadeTimes"
                         className="md:tracking-widest md:bg-neutral-800 md:block md:w-fit md:text-nowrap md:uppercase md:text-[0.625rem] md:px-2 md:py-1 lg:duration-300 lg:hover:bg-white lg:hover:text-black"
@@ -87,7 +87,7 @@ const ThirdSlider = ({ articles, className }) => {
                       mollitia iste et itaque alias repellendus consectetur. Nisi tempore iste minima nam nostrum nulla repudiandae perspiciatis.
                     </p>
                     <div className="flex flex-row gap-4">
-                      {screen === "small" && (
+                      {screenSize === "small" && (
                         <a href="https://www.youtube.com/@JadeTimes" className="bg-neutral-800 block w-fit text-nowrap uppercase text-sm px-3 py-2">
                           Youtube updates
                         </a>

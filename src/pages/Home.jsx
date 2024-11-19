@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { FaChevronRight } from "react-icons/fa6";
 
 import UpdatesBadge from "../components/UpdatesBadge";
-import MembershipBadge from "../components/MembershipBadge";
+import MembershipLink from "../components/MembershipLink";
 import PictureLink from "../components/PictureLink";
 import FirstSlider from "../components/FirstSlider";
 import SecondSlider from "../components/SecondSlider";
@@ -17,7 +17,7 @@ import SpecialPrinters from "../assets/add-2.gif";
 import useWindowSize from "../hooks/useWindowSize";
 
 const Home = () => {
-  const screen = useWindowSize();
+  const screenSize = useWindowSize();
 
   const articlesTwo = Articles.slice(1, 5);
   const articlesThree = Articles.slice(5, 9);
@@ -30,18 +30,19 @@ const Home = () => {
   return (
     <>
       <div className="max-w-[1300px] mx-auto relative md:p-4">
-        {screen !== "small" && <UpdatesBadge className="md:block md:mb-4 md:px-2 md:py-[0.15rem]">Latest Updates</UpdatesBadge>}
+        {screenSize !== "small" && <UpdatesBadge className="md:block md:mb-4 md:px-2 md:py-[0.15rem]">Latest Updates</UpdatesBadge>}
         <div className="text-neutral-900 md:grid md:grid-cols-2 md:gap-4 lg:grid-cols-[repeat(17,_minmax(0,_1fr))] lg:gap-5 xl:col-start-2 xl:col-span-10 xl:row-start-2">
+          {/* 1 */}
           <article className="md:grid md:grid-cols-2 md:border md:border-neutral-300 md:col-span-2 lg:col-[13_span_/_13_span] lg:row-start-2">
             <div className="relative">
-              {screen === "small" && <UpdatesBadge className="block px-3 py-2 text-sm absolute -bottom-9 left-1/2 -translate-x-1/2 -translate-y-1/2">Latest Updates</UpdatesBadge>}
+              {screenSize === "small" && <UpdatesBadge className="block px-3 py-2 text-sm absolute -bottom-9 left-1/2 -translate-x-1/2 -translate-y-1/2">Latest Updates</UpdatesBadge>}
               <PictureLink link={Articles[0].link}>
                 <img src={Articles[0].image} alt={Articles[0].title} className="object-cover object-center md:h-full" />
               </PictureLink>
             </div>
             <div className="p-4 pt-8 flex flex-col justify-between gap-2 md:justify-start md:p-4 md:gap-4 lg:p-8">
               <div>
-                {screen === "large" && <Link className="lg:block lg:w-fit lg:text-xs">{Articles[0].authorName}</Link>}
+                {screenSize === "large" && <Link className="lg:block lg:w-fit lg:text-xs">{Articles[0].authorName}</Link>}
                 <div className="whitespace-nowrap lg:text-xs">{Articles[0].posted}</div>
               </div>
               <h2>
@@ -52,6 +53,7 @@ const Home = () => {
               <p className="line-clamp-2 lg:text-sm lg:line-clamp-3">{Articles[0].title}</p>
             </div>
           </article>
+          {/* 2 */}
           <div className="p-4 flex flex-col gap-4 md:p-0 md:grid md:grid-cols-2 md:col-span-2 md:gap-4 lg:grid-cols-12 lg:gap-5 lg:col-[13_span_/_13_span]">
             {articlesTwo.map((article, index) => (
               <article key={index} className="flex flex-row p-4 gap-4 border border-neutral-300 lg:p-0 lg:flex-col lg:gap-0 lg:col-span-3">
@@ -59,7 +61,7 @@ const Home = () => {
                   <img src={article.image} alt={article.title} className="min-w-24 w-24 min-h-24 h-24 object-cover object-center lg:w-full lg:h-full" />
                 </PictureLink>
                 <div className="flex flex-col justify-between gap-4 lg:p-4">
-                  {screen === "large" && (
+                  {screenSize === "large" && (
                     <Link to={article.categoryLink} className="lg:w-fit text-sm font-light text-[#686868] lg:order-[-1]">
                       {article.categoryTitle}
                     </Link>
@@ -69,17 +71,18 @@ const Home = () => {
                       {article.title}
                     </Link>
                   </h2>
-                  {screen === "large" && <p className="lg:line-clamp-2 lg:text-[0.6875rem]">{article.title}</p>}
-                  {screen !== "large" && <div className="whitespace-nowrap lg:text-xs">{article.posted}</div>}
+                  {screenSize === "large" && <p className="lg:line-clamp-2 lg:text-[0.6875rem]">{article.title}</p>}
+                  {screenSize !== "large" && <div className="whitespace-nowrap lg:text-xs">{article.posted}</div>}
                 </div>
               </article>
             ))}
           </div>
+          {/* 3 */}
           <div className="lg:col-start-[14] lg:col-span-4 lg:row-start-3 lg:row-span-1">
             <a href="https://specialgraphics.us/" className="block" target="_blank" aria-label="visit special graphics website">
               <img src={SpecialGraphics} alt="special graphics representation" className="md:h-[320px] lg:h-auto" />
             </a>
-            {screen === "large" && (
+            {screenSize === "large" && (
               <div className="lg:mt-4 lg:flex lg:flex-row lg:items-center xl:gap-4">
                 <UpdatesBadge className="block px-3 py-2 text-center w-full">Latest Updates</UpdatesBadge>
                 <a href="" className="w-full text-[#282626] text-sm group flex flex-row items-center justify-center py-[0.4rem] text-nowrap">
@@ -89,10 +92,11 @@ const Home = () => {
               </div>
             )}
           </div>
+          {/* 4 */}
           <div className="flex flex-col gap-4 p-4 md:p-0 md:col-span-2 md:grid md:grid-cols-2 md:row-span-2 lg:grid-cols-4 lg:col-span-full lg:row-start-1 lg:row-span-1 lg:gap-0">
             {articlesThree.map((article, index) => (
               <article key={index} className="flex flex-col justify-between gap-4 lg:pr-6 lg:pl-6 lg:border-r-2 lg:border-[#51515137] lg:first:pl-0 lg:last:pr-0 lg:last:border-none">
-                {screen !== "large" && (
+                {screenSize !== "large" && (
                   <PictureLink link={article.link}>
                     <img src={article.image} alt={article.title} />
                   </PictureLink>
@@ -108,6 +112,7 @@ const Home = () => {
               </article>
             ))}
           </div>
+          {/* 5 */}
           <div className="p-4 flex flex-col gap-4 md:p-0 md:col-start-2 md:row-start-3 lg:row-start-2 lg:col-span-4 lg:gap-5">
             {articlesEight.map((article, index) => (
               <article className="flex flex-row lg:p-3 lg:border lg:border-neutral-300 lg:gap-4" key={index}>
@@ -120,7 +125,7 @@ const Home = () => {
                       {article.title}
                     </Link>
                   </h2>
-                  {screen === "large" && (
+                  {screenSize === "large" && (
                     <Link to={article.categoryLink} className="lg:w-fit text-sm text-[#686868] font-light">
                       {article.categoryTitle}
                     </Link>
@@ -151,13 +156,13 @@ const Home = () => {
                 <h3>
                   <Link className="overflow-anywhere line-clamp-2 lg:text-sm lg:line-clamp-3">{article.title}</Link>
                 </h3>
-                {screen !== "large" && <div className="whitespace-nowrap">{article.posted}</div>}
+                {screenSize !== "large" && <div className="whitespace-nowrap">{article.posted}</div>}
               </div>
             </article>
           ))}
         </div>
         <div className="lg:grid lg:grid-cols-10 lg:pb-4 lg:pt-5">
-          {screen !== "large" && (
+          {screenSize !== "large" && (
             <div className="flex flex-col gap-4 md:flex-row">
               {articlesFive.map((article, index) => (
                 <article
@@ -177,7 +182,7 @@ const Home = () => {
               ))}
             </div>
           )}
-          {screen === "large" && <FirstSlider className="lg:col-span-6 lg:border lg:border-neutral-300 lg:mr-10" articles={articlesFive} />}
+          {screenSize === "large" && <FirstSlider className="lg:col-span-6 lg:border lg:border-neutral-300 lg:mr-10" articles={articlesFive} />}
           <section className="lg:pl-10 lg:border-l lg:border-[#515151] lg:col-span-4 lg:flex lg:flex-col lg:gap-5">
             <div className="mb-4 lg:mx-0 lg:flex lg:flex-row lg:gap-4 lg:items-center lg:mb-0">
               <h3 className="mt-4 lg:mt-0">
@@ -185,7 +190,7 @@ const Home = () => {
                   Whats <span className="font-normal inline-block">Trending</span>
                 </Link>
               </h3>
-              {screen === "large" && <MembershipBadge className="lg:font-semibold lg:text-[0.625rem]" />}
+              {screenSize === "large" && <MembershipLink className="lg:font-semibold lg:text-[0.625rem]" />}
             </div>
             <div className="flex flex-col gap-4 md:grid md:grid-cols-2 lg:grid-cols-2 lg:gap-5 lg:p-0 lg:h-full">
               {articlesSix.map((article, index) => (
@@ -197,8 +202,8 @@ const Home = () => {
                     <h4>
                       <Link className="line-clamp-2 overflow-anywhere lg:text-sm lg:line-clamp-3">{article.title}</Link>
                     </h4>
-                    {screen !== "large" && <div className="whitespace-nowrap lg:text-xs">{article.posted}</div>}
-                    {screen === "large" && (
+                    {screenSize !== "large" && <div className="whitespace-nowrap lg:text-xs">{article.posted}</div>}
+                    {screenSize === "large" && (
                       <Link to={article.categoryLink} className="text-sm font-light w-fit text-[#686868]">
                         {article.categoryTitle}
                       </Link>
@@ -209,7 +214,7 @@ const Home = () => {
             </div>
           </section>
         </div>
-        {screen === "large" && (
+        {screenSize === "large" && (
           <section>
             <h3 className="mb-4">
               <Link className="text-[#111111] font-semibold text-lg lg:text-xl">
@@ -264,7 +269,7 @@ const Home = () => {
             {articlesEight.map((article, index) => (
               <article key={index} link={article.link} className="mb-4 md:last-of-type:mb-0 lg:odd:my-8">
                 <div className="flex flex-col justify-between gap-4">
-                  {screen !== "large" && (
+                  {screenSize !== "large" && (
                     <PictureLink link={article.link}>
                       <img src={article.image} alt="" />
                     </PictureLink>
@@ -286,7 +291,7 @@ const Home = () => {
             {articlesEight.map((article, index) => (
               <article key={index} link={article.link} className="mb-4 md:last-of-type:mb-0 lg:odd:my-8">
                 <div className="flex flex-col justify-between gap-4">
-                  {screen !== "large" && (
+                  {screenSize !== "large" && (
                     <PictureLink link={article.link}>
                       <img src={article.image} alt="" />
                     </PictureLink>
@@ -308,7 +313,7 @@ const Home = () => {
             {articlesEight.map((article, index) => (
               <article key={index} link={article.link} className="mb-4 md:last-of-type:mb-0 lg:odd:my-8">
                 <div className="flex flex-col justify-between gap-4">
-                  {screen !== "large" && (
+                  {screenSize !== "large" && (
                     <PictureLink link={article.link}>
                       <img src={article.image} alt="" />
                     </PictureLink>
@@ -330,7 +335,7 @@ const Home = () => {
             {articlesEight.map((article, index) => (
               <article key={index} link={article.link} className="mb-4 last-of-type:mb-0 lg:odd:my-8">
                 <div className="flex flex-col justify-between gap-4">
-                  {screen !== "large" && (
+                  {screenSize !== "large" && (
                     <PictureLink link={article.link}>
                       <img src={article.image} alt="" />
                     </PictureLink>
@@ -363,8 +368,8 @@ const Home = () => {
                     <h3>
                       <Link className="overflow-anywhere line-clamp-2 lg:text-sm lg:line-clamp-3">{article.title}</Link>
                     </h3>
-                    {screen === "large" && <p className="lg:line-clamp-2 lg:text-xs">{article.title}</p>}
-                    {screen !== "large" && <div className="whitespace-nowrap lg:text-xs lg:order-[-1]">{article.posted}</div>}
+                    {screenSize === "large" && <p className="lg:line-clamp-2 lg:text-xs">{article.title}</p>}
+                    {screenSize !== "large" && <div className="whitespace-nowrap lg:text-xs lg:order-[-1]">{article.posted}</div>}
                   </div>
                 </div>
               </article>
@@ -403,10 +408,7 @@ const Home = () => {
                   these two groups, shedding light on hidden influences and funding sources.
                 </p>
                 <div className="flex items-center gap-4 text-sm">
-                  <a
-                    href="https://www.youtube.com/@JadeTimes"
-                    className="bg-neutral-800 inline-block uppercase tracking-widest text-nowrap px-3 py-2 md:hidden"
-                  >
+                  <a href="https://www.youtube.com/@JadeTimes" className="bg-neutral-800 inline-block uppercase tracking-widest text-nowrap px-3 py-2 md:hidden">
                     Youtube updates
                   </a>
                   <a
@@ -432,11 +434,11 @@ const Home = () => {
                   <h3>
                     <Link className="overflow-anywhere line-clamp-2 lg:text-lg lg:font-medium">{Articles[0].title}</Link>
                   </h3>
-                  {screen !== "large" && <div className="whitespace-nowrap lg:text-xs md:order-[-1]">{Articles[0].posted}</div>}
+                  {screenSize !== "large" && <div className="whitespace-nowrap lg:text-xs md:order-[-1]">{Articles[0].posted}</div>}
                 </div>
               </div>
             </article>
-            {screen === "large" && (
+            {screenSize === "large" && (
               <div className="lg:flex lg:flex-col lg:gap-5">
                 {articlesEight.map((article, index) => (
                   <article className="flex flex-row gap-4 items-center" key={index}>
@@ -458,7 +460,7 @@ const Home = () => {
               }}
               className="h-full bg-center bg-cover bg-no-repeat bg-image-none"
             >
-              {screen === "large" && (
+              {screenSize === "large" && (
                 <PictureLink>
                   <img src={articlesFive[0].image} alt="" />
                 </PictureLink>
@@ -467,8 +469,8 @@ const Home = () => {
                 <h3 className="order-2">
                   <Link className="line-clamp-3 text-lg lg:text-2xl lg:line-clamp-2 lg:font-medium">{articlesFive[0].title}</Link>
                 </h3>
-                {screen === "large" && <p className="lg:line-clamp-2 lg:text-lg lg:order-3">{articlesFive[0].title}</p>}
-                {screen !== "large" && <div className="whitespace-nowrap lg:text-xs">{articlesFive[0].posted}</div>}
+                {screenSize === "large" && <p className="lg:line-clamp-2 lg:text-lg lg:order-3">{articlesFive[0].title}</p>}
+                {screenSize !== "large" && <div className="whitespace-nowrap lg:text-xs">{articlesFive[0].posted}</div>}
               </div>
             </article>
           </div>
@@ -482,11 +484,11 @@ const Home = () => {
                   <h3>
                     <Link className="overflow-anywhere line-clamp-2 lg:text-lg lg:font-medium">{Articles[1].title}</Link>
                   </h3>
-                  {screen !== "large" && <div className="whitespace-nowrap lg:text-xs md:order-[-1]">{Articles[1].posted}</div>}
+                  {screenSize !== "large" && <div className="whitespace-nowrap lg:text-xs md:order-[-1]">{Articles[1].posted}</div>}
                 </div>
               </div>
             </article>
-            {screen === "large" && (
+            {screenSize === "large" && (
               <div className="lg:flex lg:flex-col lg:gap-5">
                 {articlesEight.map((article, index) => (
                   <article className="flex flex-row gap-4 items-center" key={index}>

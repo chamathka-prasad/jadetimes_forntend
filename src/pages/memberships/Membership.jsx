@@ -30,7 +30,7 @@ const memberBenefits = [
 ];
 
 const Membership = () => {
-  const screen = useWindowSize();
+  const screenSize = useWindowSize();
   function scrollTop() {
     window.scrollTo({
       top: 0,
@@ -45,9 +45,9 @@ const Membership = () => {
         <ul className="text-neutral-900 mt-8 px-4 flex flex-col gap-4 md:grid md:grid-cols-2 max-w-[1300px] mx-auto lg:gap-x-8">
           {memberBenefits.map((benefit, index) => (
             <li key={index}>
-              {screen === "large" && <div className="text-5xl font-black text-[#949494] float-left min-w-[4.0625rem] text-center mr-4">{index + 1 <= 9 ? `0${index + 1}` : index + 1}</div>}
+              {screenSize === "large" && <div className="text-5xl font-black text-[#949494] float-left min-w-[4.0625rem] text-center mr-4">{index + 1 <= 9 ? `0${index + 1}` : index + 1}</div>}
               <div className="flex flex-row gap-4 items-center">
-                {screen !== "large" && <div className="text-5xl font-black text-[#949494] min-w-[4.0625rem] text-center">{index + 1 <= 9 ? `0${index + 1}` : index + 1}</div>}
+                {screenSize !== "large" && <div className="text-5xl font-black text-[#949494] min-w-[4.0625rem] text-center">{index + 1 <= 9 ? `0${index + 1}` : index + 1}</div>}
                 <h3 className="font-semibold text-[1.0625rem]">{benefit.type}</h3>
               </div>
               <p className="mt-2 lg:text-sm md:line-clamp-4 lg:line-clamp-3">{benefit.details}</p>

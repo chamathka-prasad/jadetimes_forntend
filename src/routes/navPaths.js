@@ -1,4 +1,4 @@
-export const navPaths = [
+const navPaths = [
   {
     key: 0,
     to: "/",
@@ -112,47 +112,10 @@ export const navPaths = [
   },
   {
     key: 11,
-    to: "/membership",
-    name: "Plans & Pricing",
-  },
-  {
-    key: 12,
-    to: "/all-products",
-    name: "Shop",
-  },
-  {
-    key: 13,
-    to: "/copy-of-about-jadetimes",
-    name: "World Journalist Rankings",
-  },
-  {
-    key: 14,
-    to: "/advertise-with-us",
-    name: "Advertise with Jadetimes",
-  },
-  {
-    key: 15,
-    to: "/talk-to-us",
-    name: "Report a Issue",
-  },
-  {
-    key: 16,
-    to: "/talk-to-us",
-    name: "Contact Us",
-  },
-  {
-    key: 17,
-    to: "/job-vacancies",
-    name: "Careers at Jadetimes",
-  },
-  {
-    key: 18,
-    to: "/privacy-policy",
-    name: "Privacy Policy",
-  },
-  {
-    key: 19,
-    to: "/terms-and-conditions",
-    name: "Terms & Conditions",
+    to: "/health",
+    name: "Health",
   },
 ];
+
+
+export default navPaths;

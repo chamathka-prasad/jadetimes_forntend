@@ -4,12 +4,12 @@ import { FaWhatsapp, FaTiktok, FaXTwitter, FaYoutube, FaFacebookF, FaInstagram, 
 
 import Logo from "/footer-logo.png";
 
-import { navPaths } from "../routes/paths";
+import navPaths from "../routes/navPaths";
 
 import useWindowSize from "../hooks/useWindowSize";
 
 const Footer = () => {
-  const screen = useWindowSize();
+  const screenSize = useWindowSize();
   const emailRef = useRef(null);
   function handleSubmit(event) {
     event.preventDefault();
@@ -23,7 +23,7 @@ const Footer = () => {
             <Link to="/" className="block mx-auto min-w-32 max-w-44 lg:max-w-52 order-2">
               <img src={Logo} alt="jadetimes logo" />
             </Link>
-            {screen !== "large" && (
+            {screenSize !== "large" && (
               <ul className="flex flex-col gap-4 text-center text-[#282626] text-sm text-nowrap my-4">
                 <li>
                   <Link to="/about-jadetimes">About Jadetimes</Link>
@@ -83,10 +83,10 @@ const Footer = () => {
             </div>
           </form>
         </div>
-        {screen === "large" && (
+        {screenSize === "large" && (
           <nav className="border-t border-b border-neutral-200 py-4 text-[#515151] 2xl:flex 2xl:items-center 2xl:justify-center 2xl:gap-3">
             <ul className="text-xs flex flex-row items-center justify-center gap-3 flex-wrap font-semibold">
-              {navPaths.slice(1, 11).map((path) => (
+              {navPaths.slice(1, navPaths.length).map((path) => (
                 <li key={path.key} className="gap-4">
                   <Link to={path.to} className="inline-block duration-300 hover:underline">
                     {path.name}
@@ -100,11 +100,6 @@ const Footer = () => {
                   </Link>
                 </li>
               ))}
-              <li className="gap-4">
-                <Link to="/sports/wwe" className="inline-block duration-300 hover:underline">
-                  WWE
-                </Link>
-              </li>
             </ul>
             <ul className="flex flex-row gap-3 w-full justify-center text-lg mt-3 2xl:w-auto 2xl:justify-normal 2xl:mt-0">
               <li className="flex">
@@ -149,7 +144,7 @@ const Footer = () => {
           <div className="text-xs lg:text-[0.6875rem] text-nowrap lg:order-2 2xl:order-none">
             &copy; 2024 Jadetimes Media LLC. <span className="inline-block 2xl:block">All Rights Reserved</span>
           </div>
-          {screen === "large" && (
+          {screenSize === "large" && (
             <ul className="text-[0.6875rem] flex flex-row flex-wrap justify-center 2xl:justify-normal 2xl:max-w-[1063px]">
               <li>
                 <Link to="/terms-and-conditions" className="duration-300 hover:underline">
