@@ -40,7 +40,7 @@ const Search = () => {
               <Link to={article.categoryLink} className="w-fit text-lg mt-2 block text-[#686868] font-light lg:text-sm">
                 {article.categoryTitle}
               </Link>
-              <div className="whitespace-nowrap mt-2 lg:text-xs">{article.posted}</div>
+              <div className="whitespace-nowrap mt-2 lg:text-xs lg:mt-3">{article.posted}</div>
             </article>
           ))}
         </div>

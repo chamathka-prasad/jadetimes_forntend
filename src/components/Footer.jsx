@@ -153,7 +153,7 @@ const Footer = () => {
                 <span className="mx-2">|</span>
               </li>
               <li>
-                <Link to="/about-jadetimes" className="duration-300 hover:underline">
+                <Link to="/about-us" className="duration-300 hover:underline">
                   About Jadetimes
                 </Link>
                 <span className="mx-2">|</span>
@@ -165,7 +165,7 @@ const Footer = () => {
                 <span className="mx-2">|</span>
               </li>
               <li>
-                <Link to="/job-vacancies" className="duration-300 hover:underline">
+                <Link to="/careers" className="duration-300 hover:underline">
                   Join Jadetimes Media
                 </Link>
                 <span className="mx-2">|</span>
@@ -183,7 +183,7 @@ const Footer = () => {
                 <span className="mx-2">|</span>
               </li>
               <li>
-                <Link to="/accessibility-help" className="duration-300 hover:underline">
+                <Link to="/accessibility" className="duration-300 hover:underline">
                   Accessibility Help
                 </Link>
                 <span className="mx-2">|</span>

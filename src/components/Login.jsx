@@ -10,7 +10,7 @@ const Login = ({ handleLoginClose }) => {
   const [isChecked, setIsChecked] = useState(true);
 
   return (
-    <section className="fixed w-screen h-full z-[100] top-0 left-0 right-0 bg-white p-8 pt-[71.97px] lg:pt-[59.9px] overflow-y-auto lg:flex lg:items-center lg:justify-center">
+    <section className="fixed top-0 left-0 bottom-0 w-screen z-[100] bg-white p-8 pt-[71.97px] lg:pt-[59.9px] overflow-y-auto lg:flex lg:items-center lg:justify-center">
       <div className="max-w-[613px] mx-auto">
         <img src={Logo} alt="jadetimes logo" className="max-w-80 mx-auto md:max-w-64" />
         <h1 className="font-bold text-[1.0625rem] text-neutral-800 mt-8 text-center md:text-4xl">Register for a Jadetimes Account</h1>

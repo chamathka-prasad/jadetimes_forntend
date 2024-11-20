@@ -35,6 +35,7 @@ const AboutUs = lazy(() => import("../pages/AboutUs"));
 const Privacy = lazy(() => import("../pages/Privacy"));
 const Careers = lazy(() => import("../pages/Careers"));
 const Cookie = lazy(() => import("../pages/Cookie"));
+const Faq = lazy(() => import("../pages/Faq"));
 const NotFound = lazy(() => import("../pages/NotFound"));
 
 const Pages = [
@@ -203,7 +204,7 @@ const Pages = [
   },
   {
     id: 16,
-    path: "/about-jadetimes",
+    path: "/about-us",
     component: <AboutUs />,
   },
   {
@@ -213,13 +214,18 @@ const Pages = [
   },
   {
     id: 18,
-    path: "/job-vacancies",
+    path: "/careers",
     component: <Careers />,
   },
   {
     id: 19,
     path: "/cookie-policy",
     component: <Cookie />,
+  },
+  {
+    id: 20,
+    path: "/faq",
+    component: <Faq />,
   },
   {
     id: 25,
