@@ -1,4 +1,7 @@
+import { useRef, useState } from "react";
+
 import { BsChevronDown, BsChevronUp, BsSearch, BsXLg } from "react-icons/bs";
+
 import useKey from "../hooks/useKey";
 
 const faqs = [
@@ -35,32 +38,42 @@ const faqs = [
 ];
 
 const Faq = () => {
-  const [key, handleKey] = useKey();
+  const [key, handleKey] = useKey(0);
+  const [filteredFaqs, setFilteredFaqs] = useState(faqs);
+  const searchRef = useRef(null);
+  function handleChange() {
+    const searchValue = searchRef.current.value.toLowerCase();
+    setFilteredFaqs(searchValue ? faqs.filter((faq) => faq.answer.toLowerCase().includes(searchValue)) : faqs);
+  }
   return (
     <section className="p-4 text-neutral-900">
       <div className="max-w-[1000px] mx-auto">
         <h1 className="text-lg text-center mb-6 lg:text-xl">Frequently asked questions</h1>
         <div className="relative">
-          <input type="search" placeholder="Looking for somthing ?" className="py-2 px-8 border-b-2 border-b-[#17171724] w-full placeholder:text-neutral-500" />
+          <input
+            type="search"
+            onChange={handleChange}
+            ref={searchRef}
+            placeholder="Looking for somthing ?"
+            className="py-2 px-9 border-b-2 border-b-[#17171724] w-full placeholder:text-neutral-500 focus:border-b-neutral-900 focus:outline-none"
+          />
           <BsSearch size={17} className="absolute left-2 top-1/2 -translate-y-1/2 -z-10" aria-hidden />
-          <BsXLg size={17} className="absolute right-2 top-1/2 -translate-y-1/2" />
+          <button className="absolute right-2 top-1/2 -translate-y-1/2">
+            <BsXLg size={17} />
+          </button>
         </div>
         <section className="mt-6">
           <h2 className="text-[#FF322E] mb-2">General</h2>
-          {/* <div className="relative mt-3 mb-4">
-            <select className="py-2 px-3 w-full border border-[#17171724] appearance-none text-[#FF322E]">
-              <option value="general">General</option>
-            </select>
-            <BsChevronDown size={20} className="text-neutral-900 absolute right-3 top-1/2 -translate-y-1/2" />
-          </div> */}
-          {faqs.map((faq, index) => (
+          {filteredFaqs.map((faq, index) => (
             <div key={index} className="border-b border-b-[#17171724] last:border-b-0">
               <button className="flex flex-row justify-between items-center gap-8 w-full py-4" onClick={() => handleKey(index)}>
                 <div className="text-black text-left lg:text-lg">{faq.question} ?</div>
                 <div>{key === index ? <BsChevronUp /> : <BsChevronDown />}</div>
               </button>
-              <div className={`duration-300 ${key === index ? "max-h-screen overflow-y-auto" : "invisible overflow-y-hidden max-h-0"}`}>
-                <p className="mb-4 lg:text-sm">{faq.answer}</p>
+              <div className={`duration-300 grid ${key === index ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
+                <div className="overflow-y-hidden">
+                  <p className="lg:text-sm mb-4">{faq.answer}</p>
+                </div>
               </div>
             </div>
           ))}

@@ -8,12 +8,9 @@ import Footer from "./components/Footer";
 import pages from "./routes/pages";
 
 import useOpen from "./hooks/useOpen";
-import useYouTubeShorts from "./hooks/useYouTubeShorts";
 
 const App = () => {
   const [isMenu, handleMenuOpen, handleMenuClose] = useOpen();
-  const [videos, error, isLoading] = useYouTubeShorts();
-  console.log(videos)
 
   return (
     <>

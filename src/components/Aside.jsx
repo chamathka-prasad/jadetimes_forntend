@@ -17,7 +17,7 @@ import CloseButton from "./CloseButton";
 
 const Aside = ({ handleMenuClose, isMenu }) => {
   const screenSize = useWindowSize();
-  const [key, handleKey] = useKey();
+  const [key, handleKey] = useKey(null);
   const [isLogin, handleLoginOpen, handleLoginClose] = useOpen();
   const scrollTopRef = useRef(null);
 
@@ -51,15 +51,17 @@ const Aside = ({ handleMenuClose, isMenu }) => {
                 </Link>
                 {path.submenus && <button onClick={() => handleKey(path.key)}>{key === path.key ? <BsChevronUp /> : <BsChevronDown />}</button>}
                 {path.submenus && (
-                  <ul className={`w-full text-[#8B8B8B] duration-300 ${key === path.key ? "max-h-screen" : "max-h-0 overflow-y-hidden invisible"}`}>
-                    {path.submenus.map((submenu) => (
-                      <li key={submenu.key}>
-                        <Link to={submenu.to} onClick={handleToggleMenuItem} className="block pl-2 py-2 lg:duration-300 lg:hover:text-[#FF322F]">
-                          {submenu.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
+                  <div className={`w-full text-[#8B8B8B] duration-300 grid ${key === path.key ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
+                    <ul className="overflow-y-hidden">
+                      {path.submenus.map((submenu) => (
+                        <li key={submenu.key}>
+                          <Link to={submenu.to} onClick={handleToggleMenuItem} className="block pl-2 py-2 lg:duration-300 lg:hover:text-[#FF322F]">
+                            {submenu.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 )}
               </li>
             ))}
