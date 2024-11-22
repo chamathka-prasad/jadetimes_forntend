@@ -52,7 +52,7 @@ const Aside = ({ handleMenuClose, isMenu }) => {
                 {path.submenus && <button onClick={() => handleKey(path.key)}>{key === path.key ? <BsChevronUp /> : <BsChevronDown />}</button>}
                 {path.submenus && (
                   <div className={`w-full text-[#8B8B8B] duration-300 grid ${key === path.key ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
-                    <ul className="overflow-y-hidden">
+                    <ul className="overflow-y-hidden" aria-hidden={key !== path.key}>
                       {path.submenus.map((submenu) => (
                         <li key={submenu.key}>
                           <Link to={submenu.to} onClick={handleToggleMenuItem} className="block pl-2 py-2 lg:duration-300 lg:hover:text-[#FF322F]">

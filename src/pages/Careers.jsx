@@ -1,3 +1,4 @@
+import { BsChevronDown } from "react-icons/bs";
 import ContactDetails from "../components/ContactDetails";
 
 const Careers = () => {
@@ -49,41 +50,70 @@ const Careers = () => {
             <form action="" className="text-sm flex flex-col gap-4 mt-4 md:pr-6 md:border-r md:border-r-[#17171724]">
               <div className="flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-4">
                 <div>
-                  <label htmlFor="name">Full name *</label>
-                  <input id="name" type="text" className="w-full border-2 border-black focus-visible:outline-none p-3 mt-2 md:border-x-0 md:border-t-0 md:border-b" />
+                  <label htmlFor="name">Full name <span className="text-[#FF322E]">*</span></label>
+                  <input
+                    id="name"
+                    type="text"
+                    className="w-full border-2 border-[#17171724] duration-300 lg:hover:border-black focus:border-black focus-visible:outline-none p-3 mt-2 md:border-x-0 md:border-t-0"
+                  />
                 </div>
                 <div>
                   <label htmlFor="country">Country</label>
-                  <input id="country" type="text" className="w-full border-2 border-black focus-visible:outline-none p-3 mt-2 md:border-x-0 md:border-t-0 md:border-b" />
+                  <input
+                    id="country"
+                    type="text"
+                    className="w-full border-2 border-[#17171724] duration-300 lg:hover:border-black focus:border-black focus-visible:outline-none p-3 mt-2 md:border-x-0 md:border-t-0"
+                  />
                 </div>
               </div>
               <div>
-                <label htmlFor="email">Email *</label>
-                <input id="email" type="email" className="w-full border-2 border-black focus-visible:outline-none p-3 mt-2 md:border-x-0 md:border-t-0 md:border-b" />
+                <label htmlFor="email">Email <span className="text-[#FF322E]">*</span></label>
+                <input
+                  id="email"
+                  type="email"
+                  className="w-full border-2 border-[#17171724] duration-300 lg:hover:border-black focus:border-black focus-visible:outline-none p-3 mt-2 md:border-x-0 md:border-t-0"
+                />
               </div>
               <div className="flex flex-col gap-4 lg:grid lg:grid-cols-2">
                 <div>
-                  <label htmlFor="whatsapp">Whatsapp Number *</label>
-                  <input id="whatsapp" type="tel" className="w-full border-2 border-black focus-visible:outline-none p-3 mt-2 md:border-x-0 md:border-t-0 md:border-b" />
+                  <label htmlFor="whatsapp">Whatsapp Number <span className="text-[#FF322E]">*</span></label>
+                  <input
+                    id="whatsapp"
+                    type="tel"
+                    className="w-full border-2 border-[#17171724] duration-300 lg:hover:border-black focus:border-black focus-visible:outline-none p-3 mt-2 md:border-x-0 md:border-t-0"
+                  />
                 </div>
-                <div>
-                  <label htmlFor="cv" className="block">CV Upload</label>
-                  <input type="file" id="cv" className="w-full border-2 border-black mt-2 file:bg-white file:p-3 file:mr-3 file:border-y-0 file:border-l-0 file:border-r file:border-r-black md:border-0 md:file:border" />
+                <div className="lg:flex lg:flex-col lg:justify-between">
+                  <label htmlFor="cv" className="block">
+                    CV Upload
+                  </label>
+                  <input
+                    type="file"
+                    id="cv"
+                    className="w-full border-2 border-[#17171724] duration-300 file:duration-300 lg:hover:border-black focus:border-black focus-visible:outline-none mt-2 lg:mt-0 file:bg-white file:p-3 file:mr-3 file:border-y-0 file:border-l-0 file:border-r-2 file:border-r-[#17171724] md:border-0 md:file:border-2 md:file:border-[#17171724] md:file:focus:border-black lg:file:hover:border-black"
+                  />
                 </div>
               </div>
               <div className="flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-4">
                 <div>
                   <label htmlFor="job">Applying To</label>
-                  <select id="job" className="w-full border-2 border-black p-3 mt-2 md:border-x-0 md:border-t-0 md:border-b">
-                    <option value=""></option>
-                    <option value="internships">Internships</option>
-                    <option value="vacancies">Vacancies</option>
-                    <option value="jadetimes-contributor<">Jadetimes Contributor</option>
-                  </select>
+                  <div className="relative mt-2">
+                    <select id="job" className="w-full border-2 border-[#17171724] duration-300 lg:hover:border-black focus:border-black focus-visible:outline-none p-3 md:border-x-0 md:border-t-0 appearance-none">
+                      <option value=""></option>
+                      <option value="internships">Internships</option>
+                      <option value="vacancies">Vacancies</option>
+                      <option value="jadetimes-contributor<">Jadetimes Contributor</option>
+                    </select>
+                    <BsChevronDown size={20} className="absolute right-3 top-1/2 -translate-y-1/2" />
+                  </div>
                 </div>
                 <div>
                   <label htmlFor="country">Position Applying</label>
-                  <input id="country" type="text" className="w-full border-2 border-black focus-visible:outline-none p-3 mt-2 md:border-x-0 md:border-t-0 md:border-b" />
+                  <input
+                    id="country"
+                    type="text"
+                    className="w-full border-2 border-[#17171724] duration-300 lg:hover:border-black focus:border-black focus-visible:outline-none p-3 mt-2 md:border-x-0 md:border-t-0"
+                  />
                 </div>
               </div>
               <button type="submit" className="text-base p-3 bg-neutral-900 text-white">

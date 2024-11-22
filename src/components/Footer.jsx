@@ -41,7 +41,7 @@ const Footer = () => {
                   <Link to="/shop">Jadetimes Shop</Link>
                 </li>
                 <li>
-                  <Link to="/job-vacancies">Jobs At Jadetimes</Link>
+                  <Link to="/careers">Jobs At Jadetimes</Link>
                 </li>
                 <li>
                   <Link to="/advertise-with-us">Get Published Online Articles</Link>

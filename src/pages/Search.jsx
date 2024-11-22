@@ -17,11 +17,11 @@ const Search = () => {
           <h1 className="text-3xl font-semibold md:text-2xl">Search</h1>
           <div className="mt-5 relative md:mt-0 md:w-full">
             <input
-              className="border border-[#2423233B] w-full block rounded-md text-xl placeholder:text-neutral-500 py-3 pl-4 pr-12 md:text-base"
+              className="border-2 border-[#17171724] w-full block rounded-md text-xl duration-300 placeholder:text-neutral-500 py-3 pl-12 pr-4 md:text-base focus-visible:outline-none focus:border-neutral-900 lg:hover:border-neutral-900"
               type="search"
               placeholder="What are you looking for?"
             />
-            <BsSearch size={20} className="absolute right-4 top-1/2 -translate-y-1/2 -z-10" />
+            <BsSearch size={20} className="text-neutral-900 absolute left-4 top-1/2 -translate-y-1/2 -z-10" />
           </div>
         </div>
         <div className="flex flex-col gap-4 py-4 lg:grid lg:grid-cols-3">

@@ -55,12 +55,9 @@ const Faq = () => {
             onChange={handleChange}
             ref={searchRef}
             placeholder="Looking for somthing ?"
-            className="py-2 px-9 border-b-2 border-b-[#17171724] w-full placeholder:text-neutral-500 focus:border-b-neutral-900 focus:outline-none"
+            className="py-2 pl-9 pr-2 border-b-2 border-b-[#17171724] w-full placeholder:text-neutral-500 focus:border-b-neutral-900 focus:outline-none lg:hover:border-b-neutral-900"
           />
-          <BsSearch size={17} className="absolute left-2 top-1/2 -translate-y-1/2 -z-10" aria-hidden />
-          <button className="absolute right-2 top-1/2 -translate-y-1/2">
-            <BsXLg size={17} />
-          </button>
+          <BsSearch size={17} className="text-neutral-900 absolute left-2 top-1/2 -translate-y-1/2 -z-10" aria-hidden />
         </div>
         <section className="mt-6">
           <h2 className="text-[#FF322E] mb-2">General</h2>
@@ -68,10 +65,10 @@ const Faq = () => {
             <div key={index} className="border-b border-b-[#17171724] last:border-b-0">
               <button className="flex flex-row justify-between items-center gap-8 w-full py-4" onClick={() => handleKey(index)}>
                 <div className="text-black text-left lg:text-lg">{faq.question} ?</div>
-                <div>{key === index ? <BsChevronUp /> : <BsChevronDown />}</div>
+                <div className="text-neutral-900">{key === index ? <BsChevronUp /> : <BsChevronDown />}</div>
               </button>
               <div className={`duration-300 grid ${key === index ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
-                <div className="overflow-y-hidden">
+                <div className="overflow-y-hidden" aria-hidden={key !== index}>
                   <p className="lg:text-sm mb-4">{faq.answer}</p>
                 </div>
               </div>

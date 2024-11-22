@@ -23,7 +23,7 @@ const Login = ({ handleLoginClose }) => {
               placeholder="First name"
               autoComplete="off"
               aria-label="first name"
-              className="text-[1.15rem] md:text-base placeholder:text-neutral-900 border-b border-black py-2 block mb-3 md:mb-0 pb-3 w-full focus-visible:outline-none focus-visible:border-b-2 lg:hover:border-b-2"
+              className="text-[1.15rem] md:text-base placeholder:text-neutral-500 border-b-2 border-[#17171724] py-2 block mb-3 md:mb-0 pb-3 w-full focus-visible:outline-none focus-visible:border-b-2 lg:hover:border-b-neutral-900 focus:border-b-neutral-900 duration-300"
             />
             <input
               type="text"
@@ -31,7 +31,7 @@ const Login = ({ handleLoginClose }) => {
               placeholder="Last name"
               autoComplete="off"
               aria-label="last name"
-              className="text-[1.15rem] md:text-base placeholder:text-neutral-900 border-b border-black py-2 block mb-3 md:mb-0 pb-3 w-full focus-visible:outline-none focus-visible:border-b-2 lg:hover:border-b-2"
+              className="text-[1.15rem] md:text-base placeholder:text-neutral-500 border-b-2 border-[#17171724] py-2 block mb-3 md:mb-0 pb-3 w-full focus-visible:outline-none focus-visible:border-b-2 lg:hover:border-b-neutral-900 focus:border-b-neutral-900 duration-300"
             />
             <input
               type="email"
@@ -42,7 +42,7 @@ const Login = ({ handleLoginClose }) => {
               maxLength="250"
               autoComplete="off"
               aria-label="email"
-              className="text-[1.15rem] md:text-base placeholder:text-neutral-900 border-b border-black py-2 block mb-3 md:mb-0 pb-3 w-full focus-visible:outline-none focus-visible:border-b-2 lg:hover:border-b-2"
+              className="text-[1.15rem] md:text-base placeholder:text-neutral-500 border-b-2 border-[#17171724] py-2 block mb-3 md:mb-0 pb-3 w-full focus-visible:outline-none focus-visible:border-b-2 lg:hover:border-b-neutral-900 focus:border-b-neutral-900 duration-300"
             />
             <input
               type="password"
@@ -51,7 +51,7 @@ const Login = ({ handleLoginClose }) => {
               required
               autoComplete="off"
               aria-label="password"
-              className="text-[1.15rem] md:text-base placeholder:text-neutral-900 border-b border-black py-2 block mb-3 md:mb-0 pb-3 w-full focus-visible:outline-none focus-visible:border-b-2 lg:hover:border-b-2"
+              className="text-[1.15rem] md:text-base placeholder:text-neutral-500 border-b-2 border-[#17171724] py-2 block mb-3 md:mb-0 pb-3 w-full focus-visible:outline-none focus-visible:border-b-2 lg:hover:border-b-neutral-900 focus:border-b-neutral-900 duration-300"
             />
           </div>
           <div className="my-6 flex">
