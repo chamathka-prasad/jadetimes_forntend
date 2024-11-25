@@ -26,7 +26,7 @@ const Footer = () => {
             {screenSize !== "large" && (
               <ul className="flex flex-col gap-4 text-center text-[#282626] text-sm text-nowrap my-4">
                 <li>
-                  <Link to="/about-jadetimes">About Jadetimes</Link>
+                  <Link to="/about-us">About Jadetimes</Link>
                 </li>
                 <li>
                   <Link to="/privacy-policy">Privacy Policy</Link>

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const useYouTubePlaylist = () => {
   const [videos, setVideos] = useState([]);
   const [error, setError] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const allVideos = [];
@@ -33,8 +33,9 @@ const useYouTubePlaylist = () => {
           setVideos(InsertedVideos);
         })
         .catch((error) => {
-          setError(error.message);
-        });
+          setError(error);
+        })
+        .finally(setIsLoading(false));
     }
 
     fetchVideos();

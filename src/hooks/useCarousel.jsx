@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 
-const useCarousel = () => {
+const useCarousel = ({ length }) => {
   const [index, setIndex] = useState(0);
   const scrollRef = useRef(null);
 
@@ -13,7 +13,7 @@ const useCarousel = () => {
       });
     }
     setIndex((previousIndex) => {
-      return previousIndex + 1;
+      return previousIndex === length - 1 ? length - 1 : previousIndex + 1;
     });
   }
 
@@ -26,7 +26,7 @@ const useCarousel = () => {
       });
     }
     setIndex((previousIndex) => {
-      return previousIndex - 1;
+      return previousIndex === 0 ? 0 : previousIndex - 1;
     });
   }
 

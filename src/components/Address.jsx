@@ -1,6 +1,6 @@
-const Address = ({ className, address }) => {
+const Address = ({ address }) => {
   return (
-    <address className={className}>
+    <address>
       <div className="font-semibold mb-2">{address.agent}</div>
       <div>{address.street}</div>
       <div>{address.landline}</div>

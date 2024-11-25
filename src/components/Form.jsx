@@ -19,7 +19,7 @@ const Form = ({ className }) => {
       </div>
       <div>
         <label htmlFor="query">Your Query <span className="text-[#FF322E]">*</span></label>
-        <textarea id="query" className="w-full border-b-2 duration-300 border-b-[#17171724] focus:border-b-black hover:border-b-black focus-visible:outline-none p-4 resize-none h-24"></textarea>
+        <textarea id="query" className="block w-full border-b-2 duration-300 border-b-[#17171724] focus:border-b-black hover:border-b-black focus-visible:outline-none p-4 resize-none h-24"></textarea>
       </div>
       <button type="submit" className="text-base p-3 bg-neutral-900 text-white">
         Submit

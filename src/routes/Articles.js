@@ -8,6 +8,7 @@ const Articles = [
     categoryTitle: "Category",
     categoryLink: "",
     authorName: "Author Name",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla mollitia dignissimos consectetur quas rem nam nesciunt a alias explicabo. Dignissimos!"
   },
   {
     link: "",
@@ -18,6 +19,7 @@ const Articles = [
     categoryTitle: "Category",
     categoryLink: "",
     authorName: "Author Name",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla mollitia dignissimos consectetur quas rem nam nesciunt a alias explicabo. Dignissimos!"
   },
   {
     link: "",
@@ -28,6 +30,7 @@ const Articles = [
     categoryTitle: "Category",
     categoryLink: "",
     authorName: "Author Name",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla mollitia dignissimos consectetur quas rem nam nesciunt a alias explicabo. Dignissimos!"
   },
   {
     link: "",
@@ -38,6 +41,7 @@ const Articles = [
     categoryTitle: "Category",
     categoryLink: "",
     authorName: "Author Name",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla mollitia dignissimos consectetur quas rem nam nesciunt a alias explicabo. Dignissimos!"
   },
   {
     link: "",
@@ -48,6 +52,7 @@ const Articles = [
     categoryTitle: "Category",
     categoryLink: "",
     authorName: "Author Name",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla mollitia dignissimos consectetur quas rem nam nesciunt a alias explicabo. Dignissimos!"
   },
   {
     link: "",
@@ -58,6 +63,7 @@ const Articles = [
     categoryTitle: "Category",
     categoryLink: "",
     authorName: "Author Name",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla mollitia dignissimos consectetur quas rem nam nesciunt a alias explicabo. Dignissimos!"
   },
   {
     link: "",
@@ -68,6 +74,7 @@ const Articles = [
     categoryTitle: "Category",
     categoryLink: "",
     authorName: "Author Name",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla mollitia dignissimos consectetur quas rem nam nesciunt a alias explicabo. Dignissimos!"
   },
   {
     link: "",
@@ -78,6 +85,7 @@ const Articles = [
     categoryTitle: "Category",
     categoryLink: "",
     authorName: "Author Name",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla mollitia dignissimos consectetur quas rem nam nesciunt a alias explicabo. Dignissimos!"
   },
   {
     link: "",
@@ -88,6 +96,7 @@ const Articles = [
     categoryTitle: "Category",
     categoryLink: "",
     authorName: "Author Name",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla mollitia dignissimos consectetur quas rem nam nesciunt a alias explicabo. Dignissimos!"
   },
   {
     link: "",
@@ -98,6 +107,7 @@ const Articles = [
     categoryTitle: "Category",
     categoryLink: "",
     authorName: "Author Name",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla mollitia dignissimos consectetur quas rem nam nesciunt a alias explicabo. Dignissimos!"
   },
 ];
 

@@ -19,7 +19,7 @@ const Search = () => {
             <input
               className="border-2 border-[#17171724] w-full block rounded-md text-xl duration-300 placeholder:text-neutral-500 py-3 pl-12 pr-4 md:text-base focus-visible:outline-none focus:border-neutral-900 lg:hover:border-neutral-900"
               type="search"
-              placeholder="What are you looking for?"
+              placeholder="What are you looking for ?"
             />
             <BsSearch size={20} className="text-neutral-900 absolute left-4 top-1/2 -translate-y-1/2 -z-10" />
           </div>

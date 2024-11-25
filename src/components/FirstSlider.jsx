@@ -5,15 +5,15 @@ import PictureLink from "./PictureLink";
 
 import useCarousel from "../hooks/useCarousel";
 
-const FirstSlider = ({ articles, className }) => {
-  const [currentIndex, scrollRef, handleNextSlide, handlePreviousSlide] = useCarousel();
+const FirstSlider = ({ articles }) => {
+  const [currentIndex, scrollRef, handleNextSlide, handlePreviousSlide] = useCarousel(articles.length);
 
   return (
-    <div className={className}>
+    <div className="lg:col-span-6 lg:border lg:border-neutral-300 lg:mr-10">
       <div className="relative">
-        <div className="flex flex-row overflow-x-hidden snap-mandatory snap-x" ref={scrollRef}>
+        <div className="flex flex-row overflow-x-hidden snap-x snap-mandatory" ref={scrollRef}>
           {articles.map((article, index) => (
-            <article className={`snap-start flex-none w-full duration-500 ${currentIndex !== index && "invisible"}`} aria-hidden={currentIndex !== index} key={index}>
+            <article key={index} className={`${currentIndex === index ? "" : "invisible"} snap-end flex-none w-full duration-1000`.trim()}>
               <PictureLink>
                 <img src={article.image} alt={articles[0].title} />
               </PictureLink>

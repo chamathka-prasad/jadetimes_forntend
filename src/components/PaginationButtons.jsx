@@ -28,7 +28,7 @@ const PaginationButtons = ({ currentIndex, lastIndex, prevArticles, nextArticles
                   onClick={() => {
                     handleCurrentArticle(button);
                   }}
-                  className={(currentIndex === button && "text-neutral-500 px-2") || "px-2"}
+                  className={`px-2 ${currentIndex === button ? "text-neutral-500" : ""}`.trim()}
                 >
                   {button}
                 </button>

@@ -4,6 +4,7 @@ import { FaBarsStaggered, FaMagnifyingGlass } from "react-icons/fa6";
 import MembershipLink from "./MembershipLink";
 import LoginButton from "./LoginButton";
 import Login from "./Login";
+import Aside from "./Aside";
 
 import Logo from "/logo-white.png";
 
@@ -11,10 +12,13 @@ import navPaths from "../routes/navPaths";
 
 import useWindowSize from "../hooks/useWindowSize";
 import useOpen from "../hooks/useOpen";
+import useStopScroll from "../hooks/useStopScroll"
 
-const Header = ({ handleMenuOpen }) => {
+const Header = () => {
   const screenSize = useWindowSize();
   const [isLogin, handleLoginOpen, handleLoginClose] = useOpen();
+  const [isMenu, handleMenuOpen, handleMenuClose] = useOpen();
+  useStopScroll(isLogin)
   return (
     <header className="bg-neutral-900 text-white sticky top-0 z-40">
       <div className="px-4 py-[1.45rem] flex items-center relative max-w-[1407px] mx-auto lg:py-[1.032rem]">
@@ -24,6 +28,7 @@ const Header = ({ handleMenuOpen }) => {
         <button className="block order-1 mr-auto lg:mr-0" aria-label="open the menu" onClick={handleMenuOpen}>
           <FaBarsStaggered className="text-[1.6rem] lg:text-[1.45rem]" />
         </button>
+        <Aside handleMenuClose={handleMenuClose} isMenu={isMenu} />
         <Link to="/search" className="block order-5 ml-auto lg:ml-0" aria-label="search jadetimes" role="button">
           <FaMagnifyingGlass className="text-[1.6rem] lg:text-[1.2rem]" />
         </Link>

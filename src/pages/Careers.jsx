@@ -104,7 +104,7 @@ const Careers = () => {
                       <option value="vacancies">Vacancies</option>
                       <option value="jadetimes-contributor<">Jadetimes Contributor</option>
                     </select>
-                    <BsChevronDown size={20} className="absolute right-3 top-1/2 -translate-y-1/2" />
+                    <BsChevronDown size={20} className="absolute right-3 top-1/2 -translate-y-1/2 -z-10" />
                   </div>
                 </div>
                 <div>

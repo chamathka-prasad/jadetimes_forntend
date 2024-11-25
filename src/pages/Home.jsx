@@ -1,18 +1,22 @@
 import { Link } from "react-router-dom";
-import { FaChevronRight } from "react-icons/fa6";
 
-import UpdatesBadge from "../components/UpdatesBadge";
+import LatestUpdatesLink from "../components/LatestUpdatesLink";
 import MembershipLink from "../components/MembershipLink";
 import PictureLink from "../components/PictureLink";
 import FirstSlider from "../components/FirstSlider";
 import SecondSlider from "../components/SecondSlider";
 import ThirdSlider from "../components/ThirdSlider";
+import ThirdBigArticles from "../components/ThirdBigArticles";
+import FourthBigArticles from "../components/FourthBigArticles";
+import ReadMoreLink from "../components/ReadMoreLink";
+import YouTubeArticle from "../components/YouTubeArticle.";
+import Iframe from "../components/Iframe";
 
 import Articles from "../routes/Articles";
 
 import SpecialGraphics from "../assets/add-3.webp";
-import DigitUsTecGlobal from "../assets/add-1.gif";
-import SpecialPrinters from "../assets/add-2.gif";
+import DigitUsTecGlobal from "../assets/digitustecglobal.mp4";
+import SpecialPrinters from "../assets/specialprinters.mp4";
 
 import useWindowSize from "../hooks/useWindowSize";
 
@@ -30,12 +34,12 @@ const Home = () => {
   return (
     <>
       <div className="max-w-[1300px] mx-auto relative md:p-4">
-        {screenSize !== "small" && <UpdatesBadge className="md:block md:mb-4 md:px-2 md:py-[0.15rem]">Latest Updates</UpdatesBadge>}
+        {screenSize !== "small" && <LatestUpdatesLink className="text-[0.625rem] md:mb-4 md:px-2 md:py-[0.15rem]" />}
         <div className="text-neutral-900 md:grid md:grid-cols-2 md:gap-4 lg:grid-cols-[repeat(17,_minmax(0,_1fr))] lg:gap-5 xl:col-start-2 xl:col-span-10 xl:row-start-2">
           {/* 1 */}
           <article className="md:grid md:grid-cols-2 md:border md:border-neutral-300 md:col-span-2 lg:col-[13_span_/_13_span] lg:row-start-2">
             <div className="relative">
-              {screenSize === "small" && <UpdatesBadge className="block px-3 py-2 text-sm absolute -bottom-9 left-1/2 -translate-x-1/2 -translate-y-1/2">Latest Updates</UpdatesBadge>}
+              {screenSize === "small" && <LatestUpdatesLink className="px-3 py-2 text-sm absolute -bottom-9 left-1/2 -translate-x-1/2 -translate-y-1/2" />}
               <PictureLink link={Articles[0].link}>
                 <img src={Articles[0].image} alt={Articles[0].title} className="object-cover object-center md:h-full" />
               </PictureLink>
@@ -71,75 +75,38 @@ const Home = () => {
                       {article.title}
                     </Link>
                   </h2>
-                  {screenSize === "large" && <p className="lg:line-clamp-2 lg:text-[0.6875rem]">{article.title}</p>}
+                  {screenSize === "large" && <p className="lg:line-clamp-2 lg:text-xs">{article.title}</p>}
                   {screenSize !== "large" && <div className="whitespace-nowrap lg:text-xs">{article.posted}</div>}
                 </div>
               </article>
             ))}
           </div>
           {/* 3 */}
-          <div className="lg:col-start-[14] lg:col-span-4 lg:row-start-3 lg:row-span-1">
-            <a href="https://specialgraphics.us/" className="block" target="_blank" aria-label="visit special graphics website">
-              <img src={SpecialGraphics} alt="special graphics representation" className="md:h-[320px] lg:h-auto" />
-            </a>
-            {screenSize === "large" && (
+          {screenSize === "large" && (
+            <div className="lg:col-start-[14] lg:col-span-4 lg:row-start-3 lg:row-span-1">
+              <a href="https://specialgraphics.us/" className="block" target="_blank" aria-label="visit special graphics website">
+                <img src={SpecialGraphics} alt="special graphics representation" className="md:h-[320px] lg:h-auto" />
+              </a>
               <div className="lg:mt-4 lg:flex lg:flex-row lg:items-center xl:gap-4">
-                <UpdatesBadge className="block px-3 py-2 text-center w-full">Latest Updates</UpdatesBadge>
-                <a href="" className="w-full text-[#282626] text-sm group flex flex-row items-center justify-center py-[0.4rem] text-nowrap">
-                  Read More
-                  <FaChevronRight className="inline-block" />
-                </a>
+                <LatestUpdatesLink className="px-3 py-2 w-full text-xs" />
+                <ReadMoreLink className="text-sm w-full py-[0.4rem] flex items-center justify-center" to="" ariaLabel="" />
               </div>
-            )}
-          </div>
+            </div>
+          )}
           {/* 4 */}
-          <div className="flex flex-col gap-4 p-4 md:p-0 md:col-span-2 md:grid md:grid-cols-2 md:row-span-2 lg:grid-cols-4 lg:col-span-full lg:row-start-1 lg:row-span-1 lg:gap-0">
-            {articlesThree.map((article, index) => (
-              <article key={index} className="flex flex-col justify-between gap-4 lg:pr-6 lg:pl-6 lg:border-r-2 lg:border-[#51515137] lg:first:pl-0 lg:last:pr-0 lg:last:border-none">
-                {screenSize !== "large" && (
-                  <PictureLink link={article.link}>
-                    <img src={article.image} alt={article.title} />
-                  </PictureLink>
-                )}
-                <div className="flex flex-col justify-between gap-4">
-                  <div className="whitespace-nowrap lg:text-xs">{article.posted}</div>
-                  <h2>
-                    <Link to={article.link} className="text-lg line-clamp-2 lg:text-base">
-                      {article.title}
-                    </Link>
-                  </h2>
-                </div>
-              </article>
-            ))}
-          </div>
+          <ThirdBigArticles articles={articlesThree} />
           {/* 5 */}
-          <div className="p-4 flex flex-col gap-4 md:p-0 md:col-start-2 md:row-start-3 lg:row-start-2 lg:col-span-4 lg:gap-5">
-            {articlesEight.map((article, index) => (
-              <article className="flex flex-row lg:p-3 lg:border lg:border-neutral-300 lg:gap-4" key={index}>
-                <PictureLink link={article.link} className="lg:order-2">
-                  <img src={article.image} alt={article.title} className="min-w-24 w-24 min-h-24 h-24 lg:min-w-[4.25rem] lg:w-[4.25rem] lg:min-h-[4.25rem] lg:h-[4.25rem] object-cover object-center" />
-                </PictureLink>
-                <div className="flex flex-col p-4 justify-center lg:justify-between lg:p-0 lg:gap-2">
-                  <h2>
-                    <Link to={article.link} className="line-clamp-3 overflow-anywhere lg:text-sm">
-                      {article.title}
-                    </Link>
-                  </h2>
-                  {screenSize === "large" && (
-                    <Link to={article.categoryLink} className="lg:w-fit text-sm text-[#686868] font-light">
-                      {article.categoryTitle}
-                    </Link>
-                  )}
-                </div>
-              </article>
-            ))}
-          </div>
+          <FourthBigArticles articles={articlesEight} />
         </div>
         <a href="http://www.digitustecglobal.com/" className="hidden 2xl:block absolute top-[154px] -left-[118px] w-[117px]" target="_blank" aria-label="visit digit us tec global website">
-          <img src={DigitUsTecGlobal} alt="digit us tec global representation" />
+          <video autoPlay loop muted playsInline>
+            <source src={DigitUsTecGlobal} type="video/mp4" />
+          </video>
         </a>
         <a href="https://www.specialprinters.us/" className="hidden 2xl:block absolute top-[154px] -right-[118px] w-[117px]" target="_blank" aria-label="visit special printers website">
-          <img src={SpecialPrinters} alt="special printers representation" />
+          <video autoPlay loop muted playsInline>
+            <source src={SpecialPrinters} type="video/mp4" />
+          </video>
         </a>
       </div>
       <section className="p-4 max-w-[1300px] mx-auto text-neutral-900">
@@ -182,7 +149,7 @@ const Home = () => {
               ))}
             </div>
           )}
-          {screenSize === "large" && <FirstSlider className="lg:col-span-6 lg:border lg:border-neutral-300 lg:mr-10" articles={articlesFive} />}
+          {screenSize === "large" && <FirstSlider articles={articlesFive} />}
           <section className="lg:pl-10 lg:border-l lg:border-[#515151] lg:col-span-4 lg:flex lg:flex-col lg:gap-5">
             <div className="mb-4 lg:mx-0 lg:flex lg:flex-row lg:gap-4 lg:items-center lg:mb-0">
               <h3 className="mt-4 lg:mt-0">
@@ -386,40 +353,8 @@ const Home = () => {
               </Link>
             </h2>
             <div className="text-white flex flex-col gap-4 md:grid md:grid-cols-2 place-items-center">
-              <iframe
-                className="block aspect-video"
-                title="How Sri Lanka's 2024 Election Could Shape the Future of Entrepreneurs | Exclusive Pulse | Jadetimes"
-                width="100%"
-                src="https://www.youtube.com/embed/4W7SjwdQS64?autoplay=0&mute=0&controls=1&loop=0&rel=0&origin=https://www.jadetimes.com&playsinline=1"
-                sandbox="allow-same-origin allow-scripts allow-popups allow-presentation"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                loading="lazy"
-              ></iframe>
-              <div className="flex flex-col gap-4 lg:w-96">
-                <a
-                  href="https://www.youtube.com/@JadeTimes"
-                  className="hidden md:bg-neutral-800 md:block md:w-fit md:tracking-widest md:text-nowrap md:uppercase md:text-[0.625rem] md:px-2 md:py-1 lg:duration-300 lg:hover:bg-white lg:hover:text-black"
-                >
-                  Youtube updates
-                </a>
-                <h3 className="text-sm lg:text-base">How Sri Lanka's 2024 Election Could Shape the Future of Entrepreneurs</h3>
-                <p className="text-xs">
-                  We explore how the upcoming election could shape opportunities and challenges for business owners and startups across the country. A shocking revelation about the connection between
-                  these two groups, shedding light on hidden influences and funding sources.
-                </p>
-                <div className="flex items-center gap-4 text-sm">
-                  <a href="https://www.youtube.com/@JadeTimes" className="bg-neutral-800 inline-block uppercase tracking-widest text-nowrap px-3 py-2 md:hidden">
-                    Youtube updates
-                  </a>
-                  <a
-                    href="https://www.jadetimes.com/post/shocking-revelations-mr-neomal-perera-on-hidden-influences-in-sri-lanka-s-political-sphere"
-                    className="text-nowrap flex items-center capitalize lg:duration-300 lg:hover:opacity-50"
-                  >
-                    Read more
-                    <FaChevronRight className="inline" />
-                  </a>
-                </div>
-              </div>
+              <Iframe title={Articles[0].title} videoId="" />
+              <YouTubeArticle className="flex flex-col gap-4 lg:w-96" article={Articles[0]} />
             </div>
           </div>
         </div>

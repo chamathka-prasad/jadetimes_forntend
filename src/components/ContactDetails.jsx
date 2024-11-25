@@ -2,13 +2,13 @@ const ContactDetails = () => {
   return (
     <>
       <div>
-        <h3 className="font-semibold">Online</h3>
+        <h3 className="font-semibold mb-1">Online</h3>
         <div>Submit Request Form</div>
         <div>Live Chat</div>
         <div>Email : Info@jadetimes.com</div>
       </div>
       <div>
-        <h3 className="font-semibold">Post</h3>
+        <h3 className="font-semibold mb-1">Post</h3>
         <address>
           <div>Jadetimes Media LLC</div>
           <div>8206 Louisiana Blvd NE,</div>
@@ -17,7 +17,7 @@ const ContactDetails = () => {
         </address>
       </div>
       <div>
-        <h3 className="font-semibold">Phone</h3>
+        <h3 className="font-semibold mb-1">Phone</h3>
         <div>USA : +1 9293213710</div>
       </div>
       <p className="text-xs">

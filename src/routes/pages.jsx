@@ -24,6 +24,7 @@ const Technology = lazy(() => import("../pages/innovations/Technology"));
 const Political = lazy(() => import("../pages/Political"));
 const Universe = lazy(() => import("../pages/Universe"));
 const Fashion = lazy(() => import("../pages/Fashion"));
+const Health = lazy(() => import("../pages/Health"));
 const Search = lazy(() => import("../pages/Search"));
 const Membership = lazy(() => import("../pages/memberships/Membership"));
 const PricePlan = lazy(() => import("../pages/memberships/PricePlan"));
@@ -167,11 +168,16 @@ const Pages = [
   },
   {
     id: 11,
+    path: "/health",
+    component: <Health />,
+  },
+  {
+    id: 12,
     path: "/search",
     component: <Search />,
   },
   {
-    id: 12,
+    id: 13,
     path: "/membership",
     component: <Membership />,
     subpages: [
@@ -188,42 +194,42 @@ const Pages = [
     ],
   },
   {
-    id: 13,
+    id: 14,
     path: "/advertise-with-us",
     component: <AdvertiseWithUs />,
   },
   {
-    id: 14,
+    id: 15,
     path: "/talk-to-us",
     component: <TalkToUs />,
   },
   {
-    id: 15,
+    id: 16,
     path: "/terms-and-conditions",
     component: <TermsAndConditions />,
   },
   {
-    id: 16,
+    id: 17,
     path: "/about-us",
     component: <AboutUs />,
   },
   {
-    id: 17,
+    id: 18,
     path: "/privacy-policy",
     component: <Privacy />,
   },
   {
-    id: 18,
+    id: 19,
     path: "/careers",
     component: <Careers />,
   },
   {
-    id: 19,
+    id: 20,
     path: "/cookie-policy",
     component: <Cookie />,
   },
   {
-    id: 20,
+    id: 21,
     path: "/faq",
     component: <Faq />,
   },

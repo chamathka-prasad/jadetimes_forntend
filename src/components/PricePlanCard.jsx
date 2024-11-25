@@ -25,7 +25,7 @@ const PricePlanCard = () => {
   return (
     <ul className="flex flex-col gap-4 md:flex-row justify-center max-w-[1000px] mx-auto lg:gap-8">
       {pricePlans.map((pricePlan, index) => (
-        <li key={index} className={`bg-white text-neutral-900 p-8 relative w-full md:order-none ${pricePlan.popular ? "-order-1" : ""}`}>
+        <li key={index} className={`bg-white text-neutral-900 p-8 relative w-full md:order-none ${pricePlan.popular ? "-order-1" : ""}`.trim()}>
           <h2 className="uppercase text-lg lg:text-xl">{pricePlan.duration}</h2>
           <div className="my-6 md:mb-1">
             <div>

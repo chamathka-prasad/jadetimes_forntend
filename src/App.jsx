@@ -2,20 +2,18 @@ import { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header";
-import Aside from "./components/Aside";
 import Footer from "./components/Footer";
 
 import pages from "./routes/pages";
 
-import useOpen from "./hooks/useOpen";
+import useYouTubeShorts from "./hooks/useYouTubeShorts";
 
 const App = () => {
-  const [isMenu, handleMenuOpen, handleMenuClose] = useOpen();
+  // useYouTubeShorts();
 
   return (
     <>
-      <Header handleMenuOpen={handleMenuOpen} />
-      <Aside handleMenuClose={handleMenuClose} isMenu={isMenu} />
+      <Header />
       <main className="2xl:overflow-x-hidden">
         <Suspense fallback={<div>Loading...</div>}>
           <Routes>
