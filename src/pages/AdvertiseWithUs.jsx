@@ -52,7 +52,7 @@ const AdvertiseWithUs = () => {
   return (
     <section className="p-4">
       <div className="max-w-[1000px] mx-auto">
-        <h1 className="text-neutral-900 text-xl font-semibold border-b border-b-[#17171724] pb-1 md:text-center md:text-2xl md:pb-4 lg:text-3xl lg:py-8 lg:pb-11">Contact Us</h1>
+        <h1 className="text-neutral-900 text-2xl font-semibold border-b border-b-[#17171724] pb-1 md:text-center md:text-2xl md:pb-4 lg:text-3xl lg:py-8 lg:pb-11">Contact Us</h1>
         <h2 className="text-neutral-900 text-xl font-semibold my-3 md:text-base md:text-center md:my-8">Ad Sales Contacts in the America</h2>
         <ul className="border-y border-y-[#17171724] py-8 text-xs flex flex-col gap-6 text-center md:text-[0.8125rem] md:flex-row md:gap-0">
           <li className="md:w-1/2 md:pr-9 md:border-r md:border-r-[#17171724]">

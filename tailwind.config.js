@@ -6,4 +6,13 @@ export default {
       sans: ["Poppins", "sans-serif"],
     },
   },
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        ".overflow-anywhere": {
+          "overflow-wrap": "anywhere",
+        },
+      });
+    },
+  ],
 };

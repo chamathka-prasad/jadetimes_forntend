@@ -1,5 +1,5 @@
 /* Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 /* Reset */
 *,
@@ -60,6 +60,16 @@ iframe {
   display: block;
 }
 
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
 /* Active class */
 header .active {
   color: #ff322e;
@@ -68,15 +78,6 @@ header .active {
 .sub-page .active {
   border-bottom: 2px solid #111111;
 }
-
-/* Custom classes */
-.overflow-anywhere {
-  overflow-wrap: anywhere;
-}
-
-/* .scroll-bar-hidden {
-  scrollbar-width: none;
-} */
 
 @media screen and (min-width: 1024px) {
   .bg-image-none {

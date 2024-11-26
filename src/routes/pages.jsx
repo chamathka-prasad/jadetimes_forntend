@@ -37,6 +37,8 @@ const Privacy = lazy(() => import("../pages/Privacy"));
 const Careers = lazy(() => import("../pages/Careers"));
 const Cookie = lazy(() => import("../pages/Cookie"));
 const Faq = lazy(() => import("../pages/Faq"));
+const Shop = lazy(() => import("../pages/Shop"));
+const RisingBrand = lazy(() => import("../pages/products/RisingBrand"));
 const NotFound = lazy(() => import("../pages/NotFound"));
 
 const Pages = [
@@ -232,6 +234,16 @@ const Pages = [
     id: 21,
     path: "/faq",
     component: <Faq />,
+  },
+  {
+    id: 22,
+    path: "/shop",
+    component: <Shop />,
+  },
+  {
+    id: 23,
+    path: "/product/rising-brands-2024-by-jadetimes",
+    component: <RisingBrand />,
   },
   {
     id: 25,

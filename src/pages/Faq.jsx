@@ -48,7 +48,7 @@ const Faq = () => {
   return (
     <section className="p-4 text-neutral-900">
       <div className="max-w-[1000px] mx-auto">
-        <h1 className="text-lg text-center mb-6 lg:text-xl">Frequently asked questions</h1>
+        <h1 className="text-2xl text-center mb-6 lg:text-xl">Frequently asked questions</h1>
         <div className="relative">
           <input
             type="search"
@@ -65,7 +65,7 @@ const Faq = () => {
             <div key={index} className="border-b border-b-[#17171724] last:border-b-0">
               <button className="flex flex-row justify-between items-center gap-8 w-full py-4" onClick={() => handleKey(index)}>
                 <div className="text-black text-left lg:text-lg">{faq.question} ?</div>
-                <div className="text-neutral-900">{key === index ? <BsChevronUp /> : <BsChevronDown />}</div>
+                <div className="text-black">{key === index ? <BsChevronUp /> : <BsChevronDown />}</div>
               </button>
               <div className={`duration-300 grid ${key === index ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
                 <div className="overflow-y-hidden" aria-hidden={key !== index}>

@@ -72,13 +72,13 @@ const ThirdSlider = ({ articles, className }) => {
           </article>
         ))}
       </div>
-      <div className="flex flex-row gap-3 items-center justify-center absolute bottom-[2.3rem] w-full z-10">
+      <div className="flex flex-row gap-4 items-center justify-center absolute bottom-12 w-full z-10">
         {articles.map((_, index) => (
           <button
             onClick={() => {
               setCurrentIndex(index);
             }}
-            className="w-[8px] h-[8px] flex items-center justify-center rounded-full text-xs bg-white lg:w-[6px] lg:h-[6px]"
+            className="w-[8px] h-[8px] flex items-center justify-center rounded-full text-xs bg-white"
             key={index}
             aria-label={`go to slide ${index + 1}`}
           ></button>

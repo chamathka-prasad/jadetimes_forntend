@@ -16,7 +16,7 @@ const Footer = () => {
     emailRef.current.value = "";
   }
   return (
-    <footer className="border-t border-t-black">
+    <footer className="border-t border-t-black text-neutral-900">
       <div className="max-w-[1407px] mx-auto p-4">
         <div className="my-8 mb-12 lg:flex lg:flex-row lg:justify-between">
           <div className="mb-4 lg:mb-0">
@@ -64,7 +64,7 @@ const Footer = () => {
             </label>
             <div className="flex flex-row gap-[1px] max-w-lg w-full">
               <input
-                className="text-sm w-full py-1 px-5 border border-neutral-300 focus-visible:outline-none lg:w-96 focus:bg-neutral-300 focus:border-b-2 focus:border-b-black lg:hover:bg-neutral-300 lg:hover:border-b-2 lg:hover:border-b-black"
+                className="text-sm w-full py-1 px-5 duration-300 border border-neutral-300 focus-visible:outline-none lg:w-96 focus:bg-neutral-300 lg:hover:bg-neutral-300 lg:hover:border-neutral-900 lg:focus:border-neutral-900"
                 id="email"
                 name="email"
                 type="email"

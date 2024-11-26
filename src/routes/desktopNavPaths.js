@@ -6,14 +6,9 @@ const desktopNavPath = [
   },
   {
     key: 1,
-    to: "/all-products",
+    to: "/shop",
     name: "Shop",
-  },
-  {
-    key: 2,
-    to: "/copy-of-about-jadetimes",
-    name: "World Journalist Rankings",
-  },
+  }
 ];
 
 export default desktopNavPath;

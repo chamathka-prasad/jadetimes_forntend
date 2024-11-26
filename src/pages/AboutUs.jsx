@@ -6,7 +6,7 @@ const AboutUs = () => {
   return (
     <section className="text-neutral-900">
       <div className="p-4">
-        <h1 className="text-center font-semibold text-xl lg:text-3xl lg:mb-1">Learn more about what we do</h1>
+        <h1 className="text-center font-semibold text-2xl lg:text-3xl lg:mb-1">Learn more about what we do</h1>
         <p className="text-center text-xs lg:text-sm">where we go beyond the ordinary to bring you exclusive insights.</p>
       </div>
       <div className="p-4">

@@ -18,9 +18,9 @@ const useYouTubeShorts = () => {
           return response.json();
         })
         .then((data) => {
-          if (data.nextPageToken) {
-            fetchVideos(data.nextPageToken);
-          }
+          // if (data.nextPageToken) {
+          //   fetchVideos(data.nextPageToken);
+          // }
           // const shortVideos = data.items.filter((video) => {
           //   const duration = video.contentDetails.duration;
           //   const match = duration.match(/PT(\d+M)?(\d+S)?/);
@@ -32,11 +32,11 @@ const useYouTubeShorts = () => {
           //   }
           //   return false;
           // });
-        //   console.log(shortVideos)
+          //   console.log(shortVideos)
           // allVideos.push(...shortVideos);
           // const videoIdsStr = videoIds.join(",");
           // console.log(videoIdsStr)
-          //   console.log(data);
+            // console.log(data);
         })
         .catch((error) => {
           setError(error.message);
@@ -44,7 +44,7 @@ const useYouTubeShorts = () => {
     }
 
     fetchVideos();
-    // console.log(allVideos);
+    console.log(allVideos);
   }, []);
 
   return [videos, error, isLoading];

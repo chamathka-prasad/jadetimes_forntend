@@ -358,16 +358,16 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="p-4 flex flex-col gap-4 md:grid md:grid-cols-3 lg:grid-cols-8 lg:gap-5 lg:py-5 max-w-[1300px] mx-auto">
+        <div className="p-4 flex flex-col gap-4 md:grid md:grid-cols-3 lg:grid-cols-8 lg:gap-5 lg:py-5 max-w-[1300px] mx-auto text-neutral-900">
           <div className="lg:col-span-2 lg:flex lg:flex-col lg:gap-5">
             <article className="border border-neutral-300 block lg:col-span-2 h-full lg:h-auto lg:border-none">
-              <div className="flex flex-row p-4 justify-between gap-4 md:gap-0 md:p-0 md:flex-col">
+              <div className="flex flex-row p-4 justify-between gap-4 md:gap-2 md:p-0 md:flex-col">
                 <PictureLink className="order-2 md:order-none">
                   <img src={Articles[0].image} alt="" className="min-w-24 w-24 min-h-24 h-24 object-cover object-center md:w-full md:h-full" />
                 </PictureLink>
                 <div className="flex flex-col justify-between gap-4 md:p-4 lg:p-0">
                   <h3>
-                    <Link className="overflow-anywhere line-clamp-2 lg:text-lg lg:font-medium">{Articles[0].title}</Link>
+                    <Link className="overflow-anywhere line-clamp-2 lg:text-lg lg:font-medium lg:text-[#111111]">{Articles[0].title}</Link>
                   </h3>
                   {screenSize !== "large" && <div className="whitespace-nowrap lg:text-xs md:order-[-1]">{Articles[0].posted}</div>}
                 </div>
@@ -400,9 +400,9 @@ const Home = () => {
                   <img src={articlesFive[0].image} alt="" />
                 </PictureLink>
               )}
-              <div className="flex flex-col justify-between h-full p-8 bg-[#000000aa] text-white lg:h-auto lg:bg-white lg:text-black lg:gap-2 lg:p-0 lg:pt-8">
+              <div className="flex flex-col justify-between h-full p-8 bg-[#000000aa] text-white lg:h-auto lg:bg-white lg:text-neutral-900 lg:gap-2 lg:p-0 lg:pt-8">
                 <h3 className="order-2">
-                  <Link className="line-clamp-3 text-lg lg:text-2xl lg:line-clamp-2 lg:font-medium">{articlesFive[0].title}</Link>
+                  <Link className="line-clamp-3 text-lg lg:text-2xl lg:line-clamp-2 lg:font-medium lg:text-[#111111]">{articlesFive[0].title}</Link>
                 </h3>
                 {screenSize === "large" && <p className="lg:line-clamp-2 lg:text-lg lg:order-3">{articlesFive[0].title}</p>}
                 {screenSize !== "large" && <div className="whitespace-nowrap lg:text-xs">{articlesFive[0].posted}</div>}
@@ -411,13 +411,13 @@ const Home = () => {
           </div>
           <div className="lg:col-span-2 lg:flex lg:flex-col lg:gap-5">
             <article className="border border-neutral-300 block lg:col-span-2 h-full lg:h-auto lg:border-none">
-              <div className="flex flex-row p-4 justify-between gap-4 md:gap-0 md:p-0 md:flex-col">
+              <div className="flex flex-row p-4 justify-between gap-4 md:gap-2 md:p-0 md:flex-col">
                 <PictureLink className="order-2 md:order-none">
                   <img src={Articles[1].image} alt="" className="min-w-24 w-24 min-h-24 h-24 object-cover object-center md:w-full md:h-full" />
                 </PictureLink>
                 <div className="flex flex-col justify-between gap-4 md:p-4 lg:p-0">
                   <h3>
-                    <Link className="overflow-anywhere line-clamp-2 lg:text-lg lg:font-medium">{Articles[1].title}</Link>
+                    <Link className="overflow-anywhere line-clamp-2 lg:text-lg lg:font-medium lg:text-[#111111]">{Articles[1].title}</Link>
                   </h3>
                   {screenSize !== "large" && <div className="whitespace-nowrap lg:text-xs md:order-[-1]">{Articles[1].posted}</div>}
                 </div>
