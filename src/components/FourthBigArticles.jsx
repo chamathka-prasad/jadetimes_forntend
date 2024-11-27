@@ -15,7 +15,7 @@ const FourthBigArticles = ({ articles }) => {
           </PictureLink>
           <div className="flex flex-col justify-center lg:justify-between lg:gap-2">
             <h2>
-              <Link to={article.link} className="line-clamp-3 overflow-anywhere lg:text-sm">
+              <Link to={article.link} className="line-clamp-3 overflow-wrap-anywhere lg:text-sm">
                 {article.title}
               </Link>
             </h2>

@@ -11,25 +11,25 @@ import usePagination from "../hooks/usePagination";
 const Search = () => {
   const [currentIndex, visiblePages, pageItems, lastIndex, prevArticles, nextArticles, handlePrevDisabled, handleNextDisabled, handleCurrentArticle] = usePagination(3, Articles.length);
   return (
-    <section className="p-4 text-neutral-900">
+    <section className="p-4">
       <div className="max-w-[1000px] mx-auto">
         <div className="md:flex md:flex-row md:gap-4 md:items-center">
-          <h1 className="text-3xl font-semibold md:text-2xl">Search</h1>
+          <h1 className="text-3xl font-semibold md:text-2xl text-[#111111]">Search</h1>
           <div className="mt-5 relative md:mt-0 md:w-full">
             <input
               className="border-2 border-[#17171724] w-full block rounded-md text-xl duration-300 placeholder:text-neutral-500 py-3 pl-12 pr-4 md:text-base focus-visible:outline-none focus:border-neutral-900 lg:hover:border-neutral-900"
               type="search"
               placeholder="What are you looking for ?"
             />
-            <BsSearch size={20} className="text-neutral-900 absolute left-4 top-1/2 -translate-y-1/2 -z-10" />
+            <BsSearch size={20} className="text-black absolute left-4 top-1/2 -translate-y-1/2 -z-10" />
           </div>
         </div>
         <div className="flex flex-col gap-4 py-4 lg:grid lg:grid-cols-3">
           {Articles.slice(currentIndex * pageItems - pageItems, pageItems * currentIndex).map((article, index) => (
-            <article key={index} className="border border-neutral-300 p-4">
+            <article key={index} className="border border-neutral-300 p-4 text-neutral-900">
               <div className="flex flex-row gap-4">
                 <h2>
-                  <Link to={article.link} className="text-lg line-clamp-3 overflow-anywhere lg:text-sm">
+                  <Link to={article.link} className="text-lg line-clamp-3 overflow-wrap-anywhere lg:text-sm">
                     {article.title}
                   </Link>
                 </h2>

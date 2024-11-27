@@ -34,12 +34,12 @@ const FirstSlider = ({ articles }) => {
           ))}
         </div>
         {currentIndex !== articles.length - 1 && (
-          <button className="text-neutral-900 absolute top-1/3 right-4" onClick={handleNextSlide} aria-label="next slide">
+          <button className="text-black absolute top-1/3 right-4" onClick={handleNextSlide} aria-label="next slide">
             <BsChevronRight size={35} />
           </button>
         )}
         {currentIndex !== 0 && (
-          <button className="text-neutral-900 absolute top-1/3 left-4" onClick={handlePreviousSlide} aria-label="previous slide">
+          <button className="text-black absolute top-1/3 left-4" onClick={handlePreviousSlide} aria-label="previous slide">
             <BsChevronLeft size={35} />
           </button>
         )}

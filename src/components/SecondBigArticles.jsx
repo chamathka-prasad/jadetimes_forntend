@@ -20,7 +20,7 @@ const SecondBigArticles = ({ articles }) => {
               </Link>
             )}
             <h2>
-              <Link to={article.link} className="overflow-anywhere line-clamp-2 lg:text-sm lg:line-clamp-3">
+              <Link to={article.link} className="overflow-wrap-anywhere line-clamp-2 lg:text-sm lg:line-clamp-3">
                 {article.title}
               </Link>
             </h2>

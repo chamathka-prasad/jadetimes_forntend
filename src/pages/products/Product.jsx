@@ -1,12 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BsChevronDown, BsChevronUp, BsDashLg, BsPlusLg } from "react-icons/bs";
-
-import product1image1 from "../../assets/shop/cover1.webp";
-import product2image2 from "../../assets/shop/cover2.webp";
+import { useParams } from "react-router-dom";
 
 import useKey from "../../hooks/useKey";
 
-const risingBrand = [product1image1, product2image2];
+import products from "../../routes/products";
+
 const productInformations = [
   {
     title: "PRODUCT INFO",
@@ -22,10 +21,22 @@ const productInformations = [
   },
 ];
 
-const RisingBrand = () => {
+const Product = () => {
+  const param = useParams()
+  const [product, setProduct] = useState();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentQuantity, setCurrentQuantity] = useState(1);
   const [key, handleKey] = useKey(0);
+
+  useEffect(() => {
+    const productItem = products.find(product => product.id === param.id);
+
+    if (productItem) {
+      setProduct(productItem);
+    } else {
+      setProduct();
+    }
+  }, [param]);
 
   function handleCurrentIndex(index) {
     setCurrentIndex(index);
@@ -46,13 +57,19 @@ const RisingBrand = () => {
     }
   }
 
+  if(!product) {
+    return (
+      <h1 className="text-4xl text-center py-20">The product not found</h1>
+    )
+  }
+
   return (
     <>
       <section className="max-w-[1000px] min-[1000px]:mx-auto m-4 md:grid md:grid-cols-2">
         <div className="md:pr-6 md:border-r md:border-r-[#17171724]">
-          <img src={risingBrand[currentIndex]} alt="" className="aspect-[9_/_12]" />
+          <img src={product.images?.[currentIndex]} alt="" className="aspect-[9_/_12]" />
           <div className="flex flex-row gap-4 items-center justify-center my-4 md:mb-0">
-            {risingBrand.map((_, index) => (
+            {product.images?.map((_, index) => (
               <button
                 key={index}
                 className={`w-3 h-3 flex items-center justify-center rounded-full text-xs border border-neutral-900 ${index === currentIndex && "bg-black"}`}
@@ -62,10 +79,10 @@ const RisingBrand = () => {
           </div>
         </div>
         <div className="md:pl-6">
-          <h1 className="text-3xl mb-2">Rising Brands 2024 by Jadetimes</h1>
-          <div className="lg:text-sm">SKU: 364215376135199</div>
+          <h1 className="text-3xl mb-2">{product.name}</h1>
+          <div className="lg:text-sm">SKU: {product.sku}</div>
           <div className="flex flex-row items-center justify-between my-6">
-            <div className="text-2xl text-neutral-700">$45.00</div>
+            <div className="text-2xl text-neutral-700">${product.price}</div>
             <div className="flex flex-row items-center gap-4 border border-neutral-300 text-lg relative w-36" aria-label="quantity">
               <button className={`p-2 bg-neutral-300 text-black z-10 ${currentQuantity === 1 && "opacity-50"}`} onClick={() => handleCurrentQuantity("decrement")} disabled={currentQuantity === 1}>
                 <BsDashLg size={20} />
@@ -127,4 +144,4 @@ const RisingBrand = () => {
   );
 };
 
-export default RisingBrand;
+export default Product;

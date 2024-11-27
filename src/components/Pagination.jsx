@@ -14,13 +14,13 @@ const Pagination = ({ articles }) => {
     <>
       <div className="flex flex-col gap-4 py-4">
         {articles.slice(currentIndex * pageItems - pageItems, pageItems * currentIndex).map((article, index) => (
-          <article className="flex flex-row gap-4 border border-neutral-300 p-4 items-center lg:items-start lg:grid lg:grid-cols-4" key={index}>
+          <article className="flex flex-row text-neutral-900 gap-4 border border-neutral-300 p-4 items-center lg:items-start lg:grid lg:grid-cols-4" key={index}>
             <PictureLink link={article.link} className="lg:order-2">
               <img src={article.image} alt={article.title} className="min-w-24 w-24 min-h-24 h-24 object-cover object-center lg:w-full lg:h-full" />
             </PictureLink>
             <div className="col-span-3">
               <h2>
-                <Link to={article.link} className="line-clamp-3 overflow-anywhere lg:text-lg lg:mb-2">
+                <Link to={article.link} className="line-clamp-3 overflow-wrap-anywhere lg:text-lg lg:mb-2">
                   {article.title}
                 </Link>
               </h2>

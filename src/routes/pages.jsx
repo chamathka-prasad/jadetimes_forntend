@@ -38,7 +38,7 @@ const Careers = lazy(() => import("../pages/Careers"));
 const Cookie = lazy(() => import("../pages/Cookie"));
 const Faq = lazy(() => import("../pages/Faq"));
 const Shop = lazy(() => import("../pages/Shop"));
-const RisingBrand = lazy(() => import("../pages/products/RisingBrand"));
+const Product = lazy(() => import("../pages/products/Product"));
 const NotFound = lazy(() => import("../pages/NotFound"));
 
 const Pages = [
@@ -242,8 +242,8 @@ const Pages = [
   },
   {
     id: 23,
-    path: "/product/rising-brands-2024-by-jadetimes",
-    component: <RisingBrand />,
+    path: "/product/:id",
+    component: <Product />,
   },
   {
     id: 25,

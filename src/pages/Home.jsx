@@ -71,7 +71,7 @@ const Home = () => {
                     </Link>
                   )}
                   <h2>
-                    <Link to={article.link} className="overflow-anywhere line-clamp-2 lg:text-sm lg:line-clamp-3">
+                    <Link to={article.link} className="overflow-wrap-anywhere line-clamp-2 lg:text-sm lg:line-clamp-3">
                       {article.title}
                     </Link>
                   </h2>
@@ -121,7 +121,7 @@ const Home = () => {
               </PictureLink>
               <div className="flex flex-col justify-between gap-4 lg:p-4">
                 <h3>
-                  <Link className="overflow-anywhere line-clamp-2 lg:text-sm lg:line-clamp-3">{article.title}</Link>
+                  <Link className="overflow-wrap-anywhere line-clamp-2 lg:text-sm lg:line-clamp-3">{article.title}</Link>
                 </h3>
                 {screenSize !== "large" && <div className="whitespace-nowrap">{article.posted}</div>}
               </div>
@@ -167,7 +167,7 @@ const Home = () => {
                   </PictureLink>
                   <div className="flex flex-col justify-between lg:h-fit gap-4 lg:justify-normal lg:gap-2">
                     <h4>
-                      <Link className="line-clamp-2 overflow-anywhere lg:text-sm lg:line-clamp-3">{article.title}</Link>
+                      <Link className="line-clamp-2 overflow-wrap-anywhere lg:text-sm lg:line-clamp-3">{article.title}</Link>
                     </h4>
                     {screenSize !== "large" && <div className="whitespace-nowrap lg:text-xs">{article.posted}</div>}
                     {screenSize === "large" && (
@@ -199,7 +199,7 @@ const Home = () => {
                       </PictureLink>
                       <div className="flex flex-col gap-2 h-fit">
                         <h4>
-                          <Link to={article.link} className="line-clamp-3 overflow-anywhere text-sm">
+                          <Link to={article.link} className="line-clamp-3 overflow-wrap-anywhere text-sm">
                             {article.title}
                           </Link>
                         </h4>
@@ -217,7 +217,7 @@ const Home = () => {
                 </h4>
                 {Articles.slice(0, 6).map((article, index) => (
                   <h5 key={index}>
-                    <Link to={article.link} className="text-xs mb-3 line-clamp-2 overflow-anywhere">
+                    <Link to={article.link} className="text-xs mb-3 line-clamp-2 overflow-wrap-anywhere">
                       {article.title}
                     </Link>
                   </h5>
@@ -333,7 +333,7 @@ const Home = () => {
                   </PictureLink>
                   <div className="flex flex-col justify-between gap-4 lg:p-4">
                     <h3>
-                      <Link className="overflow-anywhere line-clamp-2 lg:text-sm lg:line-clamp-3">{article.title}</Link>
+                      <Link className="overflow-wrap-anywhere line-clamp-2 lg:text-sm lg:line-clamp-3">{article.title}</Link>
                     </h3>
                     {screenSize === "large" && <p className="lg:line-clamp-2 lg:text-xs">{article.title}</p>}
                     {screenSize !== "large" && <div className="whitespace-nowrap lg:text-xs lg:order-[-1]">{article.posted}</div>}
@@ -367,7 +367,7 @@ const Home = () => {
                 </PictureLink>
                 <div className="flex flex-col justify-between gap-4 md:p-4 lg:p-0">
                   <h3>
-                    <Link className="overflow-anywhere line-clamp-2 lg:text-lg lg:font-medium lg:text-[#111111]">{Articles[0].title}</Link>
+                    <Link className="overflow-wrap-anywhere line-clamp-2 lg:text-lg lg:font-medium lg:text-[#111111]">{Articles[0].title}</Link>
                   </h3>
                   {screenSize !== "large" && <div className="whitespace-nowrap lg:text-xs md:order-[-1]">{Articles[0].posted}</div>}
                 </div>
@@ -381,7 +381,7 @@ const Home = () => {
                       <img src={article.image} alt="" className="min-w-28 w-28 min-h-20 h-20 object-cover object-center" />
                     </PictureLink>
                     <h3>
-                      <Link className="overflow-anywhere text-sm line-clamp-3">{article.title}</Link>
+                      <Link className="overflow-wrap-anywhere text-sm line-clamp-3">{article.title}</Link>
                     </h3>
                   </article>
                 ))}
@@ -404,7 +404,7 @@ const Home = () => {
                 <h3 className="order-2">
                   <Link className="line-clamp-3 text-lg lg:text-2xl lg:line-clamp-2 lg:font-medium lg:text-[#111111]">{articlesFive[0].title}</Link>
                 </h3>
-                {screenSize === "large" && <p className="lg:line-clamp-2 lg:text-lg lg:order-3">{articlesFive[0].title}</p>}
+                {screenSize === "large" && <p className="lg:line-clamp-2 lg:text-lg lg:order-3 text-neutral-900">{articlesFive[0].title}</p>}
                 {screenSize !== "large" && <div className="whitespace-nowrap lg:text-xs">{articlesFive[0].posted}</div>}
               </div>
             </article>
@@ -417,7 +417,7 @@ const Home = () => {
                 </PictureLink>
                 <div className="flex flex-col justify-between gap-4 md:p-4 lg:p-0">
                   <h3>
-                    <Link className="overflow-anywhere line-clamp-2 lg:text-lg lg:font-medium lg:text-[#111111]">{Articles[1].title}</Link>
+                    <Link className="overflow-wrap-anywhere line-clamp-2 lg:text-lg lg:font-medium lg:text-[#111111]">{Articles[1].title}</Link>
                   </h3>
                   {screenSize !== "large" && <div className="whitespace-nowrap lg:text-xs md:order-[-1]">{Articles[1].posted}</div>}
                 </div>
@@ -431,7 +431,7 @@ const Home = () => {
                       <img src={article.image} alt="" className="min-w-28 w-28 min-h-20 h-20 object-cover object-center" />
                     </PictureLink>
                     <h3>
-                      <Link className="overflow-anywhere text-sm line-clamp-3">{article.title}</Link>
+                      <Link className="overflow-wrap-anywhere text-sm line-clamp-3">{article.title}</Link>
                     </h3>
                   </article>
                 ))}

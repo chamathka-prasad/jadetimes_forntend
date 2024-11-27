@@ -9,7 +9,7 @@ export default {
   plugins: [
     function ({ addUtilities }) {
       addUtilities({
-        ".overflow-anywhere": {
+        ".overflow-wrap-anywhere": {
           "overflow-wrap": "anywhere",
         },
       });

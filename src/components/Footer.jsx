@@ -64,7 +64,7 @@ const Footer = () => {
             </label>
             <div className="flex flex-row gap-[1px] max-w-lg w-full">
               <input
-                className="text-sm w-full py-1 px-5 duration-300 border border-neutral-300 focus-visible:outline-none lg:w-96 focus:bg-neutral-300 lg:hover:bg-neutral-300 lg:hover:border-neutral-900 lg:focus:border-neutral-900"
+                className="text-sm w-full py-1 px-5 duration-300 border border-neutral-300 focus-visible:outline-none lg:w-96 lg:hover:border-black lg:focus:border-black"
                 id="email"
                 name="email"
                 type="email"
