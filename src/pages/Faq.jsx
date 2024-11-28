@@ -51,7 +51,7 @@ const Faq = () => {
         <h1 className="text-2xl text-[#111111] text-center mb-6 lg:text-xl">Frequently asked questions</h1>
         <div className="relative">
           <input
-            type="search"
+            type="text"
             onChange={handleChange}
             ref={searchRef}
             placeholder="Looking for somthing ?"

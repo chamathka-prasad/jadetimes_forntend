@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import { BsChevronDown, BsChevronUp, BsDashLg, BsPlusLg } from "react-icons/bs";
 import { useParams } from "react-router-dom";
 
-import useKey from "../../hooks/useKey";
+import useKey from "../hooks/useKey";
 
-import products from "../../routes/products";
+import products from "../routes/products";
 
 const productInformations = [
   {
@@ -72,7 +72,7 @@ const Product = () => {
             {product.images?.map((_, index) => (
               <button
                 key={index}
-                className={`w-3 h-3 flex items-center justify-center rounded-full text-xs border border-neutral-900 ${index === currentIndex && "bg-black"}`}
+                className={`w-3 h-3 flex items-center justify-center rounded-full text-xs border border-neutral-900 focus:rounded-full ${index === currentIndex && "bg-black"}`}
                 onClick={() => handleCurrentIndex(index)}
               ></button>
             ))}
@@ -83,13 +83,13 @@ const Product = () => {
           <div className="lg:text-sm">SKU: {product.sku}</div>
           <div className="flex flex-row items-center justify-between my-6">
             <div className="text-2xl text-neutral-700">${product.price}</div>
-            <div className="flex flex-row items-center gap-4 border border-neutral-300 text-lg relative w-36" aria-label="quantity">
+            <div className="flex flex-row items-center gap-4 border-2 border-[#17171724] text-lg relative w-36" aria-label="quantity">
               <button className={`p-2 bg-neutral-300 text-black z-10 ${currentQuantity === 1 && "opacity-50"}`} onClick={() => handleCurrentQuantity("decrement")} disabled={currentQuantity === 1}>
                 <BsDashLg size={20} />
               </button>
               <input
-                type="number"
-                className="block w-full h-full text-center absolute px-12 appearance-none"
+                type="text"
+                className="block w-full h-full text-center absolute px-12 focus:outline-black"
                 value={currentQuantity}
                 onChange={() => handleCurrentQuantity(null, event)}
                 min="1"

@@ -85,7 +85,7 @@ const Home = () => {
           {screenSize === "large" && (
             <div className="lg:col-start-[14] lg:col-span-4 lg:row-start-3 lg:row-span-1">
               <a href="https://specialgraphics.us/" className="block" target="_blank" aria-label="visit special graphics website">
-                <img src={SpecialGraphics} alt="special graphics representation" className="md:h-[320px] lg:h-auto" />
+                <img src={SpecialGraphics} alt="special graphics representation" className="md:h-[320px] lg:h-auto w-full" />
               </a>
               <div className="lg:mt-4 lg:flex lg:flex-row lg:items-center xl:gap-4">
                 <LatestUpdatesLink className="px-3 py-2 w-full text-xs" />
@@ -159,11 +159,11 @@ const Home = () => {
               </h3>
               {screenSize === "large" && <MembershipLink className="lg:font-semibold lg:text-[0.625rem]" />}
             </div>
-            <div className="flex flex-col gap-4 md:grid md:grid-cols-2 lg:grid-cols-2 lg:gap-5 lg:p-0 lg:h-full">
+            <div className="flex flex-col gap-4 md:grid md:grid-cols-2 lg:grid-cols-2 lg:gap-5 lg:p-0">
               {articlesSix.map((article, index) => (
                 <article key={index} className="flex flex-row p-4 gap-4 border border-neutral-300 lg:p-3">
                   <PictureLink className="lg:order-2 cursor-pointer" link={article.link}>
-                    <img src={article.image} alt={article.title} className="min-w-24 w-24 min-h-24 h-24 object-cover object-center lg:min-w-14 lg:w-14 lg:min-h-14 lg:h-14" />
+                    <img src={article.image} alt={article.title} className="min-w-24 w-24 min-h-24 h-24 lg:min-w-[3.75rem] lg:w-[3.75rem] lg:min-h-[3.75rem] lg:h-[3.75rem] object-cover object-center" />
                   </PictureLink>
                   <div className="flex flex-col justify-between lg:h-fit gap-4 lg:justify-normal lg:gap-2">
                     <h4>
@@ -197,7 +197,7 @@ const Home = () => {
                       <PictureLink link={article.link}>
                         <img src={article.image} alt={article.title} className="min-w-24 w-24 min-h-24 h-24 object-cover object-center" />
                       </PictureLink>
-                      <div className="flex flex-col gap-2 h-fit">
+                      <div className="flex flex-col gap-2 justify-between">
                         <h4>
                           <Link to={article.link} className="line-clamp-3 overflow-wrap-anywhere text-sm">
                             {article.title}

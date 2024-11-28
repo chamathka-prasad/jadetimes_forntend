@@ -38,7 +38,7 @@ const Careers = lazy(() => import("../pages/Careers"));
 const Cookie = lazy(() => import("../pages/Cookie"));
 const Faq = lazy(() => import("../pages/Faq"));
 const Shop = lazy(() => import("../pages/Shop"));
-const Product = lazy(() => import("../pages/products/Product"));
+const Product = lazy(() => import("../pages/Product"));
 const NotFound = lazy(() => import("../pages/NotFound"));
 
 const Pages = [
@@ -242,7 +242,7 @@ const Pages = [
   },
   {
     id: 23,
-    path: "/product/:id",
+    path: "/shop/:id",
     component: <Product />,
   },
   {

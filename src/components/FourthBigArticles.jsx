@@ -11,7 +11,7 @@ const FourthBigArticles = ({ articles }) => {
       {articles.slice(0, 3).map((article, index) => (
         <article className="flex flex-row gap-4 lg:p-3 lg:border lg:border-neutral-300" key={index}>
           <PictureLink link={article.link} className="lg:order-2">
-            <img src={article.image} alt={article.title} className="min-w-24 w-24 min-h-24 h-24 lg:min-w-[4.25rem] lg:w-[4.25rem] lg:min-h-[4.25rem] lg:h-[4.25rem] object-cover object-center" />
+            <img src={article.image} alt={article.title} className="min-w-24 w-24 min-h-24 h-24 object-cover object-center" />
           </PictureLink>
           <div className="flex flex-col justify-center lg:justify-between lg:gap-2">
             <h2>

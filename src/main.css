@@ -1,3 +1,8 @@
+/* Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Reset */
 *,
 *::before,
@@ -6,65 +11,25 @@
   margin: 0;
   padding: 0;
   background: none;
-  border: none;
-  color: unset;
   font: unset;
-  /* outline: 1px solid lime; */
 }
 
 *:focus-visible {
   outline: 2px solid dodgerblue;
   transition: none;
   border-radius: 0px;
-}
-
-button {
   outline-offset: 1px;
-}
-
-input::-webkit-search-cancel-button {
-  -webkit-appearance: none;
-  height: 16px;
-  width: 16px;
-  background-image: url("data:image/svg+xml;utf8,<svg stroke='currentColor' fill='currentColor' stroke-width='0' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'><path d='M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z'></path></svg>");
-  cursor: pointer;
 }
 
 html {
   font-size: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: Poppins, Arial, Helvetica, sans-serif;
   scroll-behavior: smooth;
 }
 
-h1,
-h2,
-h3,
-h4 {
-  line-height: 1.25;
-}
-
 img {
-  display: block;
   width: 100%;
-}
-
-iframe {
-  width: 100%;
-  height: 100%;
-  aspect-ratio: 16 / 9;
-  display: block;
-}
-
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-}
-
-input[type="number"] {
-  -moz-appearance: textfield;
-  appearance: textfield;
 }
 
 /* Active class */
@@ -81,8 +46,3 @@ header .active {
     background-image: none !important;
   }
 }
-
-/* Tailwind CSS */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;

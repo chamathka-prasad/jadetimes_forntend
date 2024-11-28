@@ -9,7 +9,7 @@ const products = [
       "https://placehold.co/660X880"
     ],
     new: true,
-    link: "/product/rising-brands-2024-by-jadetimes",
+    link: "/shop/rising-brands-2024-by-jadetimes",
   },
   {
     id: "rising-brands-2025-by-jadetimes",
@@ -21,7 +21,7 @@ const products = [
       "https://placehold.co/660X880"
     ],
     new: false,
-    link: "/product/rising-brands-2025-by-jadetimes",
+    link: "/shop/rising-brands-2025-by-jadetimes",
   },
   {
     id: "rising-brands-2026-by-jadetimes",
@@ -33,7 +33,7 @@ const products = [
       "https://placehold.co/660X880"
     ],
     new: false,
-    link: "/product/rising-brands-2026-by-jadetimes",
+    link: "/shop/rising-brands-2026-by-jadetimes",
   },
 ];
 

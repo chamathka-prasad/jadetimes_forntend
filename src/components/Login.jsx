@@ -60,7 +60,7 @@ const Login = ({ handleLoginClose }) => {
                 type="checkbox"
                 name="checkbox"
                 id="checkbox"
-                className="appearance-none w-6 h-6 border border-black absolute cursor-pointer"
+                className="appearance-none w-6 h-6 border-2 border-[#17171724] absolute cursor-pointer duration-300 focus-visible:outline-none focus:border-black lg:hover:border-black"
                 checked={isChecked}
                 onChange={() => setIsChecked((prevChecked) => !prevChecked)}
               />
