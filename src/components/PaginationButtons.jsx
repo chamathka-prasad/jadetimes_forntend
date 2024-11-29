@@ -6,10 +6,10 @@ const PaginationButtons = ({ currentIndex, lastIndex, prevArticles, nextArticles
   const screenSize = useWindowSize();
   return (
     <div className="flex flex-row gap-8 items-center justify-center">
-      <button onClick={handlePrevDisabled} disabled={currentIndex <= 3 || lastIndex === 5} className={currentIndex <= 3 || lastIndex === 5 ? "text-neutral-500" : undefined}>
+      <button onClick={handlePrevDisabled} disabled={currentIndex <= 3 || lastIndex === 5} className={currentIndex <= 3 || lastIndex === 5 ? "text-neutral-500" : "text-black"}>
         <BsChevronDoubleLeft size={20} />
       </button>
-      <button onClick={prevArticles} className={(currentIndex === 1 && "text-neutral-500") || undefined} disabled={currentIndex === 1}>
+      <button onClick={prevArticles} className={(currentIndex === 1 && "text-neutral-500") || "text-black"} disabled={currentIndex === 1}>
         <BsChevronLeft size={20} />
       </button>
       {screenSize !== "large" && (
@@ -18,7 +18,7 @@ const PaginationButtons = ({ currentIndex, lastIndex, prevArticles, nextArticles
         </div>
       )}
       {screenSize === "large" && (
-        <div className="flex flex-row gap-4">
+        <div className="flex flex-row gap-4 text-neutral-900">
           {visiblePages.map(
             (button) =>
               button > 0 &&
@@ -28,7 +28,7 @@ const PaginationButtons = ({ currentIndex, lastIndex, prevArticles, nextArticles
                   onClick={() => {
                     handleCurrentArticle(button);
                   }}
-                  className={`px-2 ${currentIndex === button ? "text-neutral-500" : ""}`.trim()}
+                  className={`px-2 ${currentIndex === button ? "text-[#FF322E]" : ""}`.trim()}
                 >
                   {button}
                 </button>
@@ -36,10 +36,10 @@ const PaginationButtons = ({ currentIndex, lastIndex, prevArticles, nextArticles
           )}
         </div>
       )}
-      <button onClick={nextArticles} className={(currentIndex === lastIndex && "text-neutral-500") || undefined} disabled={currentIndex === lastIndex}>
+      <button onClick={nextArticles} className={(currentIndex === lastIndex && "text-neutral-500") || "text-black"} disabled={currentIndex === lastIndex}>
         <BsChevronRight size={20} />
       </button>
-      <button onClick={handleNextDisabled} disabled={currentIndex === lastIndex || lastIndex === 5} className={currentIndex >= lastIndex - 2 || lastIndex === 5 ? "text-neutral-500" : undefined}>
+      <button onClick={handleNextDisabled} disabled={currentIndex === lastIndex || lastIndex === 5} className={currentIndex >= lastIndex - 2 || lastIndex === 5 ? "text-neutral-500" : "text-black"}>
         <BsChevronDoubleRight size={20} />
       </button>
     </div>

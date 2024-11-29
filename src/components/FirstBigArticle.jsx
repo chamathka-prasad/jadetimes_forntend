@@ -8,7 +8,7 @@ import useWindowSize from "../hooks/useWindowSize";
 const FirstBigArticle = ({ article }) => {
   const screenSize = useWindowSize();
   return (
-    <article className="relative p-4 border-b border-b-[#8B8B8B] mb-4 md:mb-0 md:p-0 md:grid md:grid-cols-2 md:border md:border-neutral-300 md:col-span-2 lg:col-[13_span_/_13_span] lg:row-start-2">
+    <article className="relative p-4 border-b border-b-neutral-300 mb-4 md:mb-0 md:p-0 md:grid md:grid-cols-2 md:border md:border-neutral-300 md:col-span-2 lg:col-[13_span_/_13_span] lg:row-start-2">
       {screenSize === "small" && <LatestUpdatesLink className="px-3 py-2 text-sm absolute -bottom-9 left-1/2 -translate-x-1/2 -translate-y-1/2 md:hidden" />}
       <PictureLink link={article.link} className="h-full">
         <img src={article.image} alt={article.title} className="object-cover object-center md:h-full" />

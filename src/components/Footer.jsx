@@ -16,7 +16,7 @@ const Footer = () => {
     emailRef.current.value = "";
   }
   return (
-    <footer className="border-t border-t-black text-neutral-900">
+    <footer className="border-t border-t-neutral-900 text-neutral-900">
       <div className="max-w-[1407px] mx-auto p-4">
         <div className="my-8 mb-12 lg:flex lg:flex-row lg:justify-between">
           <div className="mb-4 lg:mb-0">
@@ -24,7 +24,7 @@ const Footer = () => {
               <img src={Logo} alt="jadetimes logo" />
             </Link>
             {screenSize !== "large" && (
-              <ul className="flex flex-col gap-4 text-center text-[#282626] text-sm text-nowrap my-4">
+              <ul className="flex flex-col gap-4 text-center text-neutral-900 text-sm text-nowrap my-4">
                 <li>
                   <Link to="/about-us">About Jadetimes</Link>
                 </li>
@@ -48,23 +48,23 @@ const Footer = () => {
                 </li>
               </ul>
             )}
-            <div className="text-sm flex flex-row items-center justify-center max-w-lg mx-auto whitespace-nowrap border-t border-t-[#17171724] pt-4 lg:text-xs lg:border-none lg:pt-0 lg:mt-3">
+            <div className="text-sm flex flex-row items-center justify-center max-w-lg mx-auto whitespace-nowrap border-t border-t-neutral-300 pt-4 lg:text-xs lg:border-none lg:pt-0 lg:mt-3">
               <Link to="/advertise-with-us" className="lg:hover:underline">
                 Advertise with us
               </Link>
-              <span className="w-[1px] h-3 bg-neutral-800 mx-2"></span>
+              <span className="w-[1px] h-3 bg-neutral-900 mx-2"></span>
               <Link to="/talk-to-us" className="lg:hover:underline">
                 Talk to us
               </Link>
             </div>
           </div>
           <form className="flex flex-col items-center gap-4 lg:flex-row" onSubmit={handleSubmit}>
-            <label htmlFor="email" className="uppercase block text-center text-lg lg:text-[0.8125rem] text-nowrap lg:mb-0">
+            <label htmlFor="email" className="uppercase block text-center text-lg lg:text-[0.8125rem] text-nowrap text-black lg:mb-0">
               Sign up for our newsletter
             </label>
             <div className="flex flex-row gap-[1px] max-w-lg w-full">
               <input
-                className="text-sm w-full py-1 px-5 duration-300 border-2 border-[#17171724] focus-visible:outline-none lg:w-96 lg:hover:border-black focus:border-black"
+                className="text-sm w-full py-1 px-5 duration-300 placeholder:text-neutral-500 border-2 border-neutral-300 focus-visible:outline-none lg:w-96 lg:hover:border-neutral-900 focus:border-neutral-900"
                 id="email"
                 name="email"
                 type="email"
@@ -76,7 +76,7 @@ const Footer = () => {
               />
               <button
                 type="submit"
-                className="uppercase text-nowrap bg-neutral-800 text-white text-xs border border-neutral-800 duration-300 py-[0.625rem] px-3 lg:hover:bg-[#FF322E] lg:hover:border-[#FF322E] lg:px-9"
+                className="uppercase text-nowrap bg-neutral-900 text-white text-xs border border-neutral-900 duration-300 py-[0.625rem] px-3 lg:hover:bg-[#FF322E] lg:hover:border-[#FF322E] lg:px-9"
               >
                 Subscribe
               </button>
@@ -84,7 +84,7 @@ const Footer = () => {
           </form>
         </div>
         {screenSize === "large" && (
-          <nav className="border-t border-b border-neutral-200 py-4 text-[#515151] 2xl:flex 2xl:items-center 2xl:justify-center 2xl:gap-3">
+          <nav className="border-t border-b border-neutral-300 py-4 text-[#515151] 2xl:flex 2xl:items-center 2xl:justify-center 2xl:gap-3">
             <ul className="text-xs flex flex-row items-center justify-center gap-3 flex-wrap font-semibold">
               {navPaths.slice(1, navPaths.length).map((path) => (
                 <li key={path.key} className="gap-4">

@@ -10,7 +10,7 @@ const useYouTubeShorts = () => {
 
     function fetchVideos(pageToken = "") {
       const channelId = "UCh3RLLVBaEeBRRZBbnnVWWA";
-      fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&type=video&videoDuration=short&key=${import.meta.env.VITE_API_KEY}&pageToken=${pageToken}`)
+      fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet,contentDetails&channelId=${channelId}&type=video&videoDuration=short&key=${import.meta.env.VITE_API_KEY}&pageToken=${pageToken}`)
         .then((response) => {
           if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -32,11 +32,11 @@ const useYouTubeShorts = () => {
           //   }
           //   return false;
           // });
-          //   console.log(shortVideos)
+          // console.log(shortVideos);
           // allVideos.push(...shortVideos);
           // const videoIdsStr = videoIds.join(",");
           // console.log(videoIdsStr)
-            // console.log(data);
+          // console.log(data);
         })
         .catch((error) => {
           setError(error.message);

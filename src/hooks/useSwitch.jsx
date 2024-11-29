@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function useOpen() {
+function useSwitch() {
   const [value, setValue] = useState(false);
 
   function handleTrue() {
@@ -14,4 +14,4 @@ function useOpen() {
   return [value, handleTrue, handleFalse];
 }
 
-export default useOpen;
+export default useSwitch;

@@ -1,9 +1,9 @@
-const LoginButton = ({ className, onClick }) => {
+const SignInButton = ({ className, onClick }) => {
   return (
     <button className={`text-nowrap ${className}`} onClick={onClick}>
-      Log In
+      Sign In
     </button>
   );
 };
 
-export default LoginButton;
+export default SignInButton;

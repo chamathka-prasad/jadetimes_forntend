@@ -78,7 +78,7 @@ const ThirdSlider = ({ articles, className }) => {
             onClick={() => {
               setCurrentIndex(index);
             }}
-            className="w-[8px] h-[8px] flex items-center justify-center rounded-full text-xs bg-white"
+            className="w-[8px] h-[8px] flex items-center justify-center rounded-full text-xs bg-white focus:rounded-full"
             key={index}
             aria-label={`go to slide ${index + 1}`}
           ></button>

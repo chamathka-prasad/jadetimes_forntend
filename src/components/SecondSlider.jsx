@@ -4,15 +4,15 @@ import YouTube from "react-youtube";
 
 import useYouTubePlaylist from "../hooks/useYouTubePlaylist";
 import useCarousel from "../hooks/useCarousel";
-import useOpen from "../hooks/useOpen";
+import useSwitch from "../hooks/useSwitch";
 
 const SecondSlider = () => {
   const [videos, error, loading] = useYouTubePlaylist();
   const [currentVideo, setCurrentVideo] = useState({});
   const [youTubeVideos, setYouTubeVideos] = useState([]);
   const [currentIndex, scrollRef, handleNextSlide, handlePreviousSlide] = useCarousel(youTubeVideos.length);
-  const [isPlay, handlePlayOpen, handlePlayClose] = useOpen();
-  const [isNextPlay, handleNextPlayOpen, handleNextPlayClose] = useOpen();
+  const [isPlay, handlePlayOpen, handlePlayClose] = useSwitch();
+  const [isNextPlay, handleNextPlayOpen, handleNextPlayClose] = useSwitch();
 
   useEffect(() => {
     if (videos.length > 0) {
@@ -83,13 +83,13 @@ const SecondSlider = () => {
   if (error) {
     return (
       <div className="col-[span_14_/_span_14]">
-        <div className="aspect-video mb-5 bg-red-50 border border-red-200 text-[#FF332E] flex flex-col gap-4 items-center justify-center">
+        <div className="aspect-video mb-5 bg-red-50 border border-red-300 text-[#FF332E] flex flex-col gap-4 items-center justify-center">
           <div>{error.message}</div>
           <div className="text-lg">Sorry we couldn't be able to load the playlist</div>
         </div>
         <div className="grid grid-cols-4 gap-5 w-full">
           {Array.from({ length: 4 }, (_, index) => index).map((_, index) => (
-            <div key={index} className="aspect-video bg-red-50 border border-red-200 text-sm text-[#FF332E] flex flex-col items-center justify-center">
+            <div key={index} className="aspect-video bg-red-50 border border-red-300 text-sm text-[#FF332E] flex flex-col items-center justify-center">
               {error.message}
             </div>
           ))}
@@ -100,7 +100,7 @@ const SecondSlider = () => {
 
   return (
     <div className="col-[span_14_/_span_14]">
-      <div className="aspect-video mb-5 bg-black">
+      <div className="aspect-video mb-5 bg-black border border-neutral-300">
         {isPlay ? (
           <YouTube
             videoId={currentVideo.id}
@@ -148,7 +148,7 @@ const SecondSlider = () => {
             {articles.map((article) => (
               <article className="text-sm w-full h-full cursor-pointer group" onClick={() => handleCurrentVideo(article.index)} key={article.index}>
                 <div
-                  className="aspect-video bg-cover bg-center w-full group/2"
+                  className="aspect-video bg-cover bg-center w-full group/2 border border-neutral-300"
                   style={{
                     backgroundImage: `url("https://i.ytimg.com/vi/${article.id}/mqdefault.jpg")`,
                   }}
@@ -184,13 +184,13 @@ const SecondSlider = () => {
       </div>
       <div className="relative flex mt-6">
         {currentIndex !== 0 && (
-          <button className={`flex flex-row flex-nowrap items-center gap-3 text-sm`} onClick={handlePreviousSlide}>
+          <button className={`flex flex-row flex-nowrap items-center gap-3 text-sm text-black`} onClick={handlePreviousSlide}>
             <BsArrowLeft size={24} />
             Prev
           </button>
         )}
         {currentIndex !== youTubeVideos.length - 1 && (
-          <button className={`flex flex-row flex-nowrap items-center gap-3 text-sm ml-auto`} onClick={handleNextSlide}>
+          <button className={`flex flex-row flex-nowrap items-center gap-3 text-sm text-black ml-auto`} onClick={handleNextSlide}>
             Next
             <BsArrowRight size={24} />
           </button>

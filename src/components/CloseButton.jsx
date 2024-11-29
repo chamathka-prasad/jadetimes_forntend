@@ -1,8 +1,8 @@
 import { BsXLg } from "react-icons/bs";
 
-const CloseButton = ({className, ariaLabel, onClick}) => {
+const CloseButton = ({className, onClick}) => {
   return (
-    <button className={className} aria-label={ariaLabel} onClick={onClick}>
+    <button className={className} onClick={onClick}>
       <BsXLg />
     </button>
   );

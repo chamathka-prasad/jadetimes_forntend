@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 import LatestUpdatesLink from "../components/LatestUpdatesLink";
-import MembershipLink from "../components/MembershipLink";
+import LinkToMembership from "../components/LinkToMembership";
 import PictureLink from "../components/PictureLink";
 import FirstSlider from "../components/FirstSlider";
 import SecondSlider from "../components/SecondSlider";
@@ -150,20 +150,24 @@ const Home = () => {
             </div>
           )}
           {screenSize === "large" && <FirstSlider articles={articlesFive} />}
-          <section className="lg:pl-10 lg:border-l lg:border-[#515151] lg:col-span-4 lg:flex lg:flex-col lg:gap-5">
+          <section className="lg:pl-10 lg:border-l lg:border-neutral-300 lg:col-span-4 lg:flex lg:flex-col lg:gap-5">
             <div className="mb-4 lg:mx-0 lg:flex lg:flex-row lg:gap-4 lg:items-center lg:mb-0">
               <h3 className="mt-4 lg:mt-0">
                 <Link className="text-[#111111] text-lg lg:text-xl font-semibold block w-fit">
                   Whats <span className="font-normal inline-block">Trending</span>
                 </Link>
               </h3>
-              {screenSize === "large" && <MembershipLink className="lg:font-semibold lg:text-[0.625rem]" />}
+              {screenSize === "large" && <LinkToMembership className="lg:font-semibold lg:text-[0.625rem]" />}
             </div>
             <div className="flex flex-col gap-4 md:grid md:grid-cols-2 lg:grid-cols-2 lg:gap-5 lg:p-0">
               {articlesSix.map((article, index) => (
                 <article key={index} className="flex flex-row p-4 gap-4 border border-neutral-300 lg:p-3">
                   <PictureLink className="lg:order-2 cursor-pointer" link={article.link}>
-                    <img src={article.image} alt={article.title} className="min-w-24 w-24 min-h-24 h-24 lg:min-w-[3.75rem] lg:w-[3.75rem] lg:min-h-[3.75rem] lg:h-[3.75rem] object-cover object-center" />
+                    <img
+                      src={article.image}
+                      alt={article.title}
+                      className="min-w-24 w-24 min-h-24 h-24 lg:min-w-[3.75rem] lg:w-[3.75rem] lg:min-h-[3.75rem] lg:h-[3.75rem] object-cover object-center"
+                    />
                   </PictureLink>
                   <div className="flex flex-col justify-between lg:h-fit gap-4 lg:justify-normal lg:gap-2">
                     <h4>
@@ -193,11 +197,11 @@ const Home = () => {
               <div className="col-span-5">
                 <div className="flex flex-col gap-5 mb-5">
                   {articlesEight.map((article, index) => (
-                    <article className="flex flex-row gap-4" key={index}>
+                    <article className="flex flex-row gap-4 border border-neutral-300 p-4" key={index}>
                       <PictureLink link={article.link}>
                         <img src={article.image} alt={article.title} className="min-w-24 w-24 min-h-24 h-24 object-cover object-center" />
                       </PictureLink>
-                      <div className="flex flex-col gap-2 justify-between">
+                      <div className="flex flex-col gap-4 justify-between">
                         <h4>
                           <Link to={article.link} className="line-clamp-3 overflow-wrap-anywhere text-sm">
                             {article.title}
@@ -210,7 +214,7 @@ const Home = () => {
                     </article>
                   ))}
                 </div>
-                <h4 className="mb-4 border-b border-[#17171723] pb-2">
+                <h4 className="mb-4 border-b border-neutral-900 pb-2">
                   <Link className="text-[#111111] font-semibold text-lg lg:text-xl">
                     Political <span className="font-normal">Updates</span>
                   </Link>
@@ -230,18 +234,18 @@ const Home = () => {
       <div className="bg-neutral-50">
         <div className="text-neutral-900 p-4 pt-2 max-w-[1300px] mx-auto md:grid md:gap-4 md:grid-cols-2 lg:grid-cols-4 lg:gap-16 lg:pt-4">
           <section>
-            <h3 className="mb-4 border-b-2 border-[#424242] pb-1 text-lg text-[#111111] font-semibold">
+            <h3 className="mb-4 border-b-2 border-neutral-900 pb-1 text-lg text-[#111111] font-semibold">
               <Link>Asia</Link>
             </h3>
             {articlesEight.map((article, index) => (
-              <article key={index} link={article.link} className="mb-4 md:last-of-type:mb-0 lg:odd:my-8">
+              <article key={index} link={article.link} className="mb-4 md:last-of-type:mb-0 lg:odd:my-8 border border-neutral-300 lg:border-0">
                 <div className="flex flex-col justify-between gap-4">
                   {screenSize !== "large" && (
                     <PictureLink link={article.link}>
                       <img src={article.image} alt="" />
                     </PictureLink>
                   )}
-                  <div className="flex flex-col justify-between gap-4">
+                  <div className="flex flex-col justify-between gap-4 px-4 pb-4 lg:p-0">
                     <div className="whitespace-nowrap lg:text-xs lg:order-2">{article.posted}</div>
                     <h4>
                       <Link className="text-lg line-clamp-2 lg:text-base lg:line-clamp-3">{article.title}</Link>
@@ -252,18 +256,18 @@ const Home = () => {
             ))}
           </section>
           <section>
-            <h3 className="mb-4 border-b-2 border-[#424242] pb-1 text-lg text-[#111111] font-semibold">
+            <h3 className="mb-4 border-b-2 border-neutral-900 pb-1 text-lg text-[#111111] font-semibold">
               <Link>Australia</Link>
             </h3>
             {articlesEight.map((article, index) => (
-              <article key={index} link={article.link} className="mb-4 md:last-of-type:mb-0 lg:odd:my-8">
+              <article key={index} link={article.link} className="mb-4 md:last-of-type:mb-0 lg:odd:my-8 border border-neutral-300 lg:border-0">
                 <div className="flex flex-col justify-between gap-4">
                   {screenSize !== "large" && (
                     <PictureLink link={article.link}>
                       <img src={article.image} alt="" />
                     </PictureLink>
                   )}
-                  <div className="flex flex-col justify-between gap-4">
+                  <div className="flex flex-col justify-between gap-4 px-4 pb-4 lg:p-0">
                     <div className="whitespace-nowrap lg:text-xs lg:order-2">{article.posted}</div>
                     <h4>
                       <Link className="text-lg line-clamp-2 lg:text-base lg:line-clamp-3">{article.title}</Link>
@@ -274,18 +278,18 @@ const Home = () => {
             ))}
           </section>
           <section>
-            <h3 className="mb-4 border-b-2 border-[#424242] pb-1 text-lg text-[#111111] font-semibold">
+            <h3 className="mb-4 border-b-2 border-neutral-900 pb-1 text-lg text-[#111111] font-semibold">
               <Link>USA</Link>
             </h3>
             {articlesEight.map((article, index) => (
-              <article key={index} link={article.link} className="mb-4 md:last-of-type:mb-0 lg:odd:my-8">
+              <article key={index} link={article.link} className="mb-4 md:last-of-type:mb-0 lg:odd:my-8 border border-neutral-300 lg:border-0">
                 <div className="flex flex-col justify-between gap-4">
                   {screenSize !== "large" && (
                     <PictureLink link={article.link}>
                       <img src={article.image} alt="" />
                     </PictureLink>
                   )}
-                  <div className="flex flex-col justify-between gap-4">
+                  <div className="flex flex-col justify-between gap-4 px-4 pb-4 lg:p-0">
                     <div className="whitespace-nowrap lg:text-xs lg:order-2">{article.posted}</div>
                     <h4>
                       <Link className="text-lg line-clamp-2 lg:text-base lg:line-clamp-3">{article.title}</Link>
@@ -296,18 +300,18 @@ const Home = () => {
             ))}
           </section>
           <section>
-            <h3 className="mb-4 border-b-2 border-[#424242] pb-1 text-lg text-[#111111] font-semibold">
+            <h3 className="mb-4 border-b-2 border-neutral-900 pb-1 text-lg text-[#111111] font-semibold">
               <Link>Europe</Link>
             </h3>
             {articlesEight.map((article, index) => (
-              <article key={index} link={article.link} className="mb-4 last-of-type:mb-0 lg:odd:my-8">
+              <article key={index} link={article.link} className="mb-4 last-of-type:mb-0 lg:odd:my-8 border border-neutral-300 lg:border-0">
                 <div className="flex flex-col justify-between gap-4">
                   {screenSize !== "large" && (
                     <PictureLink link={article.link}>
                       <img src={article.image} alt="" />
                     </PictureLink>
                   )}
-                  <div className="flex flex-col justify-between gap-4">
+                  <div className="flex flex-col justify-between gap-4 px-4 pb-4 lg:p-0">
                     <div className="whitespace-nowrap lg:text-xs lg:order-2">{article.posted}</div>
                     <h4>
                       <Link className="text-lg line-clamp-2 lg:text-base lg:line-clamp-3">{article.title}</Link>
@@ -345,7 +349,7 @@ const Home = () => {
         </section>
       </div>
       <section>
-        <div className="bg-black">
+        <div className="bg-neutral-900">
           <div className="max-w-[1300px] mx-auto p-4 pt-3">
             <h2 className="border-b-[3px] border-b-[#FF322E] pb-1 text-white mb-4 lg:mt-0">
               <Link className="font-semibold text-lg lg:text-xl">
