@@ -83,13 +83,13 @@ const SecondSlider = () => {
   if (error) {
     return (
       <div className="col-[span_14_/_span_14]">
-        <div className="aspect-video mb-5 bg-red-50 border border-red-300 text-[#FF332E] flex flex-col gap-4 items-center justify-center">
+        <div className="aspect-video mb-5 bg-red-50 border border-red-300 text-accent flex flex-col gap-4 items-center justify-center">
           <div>{error.message}</div>
           <div className="text-lg">Sorry we couldn't be able to load the playlist</div>
         </div>
         <div className="grid grid-cols-4 gap-5 w-full">
           {Array.from({ length: 4 }, (_, index) => index).map((_, index) => (
-            <div key={index} className="aspect-video bg-red-50 border border-red-300 text-sm text-[#FF332E] flex flex-col items-center justify-center">
+            <div key={index} className="aspect-video bg-red-50 border border-red-300 text-sm text-accent flex flex-col items-center justify-center">
               {error.message}
             </div>
           ))}
@@ -100,7 +100,7 @@ const SecondSlider = () => {
 
   return (
     <div className="col-[span_14_/_span_14]">
-      <div className="aspect-video mb-5 bg-black border border-neutral-300">
+      <div className="aspect-video mb-5 border border-neutral-300">
         {isPlay ? (
           <YouTube
             videoId={currentVideo.id}
@@ -128,12 +128,12 @@ const SecondSlider = () => {
               <h4 className="text-[0.9375rem] mb-2">{currentVideo.title}</h4>
               <div className="text-lg">Jadetimes</div>
               <div className="flex flex-row gap-4 mt-8">
-                <button className="flex flex-row flex-nowrap items-center gap-2 bg-[#FF322E] px-7 py-2 text-sm" onClick={handlePlayOpen}>
+                <button className="flex flex-row flex-nowrap items-center gap-2 bg-accent px-7 py-2 text-sm" onClick={handlePlayOpen}>
                   <BsPlayFill size={25} />
                   Play Video
                 </button>
                 {isNextPlay && (
-                  <button className="bg-[#FF322E] px-7 py-2 text-sm" onClick={() => playNextVideo(currentVideo.index)}>
+                  <button className="bg-accent px-7 py-2 text-sm" onClick={() => playNextVideo(currentVideo.index)}>
                     Next Video
                   </button>
                 )}
@@ -176,7 +176,7 @@ const SecondSlider = () => {
                   }
                 </div>
                 <h5 className="line-clamp-1 mt-2">{article.title}</h5>
-                <div className="text-[#17171796]">Jadetimes</div>
+                <div className="text-neutral-500">Jadetimes</div>
               </article>
             ))}
           </div>

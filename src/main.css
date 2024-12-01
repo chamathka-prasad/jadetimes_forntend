@@ -1,5 +1,10 @@
 /* Tailwind CSS */
 @tailwind base;
+@layer base {
+  html {
+    @apply text-neutral-900;
+  } 
+}
 @tailwind components;
 @tailwind utilities;
 

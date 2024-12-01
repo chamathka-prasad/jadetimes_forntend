@@ -7,7 +7,7 @@ import useWindowSize from "../hooks/useWindowSize";
 const SecondBigArticles = ({ articles }) => {
   const screenSize = useWindowSize();
   return (
-    <div className="p-4 flex flex-col gap-4 md:p-0 md:grid md:grid-cols-2 md:col-span-2 md:gap-4 lg:grid-cols-10 lg:gap-5 lg:col-span-full">
+    <div className="m-4 flex flex-col gap-4 md:m-0 md:grid md:grid-cols-2 md:col-span-2 md:gap-4 lg:grid-cols-10 lg:gap-5 lg:col-span-full">
       {articles.map((article, index) => (
         <article key={index} className="flex flex-row p-4 gap-4 justify-between border border-neutral-300 lg:p-0 lg:flex-col lg:gap-0 lg:col-span-2">
           <PictureLink link={article.link} className="order-2 lg:order-none">

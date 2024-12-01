@@ -37,9 +37,9 @@ const Nav = ({ handleNavOff, isNav }) => {
     <nav className={`bg-transparent duration-300 fixed h-full w-screen left-0 top-0 z-50 ${isNav ? "translate-x-0" : "invisible -translate-x-full"}`} onClick={handleNavItem}>
       <div className={`bg-neutral-900 text-white max-w-80 duration-300 h-full overflow-y-auto relative flex flex-col p-4 lg:py-4 lg:px-9`} ref={scrollTopRef} onClick={stopHandleNav}>
         {screenSize !== "large" && <SignInButton className="text-sm my-[0.6rem] self-end" onClick={handleSignInOn} />}
-        {isSignIn && <SignIn handleSignInOff={handleSignInOff} />}
+        {isSignIn && <SignIn handleSignInOff={handleSignInOff} handleNavItem={handleNavItem} />}
         {screenSize !== "large" && <LinkToMembership className="w-fit text-sm mb-3 mt-[1.05rem]" onClick={handleNavItem} />}
-        <ul className="lg:mt-0 text-[1.0625rem]">
+        <ul className="lg:mt-0">
           <li>
             <Link to="" className="block w-fit font-semibold py-2 lg:text-[0.813rem] lg:font-normal lg:pt-[0.3rem] text-nowrap" onClick={handleNavItem}>
               Subscribe to newsletters
@@ -48,10 +48,12 @@ const Nav = ({ handleNavOff, isNav }) => {
           {navPaths.map((path) => (
             <li className="lg:text-sm lg:border-b lg:border-b-neutral-700" key={path.key}>
               {path.submenus ? (
-                <button className="py-2 flex w-full flex-row justify-between gap-4 items-center group" onClick={() => handleKey(path.key)}>
-                  <span className="lg:duration-300 lg:group-hover:text-accent">{path.name}</span>
-                  {key === path.key ? <BsChevronUp /> : <BsChevronDown />}
-                </button>
+                <div className="flex flex-row justify-between">
+                  <Link to={path.to} onClick={handleNavItem} className="block py-2 w-3/4 lg:duration-300 lg:hover:text-accent flex-grow">
+                    {path.name}
+                  </Link>
+                  <button className="flex items-center justify-end w-1/4" onClick={() => handleKey(path.key)}>{key === path.key ? <BsChevronUp /> : <BsChevronDown />}</button>
+                </div>
               ) : (
                 <Link to={path.to} onClick={handleNavItem} className="block py-2 lg:duration-300 lg:hover:text-accent flex-grow">
                   {path.name}
@@ -73,7 +75,7 @@ const Nav = ({ handleNavOff, isNav }) => {
           {screenSize === "large" && (
             <>
               {desktopNavPath.map((path) => (
-                <li className="text-sm border-b border-b-neutral-800 lg:last:border-b-0" key={path.key}>
+                <li className="text-sm border-b border-b-neutral-700 lg:last:border-b-0" key={path.key}>
                   <Link to={path.to} onClick={handleNavItem} className="block py-2 duration-300 hover:text-accent">
                     {path.name}
                   </Link>
@@ -84,16 +86,16 @@ const Nav = ({ handleNavOff, isNav }) => {
         </ul>
         {screenSize !== "large" && (
           <>
-            <ul className="border-t border-neutral-300 mt-3 pt-5 text-[1.0625rem]">
+            <ul className="border-t border-neutral-700 mt-3 py-4">
               {mobileNavPaths.map((path) => (
-                <li className="mb-2 last-of-type:mb-0" key={path.key}>
-                  <Link to={path.to} className="block" onClick={handleNavItem}>
+                <li key={path.key}>
+                  <Link to={path.to} className="block w-fit py-2" onClick={handleNavItem}>
                     {path.name}
                   </Link>
                 </li>
               ))}
             </ul>
-            <div className="mt-2 text-[1.0625rem]">
+            <div className="text-xs">
               <div>&copy; 2024 Jadetimes Media LLC.</div>
               <div>All Rights Reserved</div>
             </div>

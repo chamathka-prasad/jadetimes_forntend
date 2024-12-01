@@ -9,7 +9,7 @@ const FirstSlider = ({ articles }) => {
   const [currentIndex, scrollRef, handleNextSlide, handlePreviousSlide] = useCarousel(articles.length);
 
   return (
-    <div className="lg:col-span-6 lg:border lg:border-neutral-300 lg:mr-10">
+    <div className="lg:col-span-6 lg:border lg:border-neutral-300 lg:mr-5">
       <div className="relative">
         <div className="flex flex-row overflow-x-hidden snap-x snap-mandatory" ref={scrollRef}>
           {articles.map((article, index) => (
@@ -19,15 +19,13 @@ const FirstSlider = ({ articles }) => {
               </PictureLink>
               <div className="flex flex-col p-4 gap-4">
                 <div>
-                  <Link className="block w-fit text-xs">{article.authorName}</Link>
+                  <Link className="block w-fit text-xs mb-1">{article.authorName}</Link>
                   <div className="whitespace-nowrap text-xs">{article.posted}</div>
                 </div>
-                <Link to={article.categoryLink} className="w-fit text-sm text-[#686868] font-light">
+                <Link to={article.categoryLink} className="w-fit text-sm text-neutral-500 font-light">
                   {article.categoryTitle}
                 </Link>
-                <h3>
-                  <Link className="text-lg text-[1.375rem] line-clamp-2">{article.title}</Link>
-                </h3>
+                <Link className="text-lg text-[1.375rem] line-clamp-2">{article.title}</Link>
                 <p className="line-clamp-1 text-base">{article.title}</p>
               </div>
             </article>

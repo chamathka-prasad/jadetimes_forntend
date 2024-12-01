@@ -10,7 +10,7 @@ const useYouTubeShorts = () => {
 
     function fetchVideos(pageToken = "") {
       const channelId = "UCh3RLLVBaEeBRRZBbnnVWWA";
-      fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet,contentDetails&channelId=${channelId}&type=video&videoDuration=short&key=${import.meta.env.VITE_API_KEY}&pageToken=${pageToken}`)
+      fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet,contentDetails&channelId=${channelId}&type=video&key=${import.meta.env.VITE_API_KEY}&pageToken=${pageToken}`)
         .then((response) => {
           if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -21,6 +21,9 @@ const useYouTubeShorts = () => {
           // if (data.nextPageToken) {
           //   fetchVideos(data.nextPageToken);
           // }
+          const videoIds = data.items.map((item) => item.id.videoId);
+          const videoIdsStr = videoIds.join(",");
+          console.log(data)
           // const shortVideos = data.items.filter((video) => {
           //   const duration = video.contentDetails.duration;
           //   const match = duration.match(/PT(\d+M)?(\d+S)?/);
@@ -47,7 +50,7 @@ const useYouTubeShorts = () => {
     console.log(allVideos);
   }, []);
 
-  return [videos, error, isLoading];
+  // return [videos, error, isLoading];
 };
 
 export default useYouTubeShorts;

@@ -59,13 +59,13 @@ const ThirdSlider = ({ articles, className }) => {
               className={`bg-gradient-to-t from-black to-transparent relative ${currentIndex === index ? "" : "invisible opacity-0"}`.trim()}
               style={{ transition: `visibility 1s ease-in-out, opacity 1s ease-in-out` }}
             >
-              <div className="h-[800px] flex flex-col p-4">
-                <div className="mt-auto mb-16 flex flex-col gap-4 max-w-[850px] md:gap-8 mx-auto md:grid md:grid-cols-2">
+              <div className="h-[800px] flex flex-col p-4 pb-5">
+                <div className="mt-auto mb-16 flex flex-col gap-4 max-w-[850px] md:gap-5 mx-auto md:grid md:grid-cols-2">
                   <Iframe title={article.title} videoId="" />
-                  <YouTubeArticle className="text-white flex flex-col gap-4 md:justify-between md:h-full" article={article} />
+                  <YouTubeArticle className="text-white flex flex-col gap-4 md:justify-center" article={article} />
                 </div>
               </div>
-              <div className="text-neutral-600 absolute bottom-4 left-0 text-sm right-0 max-w-[1300px] mx-auto px-4">
+              <div className="text-neutral-500 absolute bottom-4 left-0 text-sm right-0 max-w-[1288px] mx-auto px-4">
                 <Link>Photo By</Link>
               </div>
             </div>

@@ -26,7 +26,7 @@ const Pagination = ({ articles }) => {
               </h2>
               {screenSize === "large" && (
                 <div>
-                  <Link className="lg:block lg:w-fit lg:text-xs">{article.authorName}</Link>
+                  <Link className="mb-1 lg:block lg:w-fit lg:text-xs">{article.authorName}</Link>
                   <div className="whitespace-nowrap lg:text-xs">
                     <span>{article.posted}</span>
                     <span className="w-[2px] h-[2px] bg-neutral-900 inline-block mx-2 align-middle"></span>

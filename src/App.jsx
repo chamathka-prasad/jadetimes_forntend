@@ -10,11 +10,10 @@ import useYouTubeShorts from "./hooks/useYouTubeShorts";
 
 const App = () => {
   // useYouTubeShorts();
-
   return (
     <>
       <Header />
-      <main className="2xl:overflow-x-hidden">
+      <main className="text-neutral-900 2xl:overflow-x-hidden">
         <Suspense fallback={<div>Loading...</div>}>
           <Routes>
             {pages.map((page) => (

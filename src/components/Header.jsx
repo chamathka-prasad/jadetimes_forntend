@@ -22,15 +22,15 @@ const Header = () => {
   useStopScroll(isSignIn);
   return (
     <header className="bg-neutral-900 text-white sticky top-0 z-40">
-      <div className="px-4 py-[1.45rem] flex items-center relative max-w-[1407px] mx-auto lg:py-[1.032rem]">
+      <div className="px-4 py-[1.45rem] flex items-center relative max-w-[1400px] mx-auto lg:py-[1.032rem]">
         <LinkToHome className="block min-w-32 max-w-44 order-2 mx-auto lg:order-3 absolute left-1/2 -translate-x-1/2">
           <img src={Logo} alt="jadetimes" />
         </LinkToHome>
-        <button className="block order-1 mr-auto lg:mr-0" onClick={handleNavOn}>
+        <button className="flex items-center justify-center order-1 mr-auto lg:mr-0 w-6" onClick={handleNavOn}>
           <FaBarsStaggered className="text-[1.6rem] lg:text-[1.45rem]" />
         </button>
         <Nav handleNavOff={handleNavOff} isNav={isNav} />
-        <Link to="/search" className="block order-5 ml-auto lg:ml-0">
+        <Link to="/search" className="flex items-center justify-center order-5 ml-auto lg:ml-0 w-6">
           <FaMagnifyingGlass className="text-[1.6rem] lg:text-[1.2rem]" />
         </Link>
         {screenSize === "large" && (
@@ -43,7 +43,7 @@ const Header = () => {
       </div>
       {screenSize === "large" && (
         <nav className="bg-neutral-50 text-heading">
-          <ul className="flex flex-row flex-wrap gap-7 p-3 px-4 justify-center text-[0.813rem] font-semibold">
+          <ul className="flex flex-row flex-wrap gap-7 p-3 px-4 justify-center text-[0.813rem] font-semibold max-w-[1407px] mx-auto">
             {navPaths.map((path) => (
               <li key={path.key}>
                 <NavLink className="duration-300 hover:text-[#FF322F]" to={path.to}>

@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { FaWhatsapp, FaTiktok, FaXTwitter, FaYoutube, FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa6";
 
@@ -10,15 +9,13 @@ import useWindowSize from "../hooks/useWindowSize";
 
 const Footer = () => {
   const screenSize = useWindowSize();
-  const emailRef = useRef(null);
   function handleSubmit(event) {
     event.preventDefault();
-    emailRef.current.value = "";
   }
   return (
     <footer className="border-t border-t-neutral-900 text-neutral-900">
-      <div className="max-w-[1407px] mx-auto p-4">
-        <div className="my-8 mb-12 lg:flex lg:flex-row lg:justify-between">
+      <div className="max-w-[1400px] mx-auto p-4">
+        <div className="lg:flex lg:flex-row lg:justify-between lg:mb-5">
           <div className="mb-4 lg:mb-0">
             <Link to="/" className="block mx-auto min-w-32 max-w-44 lg:max-w-52 order-2">
               <img src={Logo} alt="jadetimes logo" />
@@ -64,7 +61,7 @@ const Footer = () => {
             </label>
             <div className="flex flex-row gap-[1px] max-w-lg w-full">
               <input
-                className="text-sm w-full py-1 px-5 duration-300 placeholder:text-neutral-500 border-2 border-neutral-300 focus-visible:outline-none lg:w-96 lg:hover:border-neutral-900 focus:border-neutral-900"
+                className="text-sm w-full py-2 px-5 duration-300 placeholder:text-neutral-500 border-2 border-neutral-300 focus-visible:outline-none lg:w-96 lg:py-1 lg:hover:border-neutral-900 focus:border-neutral-900"
                 id="email"
                 name="email"
                 type="email"
@@ -72,7 +69,6 @@ const Footer = () => {
                 autoComplete="on"
                 pattern="^.+@.+\.[a-zA-Z]{2,63}$"
                 required
-                ref={emailRef}
               />
               <button
                 type="submit"
@@ -93,7 +89,7 @@ const Footer = () => {
                   </Link>
                 </li>
               ))}
-              {navPaths[1].submenus.map((submenu) => (
+              {navPaths[1].submenus.slice(0, 6).map((submenu) => (
                 <li key={submenu.key} className="gap-4">
                   <Link to={submenu.to} className="inline-block duration-300 hover:underline">
                     {submenu.name}
@@ -141,7 +137,7 @@ const Footer = () => {
           </nav>
         )}
         <div className="flex flex-col items-center lg:mt-4 lg:gap-4 2xl:flex-row 2xl:justify-between">
-          <div className="text-xs lg:text-[0.6875rem] text-nowrap lg:order-2 2xl:order-none">
+          <div className="text-xs mt-5 lg:text-[0.6875rem] text-nowrap lg:order-2 2xl:order-none lg:mt-0">
             &copy; 2024 Jadetimes Media LLC. <span className="inline-block 2xl:block">All Rights Reserved</span>
           </div>
           {screenSize === "large" && (
