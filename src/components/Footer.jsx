@@ -18,7 +18,7 @@ const Footer = () => {
         <div className="lg:flex lg:flex-row lg:justify-between lg:mb-5">
           <div className="mb-4 lg:mb-0">
             <Link to="/" className="block mx-auto min-w-32 max-w-44 lg:max-w-52 order-2">
-              <img src={Logo} alt="jadetimes logo" />
+              <img src={Logo} alt="jadetimes logo" loading="lazy" />
             </Link>
             {screenSize !== "large" && (
               <ul className="flex flex-col gap-4 text-center text-neutral-900 text-sm text-nowrap my-4">

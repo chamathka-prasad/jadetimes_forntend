@@ -49,13 +49,13 @@ const Nav = ({ handleNavOff, isNav }) => {
             <li className="lg:text-sm lg:border-b lg:border-b-neutral-700" key={path.key}>
               {path.submenus ? (
                 <div className="flex flex-row justify-between">
-                  <Link to={path.to} onClick={handleNavItem} className="block py-2 w-3/4 lg:duration-300 lg:hover:text-accent flex-grow">
+                  <Link to={path.to} onClick={handleNavItem} className="block py-2 w-3/4 flex-grow">
                     {path.name}
                   </Link>
                   <button className="flex items-center justify-end w-1/4" onClick={() => handleKey(path.key)}>{key === path.key ? <BsChevronUp /> : <BsChevronDown />}</button>
                 </div>
               ) : (
-                <Link to={path.to} onClick={handleNavItem} className="block py-2 lg:duration-300 lg:hover:text-accent flex-grow">
+                <Link to={path.to} onClick={handleNavItem} className="block py-2 flex-grow">
                   {path.name}
                 </Link>
               )}
@@ -63,7 +63,7 @@ const Nav = ({ handleNavOff, isNav }) => {
                 <ul className={`w-full text-neutral-400 duration-300 grid ${key === path.key ? "max-h-screen" : "invisible overflow-y-hidden max-h-0"}`}>
                   {path.submenus.map((submenu) => (
                     <li key={submenu.key}>
-                      <Link to={submenu.to} onClick={handleNavItem} className="block pl-2 py-2 lg:duration-300 lg:hover:text-accent">
+                      <Link to={submenu.to} onClick={handleNavItem} className="block pl-2 py-2">
                         {submenu.name}
                       </Link>
                     </li>
@@ -76,7 +76,7 @@ const Nav = ({ handleNavOff, isNav }) => {
             <>
               {desktopNavPath.map((path) => (
                 <li className="text-sm border-b border-b-neutral-700 lg:last:border-b-0" key={path.key}>
-                  <Link to={path.to} onClick={handleNavItem} className="block py-2 duration-300 hover:text-accent">
+                  <Link to={path.to} onClick={handleNavItem} className="block py-2">
                     {path.name}
                   </Link>
                 </li>
@@ -101,7 +101,7 @@ const Nav = ({ handleNavOff, isNav }) => {
             </div>
           </>
         )}
-        <CloseButton className="absolute top-[1.43rem] left-[1rem] lg:left-[16.4rem] lg:top-[1.1rem] text-[1.6rem]" onClick={handleNavItem} />
+        <CloseButton className="absolute top-[1.43rem] left-[1rem] lg:left-[16.4rem] lg:top-[1.1rem] text-[1.6rem]" onClick={handleNavItem} ariaLabel="menu slide out" />
       </div>
     </nav>
   );

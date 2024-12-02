@@ -118,12 +118,8 @@ const SecondSlider = () => {
             loading="lazy"
           />
         ) : (
-          <div
-            className="h-full bg-cover bg-center"
-            style={{
-              backgroundImage: `url("https://i.ytimg.com/vi/${currentVideo.id}/sddefault.jpg")`,
-            }}
-          >
+          <div className="h-full relative">
+            <img src={`https://i.ytimg.com/vi/${currentVideo.id}/sddefault.jpg`} alt="" loading="lazy" className="absolute top-0 h-full -z-[1] object-cover object-center" />
             <div className="bg-[#000000d1] text-white h-full flex flex-col items-center justify-center">
               <h4 className="text-[0.9375rem] mb-2">{currentVideo.title}</h4>
               <div className="text-lg">Jadetimes</div>
@@ -147,32 +143,30 @@ const SecondSlider = () => {
           <div className={`grid grid-cols-4 w-full flex-none gap-5 duration-500 snap-start ${currentIndex === index ? "" : "invisible"}`.trim()} key={index}>
             {articles.map((article) => (
               <article className="text-sm w-full h-full cursor-pointer group" onClick={() => handleCurrentVideo(article.index)} key={article.index}>
-                <div
-                  className="aspect-video bg-cover bg-center w-full group/2 border border-neutral-300"
-                  style={{
-                    backgroundImage: `url("https://i.ytimg.com/vi/${article.id}/mqdefault.jpg")`,
-                  }}
-                >
+                <div className="aspect-video w-full group/2 border border-neutral-300 relative">
                   {
-                    <div
-                      className={`w-full h-full flex items-center justify-center text-white bg-[#000000d1] duration-300 ${
-                        currentVideo.index === article.index ? "opacity-100" : "opacity-0 group-focus-within:opacity-100 group-hover:opacity-100"
-                      }`}
-                    >
-                      {isPlay && currentVideo.index === article.index ? (
-                        <div>Now Playing</div>
-                      ) : (
-                        <button
-                          onClick={(event) => {
-                            event.stopPropagation();
-                            playCurrentVideo(article.index);
-                          }}
-                          aria-label="play"
-                        >
-                          <BsPlayCircle size={35} />
-                        </button>
-                      )}
-                    </div>
+                    <>
+                      <img src={`https://i.ytimg.com/vi/${article.id}/mqdefault.jpg`} alt="" loading="lazy" className="absolute top-0 h-full -z-[1] object-cover object-center" />
+                      <div
+                        className={`w-full h-full flex items-center justify-center text-white bg-[#000000d1] duration-300 ${
+                          currentVideo.index === article.index ? "opacity-100" : "opacity-0 group-focus-within:opacity-100 group-hover:opacity-100"
+                        }`}
+                      >
+                        {isPlay && currentVideo.index === article.index ? (
+                          <div>Now Playing</div>
+                        ) : (
+                          <button
+                            onClick={(event) => {
+                              event.stopPropagation();
+                              playCurrentVideo(article.index);
+                            }}
+                            aria-label="play"
+                          >
+                            <BsPlayCircle size={35} />
+                          </button>
+                        )}
+                      </div>
+                    </>
                   }
                 </div>
                 <h5 className="line-clamp-1 mt-2">{article.title}</h5>

@@ -6,10 +6,10 @@ const PaginationButtons = ({ currentIndex, lastIndex, prevArticles, nextArticles
   const screenSize = useWindowSize();
   return (
     <div className="flex flex-row gap-8 items-center justify-center">
-      <button onClick={handlePrevDisabled} disabled={currentIndex <= 3 || lastIndex === 5} className={currentIndex <= 3 || lastIndex === 5 ? "text-neutral-500" : "text-black"}>
+      <button onClick={handlePrevDisabled} disabled={currentIndex <= 3 || lastIndex === 5} className={currentIndex <= 3 || lastIndex === 5 ? "text-neutral-500" : "text-black"} aria-label="go to first page">
         <BsChevronDoubleLeft size={20} />
       </button>
-      <button onClick={prevArticles} className={(currentIndex === 1 && "text-neutral-500") || "text-black"} disabled={currentIndex === 1}>
+      <button onClick={prevArticles} className={(currentIndex === 1 && "text-neutral-500") || "text-black"} disabled={currentIndex === 1} aria-label="go to previous page">
         <BsChevronLeft size={20} />
       </button>
       {screenSize !== "large" && (
@@ -28,7 +28,7 @@ const PaginationButtons = ({ currentIndex, lastIndex, prevArticles, nextArticles
                   onClick={() => {
                     handleCurrentArticle(button);
                   }}
-                  className={`px-2 ${currentIndex === button ? "text-[#FF322E]" : ""}`.trim()}
+                  className={`px-2 ${currentIndex === button ? "text-accent" : ""}`.trim()}
                 >
                   {button}
                 </button>
@@ -36,10 +36,10 @@ const PaginationButtons = ({ currentIndex, lastIndex, prevArticles, nextArticles
           )}
         </div>
       )}
-      <button onClick={nextArticles} className={(currentIndex === lastIndex && "text-neutral-500") || "text-black"} disabled={currentIndex === lastIndex}>
+      <button onClick={nextArticles} className={(currentIndex === lastIndex && "text-neutral-500") || "text-black"} disabled={currentIndex === lastIndex} aria-label="go to next page">
         <BsChevronRight size={20} />
       </button>
-      <button onClick={handleNextDisabled} disabled={currentIndex === lastIndex || lastIndex === 5} className={currentIndex >= lastIndex - 2 || lastIndex === 5 ? "text-neutral-500" : "text-black"}>
+      <button onClick={handleNextDisabled} disabled={currentIndex === lastIndex || lastIndex === 5} className={currentIndex >= lastIndex - 2 || lastIndex === 5 ? "text-neutral-500" : "text-black"} aria-label="go to last page">
         <BsChevronDoubleRight size={20} />
       </button>
     </div>

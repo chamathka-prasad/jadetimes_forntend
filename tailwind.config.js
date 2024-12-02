@@ -8,7 +8,7 @@ export default {
     extend: {
       colors: {
         heading: "#111111",
-        accent: "#FF322E"
+        accent: "#DA331B"
       },
     },
   },

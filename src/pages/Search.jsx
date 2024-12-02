@@ -20,6 +20,7 @@ const Search = () => {
               className="border-2 border-[#17171724] w-full block rounded-md text-xl duration-300 placeholder:text-neutral-500 py-3 pl-12 pr-4 md:text-base focus-visible:outline-none focus:border-neutral-900 focus:rounded-md lg:hover:border-neutral-900"
               type="text"
               placeholder="What are you looking for ?"
+              autoFocus
             />
             <BsSearch size={20} className="text-black absolute left-4 top-1/2 -translate-y-1/2 -z-10" />
           </div>

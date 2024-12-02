@@ -42,18 +42,3 @@ iframe {
   height: 100%;
   aspect-ratio: 16 / 9;
 }
-
-/* Active class */
-header .active {
-  color: #ff322e;
-}
-
-.sub-page .active {
-  border-bottom: 2px solid #111111;
-}
-
-@media screen and (min-width: 1024px) {
-  .bg-image-none {
-    background-image: none !important;
-  }
-}
