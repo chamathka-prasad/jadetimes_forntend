@@ -15,7 +15,7 @@ const SecondBigArticles = ({ articles }) => {
           </PictureLink>
           <div className="flex flex-col justify-between gap-4 lg:p-4">
             {screenSize === "large" && (
-              <Link to={article.categoryLink} className="lg:w-fit text-sm font-light text-[#686868] lg:order-[-1]">
+              <Link to={article.categoryLink} className="lg:w-fit text-sm font-light text-neutral-500 lg:order-[-1]">
                 {article.categoryTitle}
               </Link>
             )}

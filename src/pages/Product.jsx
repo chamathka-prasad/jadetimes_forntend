@@ -6,6 +6,8 @@ import useKey from "../hooks/useKey";
 
 import products from "../routes/products";
 
+import NotFound from "./NotFound";
+
 const productInformations = [
   {
     title: "PRODUCT INFO",
@@ -22,14 +24,14 @@ const productInformations = [
 ];
 
 const Product = () => {
-  const param = useParams()
+  const param = useParams();
   const [product, setProduct] = useState();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentQuantity, setCurrentQuantity] = useState(1);
   const [key, handleKey] = useKey(0);
 
   useEffect(() => {
-    const productItem = products.find(product => product.id === param.id);
+    const productItem = products.find((product) => product.id === param.product);
 
     if (productItem) {
       setProduct(productItem);
@@ -57,10 +59,8 @@ const Product = () => {
     }
   }
 
-  if(!product) {
-    return (
-      <h1 className="text-4xl text-center py-20">The product not found</h1>
-    )
+  if (!product) {
+    return <NotFound />;
   }
 
   return (

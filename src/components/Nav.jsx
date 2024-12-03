@@ -35,7 +35,7 @@ const Nav = ({ handleNavOff, isNav }) => {
 
   return (
     <nav className={`bg-transparent duration-300 fixed h-full w-screen left-0 top-0 z-50 ${isNav ? "translate-x-0" : "invisible -translate-x-full"}`} onClick={handleNavItem}>
-      <div className={`bg-neutral-900 text-white max-w-80 duration-300 h-full overflow-y-auto relative flex flex-col p-4 lg:py-4 lg:px-9`} ref={scrollTopRef} onClick={stopHandleNav}>
+      <div className={`bg-neutral-900 border-r border-r-neutral-700 text-white max-w-80 duration-300 h-full overflow-y-auto relative flex flex-col p-4 lg:py-4 lg:px-9`} ref={scrollTopRef} onClick={stopHandleNav}>
         {screenSize !== "large" && <SignInButton className="text-sm my-[0.6rem] self-end" onClick={handleSignInOn} />}
         {isSignIn && <SignIn handleSignInOff={handleSignInOff} handleNavItem={handleNavItem} />}
         {screenSize !== "large" && <LinkToMembership className="w-fit text-sm mb-3 mt-[1.05rem]" onClick={handleNavItem} />}

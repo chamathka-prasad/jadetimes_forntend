@@ -77,7 +77,7 @@ const Home = () => {
             {screenSize === "large" && (
               <div className="lg:col-span-2">
                 <a href="https://specialgraphics.us/" className="block" target="_blank" aria-label="visit special graphics website">
-                  <img src={SpecialGraphics} alt="special graphics representation" className="md:h-[320px] lg:h-auto w-full" />
+                  <img src={SpecialGraphics} alt="special graphics representation" className="md:h-[320px] lg:h-auto w-full" loading="lazy" />
                 </a>
                 <LatestUpdatesLink className="px-3 py-2 w-full text-xs mt-5" />
               </div>
@@ -119,12 +119,10 @@ const Home = () => {
             <div className="flex flex-col gap-4 md:flex-row">
               {articlesFive.map((article, index) => (
                 <article
-                  className="border border-neutral-300 bg-center bg-cover bg-no-repeat aspect-square"
-                  style={{
-                    backgroundImage: `url(${article.image})`,
-                  }}
+                  className="border border-neutral-300 aspect-square relative"
                   key={index}
                 >
+                  {screenSize !== "large" && <img src={article.image} alt="" className="absolute top-0 h-full object-cover object-center -z-[1]" loading="lazy" />}
                   <div className="flex flex-col justify-between h-full p-4 bg-[#000000aa] text-white">
                     <div className="whitespace-nowrap">{article.posted}</div>
                     <Link className="text-lg line-clamp-3">{article.title}</Link>
@@ -364,18 +362,14 @@ const Home = () => {
             )}
           </div>
           <div className="block aspect-square border border-neutral-300 h-full md:w-full lg:aspect-auto lg:col-span-4 lg:border-none">
-            <article
-              style={{
-                backgroundImage: `url(${articlesFive[0].image})`,
-              }}
-              className="h-full bg-center bg-cover bg-no-repeat bg-image-none"
-            >
+            <article className="h-full relative">
+              {screenSize !== "large" && <img src={articlesFive[0].image} alt="" className="absolute top-0 h-full object-cover object-center -z-[1]" loading="lazy" />}
               {screenSize === "large" && (
                 <PictureLink>
                   <img src={articlesFive[0].image} alt="" />
                 </PictureLink>
               )}
-              <div className="flex flex-col justify-between h-full p-4 bg-[#000000aa] lg:h-auto lg:bg-white lg:gap-2 lg:p-0 lg:pt-2">
+              <div className="flex flex-col justify-between h-full p-4 bg-[#000000aa] lg:h-auto lg:bg-white lg:gap-2 lg:p-0 lg:pt-3">
                 <Link className="order-2 line-clamp-3 text-white text-lg lg:text-2xl lg:line-clamp-2 lg:font-medium lg:text-heading">{articlesFive[0].title}</Link>
                 {screenSize === "large" && <p className="lg:line-clamp-2 lg:text-lg lg:order-3">{articlesFive[0].title}</p>}
                 {screenSize !== "large" && <div className="whitespace-nowrap text-white lg:text-xs lg:text-neutral-900">{articlesFive[0].posted}</div>}

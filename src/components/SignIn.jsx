@@ -109,7 +109,7 @@ const SignIn = ({ handleSignInOff, handleNavItem }) => {
               Log In
             </button>
           </div>
-          <Link to="/terms-and-conditions" className="underline text-xs block w-fit mx-auto" onClick={handleNavItemAndSignInOff}>
+          <Link to="/terms-and-conditions" className="underline text-xs block w-fit mx-auto mt-2" onClick={handleNavItemAndSignInOff}>
             Find out more about Jadetimes accounts
           </Link>
         </div>

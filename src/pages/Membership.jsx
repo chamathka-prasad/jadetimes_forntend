@@ -1,8 +1,11 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-import useWindowSize from "../../hooks/useWindowSize";
+import useWindowSize from "../hooks/useWindowSize";
 
-import membershipImage from "../../assets/membership.webp";
+import membershipImage from "../assets/membership.webp";
+
+import Section from "../components/Section";
+import PricePlanCard from "../components/PricePlanCard";
 
 const memberBenefits = [
   {
@@ -39,45 +42,45 @@ const Membership = () => {
   }
   return (
     <>
-      <Outlet />
-      <section className="py-8">
-        <h2 className="text-xl font-semibold text-neutral-800 text-center">Member Benefits</h2>
-        <ul className="text-neutral-900 mt-8 px-4 flex flex-col gap-4 md:grid md:grid-cols-2 max-w-[1300px] mx-auto lg:gap-x-8">
+      <section className="bg-neutral-900">
+        <div className="p-4 pb-5 md:pb-4 lg:py-5 max-w-[1000px] mx-auto">
+          <h1 className="text-2xl text-white text-center font-semibold mb-4 lg:text-[2.5rem]">Accelerate Your Growth</h1>
+          <p className="text-lg text-white text-center mb-12 lg:text-base">Gain unlimited insights and exclusive benefits. Become a Jadetimes member for only $1.00 per week.</p>
+          <PricePlanCard />
+        </div>
+      </section>
+      <Section className="p-4">
+        <h2 className="text-xl font-semibold text-heading text-center">Member Benefits</h2>
+        <ul className="mt-8 flex flex-col gap-4 md:grid md:grid-cols-2 lg:gap-x-8">
           {memberBenefits.map((benefit, index) => (
             <li key={index}>
-              {screenSize === "large" && <div className="text-5xl font-black text-[#949494] float-left min-w-[4.0625rem] text-center mr-4">{index + 1 <= 9 ? `0${index + 1}` : index + 1}</div>}
+              {screenSize === "large" && <div className="text-5xl font-black text-neutral-500 float-left min-w-[4.0625rem] text-center mr-4">{index + 1 <= 9 ? `0${index + 1}` : index + 1}</div>}
               <div className="flex flex-row gap-4 items-center">
-                {screenSize !== "large" && <div className="text-5xl font-black text-[#949494] min-w-[4.0625rem] text-center">{index + 1 <= 9 ? `0${index + 1}` : index + 1}</div>}
-                <h3 className="font-semibold text-[1.0625rem]">{benefit.type}</h3>
+                {screenSize !== "large" && <div className="text-5xl font-black text-neutral-500 min-w-[4.0625rem] text-center">{index + 1 <= 9 ? `0${index + 1}` : index + 1}</div>}
+                <h3 className="font-semibold text-heading text-[1.0625rem]">{benefit.type}</h3>
               </div>
               <p className="mt-2 lg:text-sm md:line-clamp-4 lg:line-clamp-3">{benefit.details}</p>
             </li>
           ))}
         </ul>
-      </section>
-      <section className="bg-neutral-50 p-4">
-        <div className="flex flex-col gap-4 max-w-[1000px] mx-auto md:grid md:grid-cols-2 items-center md:gap-8 lg:gap-20">
-          <picture className="w-full">
-            <img src={membershipImage} alt="" />
-          </picture>
-          <div className="text-neutral-900 md:-order-1">
-            <h2 className="text-xl font-semibold mb-4 lg:text-2xl">Community Access</h2>
-            <p className="md:max-w-80">
-              Join a community of like minded individuals. Participate in forums and discussion groups to share ideas, network, and collaborate with other JadeTimes members.
-            </p>
-            <Link
-              to="/membership"
-              target="_self"
-              onClick={scrollTop}
-              className="text-xs bg-[#282626] border border-[#282626] text-white px-6 py-4 inline-block tracking-widest mt-6 lg:py-3 duration-300 lg:hover:bg-neutral-50 lg:hover:text-black"
-            >
-              Subscribe Now
-            </Link>
-          </div>
+      </Section>
+      <section className="p-4 flex flex-col gap-4 max-w-[1000px] mx-auto md:grid md:grid-cols-2 items-center md:gap-5 md:justify-between">
+        <img src={membershipImage} alt="" loading="lazy" />
+        <div className="md:-order-1">
+          <h2 className="text-xl text-heading font-semibold mb-4 lg:text-2xl">Community Access</h2>
+          <p className="md:max-w-80">Join a community of like minded individuals. Participate in forums and discussion groups to share ideas, network, and collaborate with other JadeTimes members.</p>
+          <Link
+            to="/membership"
+            target="_self"
+            onClick={scrollTop}
+            className="text-sm md:text-xs bg-neutral-900 border border-neutral-900 text-white px-6 py-4 inline-block tracking-widest mt-6 lg:py-3 duration-300 lg:hover:bg-white lg:hover:text-black"
+          >
+            Subscribe Now
+          </Link>
         </div>
       </section>
-      <section className="text-neutral-900 py-6 px-4 text-sm lg:text-center lg:text-base lg:max-w-[700px] mx-auto">
-        <h2 className="text-xl font-semibold mb-4 lg:text-2xl">Support & Resources</h2>
+      <section className="p-4 text-sm lg:text-center lg:text-base lg:max-w-[700px] mx-auto">
+        <h2 className="text-xl text-heading font-semibold mb-4 lg:text-2xl">Support & Resources</h2>
         <div className="mb-4">What is a JadeTimes Digital Membership?</div>
         <p>
           A JadeTimes digital membership provides you with unlimited access to all our premium journalism on JadeTimes.com in a streamlined format with fewer ads and interruptions. At the time of

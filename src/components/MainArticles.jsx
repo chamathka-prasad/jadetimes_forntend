@@ -11,7 +11,7 @@ const MainArticles = ({ articles }) => {
   return (
     <div className="md:p-4 lg:pb-5">
       {screenSize !== "small" && <LatestUpdatesLink className="text-[0.625rem] md:mb-4 md:px-2 md:py-[0.15rem]" />}
-      <div className="text-neutral-900 md:grid md:grid-cols-2 md:gap-4 lg:grid-cols-[repeat(17,_minmax(0,_1fr))] lg:gap-5 xl:col-start-2 xl:col-span-10 xl:row-start-2">
+      <div className="md:grid md:grid-cols-2 md:gap-4 lg:grid-cols-[repeat(17,_minmax(0,_1fr))] lg:gap-5 xl:col-start-2 xl:col-span-10 xl:row-start-2">
         <FirstBigArticle article={articles[0]} />
         <SecondBigArticles articles={articles.slice(0, 5)} />
         <ThirdBigArticles articles={articles.slice(0, 4)} />

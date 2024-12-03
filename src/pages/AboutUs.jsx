@@ -17,7 +17,7 @@ const AboutUs = () => {
                 <p className="text-sm lg:w-[600px]">At Jadetimes Media, our mission is to deliver high quality and engaging content, offering diverse perspectives on the issues that matter most to our readers.</p>
             </div>
             <section>
-              <h3 className="font-semibold text-[1.35rem] py-4 border-y border-y-[#17171724] mt-5 lg:text-base lg:py-8">Jadetimes Media By The Numbers</h3>
+              <h3 className="font-semibold text-[1.35rem] py-4 border-y border-y-[#17171724] mt-5 lg:text-base lg:py-8 text-center">Jadetimes Media By The Numbers</h3>
               <ul className="py-5 flex flex-col gap-4 items-center border-b border-b-[#17171724] justify-center md:flex-row md:gap-0">
                 <li className="w-40 text-center border-b border-b-[#17171724] pb-4 md:pb-0 md:border-b-0 md:pr-8 md:border-r md:border-r-[#17171724] md:w-auto lg:pr-16">
                   <div className="font-semibold text-5xl lg:text-4xl">250+</div>
