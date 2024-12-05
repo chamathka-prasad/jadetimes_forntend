@@ -2,22 +2,22 @@ const mobileNavPaths = [
   {
     key: 0,
     to: "/advertise-with-us",
-    name: "Advertise with Jadetimes",
+    name: "Advertise with us",
   },
   {
     key: 1,
     to: "/talk-to-us",
-    name: "Report a Issue",
+    name: "Talk to us",
   },
   {
     key: 2,
-    to: "/talk-to-us",
-    name: "Contact Us",
+    to: "/terms-and-conditions",
+    name: "Terms & Conditions",
   },
   {
     key: 3,
-    to: "/job-vacancies",
-    name: "Careers at Jadetimes",
+    to: "/about-us",
+    name: "About Jadetimes",
   },
   {
     key: 4,
@@ -26,9 +26,10 @@ const mobileNavPaths = [
   },
   {
     key: 5,
-    to: "/terms-and-conditions",
-    name: "Terms & Conditions",
+    to: "/careers",
+    name: "Join Jadetimes Media",
   },
+  
 ];
 
 export default mobileNavPaths;

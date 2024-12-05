@@ -1,6 +1,9 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 
+import Section from "../components/Section";
+import LinkToHome from "../components/LinkToHome";
+
 const TermsAndConditions = () => {
   const section1Ref = useRef(null);
   const section2Ref = useRef(null);
@@ -39,13 +42,13 @@ const TermsAndConditions = () => {
   }
 
   return (
-    <div className="p-4 text-neutral-900 max-w-[1300px] mx-auto">
+    <Section className="p-4">
       <h1 className="text-2xl">
         <span className="font-semibold">Jadetimes</span>® Terms of Service
       </h1>
       <p className="text-sm mb-4">Revised and posted as of the Effective Date: June 01, 2024</p>
-      <div className="pt-4 border-t border-t-[#17171724] lg:grid lg:grid-cols-7">
-        <section className="lg:order-2 lg:col-span-5 lg:border-l lg:border-l-[#17171724] lg:pl-8">
+      <div className="pt-4 border-t border-t-neutral-300 lg:grid lg:grid-cols-7">
+        <section className="lg:order-2 lg:col-span-5 lg:border-l lg:border-l-neutral-300 lg:pl-8">
           <h2 className="text-2xl lg:text-4xl">Welcome to Jadetimes Media LLC!</h2>
           <div className="text-sm flex flex-col gap-4 mt-4 lg:gap-6 lg:mt-8">
             <p>
@@ -220,11 +223,8 @@ const TermsAndConditions = () => {
       <section className="text-sm flex flex-col gap-4 mt-8" ref={section1Ref}>
         <h2 className="font-medium lg:text-base">1. Introduction</h2>
         <p>
-          Welcome to Jadetimes Media LLC's Terms of Service. These terms govern your use of our website{" "}
-          <a href="http://" className="underline" target="_blank">
-            (www.jadetimes.com)
-          </a>{" "}
-          and all related services provided by Jadetimes Media LLC ("Jadetimes," "we," "us," or "our"). By accessing or using our website and services, you agree to comply with these Terms of Service.
+          Welcome to Jadetimes Media LLC's Terms of Service. These terms govern your use of our website <LinkToHome className="underline">(www.jadetimes.com)</LinkToHome> and all related services
+          provided by Jadetimes Media LLC ("Jadetimes," "we," "us," or "our"). By accessing or using our website and services, you agree to comply with these Terms of Service.
         </p>
         <p>Please read these terms carefully before accessing or using our website. If you do not agree with any part of these terms, you may not access the website or use any of our services.</p>
         <p>
@@ -232,32 +232,26 @@ const TermsAndConditions = () => {
           and services after any such modifications constitutes your acknowledgment of the modified terms and your agreement to abide and be bound by the modified terms.
         </p>
         <p>
-          If you have any questions or concerns regarding these terms, please contact us at info@jadetimes.com. Thank you for choosing Jadetimes Media LLC. We hope you enjoy your experience with us!
+          If you have any questions or concerns regarding these terms, please contact us at <a href="mailto:info@jadetimes.com">info@jadetimes.com</a>. Thank you for choosing Jadetimes Media LLC. We hope you enjoy your experience with us!
         </p>
       </section>
       <section className="text-sm flex flex-col gap-4 mt-8" ref={section2Ref}>
         <h2 className="font-medium lg:text-base">2. Acceptance of Terms</h2>
         <p>
-          By accessing or using Jadetimes Media LLC's website{" "}
-          <a href="http://" className="underline" target="_blank">
-            (www.jadetimes.com)
-          </a>{" "}
-          or any of our services, you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any part of these terms, you may not access the
-          website or use our services. These Terms of Service constitute a legally binding agreement between you and Jadetimes Media LLC. They govern your use of our website and services, including
-          any updates, enhancements, new features, and/or the addition of new properties. You acknowledge that your continued use of our website and services after any modifications to these Terms of
-          Service constitutes acceptance of those modifications. It is your responsibility to review these Terms of Service periodically for changes.
+          By accessing or using Jadetimes Media LLC's website <LinkToHome className="underline">(www.jadetimes.com)</LinkToHome> or any of our services, you agree to be bound by these Terms of Service
+          and all applicable laws and regulations. If you do not agree with any part of these terms, you may not access the website or use our services. These Terms of Service constitute a legally
+          binding agreement between you and Jadetimes Media LLC. They govern your use of our website and services, including any updates, enhancements, new features, and/or the addition of new
+          properties. You acknowledge that your continued use of our website and services after any modifications to these Terms of Service constitutes acceptance of those modifications. It is your
+          responsibility to review these Terms of Service periodically for changes.
         </p>
       </section>
       <section className="text-sm flex flex-col gap-4 mt-8" ref={section3Ref}>
         <h2 className="font-medium lg:text-base">3. Eligibility</h2>
         <p>
-          By accessing or using Jadetimes Media LLC's website{" "}
-          <a href="http://" className="underline" target="_blank">
-            (www.jadetimes.com)
-          </a>{" "}
-          or any of our services, you represent and warrant that you are at least 16 years old and have the legal capacity to enter into these Terms of Service. If you are under the age of 16, you may
-          only use our website and services with the consent and supervision of a parent or legal guardian who agrees to be bound by these Terms of Service. Our website and services are intended
-          solely for users who are 16 years of age or older. Any use of our website or services by individuals under the age of 16 is strictly prohibited.
+          By accessing or using Jadetimes Media LLC's website <LinkToHome className="underline">(www.jadetimes.com)</LinkToHome> or any of our services, you represent and warrant that you are at least
+          16 years old and have the legal capacity to enter into these Terms of Service. If you are under the age of 16, you may only use our website and services with the consent and supervision of a
+          parent or legal guardian who agrees to be bound by these Terms of Service. Our website and services are intended solely for users who are 16 years of age or older. Any use of our website or
+          services by individuals under the age of 16 is strictly prohibited.
         </p>
         <p>
           If you are accessing or using our website and services on behalf of a company, organization, or other legal entity, you represent and warrant that you have the authority to bind such entity
@@ -270,12 +264,9 @@ const TermsAndConditions = () => {
         <section className="text-sm flex flex-col gap-4 ml-4" ref={section41Ref}>
           <h3 className="font-medium lg:text-base">4.1 Ownership</h3>
           <p>
-            All content available on Jadetimes Media LLC's website{" "}
-            <a href="http://" className="underline" target="_blank">
-              (www.jadetimes.com)
-            </a>{" "}
-            including but not limited to text, graphics, logos, images, audio clips, video clips, data compilations, and software, is the property of Jadetimes Media LLC or its content suppliers and
-            is protected by United States and international copyright, trademark, and other intellectual property laws.
+            All content available on Jadetimes Media LLC's website <LinkToHome className="underline">(www.jadetimes.com)</LinkToHome> including but not limited to text, graphics, logos, images, audio
+            clips, video clips, data compilations, and software, is the property of Jadetimes Media LLC or its content suppliers and is protected by United States and international copyright,
+            trademark, and other intellectual property laws.
           </p>
         </section>
         <section className="text-sm flex flex-col gap-4 ml-4" ref={section42Ref}>
@@ -301,11 +292,8 @@ const TermsAndConditions = () => {
         <section className="text-sm flex flex-col gap-4 ml-4" ref={section51Ref}>
           <h3 className="font-medium lg:text-base">5.1 Prohibited Activities</h3>
           <p>
-            When using Jadetimes Media LLC's website{" "}
-            <a href="http://" className="underline" target="_blank">
-              (www.jadetimes.com)
-            </a>{" "}
-            and services, you agree not to engage in any of the following prohibited activities:
+            When using Jadetimes Media LLC's website <LinkToHome className="underline">(www.jadetimes.com)</LinkToHome> and services, you agree not to engage in any of the following prohibited
+            activities:
           </p>
           <ul className="list-outside list-disc ml-8 flex flex-col gap-2">
             <li>
@@ -433,11 +421,8 @@ const TermsAndConditions = () => {
         <h2 className="font-medium lg:text-base">7. Advertising and Sponsorship</h2>
         <p>
           Jadetimes Media LLC may display a variety of advertisements, promotions, sponsorships, and other forms of commercial content ("Advertising") on its website{" "}
-          <a href="http://" className="underline" target="_blank">
-            (www.jadetimes.com)
-          </a>{" "}
-          and within its services. These Advertising placements may be targeted based on various factors, including the content of information stored on the website, queries made through the website,
-          or other information collected.
+          <LinkToHome className="underline">(www.jadetimes.com)</LinkToHome> and within its services. These Advertising placements may be targeted based on various factors, including the content of
+          information stored on the website, queries made through the website, or other information collected.
         </p>
         <section className="text-sm flex flex-col gap-4 ml-4">
           <h3 className="font-medium lg:text-base">Advertiser Responsibility</h3>
@@ -473,10 +458,7 @@ const TermsAndConditions = () => {
           <h3 className="font-medium lg:text-base">8.1 Negotiation and Informal Resolution</h3>
           <p>
             In the event of any dispute, claim, or controversy arising out of or relating to your use of Jadetimes Media LLC's website{" "}
-            <a href="http://" className="underline" target="_blank">
-              (www.jadetimes.com)
-            </a>{" "}
-            or services, we encourage you to contact us first to seek a resolution informally.
+            <LinkToHome className="underline">(www.jadetimes.com)</LinkToHome> or services, we encourage you to contact us first to seek a resolution informally.
           </p>
         </section>
         <section className="text-sm flex flex-col gap-4 ml-4" ref={section82Ref}>
@@ -618,7 +600,7 @@ const TermsAndConditions = () => {
           <p>If interns have any concerns or issues to report, they are encouraged to contact Jadetimes directly:</p>
           <ul className="list-outside list-disc ml-8 flex flex-col gap-2">
             <li>
-              <span className="font-medium">Email:</span> info@jadetimes.com
+              <span className="font-medium">Email:</span> <a href="mailto:info@jadetimes.com">info@jadetimes.com</a>
             </li>
             <li>
               <span className="font-medium">Website:</span> Visit our contact page on the official Jadetimes website
@@ -631,12 +613,9 @@ const TermsAndConditions = () => {
         <section className="text-sm flex flex-col gap-4 ml-4">
           <h3 className="font-medium lg:text-base">Termination by Jadetimes Media LLC</h3>
           <p>
-            Jadetimes Media LLC reserves the right to suspend or terminate your access to its website{" "}
-            <a href="http://" className="underline" target="_blank">
-              (www.jadetimes.com)
-            </a>{" "}
-            and services, in whole or in part, at any time and for any reason, without prior notice or liability to you. Reasons for such termination may include, but are not limited to, breaches of
-            these Terms of Service or violations of applicable laws or regulations.
+            Jadetimes Media LLC reserves the right to suspend or terminate your access to its website <LinkToHome className="underline">(www.jadetimes.com)</LinkToHome> and services, in whole or in
+            part, at any time and for any reason, without prior notice or liability to you. Reasons for such termination may include, but are not limited to, breaches of these Terms of Service or
+            violations of applicable laws or regulations.
           </p>
         </section>
         <section className="text-sm flex flex-col gap-4 ml-4">
@@ -677,11 +656,8 @@ const TermsAndConditions = () => {
         <h2 className="font-medium lg:text-base">12. Changes to Terms</h2>
         <p>
           Jadetimes Media LLC reserves the right to modify or update these Terms of Service at any time. When we do, we will revise the "Effective Date" at the top of these Terms. We encourage you to
-          review these Terms periodically for any updates or changes. Your continued use of Jadetimes Media LLC's website{" "}
-          <a href="http://" className="underline" target="_blank">
-            (www.jadetimes.com)
-          </a>{" "}
-          and services after the posting of any revised Terms constitutes your acceptance of the revised Terms.
+          review these Terms periodically for any updates or changes. Your continued use of Jadetimes Media LLC's website <LinkToHome className="underline">(www.jadetimes.com)</LinkToHome> and
+          services after the posting of any revised Terms constitutes your acceptance of the revised Terms.
         </p>
         <section className="text-sm flex flex-col gap-4 ml-4">
           <h3 className="font-medium lg:text-base">Notification of Changes</h3>
@@ -713,7 +689,7 @@ const TermsAndConditions = () => {
           </li>
           <li>
             <span className="font-medium">Email:</span>
-            <div>Info@jadetimes.com</div>
+            <div><a href="mailto:info@jadetimes.com">Info@jadetimes.com</a></div>
           </li>
           <li>
             <span className="font-medium">Live chat:</span>
@@ -722,7 +698,7 @@ const TermsAndConditions = () => {
         </ul>
       </section>
       <p className="mt-8 text-sm">Please ensure to provide sufficient information so we can respond appropriately to your inquiry. We strive to address all inquiries promptly and effectively.</p>
-    </div>
+    </Section>
   );
 };
 

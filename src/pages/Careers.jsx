@@ -1,9 +1,10 @@
-import { BsChevronDown } from "react-icons/bs";
 import ContactDetails from "../components/ContactDetails";
+import ChevronIcon from "../components/ChevronIcon";
+import FormButton from "../components/FormButton";
 
 const Careers = () => {
   return (
-    <section className="p-4 text-neutral-900">
+    <section className="p-4">
       <div className="max-w-[1000px] mx-auto">
         <h1 className="text-center text-2xl lg:text-4xl">Apply Jadetimes Media Today!</h1>
         <div className="text-xl text-center lg:text-2xl lg:mt-2">Available Positions</div>
@@ -47,14 +48,16 @@ const Careers = () => {
         <div className="mt-6 md:grid md:grid-cols-2 md:mb-4">
           <div>
             <h2 className="text-xl text-center mb-6 lg:text-3xl">Submit Your Application Today!</h2>
-            <form action="" className="text-sm flex flex-col gap-4 mt-4 md:pr-6 md:border-r md:border-r-[#17171724]">
+            <form action="" className="text-sm flex flex-col gap-4 mt-4 md:pr-6 md:border-r md:border-r-neutraborder-neutral-300">
               <div className="flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-4">
                 <div>
-                  <label htmlFor="name">Full name <span className="text-[#FF322E]">*</span></label>
+                  <label htmlFor="name">
+                    Full name <span className="text-accent">*</span>
+                  </label>
                   <input
                     id="name"
                     type="text"
-                    className="w-full border-2 border-[#17171724] duration-300 lg:hover:border-black focus:border-black focus-visible:outline-none p-3 mt-2 md:border-x-0 md:border-t-0"
+                    className="w-full border-2 border-neutral-300 duration-300 lg:hover:border-neutral-900 focus:border-neutral-900 focus-visible:outline-none p-3 mt-2 md:border-x-0 md:border-t-0"
                   />
                 </div>
                 <div>
@@ -62,49 +65,52 @@ const Careers = () => {
                   <input
                     id="country"
                     type="text"
-                    className="w-full border-2 border-[#17171724] duration-300 lg:hover:border-black focus:border-black focus-visible:outline-none p-3 mt-2 md:border-x-0 md:border-t-0"
+                    className="w-full border-2 border-neutral-300 duration-300 lg:hover:border-neutral-900 focus:border-neutral-900 focus-visible:outline-none p-3 mt-2 md:border-x-0 md:border-t-0"
                   />
                 </div>
               </div>
               <div>
-                <label htmlFor="email">Email <span className="text-[#FF322E]">*</span></label>
+                <label htmlFor="email">
+                  Email <span className="text-accent">*</span>
+                </label>
                 <input
                   id="email"
                   type="email"
-                  className="w-full border-2 border-[#17171724] duration-300 lg:hover:border-black focus:border-black focus-visible:outline-none p-3 mt-2 md:border-x-0 md:border-t-0"
+                  className="w-full border-2 border-neutral-300 duration-300 lg:hover:border-neutral-900 focus:border-neutral-900 focus-visible:outline-none p-3 mt-2 md:border-x-0 md:border-t-0"
                 />
               </div>
               <div className="flex flex-col gap-4 lg:grid lg:grid-cols-2">
                 <div>
-                  <label htmlFor="whatsapp">Whatsapp Number <span className="text-[#FF322E]">*</span></label>
+                  <label htmlFor="whatsapp">
+                    Whatsapp Number <span className="text-accent">*</span>
+                  </label>
                   <input
                     id="whatsapp"
                     type="tel"
-                    className="w-full border-2 border-[#17171724] duration-300 lg:hover:border-black focus:border-black focus-visible:outline-none p-3 mt-2 md:border-x-0 md:border-t-0"
+                    className="w-full border-2 border-neutral-300 duration-300 lg:hover:border-neutral-900 focus:border-neutral-900 focus-visible:outline-none p-3 mt-2 md:border-x-0 md:border-t-0"
                   />
                 </div>
                 <div className="lg:flex lg:flex-col lg:justify-between">
                   <label htmlFor="cv" className="block">
                     CV Upload
                   </label>
-                  <input
-                    type="file"
-                    id="cv"
-                    className="w-full border-2 border-[#17171724] duration-300 file:duration-300 lg:hover:border-black focus:border-black focus-visible:outline-none mt-2 lg:mt-0 file:bg-white file:p-3 file:mr-3 file:border-y-0 file:border-l-0 file:border-r-2 file:border-r-[#17171724] md:border-0 md:file:border-2 md:file:border-[#17171724] md:file:focus:border-black lg:file:hover:border-black"
-                  />
+                  <input type="file" id="cv" className="w-full border-2 duration-300 lg:hover:border-neutral-900 focus:border-neutral-900 focus-visible:outline-none mt-2 md:border-x-0 md:border-t-0 file:p-3 file:border-0 file:bg-neutral-200 file:mr-3" />
                 </div>
               </div>
               <div className="flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-4">
                 <div>
                   <label htmlFor="job">Applying To</label>
                   <div className="relative mt-2">
-                    <select id="job" className="w-full border-2 border-[#17171724] duration-300 lg:hover:border-black focus:border-black focus-visible:outline-none p-3 md:border-x-0 md:border-t-0 appearance-none">
+                    <select
+                      id="job"
+                      className="w-full border-2 border-neutral-300 duration-300 lg:hover:border-neutral-900 focus:border-neutral-900 focus-visible:outline-none p-3 md:border-x-0 md:border-t-0 appearance-none"
+                    >
                       <option value=""></option>
                       <option value="internships">Internships</option>
                       <option value="vacancies">Vacancies</option>
                       <option value="jadetimes-contributor<">Jadetimes Contributor</option>
                     </select>
-                    <BsChevronDown size={20} className="absolute right-3 top-1/2 -translate-y-1/2 -z-10" />
+                    <ChevronIcon className="w-5 absolute right-3 top-1/2 -translate-y-1/2 rotate-90 -z-10" />
                   </div>
                 </div>
                 <div>
@@ -112,13 +118,11 @@ const Careers = () => {
                   <input
                     id="country"
                     type="text"
-                    className="w-full border-2 border-[#17171724] duration-300 lg:hover:border-black focus:border-black focus-visible:outline-none p-3 mt-2 md:border-x-0 md:border-t-0"
+                    className="w-full border-2 border-neutral-300 duration-300 lg:hover:border-neutral-900 focus:border-neutral-900 focus-visible:outline-none p-3 mt-2 md:border-x-0 md:border-t-0"
                   />
                 </div>
               </div>
-              <button type="submit" className="text-base p-3 bg-neutral-900 text-white">
-                Submit Your Application
-              </button>
+              <FormButton className="text-base">Submit Your Application</FormButton>
             </form>
           </div>
           <div className="text-sm text-neutral-900 flex flex-col gap-6 mt-8 md:pl-6 md:mt-1">

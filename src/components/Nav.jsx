@@ -1,10 +1,8 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
-import { BsChevronUp, BsChevronDown } from "react-icons/bs";
 
 import navPaths from "../routes/navPaths";
 import mobileNavPaths from "../routes/mobileNavPaths";
-import desktopNavPath from "../routes/desktopNavPaths";
 
 import useKey from "../hooks/useKey";
 import useWindowSize from "../hooks/useWindowSize";
@@ -15,6 +13,7 @@ import LinkToMembership from "./LinkToMembership";
 import SignInButton from "./SignInButton";
 import SignIn from "./SignIn";
 import CloseButton from "./CloseButton";
+import ChevronIcon from "./ChevronIcon";
 
 const Nav = ({ handleNavOff, isNav }) => {
   const screenSize = useWindowSize();
@@ -35,24 +34,30 @@ const Nav = ({ handleNavOff, isNav }) => {
 
   return (
     <nav className={`bg-transparent duration-300 fixed h-full w-screen left-0 top-0 z-50 ${isNav ? "translate-x-0" : "invisible -translate-x-full"}`} onClick={handleNavItem}>
-      <div className={`bg-neutral-900 border-r border-r-neutral-700 text-white max-w-80 duration-300 h-full overflow-y-auto relative flex flex-col p-4 lg:py-4 lg:px-9`} ref={scrollTopRef} onClick={stopHandleNav}>
-        {screenSize !== "large" && <SignInButton className="text-sm my-[0.6rem] self-end" onClick={handleSignInOn} />}
+      <div
+        className={`bg-neutral-900 border-r border-r-neutral-700 text-white max-w-80 duration-300 h-full overflow-y-auto relative flex flex-col p-4 pt-[1.45rem] lg:py-4 lg:px-9`}
+        ref={scrollTopRef}
+        onClick={stopHandleNav}
+      >
+        {screenSize !== "large" && <SignInButton className="text-sm self-end my-[0.4rem]" onClick={handleSignInOn} />}
         {isSignIn && <SignIn handleSignInOff={handleSignInOff} handleNavItem={handleNavItem} />}
-        {screenSize !== "large" && <LinkToMembership className="w-fit text-sm mb-3 mt-[1.05rem]" onClick={handleNavItem} />}
-        <ul className="lg:mt-0">
+        {screenSize !== "large" && <LinkToMembership className="w-fit text-sm mb-3 mt-[1.3rem]" onClick={handleNavItem} />}
+        <ul className="lg:mt-[0.19rem]">
           <li>
             <Link to="" className="block w-fit font-semibold py-2 lg:text-[0.813rem] lg:font-normal lg:pt-[0.3rem] text-nowrap" onClick={handleNavItem}>
               Subscribe to newsletters
             </Link>
           </li>
           {navPaths.map((path) => (
-            <li className="lg:text-sm lg:border-b lg:border-b-neutral-700" key={path.key}>
+            <li className="lg:text-sm lg:border-b lg:border-b-neutral-700 last:border-b-0" key={path.key}>
               {path.submenus ? (
                 <div className="flex flex-row justify-between">
                   <Link to={path.to} onClick={handleNavItem} className="block py-2 w-3/4 flex-grow">
                     {path.name}
                   </Link>
-                  <button className="flex items-center justify-end w-1/4" onClick={() => handleKey(path.key)}>{key === path.key ? <BsChevronUp /> : <BsChevronDown />}</button>
+                  <button className="flex items-center justify-end w-1/4" onClick={() => handleKey(path.key)}>
+                    {key === path.key ? <ChevronIcon className="w-5 -rotate-90 duration-300" /> : <ChevronIcon className="w-5 rotate-90 duration-300" />}
+                  </button>
                 </div>
               ) : (
                 <Link to={path.to} onClick={handleNavItem} className="block py-2 flex-grow">
@@ -72,17 +77,6 @@ const Nav = ({ handleNavOff, isNav }) => {
               )}
             </li>
           ))}
-          {screenSize === "large" && (
-            <>
-              {desktopNavPath.map((path) => (
-                <li className="text-sm border-b border-b-neutral-700 lg:last:border-b-0" key={path.key}>
-                  <Link to={path.to} onClick={handleNavItem} className="block py-2">
-                    {path.name}
-                  </Link>
-                </li>
-              ))}
-            </>
-          )}
         </ul>
         {screenSize !== "large" && (
           <>
@@ -101,7 +95,9 @@ const Nav = ({ handleNavOff, isNav }) => {
             </div>
           </>
         )}
-        <CloseButton className="absolute top-[1.43rem] left-[1rem] lg:left-[16.4rem] lg:top-[1.1rem] text-[1.6rem]" onClick={handleNavItem} ariaLabel="menu slide out" />
+        <div className="absolute w-8 flex items-center justify-center left-4 top-[1.59rem] lg:top-[1.21rem] lg:left-[unset] lg:right-[1.64rem]">
+          <CloseButton className="w-[1.7rem]" onClick={handleNavItem} ariaLabel="menu slide out" />
+        </div>
       </div>
     </nav>
   );

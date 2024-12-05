@@ -1,14 +1,17 @@
 /** @type {import('tailwindcss').Config} */
+
+import defaultTheme from "tailwindcss/defaultTheme";
+
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     fontFamily: {
-      sans: ["Poppins", "sans-serif"],
+      sans: ["Poppins", ...defaultTheme.fontFamily.sans],
     },
     extend: {
       colors: {
         heading: "#111111",
-        accent: "#DA331B"
+        accent: "#DA331B",
       },
     },
   },

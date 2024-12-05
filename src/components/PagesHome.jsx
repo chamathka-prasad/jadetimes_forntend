@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 
-import SubNav from "../components/SubNav";
+import SubNav from "./SubNav";
 
 import useWindowSize from "../hooks/useWindowSize";
 

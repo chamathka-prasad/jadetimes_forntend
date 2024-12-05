@@ -1,7 +1,10 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 
-const Privacy = () => {
+import Section from "../components/Section";
+import LinkToHome from "../components/LinkToHome";
+
+const PrivacyPolicies = () => {
   const section1Ref = useRef(null);
   const section2Ref = useRef(null);
   const section21Ref = useRef(null);
@@ -64,13 +67,13 @@ const Privacy = () => {
   }
 
   return (
-    <div className="p-4 text-neutral-900 max-w-[1300px] mx-auto">
+    <Section className="p-4">
       <h1 className="text-2xl">
         <span className="font-semibold">Jadetimes</span>® Privacy Policy
       </h1>
       <p className="text-sm mb-4">Revised and posted as of the Effective Date: June 01, 2024</p>
-      <div className="pt-4 border-t border-t-[#17171724] lg:grid lg:grid-cols-7">
-        <section className="lg:order-2 lg:col-span-5 lg:border-l lg:border-l-[#17171724] lg:pl-8">
+      <div className="pt-4 border-t border-t-neutral-300 lg:grid lg:grid-cols-7">
+        <section className="lg:order-2 lg:col-span-5 lg:border-l lg:border-l-neutborder-t-neutral-300 lg:pl-8">
           <h2 className="text-2xl lg:text-4xl">Welcome to Jadetimes Media LLC!</h2>
           <div className="text-sm flex flex-col gap-4 mt-4 lg:gap-6 lg:mt-8">
             <p>
@@ -81,7 +84,7 @@ const Privacy = () => {
               If you have any questions or concerns about our practices or your personal information, please don't hesitate to reach out to us using the contact information provided below. Your
               privacy matters to us, and we strive to be transparent and clear in how we handle your data.
             </p>
-            <p>Thank you for choosing Jadetimes Media LLC. We look forward to serving you and providing you with valuable content and services.</p>{" "}
+            <p>Thank you for choosing Jadetimes Media LLC. We look forward to serving you and providing you with valuable content and services.</p>
           </div>
         </section>
         <section className="mt-4 lg:mt-0 lg:pr-8 lg:col-span-2">
@@ -399,10 +402,7 @@ const Privacy = () => {
           <p>This privacy policy applies to all personal data collected through:</p>
           <ul className="list-outside list-disc ml-8 flex flex-col gap-2">
             <li>
-              Our website{" "}
-              <a href="http://" className="underline" target="_blank">
-                (www.jadetimes.com)
-              </a>
+              Our website <LinkToHome className="underline">(www.jadetimes.com)</LinkToHome>
             </li>
             <li>Mobile applications</li>
             <li>Social media platforms</li>
@@ -871,7 +871,7 @@ const Privacy = () => {
           </li>
           <li>
             <span className="font-medium">Email:</span>
-            <div>Info@jadetimes.com</div>
+            <div><a href="mailto:Info@jadetimes.com">Info@jadetimes.com</a></div>
           </li>
           <li>
             <span className="font-medium">Live chat:</span>
@@ -921,8 +921,8 @@ const Privacy = () => {
       <p className="mt-8 text-sm">
         For any further clarification or questions regarding these definitions, please contact us using the information provided in Section 15 (Contact Us) of this Privacy Policy.
       </p>
-    </div>
+    </Section>
   );
 };
 
-export default Privacy;
+export default PrivacyPolicies;

@@ -5,7 +5,7 @@ const ContactDetails = () => {
         <h3 className="font-semibold mb-1">Online</h3>
         <div>Submit Request Form</div>
         <div>Live Chat</div>
-        <div>Email : Info@jadetimes.com</div>
+        <div>Email : <a href="mailto:Info@jadetimes.com">Info@jadetimes.com</a></div>
       </div>
       <div>
         <h3 className="font-semibold mb-1">Post</h3>

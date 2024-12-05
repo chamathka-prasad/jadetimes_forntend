@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
-import { BsPlayFill, BsArrowRight, BsArrowLeft, BsPlayCircle } from "react-icons/bs";
 import YouTube from "react-youtube";
 
 import useYouTubePlaylist from "../hooks/useYouTubePlaylist";
 import useCarousel from "../hooks/useCarousel";
 import useSwitch from "../hooks/useSwitch";
+
+import ArrowIcon from "./ArrowIcon";
 
 const SecondSlider = () => {
   const [videos, error, loading] = useYouTubePlaylist();
@@ -121,15 +122,20 @@ const SecondSlider = () => {
           <div className="h-full relative">
             <img src={`https://i.ytimg.com/vi/${currentVideo.id}/sddefault.jpg`} alt="" loading="lazy" className="absolute top-0 h-full -z-[1] object-cover object-center" />
             <div className="bg-[#000000d1] text-white h-full flex flex-col items-center justify-center">
-              <h4 className="text-[0.9375rem] mb-2">{currentVideo.title}</h4>
+              <h4 className="text-[0.9375rem] mb-2 text-white">{currentVideo.title}</h4>
               <div className="text-lg">Jadetimes</div>
               <div className="flex flex-row gap-4 mt-8">
                 <button className="flex flex-row flex-nowrap items-center gap-2 bg-accent px-7 py-2 text-sm" onClick={handlePlayOpen}>
-                  <BsPlayFill size={25} />
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-6" viewBox="0 0 16 16">
+                    <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393" />
+                  </svg>
                   Play Video
                 </button>
                 {isNextPlay && (
-                  <button className="bg-accent px-7 py-2 text-sm" onClick={() => playNextVideo(currentVideo.index)}>
+                  <button className="flex flex-row flex-nowrap items-center gap-2 bg-accent px-7 py-2 text-sm" onClick={() => playNextVideo(currentVideo.index)}>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-6" viewBox="0 0 16 16">
+                      <path d="M12.5 4a.5.5 0 0 0-1 0v3.248L5.233 3.612C4.693 3.3 4 3.678 4 4.308v7.384c0 .63.692 1.01 1.233.697L11.5 8.753V12a.5.5 0 0 0 1 0z" />
+                    </svg>
                     Next Video
                   </button>
                 )}
@@ -161,8 +167,12 @@ const SecondSlider = () => {
                               playCurrentVideo(article.index);
                             }}
                             aria-label="play"
+                            className="flex"
                           >
-                            <BsPlayCircle size={35} />
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-9" viewBox="0 0 16 16">
+                              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                              <path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445" />
+                            </svg>
                           </button>
                         )}
                       </div>
@@ -179,14 +189,14 @@ const SecondSlider = () => {
       <div className="relative flex mt-6">
         {currentIndex !== 0 && (
           <button className={`flex flex-row flex-nowrap items-center gap-3 text-sm text-black`} onClick={handlePreviousSlide}>
-            <BsArrowLeft size={24} />
+            <ArrowIcon className="w-6 rotate-[135deg]" />
             Prev
           </button>
         )}
         {currentIndex !== youTubeVideos.length - 1 && (
           <button className={`flex flex-row flex-nowrap items-center gap-3 text-sm text-black ml-auto`} onClick={handleNextSlide}>
             Next
-            <BsArrowRight size={24} />
+            <ArrowIcon className="w-6 -rotate-45" />
           </button>
         )}
       </div>

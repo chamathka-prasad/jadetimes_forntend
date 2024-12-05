@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { BsCheck2 } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 import Logo from "/logo-black.png";
@@ -26,7 +25,7 @@ const SignIn = ({ handleSignInOff, handleNavItem }) => {
       {isLogIn ? (
         isResetPassword ? (
           <div className="max-w-[640px] md:max-w-[308px] mx-auto">
-            <div className="font-bold text-heading text-center text-4xl">Reset password</div>
+            <div className="font-semibold text-heading text-center text-4xl">Reset password</div>
             <p className="text-sm text-center my-4">Enter your login email and we’ll send you a link to reset your password.</p>
             <form className="flex flex-col gap-6 mb-5">
               <input className={inputStyles} type="email" name="email" placeholder="Email" autoComplete="off" aria-label="email" required pattern="^.+@.+\.[a-zA-Z]{2,63}$" maxLength="250" />
@@ -38,7 +37,7 @@ const SignIn = ({ handleSignInOff, handleNavItem }) => {
           </div>
         ) : (
           <div className="max-w-[640px] md:max-w-[308px] mx-auto">
-            <div className="font-bold text-heading text-center text-4xl">Log In</div>
+            <div className="font-semibold text-heading text-center text-4xl">Log In</div>
             <div className="text-sm text-center my-4">
               New to this site ?{" "}
               <button className="underline font-semibold text-heading" onClick={handleLogInOff}>
@@ -53,17 +52,29 @@ const SignIn = ({ handleSignInOff, handleNavItem }) => {
               </button>
               <FormButton>Log In</FormButton>
             </form>
-            <div className="flex items-center justify-center mt-6">
+            <div className="flex items-center justify-center my-6">
               <span className="border-t border-neutral-300 w-full mr-4"></span>
               <span>or</span>
               <span className="border-t border-neutral-300 w-full ml-4"></span>
+            </div>
+            <div className="text-neutral-900 flex items-center justify-center gap-5">
+              <a href="">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="bi bi-google w-6" viewBox="0 0 16 16">
+                  <path d="M15.545 6.558a9.4 9.4 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.7 7.7 0 0 1 5.352 2.082l-2.284 2.284A4.35 4.35 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.8 4.8 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.7 3.7 0 0 0 1.599-2.431H8v-3.08z" />
+                </svg>
+              </a>
+              <a href="">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="bi bi-facebook w-6" viewBox="0 0 16 16">
+                  <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
+                </svg>
+              </a>
             </div>
           </div>
         )
       ) : (
         <div className="max-w-[640px] mx-auto">
           <img src={Logo} alt="jadetimes logo" className="max-w-80 mx-auto md:max-w-64" />
-          <div className="font-bold text-xl text-heading mt-8 text-center md:text-4xl">Register for a Jadetimes Account</div>
+          <div className="font-semibold text-xl text-heading mt-8 text-center md:text-4xl">Register for a Jadetimes Account</div>
           <p className="text-sm text-center mt-2">You must be 18 or over to register for a Jadetimes account</p>
           <form>
             <div className="md:grid md:grid-cols-2 md:gap-6 mt-4">
@@ -82,7 +93,11 @@ const SignIn = ({ handleSignInOff, handleNavItem }) => {
                   checked={isChecked}
                   onChange={() => setIsChecked((prevChecked) => !prevChecked)}
                 />
-                {isChecked && <BsCheck2 className="text-black" />}
+                {isChecked && (
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-5" viewBox="0 0 16 16">
+                    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0" />
+                  </svg>
+                )}
               </div>
               <label htmlFor="checkbox">Join the community</label>
             </div>
@@ -114,8 +129,8 @@ const SignIn = ({ handleSignInOff, handleNavItem }) => {
           </Link>
         </div>
       )}
-      <div className="absolute top-0 left-0 right-0 px-4 py-[1.45rem] lg:py-[1.10rem] flex max-w-[1285px] mx-auto">
-        <CloseButton className="ml-auto text-black text-[1.6rem]" onClick={handleSignInOff} />
+      <div className="absolute top-0 left-0 right-0 px-4 py-[1.45rem] lg:py-[1.10rem] flex max-w-[1260px] mx-auto">
+        <CloseButton className="text-black ml-auto w-[1.7rem] h-8" onClick={handleSignInOff} />
       </div>
     </div>
   );

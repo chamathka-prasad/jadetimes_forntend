@@ -9,11 +9,11 @@ const SecondBigArticles = ({ articles }) => {
   return (
     <div className="m-4 flex flex-col gap-4 md:m-0 md:grid md:grid-cols-2 md:col-span-2 md:gap-4 lg:grid-cols-10 lg:gap-5 lg:col-span-full">
       {articles.map((article, index) => (
-        <article key={index} className="flex flex-row p-4 gap-4 justify-between border border-neutral-300 lg:p-0 lg:flex-col lg:gap-0 lg:col-span-2">
+        <article key={index} className="flex flex-row p-4 gap-4 justify-between lg:justify-normal border border-neutral-300 lg:p-0 lg:flex-col lg:gap-0 lg:col-span-2">
           <PictureLink link={article.link} className="order-2 lg:order-none">
             <img src={article.image} alt={article.title} className="min-w-24 w-24 min-h-24 h-24 object-cover object-center lg:w-full lg:h-full" />
           </PictureLink>
-          <div className="flex flex-col justify-between gap-4 lg:p-4">
+          <div className="flex flex-col justify-between lg:justify-normal gap-4 lg:p-4">
             {screenSize === "large" && (
               <Link to={article.categoryLink} className="lg:w-fit text-sm font-light text-neutral-500 lg:order-[-1]">
                 {article.categoryTitle}

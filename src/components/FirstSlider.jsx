@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { BsChevronRight, BsChevronLeft } from "react-icons/bs";
 
 import PictureLink from "./PictureLink";
+import ChevronIcon from "./ChevronIcon";
 
 import useCarousel from "../hooks/useCarousel";
 
@@ -32,13 +32,13 @@ const FirstSlider = ({ articles }) => {
           ))}
         </div>
         {currentIndex !== articles.length - 1 && (
-          <button className="text-black absolute top-1/3 right-4" onClick={handleNextSlide} aria-label="next slide">
-            <BsChevronRight size={35} />
+          <button className="text-black absolute top-1/3 right-4 flex" onClick={handleNextSlide} aria-label="next slide">
+            <ChevronIcon className="w-9" />
           </button>
         )}
         {currentIndex !== 0 && (
-          <button className="text-black absolute top-1/3 left-4" onClick={handlePreviousSlide} aria-label="previous slide">
-            <BsChevronLeft size={35} />
+          <button className="text-black absolute top-1/3 left-4 flex" onClick={handlePreviousSlide} aria-label="previous slide">
+            <ChevronIcon className="w-9 rotate-180" />
           </button>
         )}
       </div>

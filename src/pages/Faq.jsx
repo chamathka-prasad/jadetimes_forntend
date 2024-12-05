@@ -1,8 +1,9 @@
 import { useRef, useState } from "react";
 
-import { BsChevronDown, BsChevronUp, BsSearch, BsXLg } from "react-icons/bs";
-
 import useKey from "../hooks/useKey";
+
+import ChevronIcon from "../components/ChevronIcon";
+import SearchIcon from "../components/SearchIcon";
 
 const faqs = [
   {
@@ -46,36 +47,34 @@ const Faq = () => {
     setFilteredFaqs(searchValue ? faqs.filter((faq) => faq.answer.toLowerCase().includes(searchValue)) : faqs);
   }
   return (
-    <section className="p-4">
-      <div className="max-w-[1000px] mx-auto">
-        <h1 className="text-2xl text-[#111111] text-center mb-6 lg:text-xl">Frequently asked questions</h1>
-        <div className="relative">
-          <input
-            type="text"
-            onChange={handleChange}
-            ref={searchRef}
-            placeholder="Looking for somthing ?"
-            className="py-2 pl-9 pr-2 border-b-2 border-b-[#17171724] w-full placeholder:text-neutral-500 focus:border-b-neutral-900 focus:outline-none lg:hover:border-b-neutral-900"
-          />
-          <BsSearch size={17} className="text-black absolute left-2 top-1/2 -translate-y-1/2 -z-10" aria-hidden />
-        </div>
-        <section className="mt-6">
-          <h2 className="text-[#FF322E] mb-2">General</h2>
-          {filteredFaqs.map((faq, index) => (
-            <div key={index} className="border-b border-b-[#17171724] last:border-b-0">
-              <button className="flex flex-row justify-between items-center gap-8 w-full py-4" onClick={() => handleKey(index)}>
-                <div className="text-[#111111] text-left lg:text-lg">{faq.question} ?</div>
-                <div className="text-black">{key === index ? <BsChevronUp /> : <BsChevronDown />}</div>
-              </button>
-              <div className={`duration-300 grid ${key === index ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
-                <div className="overflow-y-hidden" aria-hidden={key !== index}>
-                  <p className="lg:text-sm mb-4 text-neutral-900">{faq.answer}</p>
-                </div>
+    <section className="p-4 max-w-[1000px] mx-auto">
+      <h1 className="text-2xl text-center mb-6 lg:text-xl">Frequently asked questions</h1>
+      <div className="relative">
+        <input
+          type="text"
+          onChange={handleChange}
+          ref={searchRef}
+          placeholder="Looking for somthing ?"
+          className="py-2 pl-9 pr-2 border-b-2 border-b-neutral-300 w-full placeholder:text-neutral-500 focus:border-b-neutral-900 focus:outline-none lg:hover:border-b-neutral-900"
+        />
+        <SearchIcon className="text-black absolute left-2 top-1/2 -translate-y-1/2 -z-10 w-5" />
+      </div>
+      <section className="mt-6">
+        <h2 className="text-accent mb-2">General</h2>
+        {filteredFaqs.map((faq, index) => (
+          <div key={index} className="border-b border-b-neutral-300 last:border-b-0">
+            <button className="flex flex-row justify-between items-center gap-8 w-full py-4" onClick={() => handleKey(index)}>
+              <div className="text-[#111111] text-left lg:text-lg">{faq.question} ?</div>
+              <div className="text-black">{key === index ? <ChevronIcon className="w-5 -rotate-90 duration-300" /> : <ChevronIcon className="w-5 rotate-90 duration-300" />}</div>
+            </button>
+            <div className={`duration-300 grid ${key === index ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
+              <div className="overflow-y-hidden" aria-hidden={key !== index}>
+                <p className="lg:text-sm mb-4 text-neutral-900">{faq.answer}</p>
               </div>
             </div>
-          ))}
-        </section>
-      </div>
+          </div>
+        ))}
+      </section>
     </section>
   );
 };

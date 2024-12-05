@@ -1,12 +1,12 @@
-import { Link } from "react-router-dom";
+import Section from "../components/Section";
 
-const Cookie = () => {
+const CookiesPolicies = () => {
   return (
-    <div className="p-4 text-neutral-900 max-w-[1300px] mx-auto">
+    <Section className="p-4">
       <h1 className="text-2xl">
         <span className="font-semibold">Jadetimes</span>® Cookie Policy
       </h1>
-      <p className="text-sm mb-4 border-b border-b-[#17171724] pb-4">Revised and posted as of the Effective Date: June 01, 2024</p>
+      <p className="text-sm mb-4 border-b border-b-neutral-300 pb-4">Revised and posted as of the Effective Date: June 01, 2024</p>
       <section className="text-sm flex flex-col gap-4 mt-8">
         <h2 className="font-medium lg:text-base">Introduction</h2>
         <p>
@@ -100,14 +100,14 @@ const Cookie = () => {
       <section className="text-sm flex flex-col gap-4 mt-8">
         <h2 className="font-medium lg:text-base">Contact Us</h2>
         <div>If you have any questions or concerns about our use of cookies or this Cookie Policy, please contact us at:</div>
-        <p>
+        <div>
           <div>Address: Jadetimes Media LLC 8206 Louisiana Blvd NE Ste B #10483 Albuquerque, NM 87113</div>
           <div>Email: Info@jadetimes.com</div>
           <div>Live Chat: Available on our website</div>
-        </p>
+        </div>
       </section>
-    </div>
+    </Section>
   );
 };
 
-export default Cookie;
+export default CookiesPolicies;

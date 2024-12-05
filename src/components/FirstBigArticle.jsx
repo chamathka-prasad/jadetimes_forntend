@@ -13,7 +13,7 @@ const FirstBigArticle = ({ article }) => {
       <PictureLink link={article.link} className="h-full">
         <img src={article.image} alt={article.title} className="object-cover object-center md:h-full" />
       </PictureLink>
-      <div className="py-4 pb-5 flex flex-col justify-between gap-2 md:justify-start md:p-4 md:gap-4 lg:p-8">
+      <div className="py-4 pb-5 flex flex-col gap-2 md:p-4 md:gap-4 lg:p-8">
         <div>
           {screenSize === "large" && <Link className="mb-1 lg:block lg:w-fit lg:text-xs">{article.authorName}</Link>}
           <div className="flex flex-row items-center whitespace-nowrap lg:text-xs">{article.posted}</div>

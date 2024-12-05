@@ -8,7 +8,6 @@ import SecondSlider from "../components/SecondSlider";
 import ThirdSlider from "../components/ThirdSlider";
 import ThirdBigArticles from "../components/ThirdBigArticles";
 import FourthBigArticles from "../components/FourthBigArticles";
-import ReadMoreLink from "../components/ReadMoreLink";
 import YouTubeArticle from "../components/YouTubeArticle.";
 import Iframe from "../components/Iframe";
 
@@ -43,7 +42,7 @@ const Home = () => {
                 <img src={Articles[0].image} alt={Articles[0].title} className="object-cover object-center md:h-full" />
               </PictureLink>
             </div>
-            <div className="p-4 pt-8 flex flex-col justify-between gap-2 md:justify-start md:p-4 md:gap-4 lg:p-8">
+            <div className="p-4 pt-8 flex flex-col gap-2 md:p-4 md:gap-4 lg:p-8">
               <div>
                 {screenSize === "large" && <Link className="mb-1 lg:block lg:w-fit lg:text-xs">{Articles[0].authorName}</Link>}
                 <div className="whitespace-nowrap lg:text-xs">{Articles[0].posted}</div>
@@ -56,11 +55,11 @@ const Home = () => {
           </article>
           <div className="m-4 flex flex-col gap-4 md:m-0 md:grid md:grid-cols-2 md:col-span-2 md:gap-4 lg:grid-cols-10 lg:gap-5 lg:col-span-full">
             {articlesTwo.map((article, index) => (
-              <article key={index} className="flex flex-row p-4 gap-4 border border-neutral-300 lg:p-0 lg:flex-col lg:gap-0 lg:col-span-2">
+              <article key={index} className="flex flex-row p-4 gap-4 justify-between border border-neutral-300 lg:justify-normal lg:p-0 lg:flex-col lg:gap-0 lg:col-span-2">
                 <PictureLink link={article.link} className="order-2 lg:order-none">
                   <img src={article.image} alt={article.title} className="min-w-24 w-24 min-h-24 h-24 object-cover object-center lg:w-full lg:h-full" />
                 </PictureLink>
-                <div className="flex flex-col justify-between gap-4 lg:p-4">
+                <div className="flex flex-col justify-between gap-4 lg:justify-normal lg:p-4">
                   {screenSize === "large" && (
                     <Link to={article.categoryLink} className="lg:w-fit text-sm font-light text-neutral-500 lg:order-[-1]">
                       {article.categoryTitle}
@@ -98,16 +97,16 @@ const Home = () => {
         </a>
       </div>
       <section className="max-w-[1288px] mx-auto p-4">
-        <h2 className="border-b-[3px] border-b-accent pb-1 text-heading lg:mt-0">
+        <h2 className="border-b-[3px] border-b-accent pb-1 lg:mt-0">
           <Link className="font-semibold text-lg lg:text-xl">More News</Link>
         </h2>
         <div className="my-4 flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-4 lg:my-5 lg:grid-cols-10 lg:gap-5">
           {articlesFour.map((article, index) => (
-            <article key={index} className="flex flex-row p-4 gap-4 justify-between border border-neutral-300 lg:col-span-2 lg:flex-col lg:p-0 lg:gap-0">
+            <article key={index} className="flex flex-row p-4 gap-4 justify-between lg:justify-normal border border-neutral-300 lg:col-span-2 lg:flex-col lg:p-0 lg:gap-0">
               <PictureLink link={article.link} className="order-2 lg:order-none">
                 <img src={article.image} alt={article.title} className="min-w-24 w-24 min-h-24 h-24 object-cover object-center lg:w-full lg:h-full" />
               </PictureLink>
-              <div className="flex flex-col justify-between gap-4 lg:p-4">
+              <div className="flex flex-col justify-between lg:justify-normal gap-4 lg:p-4">
                 <Link className="overflow-wrap-anywhere line-clamp-2 lg:text-sm lg:line-clamp-3">{article.title}</Link>
                 {screenSize !== "large" && <div className="whitespace-nowrap">{article.posted}</div>}
               </div>
@@ -118,10 +117,7 @@ const Home = () => {
           {screenSize !== "large" && (
             <div className="flex flex-col gap-4 md:flex-row">
               {articlesFive.map((article, index) => (
-                <article
-                  className="border border-neutral-300 aspect-square relative"
-                  key={index}
-                >
+                <article className="border border-neutral-300 aspect-square relative" key={index}>
                   {screenSize !== "large" && <img src={article.image} alt="" className="absolute top-0 h-full object-cover object-center -z-[1]" loading="lazy" />}
                   <div className="flex flex-col justify-between h-full p-4 bg-[#000000aa] text-white">
                     <div className="whitespace-nowrap">{article.posted}</div>
@@ -134,7 +130,7 @@ const Home = () => {
           {screenSize === "large" && <FirstSlider articles={articlesFive} />}
           <section className="lg:pl-5 lg:border-l lg:border-neutral-300 lg:col-span-4 lg:flex lg:flex-col lg:gap-5">
             <div className="my-4 lg:mx-0 lg:flex lg:flex-row lg:gap-5 lg:items-center lg:my-0">
-              <h3 className="text-heading text-lg lg:text-xl font-semibold lg:mt-0">
+              <h3 className="text-lg lg:text-xl font-semibold lg:mt-0">
                 Whats <span className="font-normal">Trending</span>
               </h3>
               {screenSize === "large" && <LinkToMembership className="lg:font-semibold lg:text-[0.625rem]" />}
@@ -167,7 +163,7 @@ const Home = () => {
         </div>
         {screenSize === "large" && (
           <section>
-            <h3 className="mb-5 text-heading font-semibold text-lg lg:text-xl">
+            <h3 className="mb-5 font-semibold text-lg lg:text-xl">
               Must Watch <span className="font-normal">Top 10 Ranking Segments</span>
             </h3>
             <div className="grid grid-cols-[repeat(19,_minmax(0,_1fr))] gap-5">
@@ -193,7 +189,7 @@ const Home = () => {
                   ))}
                 </div>
                 <h4 className="mb-4 border-b-2 border-neutral-900 pb-1">
-                  <Link className="text-heading font-semibold text-lg lg:text-xl">
+                  <Link className="font-semibold text-lg lg:text-xl">
                     Political <span className="font-normal">Updates</span>
                   </Link>
                 </h4>
@@ -208,18 +204,18 @@ const Home = () => {
         )}
         <div className="md:grid md:gap-4 md:grid-cols-2 lg:grid-cols-4 lg:gap-10 mt-4 lg:mt-5">
           <section>
-            <h4 className="mb-4 border-b-2 border-neutral-900 pb-1 text-lg text-heading font-semibold">
+            <h4 className="mb-4 border-b-2 border-neutral-900 pb-1 text-lg font-semibold">
               <Link to="news/asia">Asia</Link>
             </h4>
             {articlesEight.map((article, index) => (
               <article key={index} link={article.link} className="mb-4 md:last-of-type:mb-0 lg:odd:my-8 border border-neutral-300 lg:border-0">
-                <div className="flex flex-col justify-between gap-4">
+                <div className="flex flex-col gap-4">
                   {screenSize !== "large" && (
                     <PictureLink link={article.link}>
                       <img src={article.image} alt="" />
                     </PictureLink>
                   )}
-                  <div className="flex flex-col justify-between gap-4 px-4 pb-4 lg:p-0">
+                  <div className="flex flex-col gap-4 px-4 pb-4 lg:p-0">
                     <div className="whitespace-nowrap lg:text-xs lg:order-2">{article.posted}</div>
                     <h4>
                       <Link className="text-lg line-clamp-2 lg:text-base lg:line-clamp-3">{article.title}</Link>
@@ -230,18 +226,18 @@ const Home = () => {
             ))}
           </section>
           <section>
-            <h4 className="mb-4 border-b-2 border-neutral-900 pb-1 text-lg text-heading font-semibold">
+            <h4 className="mb-4 border-b-2 border-neutral-900 pb-1 text-lg font-semibold">
               <Link to="news/australia">Australia</Link>
             </h4>
             {articlesEight.map((article, index) => (
               <article key={index} link={article.link} className="mb-4 md:last-of-type:mb-0 lg:odd:my-8 border border-neutral-300 lg:border-0">
-                <div className="flex flex-col justify-between gap-4">
+                <div className="flex flex-col gap-4">
                   {screenSize !== "large" && (
                     <PictureLink link={article.link}>
                       <img src={article.image} alt="" />
                     </PictureLink>
                   )}
-                  <div className="flex flex-col justify-between gap-4 px-4 pb-4 lg:p-0">
+                  <div className="flex flex-col gap-4 px-4 pb-4 lg:p-0">
                     <div className="whitespace-nowrap lg:text-xs lg:order-2">{article.posted}</div>
                     <h4>
                       <Link className="text-lg line-clamp-2 lg:text-base lg:line-clamp-3">{article.title}</Link>
@@ -252,18 +248,18 @@ const Home = () => {
             ))}
           </section>
           <section>
-            <h4 className="mb-4 border-b-2 border-neutral-900 pb-1 text-lg text-heading font-semibold">
+            <h4 className="mb-4 border-b-2 border-neutral-900 pb-1 text-lg font-semibold">
               <Link to="news/usa">USA</Link>
             </h4>
             {articlesEight.map((article, index) => (
               <article key={index} link={article.link} className="mb-4 md:last-of-type:mb-0 lg:odd:my-8 border border-neutral-300 lg:border-0">
-                <div className="flex flex-col justify-between gap-4">
+                <div className="flex flex-col gap-4">
                   {screenSize !== "large" && (
                     <PictureLink link={article.link}>
                       <img src={article.image} alt="" />
                     </PictureLink>
                   )}
-                  <div className="flex flex-col justify-between gap-4 px-4 pb-4 lg:p-0">
+                  <div className="flex flex-col gap-4 px-4 pb-4 lg:p-0">
                     <div className="whitespace-nowrap lg:text-xs lg:order-2">{article.posted}</div>
                     <h4>
                       <Link className="text-lg line-clamp-2 lg:text-base lg:line-clamp-3">{article.title}</Link>
@@ -274,18 +270,18 @@ const Home = () => {
             ))}
           </section>
           <section>
-            <h4 className="mb-4 border-b-2 border-neutral-900 pb-1 text-lg text-heading font-semibold">
+            <h4 className="mb-4 border-b-2 border-neutral-900 pb-1 text-lg font-semibold">
               <Link to="news/europe">Europe</Link>
             </h4>
             {articlesEight.map((article, index) => (
               <article key={index} link={article.link} className="mb-4 last-of-type:mb-0 lg:odd:my-8 border border-neutral-300 lg:border-0">
-                <div className="flex flex-col justify-between gap-4">
+                <div className="flex flex-col gap-4">
                   {screenSize !== "large" && (
                     <PictureLink link={article.link}>
                       <img src={article.image} alt="" />
                     </PictureLink>
                   )}
-                  <div className="flex flex-col justify-between gap-4 px-4 pb-4 lg:p-0">
+                  <div className="flex flex-col gap-4 px-4 pb-4 lg:p-0">
                     <div className="whitespace-nowrap lg:text-xs lg:order-2">{article.posted}</div>
                     <h4>
                       <Link className="text-lg line-clamp-2 lg:text-base lg:line-clamp-3">{article.title}</Link>
@@ -298,7 +294,7 @@ const Home = () => {
         </div>
       </section>
       <section className="max-w-[1288px] mx-auto p-4 lg:pb-5">
-        <h2 className="border-b-[3px] border-b-accent pb-1 text-heading font-semibold text-lg lg:text-xl lg:mt-0">
+        <h2 className="border-b-[3px] border-b-accent pb-1 font-semibold text-lg lg:text-xl lg:mt-0">
           News Updates{" "}
           <span className="font-normal">
             | <Link to="/sports">Sports</Link>
@@ -307,11 +303,11 @@ const Home = () => {
         <div className="mt-4 flex flex-col gap-4 md:grid md:grid-cols-2 lg:grid-cols-10 lg:gap-5 lg:mt-5">
           {articlesSeven.map((article, index) => (
             <article key={index} className="border border-neutral-300 block md:m-0 lg:col-span-2">
-              <div className="flex flex-row p-4 gap-4 justify-between lg:p-0 lg:flex-col lg:gap-0">
+              <div className="flex flex-row p-4 gap-4 justify-between lg:justify-normal lg:p-0 lg:flex-col lg:gap-0">
                 <PictureLink className="order-2 lg:order-none">
                   <img src={article.image} alt="" className="min-w-24 w-24 min-h-24 h-24 object-cover object-center lg:w-full lg:h-full" />
                 </PictureLink>
-                <div className="flex flex-col justify-between gap-4 lg:p-4">
+                <div className="flex flex-col justify-between lg:justify-normal gap-4 lg:p-4">
                   <h3>
                     <Link className="overflow-wrap-anywhere line-clamp-2 lg:text-sm lg:line-clamp-3">{article.title}</Link>
                   </h3>
@@ -337,15 +333,13 @@ const Home = () => {
         </div>
         <div className="p-4 flex flex-col gap-4 md:grid md:grid-cols-3 lg:grid-cols-8 lg:gap-5 lg:py-5 max-w-[1288px] mx-auto">
           <div className="lg:col-span-2 lg:flex lg:flex-col lg:gap-5">
-            <article className="border border-neutral-300 block lg:col-span-2 h-full lg:h-auto lg:border-none">
-              <div className="flex flex-row p-4 justify-between gap-4 md:gap-2 md:p-0 md:flex-col">
-                <PictureLink className="order-2 md:order-none">
-                  <img src={Articles[0].image} alt="" className="min-w-24 w-24 min-h-24 h-24 object-cover object-center md:w-full md:h-full" />
-                </PictureLink>
-                <div className="flex flex-col justify-between gap-4 md:p-4 lg:p-0">
-                  <Link className="overflow-wrap-anywhere line-clamp-2 lg:text-lg lg:font-medium lg:text-heading">{Articles[0].title}</Link>
-                  {screenSize !== "large" && <div className="whitespace-nowrap lg:text-xs md:order-[-1]">{Articles[0].posted}</div>}
-                </div>
+            <article className="border border-neutral-300 lg:col-span-2 h-full lg:h-auto lg:border-none flex flex-row p-4 justify-between md:justify-normal gap-4 md:gap-0 lg:gap-2 md:p-0 md:flex-col">
+              <PictureLink className="order-2 md:order-none">
+                <img src={Articles[0].image} alt="" className="min-w-24 w-24 min-h-24 h-24 object-cover object-center md:w-full md:h-full" />
+              </PictureLink>
+              <div className="flex flex-col justify-between md:justify-normal gap-4 md:p-4 lg:p-0">
+                <Link className="overflow-wrap-anywhere line-clamp-2 lg:text-lg lg:font-medium lg:text-heading">{Articles[0].title}</Link>
+                {screenSize !== "large" && <div className="whitespace-nowrap lg:text-xs md:order-[-1]">{Articles[0].posted}</div>}
               </div>
             </article>
             {screenSize === "large" && (
@@ -369,7 +363,7 @@ const Home = () => {
                   <img src={articlesFive[0].image} alt="" />
                 </PictureLink>
               )}
-              <div className="flex flex-col justify-between h-full p-4 bg-[#000000aa] lg:h-auto lg:bg-white lg:gap-2 lg:p-0 lg:pt-3">
+              <div className="flex flex-col justify-between h-full p-4 bg-[#000000aa] lg:h-auto lg:bg-white lg:gap-2 lg:p-0 lg:justify-normal lg:mt-2">
                 <Link className="order-2 line-clamp-3 text-white text-lg lg:text-2xl lg:line-clamp-2 lg:font-medium lg:text-heading">{articlesFive[0].title}</Link>
                 {screenSize === "large" && <p className="lg:line-clamp-2 lg:text-lg lg:order-3">{articlesFive[0].title}</p>}
                 {screenSize !== "large" && <div className="whitespace-nowrap text-white lg:text-xs lg:text-neutral-900">{articlesFive[0].posted}</div>}
@@ -377,15 +371,13 @@ const Home = () => {
             </article>
           </div>
           <div className="lg:col-span-2 lg:flex lg:flex-col lg:gap-5">
-            <article className="border border-neutral-300 block lg:col-span-2 h-full lg:h-auto lg:border-none">
-              <div className="flex flex-row p-4 justify-between gap-4 md:gap-2 md:p-0 md:flex-col">
-                <PictureLink className="order-2 md:order-none">
-                  <img src={Articles[1].image} alt="" className="min-w-24 w-24 min-h-24 h-24 object-cover object-center md:w-full md:h-full" />
-                </PictureLink>
-                <div className="flex flex-col justify-between gap-4 md:p-4 lg:p-0">
-                  <Link className="overflow-wrap-anywhere line-clamp-2 lg:text-lg lg:font-medium lg:text-heading">{Articles[1].title}</Link>
-                  {screenSize !== "large" && <div className="whitespace-nowrap lg:text-xs md:order-[-1]">{Articles[1].posted}</div>}
-                </div>
+            <article className="border border-neutral-300 lg:col-span-2 h-full lg:h-auto lg:border-none flex flex-row p-4 justify-between md:justify-normal gap-4 md:gap-0 lg:gap-2 md:p-0 md:flex-col">
+              <PictureLink className="order-2 md:order-none">
+                <img src={Articles[0].image} alt="" className="min-w-24 w-24 min-h-24 h-24 object-cover object-center md:w-full md:h-full" />
+              </PictureLink>
+              <div className="flex flex-col justify-between md:justify-normal gap-4 md:p-4 lg:p-0">
+                <Link className="overflow-wrap-anywhere line-clamp-2 lg:text-lg lg:font-medium lg:text-heading">{Articles[0].title}</Link>
+                {screenSize !== "large" && <div className="whitespace-nowrap lg:text-xs md:order-[-1]">{Articles[0].posted}</div>}
               </div>
             </article>
             {screenSize === "large" && (

@@ -1,11 +1,11 @@
 import { NavLink, Link } from "react-router-dom";
-import { FaBarsStaggered, FaMagnifyingGlass } from "react-icons/fa6";
 
 import LinkToMembership from "./LinkToMembership";
 import SignInButton from "./SignInButton";
-import SignIn from "./SignIn";
 import Nav from "./Nav";
 import LinkToHome from "./LinkToHome";
+import SignIn from "./SignIn";
+import SearchIcon from "./SearchIcon";
 
 import Logo from "/logo-white.png";
 
@@ -22,24 +22,24 @@ const Header = () => {
   useStopScroll(isSignIn);
   return (
     <header className="bg-neutral-900 text-white sticky top-0 z-40">
-      <div className="px-4 py-[1.45rem] flex items-center relative max-w-[1400px] mx-auto lg:py-[1.032rem]">
-        <LinkToHome className="block min-w-32 max-w-44 order-2 mx-auto lg:order-3 absolute left-1/2 -translate-x-1/2">
-          <img src={Logo} alt="jadetimes" />
-        </LinkToHome>
-        <button className="flex items-center justify-center order-1 mr-auto lg:mr-0 w-6" onClick={handleNavOn} aria-label="menu slide in">
-          <FaBarsStaggered className="text-[1.6rem] lg:text-[1.45rem]" />
+      <div className="px-4 py-[1.45rem] lg:py-[1.032rem] flex flex-row items-center gap-4 justify-center max-w-[1416px] mx-auto">
+        <div className="relative max-w-[1288px] flex flex-row items-center gap-4 justify-between flex-1 px-4">
+          <LinkToHome className="block w-44 absolute left-1/2 -translate-x-1/2">
+            <img src={Logo} alt="jadetimes" loading="lazy" />
+          </LinkToHome>
+          {screenSize === "large" && <LinkToMembership className="font-semibold text-[0.625rem]" />}
+          {screenSize === "large" && <SignInButton className="text-[0.813rem]" onClick={handleSignInOn} />}
+          {isSignIn && <SignIn handleSignInOff={handleSignInOff} />}
+        </div>
+        <button className="flex items-center justify-center w-8 -order-1" onClick={handleNavOn} aria-label="menu slide in">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+          </svg>
         </button>
         <Nav handleNavOff={handleNavOff} isNav={isNav} />
-        <Link to="/search" className="flex items-center justify-center order-5 ml-auto lg:ml-0 w-6" aria-label="search in jadetimes.com">
-          <FaMagnifyingGlass className="text-[1.6rem] lg:text-[1.2rem]" />
+        <Link to="/search" className="flex items-center justify-center w-8" aria-label="search in jadetimes.com">
+          <SearchIcon className="w-[1.45rem]" />
         </Link>
-        {screenSize === "large" && (
-          <>
-            <LinkToMembership className="font-semibold text-[0.625rem] order-2 ml-8 mr-auto" />
-            <SignInButton className="order-4 mr-8 text-right text-[0.813rem] ml-auto" onClick={handleSignInOn} />
-          </>
-        )}
-        {isSignIn && <SignIn handleSignInOff={handleSignInOff} />}
       </div>
       {screenSize === "large" && (
         <nav className="bg-neutral-50 text-heading">
