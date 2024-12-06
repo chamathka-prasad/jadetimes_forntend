@@ -42,12 +42,12 @@ const Nav = ({ handleNavOff, isNav }) => {
         {screenSize !== "large" && <SignInButton className="text-sm self-end my-[0.4rem]" onClick={handleSignInOn} />}
         {isSignIn && <SignIn handleSignInOff={handleSignInOff} handleNavItem={handleNavItem} />}
         {screenSize !== "large" && <LinkToMembership className="w-fit text-sm mb-3 mt-[1.3rem]" onClick={handleNavItem} />}
-        <ul className="lg:mt-[0.19rem]">
-          <li>
+        <ul className="lg:mt-12">
+          {/* <li>
             <Link to="" className="block w-fit font-semibold py-2 lg:text-[0.813rem] lg:font-normal lg:pt-[0.3rem] text-nowrap" onClick={handleNavItem}>
               Subscribe to newsletters
             </Link>
-          </li>
+          </li> */}
           {navPaths.map((path) => (
             <li className="lg:text-sm lg:border-b lg:border-b-neutral-700 last:border-b-0" key={path.key}>
               {path.submenus ? (

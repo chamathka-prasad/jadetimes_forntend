@@ -111,7 +111,7 @@ const SignIn = ({ handleSignInOff, handleNavItem }) => {
                 Privacy
               </Link>{" "}
               and{" "}
-              <Link to="/cookie-policy" className="underline" onClick={handleNavItemAndSignInOff}>
+              <Link to="/cookies-policy" className="underline" onClick={handleNavItemAndSignInOff}>
                 Cookies
               </Link>{" "}
               Policy

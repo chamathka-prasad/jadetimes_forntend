@@ -13,7 +13,7 @@ const Footer = () => {
   }
   return (
     <footer className="border-t border-t-neutral-900 text-neutral-900">
-      <div className="max-w-[1400px] mx-auto p-4">
+      <div className="max-w-[1416px] mx-auto p-4">
         <div className="mt-6 mb-10 lg:flex lg:flex-row lg:justify-between lg:mt-10 lg:mb-14">
           <div className="mb-4 lg:mb-0">
             <Link to="/" className="block mx-auto min-w-32 max-w-44 lg:max-w-52 order-2">
@@ -34,7 +34,7 @@ const Footer = () => {
                   <Link to="/careers">Join Jadetimes Media</Link>
                 </li>
                 <li>
-                  <Link to="/cookies">Cookies</Link>
+                  <Link to="/cookies-policy">Cookies</Link>
                 </li>
                 <li>
                   <Link to="/advertise-with-us">Get Published Online Articles</Link>

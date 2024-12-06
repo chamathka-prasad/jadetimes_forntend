@@ -72,7 +72,7 @@ const ThirdSlider = ({ articles, className }) => {
           </article>
         ))}
       </div>
-      <div className="flex flex-row gap-4 items-center justify-center absolute bottom-12 w-full z-10">
+      <div className="flex flex-row gap-4 items-center justify-center absolute left-1/2 -translate-x-1/2 max-w-[1288px] bottom-12 w-full z-10">
         {articles.map((_, index) => (
           <button
             onClick={() => {
