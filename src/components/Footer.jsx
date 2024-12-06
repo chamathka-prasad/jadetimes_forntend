@@ -91,7 +91,7 @@ const Footer = () => {
                   </Link>
                 </li>
               ))}
-              {navPaths[1].submenus.slice(0, 6).map((submenu) => (
+              {navPaths[1].submenus.slice(0, 7).map((submenu) => (
                 <li key={submenu.key} className="gap-4">
                   <Link to={submenu.to} className="inline-block duration-300 hover:underline">
                     {submenu.name}
