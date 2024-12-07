@@ -3,12 +3,13 @@ import { Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import PagesHome from "./components/PagesHome";
 import Loading from "./components/Loading";
 
+// const Home = lazy(() => new Promise((res) => setTimeout(() => res(import("./pages/Home")), 3000)));
 const Home = lazy(() => import("./pages/Home"));
 const Membership = lazy(() => import("./pages/Membership"));
 const Search = lazy(() => import("./pages/Search"));
+const PagesHome = lazy(() => import("./pages/PagesHome"));
 const News = lazy(() => import("./pages/news/News"));
 const IsraelGazaWar = lazy(() => import("./pages/news/IsraelGazaWar"));
 const UkraineRussiaWar = lazy(() => import("./pages/news/UkraineRussiaWar"));
@@ -39,6 +40,8 @@ const Careers = lazy(() => import("./pages/Careers"));
 const CookiesPolicies = lazy(() => import("./pages/CookiesPolicies"));
 const Faq = lazy(() => import("./pages/Faq"));
 const Shop = lazy(() => import("./pages/Shop"));
+const PostsHome = lazy(() => import("./pages/PostsHome"));
+const Post = lazy(() => import("./pages/Post"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const App = () => {
@@ -87,6 +90,9 @@ const App = () => {
             <Route path="/cookies-policy" element={<CookiesPolicies />} />
             <Route path="/faq" element={<Faq />} />
             <Route path="/shop" element={<Shop />} />
+            <Route path="/posts" element={<PostsHome />}>
+              <Route path="/posts/:post" element={<Post />} />
+            </Route>
             <Route path="/*" element={<NotFound />} />
           </Routes>
         </Suspense>
