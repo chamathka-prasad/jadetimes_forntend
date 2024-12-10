@@ -83,19 +83,18 @@ const SecondSlider = () => {
 
   if (error) {
     return (
-      <div className="col-[span_14_/_span_14]">
+      <>
         <div className="aspect-video mb-5 bg-red-50 border border-red-300 text-accent flex flex-col gap-4 items-center justify-center">
-          <div>{error.message}</div>
-          <div className="text-lg">Sorry we couldn't be able to load the playlist</div>
+          <div className="text-lg">{error.message}</div>
         </div>
         <div className="grid grid-cols-4 gap-5 w-full">
           {Array.from({ length: 4 }, (_, index) => index).map((_, index) => (
-            <div key={index} className="aspect-video bg-red-50 border border-red-300 text-sm text-accent flex flex-col items-center justify-center">
+            <div key={index} className="aspect-video text-center p-4 bg-red-50 border border-red-300 text-sm text-accent flex flex-col items-center justify-center">
               {error.message}
             </div>
           ))}
         </div>
-      </div>
+      </>
     );
   }
 

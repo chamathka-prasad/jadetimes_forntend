@@ -115,6 +115,11 @@ const navPaths = [
     to: "/health",
     name: "Health",
   },
+  {
+    key: 12,
+    to: "/opinion",
+    name: "Opinion",
+  },
 ];
 
 

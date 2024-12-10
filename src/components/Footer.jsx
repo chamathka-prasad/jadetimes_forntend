@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 
-import Logo from "/footer-logo.png";
+import LinkToHome from "./LinkToHome";
+
+import useWindowSize from "../hooks/useWindowSize";
 
 import navPaths from "../routes/navPaths";
 
-import useWindowSize from "../hooks/useWindowSize";
+import Logo from "/footer-logo.png";
 
 const Footer = () => {
   const screenSize = useWindowSize();
@@ -16,9 +18,9 @@ const Footer = () => {
       <div className="max-w-[1416px] mx-auto p-4">
         <div className="mt-6 mb-10 lg:flex lg:flex-row lg:justify-between lg:mt-10 lg:mb-14">
           <div className="mb-4 lg:mb-0">
-            <Link to="/" className="block mx-auto min-w-32 max-w-44 lg:max-w-52 order-2">
+            <LinkToHome className="block mx-auto w-44 order-2">
               <img src={Logo} alt="jadetimes logo" loading="lazy" />
-            </Link>
+            </LinkToHome>
             {screenSize !== "large" && (
               <ul className="flex flex-col gap-4 text-center text-neutral-900 text-sm text-nowrap my-4">
                 <li>
@@ -91,7 +93,7 @@ const Footer = () => {
                   </Link>
                 </li>
               ))}
-              {navPaths[1].submenus.slice(0, 7).map((submenu) => (
+              {navPaths[1].submenus.slice(0, 6).map((submenu) => (
                 <li key={submenu.key} className="gap-4">
                   <Link to={submenu.to} className="inline-block duration-300 hover:underline">
                     {submenu.name}

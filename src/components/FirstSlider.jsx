@@ -14,7 +14,7 @@ const FirstSlider = ({ articles }) => {
         <div className="flex flex-row overflow-x-hidden snap-x snap-mandatory" ref={scrollRef}>
           {articles.map((article, index) => (
             <article key={index} className={`${currentIndex === index ? "" : "invisible"} snap-end flex-none w-full duration-1000`.trim()}>
-              <PictureLink>
+              <PictureLink link={article.link}>
                 <img src={article.image} alt={articles[0].title} />
               </PictureLink>
               <div className="flex flex-col p-4 gap-4">
@@ -25,7 +25,7 @@ const FirstSlider = ({ articles }) => {
                 <Link to={article.categoryLink} className="w-fit text-sm text-neutral-500 font-light">
                   {article.categoryTitle}
                 </Link>
-                <Link className="text-lg text-[1.375rem] line-clamp-2">{article.title}</Link>
+                <Link to={article.link} className="text-lg text-[1.375rem] line-clamp-2">{article.title}</Link>
                 <p className="line-clamp-1 text-base">{article.title}</p>
               </div>
             </article>

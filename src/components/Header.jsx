@@ -6,14 +6,15 @@ import Nav from "./Nav";
 import LinkToHome from "./LinkToHome";
 import SignIn from "./SignIn";
 import SearchIcon from "./SearchIcon";
-
-import Logo from "/logo-white.png";
-
-import navPaths from "../routes/navPaths";
+import CurrentDate from "./CurrentDate";
 
 import useWindowSize from "../hooks/useWindowSize";
 import useSwitch from "../hooks/useSwitch";
 import useStopScroll from "../hooks/useStopScroll";
+
+import navPaths from "../routes/navPaths";
+
+import Logo from "/logo-white.png";
 
 const Header = () => {
   const screenSize = useWindowSize();
@@ -27,7 +28,12 @@ const Header = () => {
           <LinkToHome className="block w-44 absolute left-1/2 -translate-x-1/2">
             <img src={Logo} alt="jadetimes" loading="lazy" />
           </LinkToHome>
-          {screenSize === "large" && <LinkToMembership className="font-semibold text-[0.625rem]" />}
+          {screenSize === "large" && (
+            <div className="flex flex-row gap-4 items-center">
+              <LinkToMembership className="font-semibold text-[0.625rem]" />
+              <CurrentDate className="text-[0.813rem]" />
+            </div>
+          )}
           {screenSize === "large" && <SignInButton className="text-[0.813rem]" onClick={handleSignInOn} />}
           {isSignIn && <SignIn handleSignInOff={handleSignInOff} />}
         </div>
