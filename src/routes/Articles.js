@@ -2,7 +2,7 @@ import placeholderImage from "../assets/placeholder.webp";
 
 const Articles = [
   {
-    link: "/article-1",
+    link: "posts/article-1",
     image: placeholderImage,
     title: "The Future of Technology: Trends to Watch in 2024",
     posted: "2 hours ago",
@@ -13,7 +13,7 @@ const Articles = [
     description: "Explore the top tech trends for 2024, from AI advancements to the future of quantum computing."
   },
   {
-    link: "/article-2",
+    link: "posts/article-2",
     image: placeholderImage,
     title: "Top 10 Travel Destinations for Adventure Seekers",
     posted: "1 day ago",
@@ -24,7 +24,7 @@ const Articles = [
     description: "Discover the best locations for thrill-seekers, featuring breathtaking landscapes and extreme activities."
   },
   {
-    link: "/article-3",
+    link: "posts/article-3",
     image: placeholderImage,
     title: "Mastering Personal Finance: A Beginner’s Guide",
     posted: "3 days ago",
@@ -35,7 +35,7 @@ const Articles = [
     description: "Learn the essentials of budgeting, saving, and investing to secure your financial future."
   },
   {
-    link: "/article-4",
+    link: "posts/article-4",
     image: placeholderImage,
     title: "10 Simple Recipes for Quick Weeknight Dinners",
     posted: "5 hours ago",
@@ -46,7 +46,7 @@ const Articles = [
     description: "Make your weeknights stress-free with these quick and delicious recipes that everyone will love."
   },
   {
-    link: "/article-5",
+    link: "posts/article-5",
     image: placeholderImage,
     title: "The Rise of Renewable Energy: Solar and Wind Trends",
     posted: "6 hours ago",
@@ -57,7 +57,7 @@ const Articles = [
     description: "A deep dive into the growing adoption of renewable energy and its impact on the planet."
   },
   {
-    link: "/article-6",
+    link: "posts/article-6",
     image: placeholderImage,
     title: "Fitness Myths Debunked: What Really Works",
     posted: "2 days ago",
@@ -68,7 +68,7 @@ const Articles = [
     description: "Separate fact from fiction when it comes to fitness advice, and discover what truly helps you stay fit."
   },
   {
-    link: "/article-7",
+    link: "posts/article-7",
     image: placeholderImage,
     title: "The Psychology of Productivity: Tips to Stay Focused",
     posted: "12 hours ago",
@@ -79,7 +79,7 @@ const Articles = [
     description: "Uncover strategies to boost productivity and maintain focus in an increasingly distracted world."
   },
   {
-    link: "/article-8",
+    link: "posts/article-8",
     image: placeholderImage,
     title: "Breaking Down Cryptocurrency: A Beginner’s Guide",
     posted: "3 hours ago",
@@ -90,7 +90,7 @@ const Articles = [
     description: "Understand the basics of cryptocurrency, how it works, and its potential in modern finance."
   },
   {
-    link: "/article-9",
+    link: "posts/article-9",
     image: placeholderImage,
     title: "How to Build a Thriving Online Business in 2024",
     posted: "1 week ago",
@@ -101,7 +101,7 @@ const Articles = [
     description: "A comprehensive guide to starting and scaling a successful online business in the digital age."
   },
   {
-    link: "/article-10",
+    link: "posts/article-10",
     image: placeholderImage,
     title: "Exploring the Art of Mindfulness in Everyday Life",
     posted: "4 hours ago",

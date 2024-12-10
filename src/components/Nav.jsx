@@ -32,6 +32,11 @@ const Nav = ({ handleNavOff, isNav }) => {
     event.stopPropagation();
   }
 
+  function handleSubscribe() {
+    window.scrollTo({ top: document.body.scrollHeight, left: 0, behavior: "smooth" });
+    handleNavItem();
+  }
+
   return (
     <nav className={`bg-transparent duration-300 fixed h-full w-screen left-0 top-0 z-50 ${isNav ? "translate-x-0" : "invisible -translate-x-full"}`} onClick={handleNavItem}>
       <div
@@ -44,9 +49,9 @@ const Nav = ({ handleNavOff, isNav }) => {
         {screenSize !== "large" && <LinkToMembership className="w-fit text-sm mb-3 mt-[1.3rem]" onClick={handleNavItem} />}
         <ul>
           <li>
-            <Link to="" className="block w-fit font-semibold py-2 lg:text-[0.813rem] lg:font-normal lg:pt-[0.3rem] text-nowrap lg:mb-4" onClick={handleNavItem}>
+            <button className="block w-fit font-semibold py-2 lg:text-[0.813rem] lg:font-normal lg:pt-[0.3rem] text-nowrap lg:mb-4" onClick={handleSubscribe}>
               Subscribe to newsletters
-            </Link>
+            </button>
           </li>
           {navPaths.map((path) => (
             <li className="lg:text-sm lg:border-b lg:border-b-neutral-700 last:border-b-0" key={path.key}>

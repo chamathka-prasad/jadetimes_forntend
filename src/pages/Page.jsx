@@ -1,9 +1,9 @@
-import MainArticles from "./MainArticles";
-import ThirdSlider from "./ThirdSlider";
-import Pagination from "./Pagination";
-import Section from "./Section";
-import H1 from "./H1";
-import H2 from "./H2";
+import MainArticles from "../components/MainArticles";
+import ThirdSlider from "../components/ThirdSlider";
+import Pagination from "../components/Pagination";
+import Section from "../components/Section";
+import H1 from "../components/H1";
+import H2 from "../components/H2";
 
 const Page = ({ name, articles }) => {
   return (

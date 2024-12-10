@@ -1,6 +1,6 @@
 import Articles from "../../routes/Articles";
 
-import Page from "../../components/Page";
+import Page from ".././Page";
 
 const Africa = () => {
   return <Page name="Africa" articles={Articles} />;

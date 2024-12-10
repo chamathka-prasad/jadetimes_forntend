@@ -1,6 +1,6 @@
 import Articles from "../routes/Articles";
 
-import Page from "../components/Page";
+import Page from "./Page";
 
 const Universe = () => {
   return <Page name="Universe" articles={Articles} />;
