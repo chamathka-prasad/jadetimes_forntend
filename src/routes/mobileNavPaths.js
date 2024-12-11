@@ -1,35 +1,44 @@
 const mobileNavPaths = [
   {
     key: 0,
-    to: "/advertise-with-us",
-    name: "Advertise with us",
-  },
-  {
-    key: 1,
-    to: "/talk-to-us",
-    name: "Talk to us",
-  },
-  {
-    key: 2,
     to: "/terms-and-conditions",
     name: "Terms & Conditions",
   },
   {
-    key: 3,
+    key: 1,
     to: "/about-us",
     name: "About Jadetimes",
   },
   {
-    key: 4,
+    key: 2,
     to: "/privacy-policy",
     name: "Privacy Policy",
   },
   {
-    key: 5,
+    key: 3,
     to: "/careers",
     name: "Join Jadetimes Media",
   },
-  
+  {
+    key: 4,
+    to: "/cookies-policy",
+    name: "Cookies",
+  },
+  {
+    key: 5,
+    to: "/advertise-with-us",
+    name: "Get Published Online Articles",
+  },
+  {
+    key: 6,
+    to: "/faq",
+    name: "FAQ",
+  },
+  {
+    key: 7,
+    to: "/shop",
+    name: "Jadetimes Shop",
+  },
 ];
 
 export default mobileNavPaths;

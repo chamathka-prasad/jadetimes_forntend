@@ -119,6 +119,13 @@ const navPaths = [
     key: 12,
     to: "/opinion",
     name: "Opinion",
+    submenus: [
+      {
+        key: 0,
+        to: "/opinion/editorials",
+        name: "Editorials",
+      },
+    ],
   },
 ];
 

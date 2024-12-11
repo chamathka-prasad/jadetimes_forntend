@@ -31,6 +31,8 @@ const Political = lazy(() => import("./pages/Political"));
 const Universe = lazy(() => import("./pages/Universe"));
 const Fashion = lazy(() => import("./pages/Fashion"));
 const Health = lazy(() => import("./pages/Health"));
+const Opinion = lazy(() => import("./pages/opinion/Opinion"));
+const Editorials = lazy(() => import("./pages/opinion/Editorials"));
 const AdvertiseWithUs = lazy(() => import("./pages/AdvertiseWithUs"));
 const TalkToUs = lazy(() => import("./pages/TalkToUs"));
 const TermsAndConditions = lazy(() => import("./pages/TermsAndConditions"));
@@ -81,6 +83,10 @@ const App = () => {
             <Route path="/universe" element={<Universe />} />
             <Route path="/fashion" element={<Fashion />} />
             <Route path="/health" element={<Health />} />
+            <Route path="/opinion" element={<PagesHome item="12" />}>
+              <Route index element={<Opinion />} />
+              <Route path="/opinion/editorials" element={<Editorials />} />
+            </Route>
             <Route path="/advertise-with-us" element={<AdvertiseWithUs />} />
             <Route path="/talk-to-us" element={<TalkToUs />} />
             <Route path="/terms-and-conditions" element={<TermsAndConditions />} />

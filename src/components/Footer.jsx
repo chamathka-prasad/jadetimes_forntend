@@ -5,6 +5,7 @@ import LinkToHome from "./LinkToHome";
 import useWindowSize from "../hooks/useWindowSize";
 
 import navPaths from "../routes/navPaths";
+import mobileNavPaths from "../routes/mobileNavPaths";
 
 import Logo from "/footer-logo.png";
 
@@ -23,30 +24,11 @@ const Footer = () => {
             </LinkToHome>
             {screenSize !== "large" && (
               <ul className="flex flex-col gap-4 text-center text-neutral-900 text-sm text-nowrap my-4">
-                <li>
-                  <Link to="/terms-and-conditions">Terms & Conditions</Link>
-                </li>
-                <li>
-                  <Link to="/about-us">About Jadetimes</Link>
-                </li>
-                <li>
-                  <Link to="/privacy-policy">Privacy Policy</Link>
-                </li>
-                <li>
-                  <Link to="/careers">Join Jadetimes Media</Link>
-                </li>
-                <li>
-                  <Link to="/cookies-policy">Cookies</Link>
-                </li>
-                <li>
-                  <Link to="/advertise-with-us">Get Published Online Articles</Link>
-                </li>
-                <li>
-                  <Link to="/faq">FAQ</Link>
-                </li>
-                <li>
-                  <Link to="/shop">Jadetimes Shop</Link>
-                </li>
+                {mobileNavPaths.map((path) => (
+                  <li key={path.key}>
+                    <Link to={path.to}>{path.name}</Link>
+                  </li>
+                ))}
               </ul>
             )}
             <div className="text-sm flex flex-row items-center justify-center max-w-lg mx-auto whitespace-nowrap border-t border-t-neutral-300 pt-4 lg:text-xs lg:border-none lg:pt-0 lg:mt-3">

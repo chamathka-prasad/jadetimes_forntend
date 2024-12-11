@@ -49,7 +49,7 @@ const Header = () => {
       </div>
       {screenSize === "large" && (
         <nav className="bg-neutral-50 text-heading">
-          <ul className="flex flex-row flex-wrap gap-7 p-3 px-4 justify-center text-[0.813rem] font-semibold max-w-[1416px] mx-auto">
+          <ul className="flex flex-row flex-wrap gap-7 p-3 px-4 justify-center text-[0.813rem] font-medium max-w-[1416px] mx-auto">
             {navPaths.map((path) => (
               <li key={path.key}>
                 <NavLink className={({ isActive }) => (isActive ? "text-accent" : "duration-300 hover:text-accent")} to={path.to}>
