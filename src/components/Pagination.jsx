@@ -19,11 +19,9 @@ const Pagination = ({ articles }) => {
               <img src={article.image} alt={article.title} className="min-w-24 w-24 min-h-24 h-24 object-cover object-center lg:w-full lg:h-full" />
             </PictureLink>
             <div className="col-span-3">
-              <h2>
-                <Link to={article.link} className="line-clamp-3 overflow-wrap-anywhere lg:text-lg lg:mb-2">
-                  {article.title}
-                </Link>
-              </h2>
+              <Link to={article.link} className="line-clamp-3 overflow-wrap-anywhere lg:text-lg lg:mb-2">
+                {article.title}
+              </Link>
               {screenSize === "large" && (
                 <div>
                   <Link className="mb-1 lg:block lg:w-fit lg:text-xs">{article.authorName}</Link>

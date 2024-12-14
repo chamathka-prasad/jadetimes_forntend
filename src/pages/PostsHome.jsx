@@ -1,11 +1,10 @@
 import { Outlet } from "react-router-dom";
-import Section from "../components/Section";
 
 const PostsHome = () => {
   return (
-    <Section tag="div" className="p-4 lg:grid lg:grid-cols-4">
+    <div className="p-4 max-w-[1416px] mx-auto lg:grid lg:grid-cols-4">
       <Outlet />
-    </Section>
+    </div>
   );
 };
 

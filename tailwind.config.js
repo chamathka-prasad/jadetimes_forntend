@@ -7,6 +7,7 @@ export default {
   theme: {
     fontFamily: {
       sans: ["Poppins", ...defaultTheme.fontFamily.sans],
+      serif: ["Caudex", ...defaultTheme.fontFamily.serif]
     },
     extend: {
       colors: {

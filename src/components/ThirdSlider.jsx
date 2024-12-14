@@ -60,7 +60,7 @@ const ThirdSlider = ({ articles, className }) => {
               style={{ transition: `visibility 1s ease-in-out, opacity 1s ease-in-out` }}
             >
               <div className="h-[800px] flex flex-col p-4 pb-5">
-                <div className="mt-auto mb-16 flex flex-col gap-4 max-w-[850px] md:gap-5 mx-auto md:grid md:grid-cols-2">
+                <div className="mt-auto mb-16 flex flex-col gap-4 max-w-[850px] w-full md:gap-5 mx-auto md:grid md:grid-cols-2">
                   <Iframe title={article.title} videoId="" />
                   <YouTubeArticle className="text-white flex flex-col gap-4 md:justify-center" article={article} />
                 </div>

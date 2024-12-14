@@ -19,11 +19,9 @@ const SecondBigArticles = ({ articles }) => {
                 {article.categoryTitle}
               </Link>
             )}
-            <h2>
-              <Link to={article.link} className="overflow-wrap-anywhere line-clamp-2 lg:text-sm lg:line-clamp-3">
-                {article.title}
-              </Link>
-            </h2>
+            <Link to={article.link} className="overflow-wrap-anywhere line-clamp-2 lg:text-sm lg:line-clamp-3">
+              {article.title}
+            </Link>
             {screenSize === "large" && <p className="lg:line-clamp-2 lg:text-xs">{article.title}</p>}
             {screenSize !== "large" && <div className="whitespace-nowrap lg:text-xs">{article.posted}</div>}
           </div>

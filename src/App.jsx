@@ -44,6 +44,7 @@ const Faq = lazy(() => import("./pages/Faq"));
 const Shop = lazy(() => import("./pages/Shop"));
 const PostsHome = lazy(() => import("./pages/PostsHome"));
 const Post = lazy(() => import("./pages/Post"));
+const Team = lazy(() => import("./pages/Team"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const App = () => {
@@ -99,6 +100,7 @@ const App = () => {
             <Route path="/posts" element={<PostsHome />}>
               <Route path="/posts/:post" element={<Post />} />
             </Route>
+            <Route path="/team" element={<Team />} />
             <Route path="/*" element={<NotFound />} />
           </Routes>
         </Suspense>
