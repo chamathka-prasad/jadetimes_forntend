@@ -11,10 +11,10 @@ const FourthBigArticles = ({ articles }) => {
       {articles.slice(0, 3).map((article, index) => (
         <article className="flex flex-row gap-4 p-4 border border-neutral-300" key={index}>
           <PictureLink link={article.link} className="lg:order-2">
-            <img src={article.image} alt={article.title} className="min-w-24 w-24 min-h-24 h-24 object-cover object-center" />
+            <img src={article.image} alt={article.title} className="min-w-24 w-24 min-h-24 h-24 object-cover object-center lg:min-w-20 lg:w-20 lg:min-h-20 lg:h-20" />
           </PictureLink>
           <div className="flex flex-col justify-between gap-4">
-            <Link to={article.link} className="line-clamp-2 overflow-wrap-anywhere lg:line-clamp-3 lg:text-sm">
+            <Link to={article.link} className="line-clamp-2 overflow-wrap-anywhere lg:text-sm">
               {article.title}
             </Link>
             {screenSize === "large" && (

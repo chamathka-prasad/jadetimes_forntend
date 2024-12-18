@@ -5,7 +5,6 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Loading from "./components/Loading";
 
-// const Home = lazy(() => new Promise((res) => setTimeout(() => res(import("./pages/Home")), 3000)));
 const Home = lazy(() => import("./pages/Home"));
 const Membership = lazy(() => import("./pages/Membership"));
 const Search = lazy(() => import("./pages/Search"));

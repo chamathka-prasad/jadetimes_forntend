@@ -6,11 +6,8 @@ const useYouTubePlaylist = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const allVideos = [];
-
-    function fetchVideos(pageToken = "") {
-      const playlistId = "PL-5p6ii0pvVHcd_swLVii3Ry0mQBH4IEj";
-      fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&playlistId=${playlistId}&key=${import.meta.env.VITE_API_KEY}&pageToken=${pageToken}`)
+    function fetchVideos() {
+      fetch(`https://ilhamifham.github.io/data/youtube/playlist.json`)
         .then((response) => {
           if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -18,24 +15,17 @@ const useYouTubePlaylist = () => {
           return response.json();
         })
         .then((data) => {
-          if (data.nextPageToken) {
-            fetchVideos(data.nextPageToken);
-          }
-          const videoDetails = data.items.map((item) => ({
-            id: item.snippet.resourceId.videoId,
-            publishedAt: item.contentDetails.videoPublishedAt,
-            title: item.snippet.title,
+          const videos = data.reverse().map((video, index) => ({
+            ...video,
+            index: index,
           }));
-          allVideos.push(...videoDetails);
-          const playableVideos = allVideos.filter((item) => item.publishedAt !== undefined);
-          const sortedVideos = playableVideos.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
-          const InsertedVideos = sortedVideos.map((item, index) => ({ ...item, index: index }));
-          setVideos(InsertedVideos);
+          setVideos(videos);
+          setIsLoading(false);
         })
         .catch((error) => {
-          setError(error);
-        })
-        .finally(setIsLoading(false));
+          setError("An error occurred while fetching videos.");
+          setIsLoading(false);
+        });
     }
 
     fetchVideos();

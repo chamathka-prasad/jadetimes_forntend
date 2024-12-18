@@ -75,7 +75,7 @@ const Footer = () => {
                   </Link>
                 </li>
               ))}
-              {navPaths[1].submenus.slice(0, 6).map((submenu) => (
+              {navPaths[1].submenus.slice(0, 4).map((submenu) => (
                 <li key={submenu.key} className="gap-4">
                   <Link to={submenu.to} className="inline-block duration-300 hover:underline">
                     {submenu.name}
@@ -141,7 +141,7 @@ const Footer = () => {
             &copy; 2024 Jadetimes Media LLC. <span className="inline-block 2xl:block">All Rights Reserved</span>
           </div>
           {screenSize === "large" && (
-            <ul className="text-[0.6875rem] flex flex-row flex-wrap justify-center 2xl:justify-normal 2xl:max-w-[1063px]">
+            <ul className="text-[0.6875rem] flex flex-row flex-wrap justify-center 2xl:justify-normal 2xl:max-w-[1094px]">
               <li>
                 <Link to="/terms-and-conditions" className="duration-300 hover:underline">
                   Terms & Conditions

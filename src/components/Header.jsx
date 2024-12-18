@@ -31,10 +31,10 @@ const Header = () => {
           {screenSize === "large" && (
             <div className="flex flex-row gap-4 items-center">
               <LinkToMembership className="font-semibold text-[0.625rem]" />
-              <CurrentDate className="text-[0.813rem]" />
+              <CurrentDate className="text-xs" />
             </div>
           )}
-          {screenSize === "large" && <SignInButton className="text-[0.813rem]" onClick={handleSignInOn} />}
+          {screenSize === "large" && <SignInButton className="text-xs" onClick={handleSignInOn} />}
           {isSignIn && <SignIn handleSignInOff={handleSignInOff} />}
         </div>
         <button className="flex items-center justify-center w-8 -order-1" onClick={handleNavOn} aria-label="menu slide in">
