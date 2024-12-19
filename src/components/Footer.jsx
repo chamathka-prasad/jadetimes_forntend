@@ -16,13 +16,13 @@ const Footer = () => {
   }
   return (
     <footer className="border-t border-t-neutral-900 text-neutral-900">
-      <div className="max-w-[1416px] mx-auto p-4">
+      <div className="max-w-[1376px] mx-auto p-4">
         <div className="mt-6 mb-10 lg:flex lg:flex-row lg:justify-between lg:mt-10 lg:mb-14">
           <div className="mb-4 lg:mb-0">
             <LinkToHome className="block mx-auto w-44 order-2">
               <img src={Logo} alt="jadetimes logo" loading="lazy" />
             </LinkToHome>
-            {screenSize !== "large" && (
+            {screenSize < 1200 && (
               <ul className="flex flex-col gap-4 text-center text-neutral-900 text-sm text-nowrap my-4">
                 {mobileNavPaths.map((path) => (
                   <li key={path.key}>
@@ -42,13 +42,13 @@ const Footer = () => {
             </div>
           </div>
           <form className="flex flex-col items-center gap-4 lg:flex-row" onSubmit={handleSubmit}>
-            <label htmlFor="email" className="uppercase block text-center text-lg lg:text-[0.8125rem] text-nowrap text-black lg:mb-0">
+            <label htmlFor="subscription" className="uppercase block text-center text-lg lg:text-[0.8125rem] text-nowrap text-black lg:mb-0">
               Sign up for our newsletter
             </label>
             <div className="flex flex-row gap-[1px] max-w-lg w-full">
               <input
                 className="text-sm w-full py-2 px-5 duration-300 placeholder:text-neutral-500 border-2 border-neutral-300 focus-visible:outline-none lg:w-96 lg:py-1 lg:hover:border-neutral-900 focus:border-neutral-900"
-                id="email"
+                id="subscription"
                 name="email"
                 type="email"
                 placeholder="Enter your email"
@@ -65,7 +65,7 @@ const Footer = () => {
             </div>
           </form>
         </div>
-        {screenSize === "large" && (
+        {screenSize >= 1200 && (
           <nav className="border-t border-b border-neutral-300 py-4 text-[#515151] 2xl:flex 2xl:items-center 2xl:justify-center 2xl:gap-3">
             <ul className="text-xs flex flex-row items-center justify-center gap-3 flex-wrap font-semibold">
               {navPaths.slice(1, navPaths.length).map((path) => (
@@ -75,7 +75,7 @@ const Footer = () => {
                   </Link>
                 </li>
               ))}
-              {navPaths[1].submenus.slice(0, 4).map((submenu) => (
+              {navPaths[1].submenus.slice(0, 5).map((submenu) => (
                 <li key={submenu.key} className="gap-4">
                   <Link to={submenu.to} className="inline-block duration-300 hover:underline">
                     {submenu.name}
@@ -140,8 +140,8 @@ const Footer = () => {
           <div className="text-xs lg:text-[0.6875rem] text-nowrap lg:order-2 2xl:order-none">
             &copy; 2024 Jadetimes Media LLC. <span className="inline-block 2xl:block">All Rights Reserved</span>
           </div>
-          {screenSize === "large" && (
-            <ul className="text-[0.6875rem] flex flex-row flex-wrap justify-center 2xl:justify-normal 2xl:max-w-[1094px]">
+          {screenSize >= 1200 && (
+            <ul className="text-[0.6875rem] flex flex-row flex-wrap justify-center 2xl:justify-normal 2xl:max-w-[1063px]">
               <li>
                 <Link to="/terms-and-conditions" className="duration-300 hover:underline">
                   Terms & Conditions

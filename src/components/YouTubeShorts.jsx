@@ -93,7 +93,7 @@ const YouTubeShorts = () => {
       </div>
       {currentIndex !== youTubeShorts.length - 1 && (
         <button
-          className="absolute text-white duration-300 opacity-0 peer-hover:opacity-100 hover:opacity-100 flex top-1/3 -translate-y-1/2 right-9"
+          className="absolute text-white duration-300 opacity-0 peer-hover:opacity-100 hover:opacity-100 focus:opacity-100 flex top-1/3 -translate-y-1/2 right-9"
           onClick={handleNextSlide}
         >
           <ChevronIcon className="w-9" />
@@ -101,7 +101,7 @@ const YouTubeShorts = () => {
       )}
       {currentIndex !== 0 && (
         <button
-          className="absolute text-white duration-300 opacity-0 peer-hover:opacity-100 hover:opacity-100 flex top-1/3 -translate-y-1/2 left-9"
+          className="absolute text-white duration-300 opacity-0 peer-hover:opacity-100 hover:opacity-100 focus:opacity-100 flex top-1/3 -translate-y-1/2 left-9"
           onClick={handlePreviousSlide}
         >
           <ChevronIcon className="w-9 rotate-180" />

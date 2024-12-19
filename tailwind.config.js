@@ -7,13 +7,18 @@ export default {
   theme: {
     fontFamily: {
       sans: ["Poppins", ...defaultTheme.fontFamily.sans],
-      serif: ["Caudex", ...defaultTheme.fontFamily.serif]
+      serif: ["Caudex", ...defaultTheme.fontFamily.serif],
     },
     extend: {
       colors: {
         heading: "#111111",
         accent: "#DA331B",
       },
+    },
+    screens: {
+      ...defaultTheme.screens,
+      sm: "600px",
+      lg: "1200px"
     },
   },
   plugins: [

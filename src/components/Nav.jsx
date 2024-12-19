@@ -44,9 +44,9 @@ const Nav = ({ handleNavOff, isNav }) => {
         ref={scrollTopRef}
         onClick={stopHandleNav}
       >
-        {screenSize !== "large" && <SignInButton className="text-sm self-end my-[0.4rem]" onClick={handleSignInOn} />}
+        {screenSize < 1200 && <SignInButton className="text-sm self-end my-[0.4rem]" onClick={handleSignInOn} />}
         {isSignIn && <SignIn handleSignInOff={handleSignInOff} handleNavItem={handleNavItem} />}
-        {screenSize !== "large" && <LinkToMembership className="w-fit text-sm mb-3 mt-[1.3rem]" onClick={handleNavItem} />}
+        {screenSize < 1200 && <LinkToMembership className="w-fit text-sm mb-3 mt-[1.3rem]" onClick={handleNavItem} />}
         <ul>
           <li>
             <button className="block w-fit font-semibold py-2 lg:text-[0.813rem] lg:font-normal lg:pt-[0.3rem] text-nowrap lg:mb-4" onClick={handleSubscribe}>
@@ -83,7 +83,7 @@ const Nav = ({ handleNavOff, isNav }) => {
             </li>
           ))}
         </ul>
-        {screenSize !== "large" && (
+        {screenSize < 1200 && (
           <>
             <ul className="border-t border-neutral-700 mt-3 py-4">
               {mobileNavPaths.map((path) => (
@@ -94,7 +94,7 @@ const Nav = ({ handleNavOff, isNav }) => {
                 </li>
               ))}
             </ul>
-            <div className="text-xs">
+            <div className="text-xs mt-auto">
               <div>&copy; 2024 Jadetimes Media LLC.</div>
               <div>All Rights Reserved</div>
             </div>

@@ -23,18 +23,18 @@ const Header = () => {
   useStopScroll(isSignIn);
   return (
     <header className="bg-neutral-900 text-white sticky top-0 z-40">
-      <div className="px-4 py-[1.45rem] lg:py-[1.032rem] flex flex-row items-center gap-4 justify-center max-w-[1416px] mx-auto">
-        <div className="relative max-w-[1288px] flex flex-row items-center gap-4 justify-between flex-1 px-4">
+      <div className="p-4 lg:py-[1.032rem] flex flex-row items-center justify-between max-w-[1376px] mx-auto">
+        <div className="relative max-w-[1280px] flex flex-row items-center gap-4 justify-between flex-1 px-4">
           <LinkToHome className="block w-44 absolute left-1/2 -translate-x-1/2">
             <img src={Logo} alt="jadetimes" loading="lazy" />
           </LinkToHome>
-          {screenSize === "large" && (
+          {screenSize >= 1200 && (
             <div className="flex flex-row gap-4 items-center">
               <LinkToMembership className="font-semibold text-[0.625rem]" />
               <CurrentDate className="text-xs" />
             </div>
           )}
-          {screenSize === "large" && <SignInButton className="text-xs" onClick={handleSignInOn} />}
+          {screenSize >= 1200 && <SignInButton className="text-xs" onClick={handleSignInOn} />}
           {isSignIn && <SignIn handleSignInOff={handleSignInOff} />}
         </div>
         <button className="flex items-center justify-center w-8 -order-1" onClick={handleNavOn} aria-label="menu slide in">
@@ -47,9 +47,9 @@ const Header = () => {
           <SearchIcon className="w-[1.45rem]" />
         </Link>
       </div>
-      {screenSize === "large" && (
+      {screenSize >= 1200 && (
         <nav className="bg-neutral-50 text-heading">
-          <ul className="flex flex-row flex-wrap gap-7 p-3 px-4 justify-center text-[0.813rem] font-medium max-w-[1416px] mx-auto">
+          <ul className="flex flex-row flex-wrap gap-7 p-3 px-4 justify-center text-[0.813rem] font-medium max-w-[1376px] mx-auto">
             {navPaths.map((path) => (
               <li key={path.key}>
                 <NavLink className={({ isActive }) => (isActive ? "text-accent" : "duration-300 hover:text-accent")} to={path.to}>

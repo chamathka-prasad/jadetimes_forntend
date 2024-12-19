@@ -43,20 +43,20 @@ const Membership = () => {
   return (
     <>
       <section className="bg-neutral-900">
-        <div className="p-4 pb-5 md:pb-4 lg:py-5 max-w-[1000px] mx-auto">
+        <div className="p-4 lg:py-5 max-w-[900px] mx-auto">
           <h1 className="text-2xl text-white text-center font-semibold mb-4 lg:text-[2.5rem]">Accelerate Your Growth</h1>
-          <p className="text-lg text-white text-center mb-12 lg:text-base">Gain unlimited insights and exclusive benefits. Become a Jadetimes member for only $1.00 per week.</p>
+          <p className="text-lg text-white text-center mb-[2.375rem] lg:text-base">Gain unlimited insights and exclusive benefits. Become a Jadetimes member for only $1.00 per week.</p>
           <PricePlanCard />
         </div>
       </section>
       <Section className="p-4">
         <h2 className="text-xl font-semibold text-center">Member Benefits</h2>
-        <ul className="mt-8 flex flex-col gap-4 md:grid md:grid-cols-2 lg:gap-x-8">
+        <ul className="mt-8 flex flex-col gap-4 sm:grid sm:grid-cols-2 lg:gap-x-8">
           {memberBenefits.map((benefit, index) => (
             <li key={index}>
-              {screenSize === "large" && <div className="text-5xl font-black text-neutral-500 float-left min-w-[4.0625rem] text-center mr-4">{index + 1 <= 9 ? `0${index + 1}` : index + 1}</div>}
+              {screenSize >= 1200 && <div className="text-5xl font-black text-neutral-500 float-left min-w-[4.0625rem] text-center mr-4">{index + 1 <= 9 ? `0${index + 1}` : index + 1}</div>}
               <div className="flex flex-row gap-4 items-center">
-                {screenSize !== "large" && <div className="text-5xl font-black text-neutral-500 min-w-[4.0625rem] text-center">{index + 1 <= 9 ? `0${index + 1}` : index + 1}</div>}
+                {screenSize < 1200 && <div className="text-5xl font-black text-neutral-500 min-w-[4.0625rem] text-center">{index + 1 <= 9 ? `0${index + 1}` : index + 1}</div>}
                 <h3 className="font-semibold text-[1.0625rem]">{benefit.type}</h3>
               </div>
               <p className="mt-2 lg:text-sm md:line-clamp-4 lg:line-clamp-3">{benefit.details}</p>
@@ -64,7 +64,7 @@ const Membership = () => {
           ))}
         </ul>
       </Section>
-      <section className="p-4 flex flex-col gap-4 max-w-[1000px] mx-auto md:grid md:grid-cols-2 items-center md:gap-5 md:justify-between">
+      <section className="p-4 flex flex-col gap-4 max-w-[900px] mx-auto md:grid md:grid-cols-2 items-center md:gap-5 md:justify-between">
         <img src={membershipImage} alt="" loading="lazy" />
         <div className="md:-order-1">
           <h2 className="text-xl font-semibold mb-4 lg:text-2xl">Community Access</h2>
@@ -79,7 +79,7 @@ const Membership = () => {
           </Link>
         </div>
       </section>
-      <section className="p-4 text-sm lg:text-center lg:text-base lg:max-w-[700px] mx-auto">
+      <section className="p-4 text-sm lg:text-center lg:text-base max-w-[900px] mx-auto">
         <h2 className="text-xl font-semibold mb-4 lg:text-2xl">Support & Resources</h2>
         <div className="mb-4">What is a JadeTimes Digital Membership?</div>
         <p>
