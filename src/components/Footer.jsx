@@ -17,13 +17,13 @@ const Footer = () => {
   return (
     <footer className="border-t border-t-neutral-900 text-neutral-900">
       <div className="max-w-[1376px] mx-auto p-4">
-        <div className="mt-6 mb-10 lg:flex lg:flex-row lg:justify-between lg:mt-10 lg:mb-14">
+        <div className="mt-6 mb-5 lg:flex lg:flex-row lg:justify-between lg:mt-10 lg:mb-14">
           <div className="mb-4 lg:mb-0">
             <LinkToHome className="block mx-auto w-44 order-2">
               <img src={Logo} alt="jadetimes logo" loading="lazy" />
             </LinkToHome>
             {screenSize < 1200 && (
-              <ul className="flex flex-col gap-4 text-center text-neutral-900 text-sm text-nowrap my-4">
+              <ul className="flex flex-col gap-4 text-center text-neutral-900 text-sm text-nowrap mb-4 mt-5">
                 {mobileNavPaths.map((path) => (
                   <li key={path.key}>
                     <Link to={path.to}>{path.name}</Link>
@@ -137,7 +137,7 @@ const Footer = () => {
           </nav>
         )}
         <div className="flex flex-col items-center lg:mt-4 lg:gap-4 2xl:flex-row 2xl:justify-between">
-          <div className="text-xs lg:text-[0.6875rem] text-nowrap lg:order-2 2xl:order-none">
+          <div className="text-xs lg:text-[0.6875rem] mb-6 text-nowrap lg:order-2 2xl:order-none lg:mb-0">
             &copy; 2024 Jadetimes Media LLC. <span className="inline-block 2xl:block">All Rights Reserved</span>
           </div>
           {screenSize >= 1200 && (

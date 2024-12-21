@@ -79,7 +79,7 @@ const Membership = () => {
           </Link>
         </div>
       </section>
-      <section className="p-4 text-sm lg:text-center lg:text-base max-w-[900px] mx-auto">
+      <section className="p-4 text-sm md:text-center lg:text-base max-w-[900px] mx-auto">
         <h2 className="text-xl font-semibold mb-4 lg:text-2xl">Support & Resources</h2>
         <div className="mb-4">What is a JadeTimes Digital Membership?</div>
         <p>

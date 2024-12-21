@@ -40,13 +40,13 @@ const Nav = ({ handleNavOff, isNav }) => {
   return (
     <nav className={`bg-transparent duration-300 fixed h-full w-screen left-0 top-0 z-50 ${isNav ? "translate-x-0" : "invisible -translate-x-full"}`} onClick={handleNavItem}>
       <div
-        className={`bg-neutral-900 border-r border-r-neutral-700 text-white max-w-[20.5rem] duration-300 h-full overflow-y-auto relative flex flex-col p-4 pt-[1.45rem] lg:py-4 lg:px-9`}
+        className="bg-neutral-900 border-r border-r-neutral-700 text-white max-w-[20.5rem] duration-300 h-full overflow-y-auto relative flex flex-col p-4 lg:py-4 lg:px-9"
         ref={scrollTopRef}
         onClick={stopHandleNav}
       >
         {screenSize < 1200 && <SignInButton className="text-sm self-end my-[0.4rem]" onClick={handleSignInOn} />}
         {isSignIn && <SignIn handleSignInOff={handleSignInOff} handleNavItem={handleNavItem} />}
-        {screenSize < 1200 && <LinkToMembership className="w-fit text-sm mb-3 mt-[1.3rem]" onClick={handleNavItem} />}
+        {screenSize < 1200 && <LinkToMembership className="w-fit text-sm mb-3 mt-4" onClick={handleNavItem} />}
         <ul>
           <li>
             <button className="block w-fit font-semibold py-2 lg:text-[0.813rem] lg:font-normal lg:pt-[0.3rem] text-nowrap lg:mb-4" onClick={handleSubscribe}>
@@ -100,7 +100,7 @@ const Nav = ({ handleNavOff, isNav }) => {
             </div>
           </>
         )}
-        <div className="absolute w-8 flex items-center justify-center left-4 top-[1.59rem] lg:top-[1.21rem] lg:left-[unset] lg:right-[1.64rem]">
+        <div className="absolute w-8 flex items-center justify-center left-4 top-4 my-[0.17rem] lg:left-[unset] lg:right-9">
           <CloseButton className="w-[1.7rem]" onClick={handleNavItem} ariaLabel="menu slide out" />
         </div>
       </div>

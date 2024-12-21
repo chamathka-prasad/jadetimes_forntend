@@ -92,7 +92,7 @@ const SecondSlider = () => {
   }
 
   return (
-    <div className="col-[span_14_/_span_14]">
+    <>
       <div className="aspect-video mb-5 border border-neutral-300">
         {isPlay ? (
           <YouTube
@@ -243,7 +243,7 @@ const SecondSlider = () => {
           </button>
         )}
       </div>
-    </div>
+    </>
   );
 };
 

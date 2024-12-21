@@ -44,13 +44,13 @@ const ThirdSlider = ({ articles, className }) => {
 
   return (
     <div className={`relative h-[800px] ${className}`}>
-      <div className="flex flex-col overflow-y-hidden h-[800px] snap-y snap-mandatory relative" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
+      <div className="flex flex-col overflow-y-hidden h-[800px] relative" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
         {articles.map((article, index) => (
           <article
             style={{
               backgroundImage: `url(${article.image})`,
             }}
-            className={`w-full bg-center bg-cover bg-no-repeat snap-start absolute z-0 duration-1000 ease-in-out ${
+            className={`w-full bg-center bg-cover bg-no-repeat absolute z-0 duration-1000 ease-in-out ${
               index === currentIndex ? "z-10 top-0" : index < currentIndex ? "-top-full" : "top-full"
             }`}
             key={index}
