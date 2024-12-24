@@ -6,19 +6,16 @@ import mobileNavPaths from "../routes/mobileNavPaths";
 
 import useKey from "../hooks/useKey";
 import useWindowSize from "../hooks/useWindowSize";
-import useSwitch from "../hooks/useSwitch";
 import useStopScroll from "../hooks/useStopScroll";
 
 import LinkToMembership from "./LinkToMembership";
 import SignInButton from "./SignInButton";
-import SignIn from "./SignIn";
 import CloseButton from "./CloseButton";
 import ChevronIcon from "./ChevronIcon";
 
-const Nav = ({ handleNavOff, isNav }) => {
+const Nav = ({ handleNavOff, isNav, handleSignInOn }) => {
   const screenSize = useWindowSize();
   const [key, handleKey] = useKey(null);
-  const [isSignIn, handleSignInOn, handleSignInOff] = useSwitch();
   const scrollTopRef = useRef(null);
   useStopScroll(isNav);
 
@@ -44,8 +41,15 @@ const Nav = ({ handleNavOff, isNav }) => {
         ref={scrollTopRef}
         onClick={stopHandleNav}
       >
-        {screenSize < 1200 && <SignInButton className="text-sm self-end my-[0.4rem]" onClick={handleSignInOn} />}
-        {isSignIn && <SignIn handleSignInOff={handleSignInOff} handleNavItem={handleNavItem} />}
+        {screenSize < 1200 && (
+          <SignInButton
+            className="text-sm self-end my-[0.4rem]"
+            onClick={() => {
+              handleSignInOn();
+              handleNavItem();
+            }}
+          />
+        )}
         {screenSize < 1200 && <LinkToMembership className="w-fit text-sm mb-3 mt-4" onClick={handleNavItem} />}
         <ul>
           <li>

@@ -1,16 +1,16 @@
 import { NavLink, Link } from "react-router-dom";
+import { useContext } from "react";
 
 import LinkToMembership from "./LinkToMembership";
 import SignInButton from "./SignInButton";
 import Nav from "./Nav";
 import LinkToHome from "./LinkToHome";
-import SignIn from "./SignIn";
 import SearchIcon from "./SearchIcon";
 import CurrentDate from "./CurrentDate";
 
 import useWindowSize from "../hooks/useWindowSize";
 import useSwitch from "../hooks/useSwitch";
-import useStopScroll from "../hooks/useStopScroll";
+import { SignInContext } from "../App";
 
 import navPaths from "../routes/navPaths";
 
@@ -18,9 +18,9 @@ import Logo from "/logo-white.png";
 
 const Header = () => {
   const screenSize = useWindowSize();
-  const [isSignIn, handleSignInOn, handleSignInOff] = useSwitch();
+  const handleSignInOn = useContext(SignInContext)
   const [isNav, handleNavOn, handleNavOff] = useSwitch();
-  useStopScroll(isSignIn);
+
   return (
     <header className="bg-neutral-900 text-white sticky top-0 z-40">
       <div className="p-4 lg:py-[1.032rem] flex flex-row items-center justify-between max-w-[1376px] mx-auto">
@@ -35,14 +35,13 @@ const Header = () => {
             </div>
           )}
           {screenSize >= 1200 && <SignInButton className="text-xs" onClick={handleSignInOn} />}
-          {isSignIn && <SignIn handleSignInOff={handleSignInOff} />}
         </div>
         <button className="flex items-center justify-center w-8 -order-1" onClick={handleNavOn} aria-label="menu slide in">
           <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
             <path d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
           </svg>
         </button>
-        <Nav handleNavOff={handleNavOff} isNav={isNav} />
+        <Nav handleNavOff={handleNavOff} isNav={isNav} handleSignInOn={handleSignInOn} />
         <Link to="/search" className="flex items-center justify-center w-8" aria-label="search in jadetimes.com">
           <SearchIcon className="w-[1.45rem]" />
         </Link>

@@ -8,7 +8,7 @@ const PagesHome = ({ item }) => {
   const screenSize = useWindowSize();
   return (
     <>
-      {screenSize === "large" && <SubNav item={item} />}
+      {screenSize >= 1200 && <SubNav item={item} />}
       <Outlet />
     </>
   );

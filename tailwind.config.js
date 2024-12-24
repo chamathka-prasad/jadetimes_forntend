@@ -14,11 +14,14 @@ export default {
         heading: "#111111",
         accent: "#DA331B",
       },
+      screens: {
+        custom: { raw: "(min-width: 768px) and (min-height: 768px)" },
+      },
     },
     screens: {
       ...defaultTheme.screens,
       sm: "600px",
-      lg: "1200px"
+      lg: "1200px",
     },
   },
   plugins: [

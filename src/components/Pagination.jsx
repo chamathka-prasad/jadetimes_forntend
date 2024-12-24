@@ -22,7 +22,7 @@ const Pagination = ({ articles }) => {
               <Link to={article.link} className="line-clamp-3 overflow-wrap-anywhere lg:text-lg lg:mb-2">
                 {article.title}
               </Link>
-              {screenSize === "large" && (
+              {screenSize >= 1200 && (
                 <div>
                   <Link className="mb-1 lg:block lg:w-fit lg:text-xs">{article.authorName}</Link>
                   <div className="whitespace-nowrap lg:text-xs">

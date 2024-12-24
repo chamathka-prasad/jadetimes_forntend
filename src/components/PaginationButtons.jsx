@@ -18,12 +18,12 @@ const PaginationButtons = ({ currentIndex, lastIndex, prevArticles, nextArticles
       <button onClick={prevArticles} className={(currentIndex === 1 && "text-neutral-500") || "text-black"} disabled={currentIndex === 1} aria-label="go to previous page">
         <ChevronIcon className="w-6 rotate-180" />
       </button>
-      {screenSize !== "large" && (
+      {screenSize < 1200 && (
         <div className="w-20 text-center text-lg">
           {currentIndex}/{lastIndex}
         </div>
       )}
-      {screenSize === "large" && (
+      {screenSize >= 1200 && (
         <div className="flex flex-row gap-4 text-neutral-900">
           {visiblePages.map(
             (button) =>

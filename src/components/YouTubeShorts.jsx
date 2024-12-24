@@ -42,9 +42,7 @@ const YouTubeShorts = () => {
   }
 
   if (error) {
-    return (
-      <div>Error...</div>
-    )
+    return null;
   }
 
   return (

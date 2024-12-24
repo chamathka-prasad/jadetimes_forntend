@@ -1,9 +1,13 @@
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, createContext } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Loading from "./components/Loading";
+import SignIn from "./components/SignIn";
+
+import useSwitch from "./hooks/useSwitch";
+import useStopScroll from "./hooks/useStopScroll";
 
 const Home = lazy(() => import("./pages/Home"));
 const Membership = lazy(() => import("./pages/Membership"));
@@ -46,10 +50,16 @@ const Post = lazy(() => import("./pages/Post"));
 const Team = lazy(() => import("./pages/Team"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
+export const SignInContext = createContext(null);
+
 const App = () => {
+  const [isSignIn, handleSignInOn, handleSignInOff] = useSwitch();
+  useStopScroll(isSignIn);
   return (
     <>
-      <Header />
+      <SignInContext.Provider value={handleSignInOn}>
+        <Header />
+      </SignInContext.Provider>
       <main className="text-neutral-900 2xl:overflow-x-hidden">
         <Suspense fallback={<Loading />}>
           <Routes>
@@ -105,6 +115,7 @@ const App = () => {
         </Suspense>
       </main>
       <Footer />
+      {isSignIn && <SignIn handleSignInOff={handleSignInOff} />}
     </>
   );
 };
