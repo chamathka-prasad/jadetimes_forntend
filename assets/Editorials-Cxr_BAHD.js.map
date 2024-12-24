@@ -1,0 +1,1 @@
+{"version":3,"file":"Editorials-Cxr_BAHD.js","sources":["../../src/pages/opinion/Editorials.jsx"],"sourcesContent":["const Editorials = () => {\n    return <div>Editorials</div>\n};\n\nexport default Editorials;\n"],"names":["Editorials","jsx"],"mappings":"wCAAA,MAAMA,EAAa,IACRC,EAAA,IAAC,OAAI,SAAU,YAAA,CAAA"}
