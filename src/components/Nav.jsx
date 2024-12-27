@@ -35,9 +35,9 @@ const Nav = ({ handleNavOff, isNav, handleSignInOn }) => {
   }
 
   return (
-    <nav className={`bg-transparent duration-300 fixed h-full w-screen left-0 top-0 z-50 ${isNav ? "translate-x-0" : "invisible -translate-x-full"}`} onClick={handleNavItem}>
+    <nav className={`bg-transparent duration-300 fixed h-full w-screen left-0 top-0 z-50 ${isNav ? "visible" : "invisible"}`} onClick={handleNavItem}>
       <div
-        className="bg-neutral-900 border-r border-r-neutral-700 text-white max-w-[20.5rem] duration-300 h-full overflow-y-auto relative flex flex-col p-4 lg:py-4 lg:px-9"
+        className={`bg-neutral-900 border-r border-r-neutral-700 text-white max-w-[20.5rem] duration-300 h-full overflow-y-auto relative flex flex-col p-4 lg:py-4 lg:px-9 ${isNav ? "-translate-x-0" : "-translate-x-full"}`}
         ref={scrollTopRef}
         onClick={stopHandleNav}
       >

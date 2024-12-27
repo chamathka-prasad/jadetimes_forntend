@@ -20,10 +20,8 @@ const useYouTubeShorts = () => {
           ...video,
           index: index,
         }));
-        setTimeout(() => {
-          setVideos(videos);
-          setIsLoading(false);
-        }, 5000);
+        setVideos(videos);
+        setIsLoading(false);
       })
       .catch((error) => {
         if (error.name === "AbortError") {

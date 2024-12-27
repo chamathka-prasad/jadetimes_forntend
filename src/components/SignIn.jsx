@@ -22,7 +22,7 @@ const SignIn = ({ handleSignInOff, handleNavItem }) => {
   }
 
   return (
-    <div className="fixed w-screen top-0 bottom-0 left-0 z-[100] bg-white text-neutral-900 p-4 pt-16 overflow-y-auto custom:flex custom:items-center custom:justify-center">
+    <div className="fixed w-screen top-0 bottom-0 left-0 z-[100] bg-white text-neutral-900 p-4 pt-16 overflow-y-auto custom-screen">
       {isLogIn ? (
         isResetPassword ? (
           <div className="max-w-[640px] md:max-w-[308px] mx-auto">

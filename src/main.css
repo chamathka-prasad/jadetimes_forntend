@@ -53,3 +53,11 @@ iframe {
   height: 100%;
   aspect-ratio: 16 / 9;
 }
+
+@media (min-width: 768px) and (min-height: 768px) {
+  .custom-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
