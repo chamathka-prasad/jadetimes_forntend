@@ -327,7 +327,7 @@ const Home = () => {
             Exclusive Pulse <span className="font-normal">| Jadetimes</span>
           </h2>
           <div className="text-white flex flex-col gap-4 md:grid md:grid-cols-2 place-items-center lg:gap-5 lg:mt-5 lg:mb-1">
-            <Iframe title={Articles[0].title} videoId="aV8LlSmd1E8" />
+            <Iframe title={Articles[0].title} videoId="" />
             <YouTubeArticle className="flex flex-col gap-4 lg:w-96" article={Articles[0]} />
           </div>
         </Section>

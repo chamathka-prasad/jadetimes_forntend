@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import YouTube from "react-youtube";
 
 import useYouTubePlaylist from "../hooks/useYouTubePlaylist";
 import useCarousel from "../hooks/useCarousel";
 import useSwitch from "../hooks/useSwitch";
 
 import ArrowIcon from "./ArrowIcon";
+import Iframe from "./Iframe";
 
 const SecondSlider = () => {
   const [videos, error, loading] = useYouTubePlaylist();
@@ -13,7 +13,6 @@ const SecondSlider = () => {
   const [youTubeVideos, setYouTubeVideos] = useState([]);
   const [currentIndex, scrollRef, handleNextSlide, handlePreviousSlide] = useCarousel(youTubeVideos.length);
   const [isPlay, handlePlayOpen, handlePlayClose] = useSwitch();
-  const [isNextPlay, handleNextPlayOpen, handleNextPlayClose] = useSwitch();
 
   function updateCurrentVideo(index) {
     setCurrentVideo({
@@ -41,17 +40,6 @@ const SecondSlider = () => {
   function playCurrentVideo(index) {
     updateCurrentVideo(index);
     handlePlayOpen();
-  }
-
-  function playNextVideo(index) {
-    const nextIndex = (index + 1) % videos.length;
-    updateCurrentVideo(nextIndex);
-    handlePlayOpen();
-  }
-
-  function handleNextVideo() {
-    handlePlayClose();
-    handleNextPlayOpen();
   }
 
   if (loading) {
@@ -95,21 +83,7 @@ const SecondSlider = () => {
     <>
       <div className="aspect-video mb-5 border border-neutral-300">
         {isPlay ? (
-          <YouTube
-            videoId={currentVideo.videoId}
-            opts={{
-              playerVars: {
-                autoplay: 1,
-                mute: 0,
-                controls: 1,
-                loop: 0,
-                rel: 0,
-                playsinline: 1,
-              },
-            }}
-            onEnd={handleNextVideo}
-            loading="lazy"
-          />
+          <Iframe videoId={currentVideo.videoId} autoplay="true" />
         ) : (
           <div className="h-full relative">
             <img
@@ -138,22 +112,6 @@ const SecondSlider = () => {
                   </svg>
                   Play Video
                 </button>
-                {isNextPlay && (
-                  <button
-                    className="flex flex-row flex-nowrap items-center gap-2 bg-accent px-7 py-2 text-sm"
-                    onClick={() => playNextVideo(currentVideo.index)}
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="currentColor"
-                      className="w-6"
-                      viewBox="0 0 16 16"
-                    >
-                      <path d="M12.5 4a.5.5 0 0 0-1 0v3.248L5.233 3.612C4.693 3.3 4 3.678 4 4.308v7.384c0 .63.692 1.01 1.233.697L11.5 8.753V12a.5.5 0 0 0 1 0z" />
-                    </svg>
-                    Next Video
-                  </button>
-                )}
               </div>
             </div>
           </div>
@@ -165,7 +123,9 @@ const SecondSlider = () => {
       >
         {youTubeVideos.map((articles, index) => (
           <div
-            className={`grid grid-cols-4 w-full flex-none gap-5 snap-center duration-1000 ${currentIndex === index ? "visible" : "invisible"}`}
+            className={`grid grid-cols-4 w-full flex-none gap-5 snap-center duration-1000 ${
+              currentIndex === index ? "visible" : "invisible"
+            }`}
             key={index}
           >
             {articles.map((article) => (

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import CloseButton from "../components/CloseButton";
 import ChevronIcon from "../components/ChevronIcon";
 import Iframe from "./Iframe";
+import PlayButton from "../components/PlayButton";
 
 import useYouTubeShorts from "../hooks/useYouTubeShorts";
 import useSwitch from "../hooks/useSwitch";
@@ -13,9 +14,9 @@ const YouTubeShorts = () => {
   const [videos, error, loading] = useYouTubeShorts();
   const [currentVideo, setCurrentVideo] = useState({});
   const [youTubeShorts, setYouTubeShorts] = useState([]);
-  const [currentIndex, scrollRef, handleNextSlide, handlePreviousSlide] =
-    useCarousel(youTubeShorts.length);
+  const [currentIndex, scrollRef, handleNextSlide, handlePreviousSlide] = useCarousel(youTubeShorts.length);
   const [isPlayScreen, handlePlayScreenOn, handlePlayScreenOff] = useSwitch();
+  const [isPlay, handlePlayOn, handlePlayOff] = useSwitch();
   useStopScroll(isPlayScreen);
 
   function updateCurrentVideo(index) {
@@ -42,14 +43,13 @@ const YouTubeShorts = () => {
         ? videos.length - 1
         : currentVideo.index + 1;
     updateCurrentVideo(index);
+    handlePlayOff();
   }
 
   function handlePreviousCurrentVideo() {
-    const index =
-      currentVideo.index === 0
-        ? 0
-        : currentVideo.index - 1;
+    const index = currentVideo.index === 0 ? 0 : currentVideo.index - 1;
     updateCurrentVideo(index);
+    handlePlayOff();
   }
 
   if (loading) {
@@ -105,30 +105,35 @@ const YouTubeShorts = () => {
                     <img
                       src={`https://i.ytimg.com/vi/${video.videoId}/mqdefault.jpg`}
                       alt=""
-                      className="absolute top-0 object-cover object-center"
+                      className="absolute top-0 object-cover object-center -z-[1]"
                       loading="lazy"
                     />
-                    <div className="bg-[#00000080] aspect-video flex flex-col items-center justify-center relative p-4">
-                      {isPlayScreen && (
-                        <p className="font-medium text-white  text-center mb-3 line-clamp-2">
-                          {video.title}
-                        </p>
+                    <div
+                      className={`bg-[#00000080] aspect-video flex flex-col items-center justify-center p-4 font-medium text-white text-center  ${
+                        isPlayScreen && currentVideo.index !== video.index
+                          ? "duration-300 opacity-0 hover:opacity-100 focus-within:opacity-100"
+                          : ""
+                      }`.trim()}
+                    >
+                      {isPlay && currentVideo.index === video.index ? (
+                        <div>Now Playing</div>
+                      ) : (
+                        <>
+                          {isPlayScreen && (
+                            <p className="mb-3 line-clamp-2">
+                              {video.title}
+                            </p>
+                          )}
+                          <PlayButton
+                            className="w-10"
+                            onClick={() => {
+                              handlePlayScreenOn();
+                              updateCurrentVideo(video.index);
+                              handlePlayOn();
+                            }}
+                          />
+                        </>
                       )}
-                      <button
-                        aria-label="play"
-                        className="flex text-white z-[2]"
-                        onClick={handlePlayScreenOn}
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          className="w-10"
-                          viewBox="0 0 16 16"
-                        >
-                          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
-                          <path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445" />
-                        </svg>
-                      </button>
                     </div>
                   </div>
                   {!isPlayScreen && (
@@ -150,6 +155,7 @@ const YouTubeShorts = () => {
           <button
             className="absolute text-black bg-white border border-neutral-300 shadow-lg rounded-full p-2 duration-300 opacity-0 peer-hover:opacity-100 hover:opacity-100 focus:opacity-100 flex top-1/2 -translate-y-1/2 focus:rounded-full right-9"
             onClick={handleNextSlide}
+            aria-label="next slide"
           >
             <ChevronIcon className="w-7 translate-x-[0.125rem]" />
           </button>
@@ -158,6 +164,7 @@ const YouTubeShorts = () => {
           <button
             className="absolute text-black bg-white border border-neutral-300 shadow-lg rounded-full p-2 duration-300 opacity-0 peer-hover:opacity-100 hover:opacity-100 focus:opacity-100 flex top-1/2 -translate-y-1/2 focus:rounded-full left-9"
             onClick={handlePreviousSlide}
+            aria-label="previous slide"
           >
             <ChevronIcon className="w-7 rotate-180 -translate-x-[0.125rem]" />
           </button>
@@ -166,32 +173,29 @@ const YouTubeShorts = () => {
       {isPlayScreen && (
         <div className="px-5 mt-auto">
           <div className="grid grid-cols-10 gap-5 aspect-[33/9]">
-            <div className="col-span-5 col-start-2 aspect-video border border-neutral-700">
-              <div className="relative h-full">
-                <img
-                  src={`https://i.ytimg.com/vi/${currentVideo.videoId}/sddefault.jpg`}
-                  alt=""
-                  className="absolute object-cover object-center h-full -z-[1]"
-                  loading="lazy"
-                />
-                <div className="bg-[#00000080] w-full h-full flex flex-col items-center justify-center gap-4 text-center">
-                  <div className="text-neutral-300">Jadetimes</div>
-                  <p className="text-white font-semibold text-2xl xl:text-3xl">
-                    {currentVideo.title}
-                  </p>
-                  <button aria-label="play" className="flex text-white">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="currentColor"
-                      className="w-12"
-                      viewBox="0 0 16 16"
-                    >
-                      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
-                      <path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445" />
-                    </svg>
-                  </button>
+            <div className="col-span-5 col-start-2 aspect-video">
+              {isPlay ? (
+                <Iframe videoId={currentVideo.videoId} autoplay="true" />
+              ) : (
+                <div className="relative h-full">
+                  <img
+                    src={`https://i.ytimg.com/vi/${currentVideo.videoId}/sddefault.jpg`}
+                    alt=""
+                    className="absolute object-cover object-center h-full -z-[1]"
+                    loading="lazy"
+                  />
+                  <div className="bg-[#00000080] w-full h-full flex flex-col items-center justify-center gap-4 text-center">
+                    <div className="text-neutral-300">Jadetimes</div>
+                    <p className="text-white font-semibold text-2xl xl:text-3xl">
+                      {currentVideo.title}
+                    </p>
+                    <PlayButton
+                      className="w-12 text-white"
+                      onClick={handlePlayOn}
+                    />
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
             <div className="col-span-3 overflow-y-auto">
               <p className="text-white text-2xl mb-4">{currentVideo.title}</p>
@@ -218,7 +222,10 @@ const YouTubeShorts = () => {
         <div className="p-5 flex -order-1">
           <CloseButton
             className="w-[1.7rem] text-white ml-auto"
-            onClick={handlePlayScreenOff}
+            onClick={() => {
+              handlePlayScreenOff();
+              handlePlayOff();
+            }}
           />
         </div>
       )}
