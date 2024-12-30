@@ -1,1 +1,0 @@
-{"version":3,"file":"Opinion-BdJolFg_.js","sources":["../../src/pages/opinion/Opinion.jsx"],"sourcesContent":["const Opinion = () => {\n    return <div>Opinion</div>\n};\n\nexport default Opinion;\n"],"names":["Opinion","jsx"],"mappings":"wCAAA,MAAMA,EAAU,IACLC,EAAA,IAAC,OAAI,SAAO,SAAA,CAAA"}
