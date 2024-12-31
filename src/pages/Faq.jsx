@@ -47,7 +47,7 @@ const Faq = () => {
     setFilteredFaqs(searchValue ? faqs.filter((faq) => faq.answer.toLowerCase().includes(searchValue)) : faqs);
   }
   return (
-    <section className="p-4 max-w-[1000px] mx-auto">
+    <section className="p-4 max-w-[900px] mx-auto pb-0">
       <h1 className="text-2xl text-center mb-6 lg:text-xl">Frequently asked questions</h1>
       <div className="relative">
         <input

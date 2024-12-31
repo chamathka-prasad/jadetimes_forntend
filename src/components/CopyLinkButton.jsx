@@ -3,32 +3,31 @@ import { useState } from "react";
 import useSwitch from "../hooks/useSwitch";
 
 const CopyLinkButton = ({ position }) => {
-    const [isCopied, handleCopiedOn, handleCopiedOff] = useSwitch();
-    const [tooltipMessage, setToolTipMessage] = useState("");
-    function copyLink() {
-        navigator.clipboard.writeText(window.location.href)
-            .then(() => {
-                setToolTipMessage("Link copied")
-                handleCopiedOn();
-            })
-            .catch((error) => {
-                setToolTipMessage("Failed to copy the link")
-            })
-            .finally(() => {
-                setTimeout(handleCopiedOff, 4000);
-            });
-    }
-    return (
-        <div className="relative flex">
-            <button className="w-7 lg:w-6 lg:hover:text-accent" onClick={copyLink}>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                    <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z" />
-                    <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z" />
-                </svg>
-            </button>
-            {isCopied && <div className={`absolute text-nowrap text-xs -${position}-24 top-1/2 -translate-y-1/2 bg-neutral-900 text-white px-2 py-1`} aria-hidden>{tooltipMessage}</div>}
-        </div>
-    )
-}
+  const [isShare, handleShareOn, handleShareOff] = useSwitch();
+  return (
+    <div className="relative flex">
+      <button className="w-5 z-[1]" onClick={() => {isShare ? handleShareOff() : handleShareOn()}}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 16 16"
+        >
+          <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0" />
+        </svg>
+      </button>
+      {isShare && <div className="absolute shadow-lg py-3 md:py-2 px-8 bg-white flex flex-row gap-3 text-nowrap items-center border border-neutral-300 right-0 top-full-plus-1rem">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 16 16"
+          className="w-5 flip-horizontal mb-[1px]"
+        >
+          <path d="M6.598 5.013a.144.144 0 0 1 .202.134V6.3a.5.5 0 0 0 .5.5c.667 0 2.013.005 3.3.822.984.624 1.99 1.76 2.595 3.876-1.02-.983-2.185-1.516-3.205-1.799a8.7 8.7 0 0 0-1.921-.306 7 7 0 0 0-.798.008h-.013l-.005.001h-.001L7.3 9.9l-.05-.498a.5.5 0 0 0-.45.498v1.153c0 .108-.11.176-.202.134L2.614 8.254l-.042-.028a.147.147 0 0 1 0-.252l.042-.028zM7.8 10.386q.103 0 .223.006c.434.02 1.034.086 1.7.271 1.326.368 2.896 1.202 3.94 3.08a.5.5 0 0 0 .933-.305c-.464-3.71-1.886-5.662-3.46-6.66-1.245-.79-2.527-.942-3.336-.971v-.66a1.144 1.144 0 0 0-1.767-.96l-3.994 2.94a1.147 1.147 0 0 0 0 1.946l3.994 2.94a1.144 1.144 0 0 0 1.767-.96z" />
+        </svg>
+        Share post
+      </div>}
+    </div>
+  );
+};
 
-export default CopyLinkButton
+export default CopyLinkButton;

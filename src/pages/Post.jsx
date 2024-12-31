@@ -5,7 +5,7 @@ import CopyLinkButton from "../components/CopyLinkButton";
 const Post = () => {
   const { post } = useParams();
   return (
-    <article className="col-span-2 lg:col-start-2">
+    <article className="p-4 max-w-[900px] mx-auto">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-3">
           <div className="w-11 h-11 rounded-full overflow-hidden bg-neutral-300 lg:w-10 lg:h-10"></div>
@@ -39,7 +39,6 @@ const Post = () => {
         </div>
       </div>
       <div className="flex items-center justify-between">
-        <CopyLinkButton position="right" />
         <Link className="lg:text-sm">Category</Link>
       </div>
     </article>

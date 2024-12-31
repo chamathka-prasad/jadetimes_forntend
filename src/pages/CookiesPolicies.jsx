@@ -100,11 +100,25 @@ const CookiesPolicies = () => {
       <section className="text-sm flex flex-col gap-4 mt-8">
         <h2 className="font-medium lg:text-base">Contact Us</h2>
         <div>If you have any questions or concerns about our use of cookies or this Cookie Policy, please contact us at:</div>
-        <div>
-          <div>Address: Jadetimes Media LLC 8206 Louisiana Blvd NE Ste B #10483 Albuquerque, NM 87113</div>
-          <div>Email: Info@jadetimes.com</div>
-          <div>Live Chat: Available on our website</div>
-        </div>
+        <ul className="list-outside list-disc ml-8 flex flex-col gap-2">
+          <li>
+            <span className="font-medium">Postal Address:</span>
+            <address>
+              <div>Jadetimes Media LLC</div>
+              <div>8206 Louisiana Blvd NE, Ste B #10483</div>
+              <div>Albuquerque, NM 87113</div>
+              <div>United States</div>
+            </address>
+          </li>
+          <li>
+            <span className="font-medium">Email:</span>
+            <div><a href="mailto:Info@jadetimes.com">Info@jadetimes.com</a></div>
+          </li>
+          <li>
+            <span className="font-medium">Live chat:</span>
+            <div>Chat support is provided as a convenience and may not be available at all times.</div>
+          </li>
+        </ul>
       </section>
     </Section>
   );

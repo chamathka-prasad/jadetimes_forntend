@@ -72,9 +72,9 @@ const PrivacyPolicies = () => {
         <span className="font-semibold">Jadetimes</span>® Privacy Policy
       </h1>
       <p className="text-sm mb-4">Revised and posted as of the Effective Date: June 01, 2024</p>
-      <div className="pt-4 border-t border-t-neutral-300 lg:grid lg:grid-cols-7">
-        <section className="lg:order-2 lg:col-span-5 lg:border-l lg:border-l-neutborder-t-neutral-300 lg:pl-8">
-          <h2 className="text-2xl lg:text-4xl">Welcome to Jadetimes Media LLC!</h2>
+      <div className="pt-4 border-t border-t-neutral-300 md:grid md:grid-cols-7">
+        <section className="md:order-2 md:col-span-4 md:border-l md:border-l-neutral-300 md:pl-8 lg:col-span-5">
+          <h2 className="text-2xl lg:text-3xl">Welcome to Jadetimes Media LLC!</h2>
           <div className="text-sm flex flex-col gap-4 mt-4 lg:gap-6 lg:mt-8">
             <p>
               Thank you for visiting Jadetimes Media's Privacy Policy page. We are committed to protecting your privacy and ensuring that your personal information is handled securely and responsibly.
@@ -87,297 +87,297 @@ const PrivacyPolicies = () => {
             <p>Thank you for choosing Jadetimes Media LLC. We look forward to serving you and providing you with valuable content and services.</p>
           </div>
         </section>
-        <section className="mt-4 lg:mt-0 lg:pr-8 lg:col-span-2">
+        <section className="mt-4 md:mt-0 md:pr-8 md:col-span-3 lg:col-span-2">
           <h2 className="text-xl font-semibold">Content</h2>
           <ul className="text-sm mt-2 lg:text-xs">
             <li className="mb-1">
-              <Link className="underline" onClick={() => scrollToSection(section1Ref)}>
+              <Link className="underline line-clamp-1" onClick={() => scrollToSection(section1Ref)}>
                 1. Introduction
               </Link>
             </li>
             <li className="mb-1">
-              <Link className="underline" onClick={() => scrollToSection(section2Ref)}>
+              <Link className="underline line-clamp-1" onClick={() => scrollToSection(section2Ref)}>
                 2. Information We Collect
               </Link>
               <ul className="ml-10">
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section21Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section21Ref)}>
                     2.1. Personal Data
                   </Link>
                 </li>
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section22Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section22Ref)}>
                     2.2. Non-Personal Data
                   </Link>
                 </li>
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section23Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section23Ref)}>
                     2.3. Cookies and Tracking Technologies
                   </Link>
                 </li>
               </ul>
             </li>
             <li className="mb-1">
-              <Link className="underline" onClick={() => scrollToSection(section3Ref)}>
+              <Link className="underline line-clamp-1" onClick={() => scrollToSection(section3Ref)}>
                 3. How We Collect Your Information
               </Link>
               <ul className="ml-10">
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section31Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section31Ref)}>
                     3.1. Direct Interactions
                   </Link>
                 </li>
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section32Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section32Ref)}>
                     3.2. Automated Technologies
                   </Link>
                 </li>
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section33Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section33Ref)}>
                     3.3. Third-Party Sources
                   </Link>
                 </li>
               </ul>
             </li>
             <li className="mb-1">
-              <Link className="underline" onClick={() => scrollToSection(section4Ref)}>
+              <Link className="underline line-clamp-1" onClick={() => scrollToSection(section4Ref)}>
                 4. How We Use Your Information
               </Link>
               <ul className="ml-10">
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section41Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section41Ref)}>
                     4.1. Service Delivery
                   </Link>
                 </li>
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section42Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section42Ref)}>
                     4.2. Marketing and Communications
                   </Link>
                 </li>
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section43Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section43Ref)}>
                     4.3. Legal Obligations
                   </Link>
                 </li>
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section44Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section44Ref)}>
                     4.4. Legitimate Interests
                   </Link>
                 </li>
               </ul>
             </li>
             <li className="mb-1">
-              <Link className="underline" onClick={() => scrollToSection(section5Ref)}>
+              <Link className="underline line-clamp-1" onClick={() => scrollToSection(section5Ref)}>
                 5. Sharing Your Information
               </Link>
               <ul className="ml-10">
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section51Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section51Ref)}>
                     5.1. Third-Party Service Providers
                   </Link>
                 </li>
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section52Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section52Ref)}>
                     5.2. Legal Requirements
                   </Link>
                 </li>
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section53Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section53Ref)}>
                     5.3. Business Transfers
                   </Link>
                 </li>
               </ul>
             </li>
             <li className="mb-1">
-              <Link className="underline" onClick={() => scrollToSection(section6Ref)}>
+              <Link className="underline line-clamp-1" onClick={() => scrollToSection(section6Ref)}>
                 6. International Data Transfers
               </Link>
               <ul className="ml-10">
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section61Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section61Ref)}>
                     6.1. Cross-Border Data Transfer
                   </Link>
                 </li>
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section62Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section62Ref)}>
                     6.2. Safeguards
                   </Link>
                 </li>
               </ul>
             </li>
             <li className="mb-1">
-              <Link className="underline" onClick={() => scrollToSection(section7Ref)}>
+              <Link className="underline line-clamp-1" onClick={() => scrollToSection(section7Ref)}>
                 7. Data Security
               </Link>
               <ul className="ml-10">
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section71Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section71Ref)}>
                     7.1. Security Measures
                   </Link>
                 </li>
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section72Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section72Ref)}>
                     7.2. Data Breach Protocols
                   </Link>
                 </li>
               </ul>
             </li>
             <li className="mb-1">
-              <Link className="underline" onClick={() => scrollToSection(section8Ref)}>
+              <Link className="underline line-clamp-1" onClick={() => scrollToSection(section8Ref)}>
                 8. Data Retention
               </Link>
               <ul className="ml-10">
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section81Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section81Ref)}>
                     8.1. Retention Periods
                   </Link>
                 </li>
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section82Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section82Ref)}>
                     8.2. Deletion Procedures
                   </Link>
                 </li>
               </ul>
             </li>
             <li className="mb-1">
-              <Link className="underline" onClick={() => scrollToSection(section9Ref)}>
+              <Link className="underline line-clamp-1" onClick={() => scrollToSection(section9Ref)}>
                 9. Your Rights
               </Link>
               <ul className="ml-10">
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section91Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section91Ref)}>
                     9.1. Access
                   </Link>
                 </li>
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section92Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section92Ref)}>
                     9.2. Correction
                   </Link>
                 </li>
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section93Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section93Ref)}>
                     9.3. Erasure
                   </Link>
                 </li>
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section94Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section94Ref)}>
                     9.4. Object to Processing
                   </Link>
                 </li>
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section95Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section95Ref)}>
                     9.5. Restrict Processing
                   </Link>
                 </li>
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section96Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section96Ref)}>
                     9.6. Data Portability
                   </Link>
                 </li>
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section97Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section97Ref)}>
                     9.7. Withdraw Consent
                   </Link>
                 </li>
               </ul>
             </li>
             <li className="mb-1">
-              <Link className="underline" onClick={() => scrollToSection(section10Ref)}>
+              <Link className="underline line-clamp-1" onClick={() => scrollToSection(section10Ref)}>
                 10. Special Privacy Rights by Region
               </Link>
               <ul className="ml-10">
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section101Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section101Ref)}>
                     10.1. European Union, Switzerland, and UK (GDPR)
                   </Link>
                 </li>
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section102Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section102Ref)}>
                     10.2. People's Republic of China (PIPL)
                   </Link>
                 </li>
               </ul>
             </li>
             <li className="mb-1">
-              <Link className="underline" onClick={() => scrollToSection(section11Ref)}>
+              <Link className="underline line-clamp-1" onClick={() => scrollToSection(section11Ref)}>
                 11. Exercising Your Rights
               </Link>
               <ul className="ml-10">
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section111Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section111Ref)}>
                     11.1. How to Make a Request
                   </Link>
                 </li>
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section112Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section112Ref)}>
                     11.2. Identity Verification
                   </Link>
                 </li>
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section113Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section113Ref)}>
                     11.3. Response Times
                   </Link>
                 </li>
               </ul>
             </li>
             <li className="mb-1">
-              <Link className="underline" onClick={() => scrollToSection(section12Ref)}>
+              <Link className="underline line-clamp-1" onClick={() => scrollToSection(section12Ref)}>
                 12. Children's Privacy
               </Link>
               <ul className="ml-10">
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section121Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section121Ref)}>
                     12.1. Data Collection from Minors
                   </Link>
                 </li>
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section122Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section122Ref)}>
                     12.2. Parental Controls
                   </Link>
                 </li>
               </ul>
             </li>
             <li className="mb-1">
-              <Link className="underline" onClick={() => scrollToSection(section13Ref)}>
+              <Link className="underline line-clamp-1" onClick={() => scrollToSection(section13Ref)}>
                 13. Third-Party Links
               </Link>
               <ul className="ml-10">
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section131Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section131Ref)}>
                     13.1. External Websites
                   </Link>
                 </li>
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section132Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section132Ref)}>
                     13.2. Liability
                   </Link>
                 </li>
               </ul>
             </li>
             <li className="mb-1">
-              <Link className="underline" onClick={() => scrollToSection(section14Ref)}>
+              <Link className="underline line-clamp-1" onClick={() => scrollToSection(section14Ref)}>
                 14. Changes to This Privacy Policy
               </Link>
               <ul className="ml-10">
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section141Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section141Ref)}>
                     14.1. Updates
                   </Link>
                 </li>
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section142Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section142Ref)}>
                     14.2. Notification Procedures
                   </Link>
                 </li>
               </ul>
             </li>
             <li className="mb-1">
-              <Link className="underline" onClick={() => scrollToSection(section15Ref)}>
+              <Link className="underline line-clamp-1" onClick={() => scrollToSection(section15Ref)}>
                 15. Contact Us
               </Link>
             </li>
             <li className="mb-1">
-              <Link className="underline" onClick={() => scrollToSection(section16Ref)}>
+              <Link className="underline line-clamp-1" onClick={() => scrollToSection(section16Ref)}>
                 16. Glossary
               </Link>
             </li>

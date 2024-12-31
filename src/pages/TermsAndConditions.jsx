@@ -47,9 +47,9 @@ const TermsAndConditions = () => {
         <span className="font-semibold">Jadetimes</span>® Terms of Service
       </h1>
       <p className="text-sm mb-4">Revised and posted as of the Effective Date: June 01, 2024</p>
-      <div className="pt-4 border-t border-t-neutral-300 lg:grid lg:grid-cols-7">
-        <section className="lg:order-2 lg:col-span-5 lg:border-l lg:border-l-neutral-300 lg:pl-8">
-          <h2 className="text-2xl lg:text-4xl">Welcome to Jadetimes Media LLC!</h2>
+      <div className="pt-4 border-t border-t-neutral-300 md:grid md:grid-cols-7">
+        <section className="md:order-2 md:col-span-4 md:border-l md:border-l-neutral-300 md:pl-8 lg:col-span-5">
+          <h2 className="text-2xl lg:text-3xl">Welcome to Jadetimes Media LLC!</h2>
           <div className="text-sm flex flex-col gap-4 mt-4 lg:gap-6 lg:mt-8">
             <p>
               Welcome to Jadetimes Media LLC, where your experience is our priority. We appreciate your interest in our Terms of Service, which outline the rules and guidelines for using our website
@@ -66,154 +66,154 @@ const TermsAndConditions = () => {
             <p>Thank you for choosing Jadetimes Media LLC. We look forward to serving you and providing you with valuable content and services.</p>
           </div>
         </section>
-        <section className="mt-4 lg:mt-0 lg:pr-8 lg:col-span-2">
+        <section className="mt-4 md:mt-0 md:pr-8 md:col-span-3 lg:col-span-2">
           <h2 className="text-xl font-semibold">Content</h2>
           <ul className="text-sm mt-2 lg:text-xs">
             <li className="mb-1">
-              <Link className="underline" onClick={() => scrollToSection(section1Ref)}>
+              <Link className="underline line-clamp-1" onClick={() => scrollToSection(section1Ref)}>
                 1. Introduction
               </Link>
             </li>
             <li className="mb-1">
-              <Link className="underline" onClick={() => scrollToSection(section2Ref)}>
+              <Link className="underline line-clamp-1" onClick={() => scrollToSection(section2Ref)}>
                 2. Acceptance of Terms
               </Link>
             </li>
             <li className="mb-1">
-              <Link className="underline" onClick={() => scrollToSection(section3Ref)}>
+              <Link className="underline line-clamp-1" onClick={() => scrollToSection(section3Ref)}>
                 3. Eligibility
               </Link>
             </li>
             <li className="mb-1">
-              <Link className="underline" onClick={() => scrollToSection(section4Ref)}>
+              <Link className="underline line-clamp-1" onClick={() => scrollToSection(section4Ref)}>
                 4. Content and Intellectual Property
               </Link>
               <ul className="ml-10">
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section41Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section41Ref)}>
                     4.1. Ownership
                   </Link>
                 </li>
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section42Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section42Ref)}>
                     4.2. Usage
                   </Link>
                 </li>
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section43Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section43Ref)}>
                     4.3. User-Generated Content
                   </Link>
                 </li>
               </ul>
             </li>
             <li className="mb-1">
-              <Link className="underline" onClick={() => scrollToSection(section5Ref)}>
+              <Link className="underline line-clamp-1" onClick={() => scrollToSection(section5Ref)}>
                 5. User Conduct
               </Link>
               <ul className="ml-10">
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section51Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section51Ref)}>
                     5.1. Prohibited Activities
                   </Link>
                 </li>
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section52Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section52Ref)}>
                     5.2. Account Security
                   </Link>
                 </li>
               </ul>
             </li>
             <li className="mb-1">
-              <Link className="underline" onClick={() => scrollToSection(section6Ref)}>
+              <Link className="underline line-clamp-1" onClick={() => scrollToSection(section6Ref)}>
                 6. Contributor Responsibilities
               </Link>
               <ul className="ml-10">
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section61Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section61Ref)}>
                     6.1. Content Accuracy
                   </Link>
                 </li>
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section62Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section62Ref)}>
                     6.2. Source Referencing
                   </Link>
                 </li>
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section63Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section63Ref)}>
                     6.3. Editorial Oversight
                   </Link>
                 </li>
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section64Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section64Ref)}>
                     6.4. Liability and Legal Compliance
                   </Link>
                 </li>
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section65Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section65Ref)}>
                     6.5. Dispute Resolution
                   </Link>
                 </li>
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section66Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section66Ref)}>
                     6.6. Contributor Agreement
                   </Link>
                 </li>
               </ul>
             </li>
             <li className="mb-1">
-              <Link className="underline" onClick={() => scrollToSection(section7Ref)}>
+              <Link className="underline line-clamp-1" onClick={() => scrollToSection(section7Ref)}>
                 7. Advertising and Sponsorship
               </Link>
             </li>
             <li className="mb-1">
-              <Link className="underline" onClick={() => scrollToSection(section8Ref)}>
+              <Link className="underline line-clamp-1" onClick={() => scrollToSection(section8Ref)}>
                 8. Dispute Resolution
               </Link>
               <ul className="ml-10">
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section81Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section81Ref)}>
                     8.1. Negotiation and Informal Resolution
                   </Link>
                 </li>
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section82Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section82Ref)}>
                     8.2. Arbitration
                   </Link>
                 </li>
                 <li className="mb-1 text">
-                  <Link className="underline" onClick={() => scrollToSection(section83Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section83Ref)}>
                     8.3. Waiver of Jury Trial and Class Action Waiver
                   </Link>
                 </li>
                 <li className="mb-1">
-                  <Link className="underline" onClick={() => scrollToSection(section84Ref)}>
+                  <Link className="underline line-clamp-1" onClick={() => scrollToSection(section84Ref)}>
                     8.4. Exceptions
                   </Link>
                 </li>
               </ul>
             </li>
             <li className="mb-1">
-              <Link className="underline" onClick={() => scrollToSection(section9Ref)}>
+              <Link className="underline line-clamp-1" onClick={() => scrollToSection(section9Ref)}>
                 9. Internship Opportunity
               </Link>
             </li>
             <li className="mb-1">
-              <Link className="underline" onClick={() => scrollToSection(section10Ref)}>
+              <Link className="underline line-clamp-1" onClick={() => scrollToSection(section10Ref)}>
                 10. Termination
               </Link>
             </li>
             <li className="mb-1">
-              <Link className="underline" onClick={() => scrollToSection(section11Ref)}>
+              <Link className="underline line-clamp-1" onClick={() => scrollToSection(section11Ref)}>
                 11. Defamation and Legal Protections
               </Link>
             </li>
             <li className="mb-1">
-              <Link className="underline" onClick={() => scrollToSection(section12Ref)}>
+              <Link className="underline line-clamp-1" onClick={() => scrollToSection(section12Ref)}>
                 12. Changes to Terms
               </Link>
             </li>
             <li className="mb-1">
-              <Link className="underline" onClick={() => scrollToSection(section13Ref)}>
+              <Link className="underline line-clamp-1" onClick={() => scrollToSection(section13Ref)}>
                 13. Contact Information
               </Link>
             </li>

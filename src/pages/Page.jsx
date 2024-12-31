@@ -8,7 +8,7 @@ import H2 from "../components/H2";
 const Page = ({ name, articles }) => {
   return (
     <>
-      <Section className="pt-2">
+      <Section className="mt-3 lg:max-w-[1280px]">
         <H1>
           News
           {name && (
@@ -21,7 +21,7 @@ const Page = ({ name, articles }) => {
         <MainArticles articles={articles} />
       </Section>
       <ThirdSlider articles={articles.slice(0, 2)} />
-      <Section className="p-4">
+      <Section className="p-4 lg:max-w-[1280px]">
         <H2>
           {name ? (
             <>

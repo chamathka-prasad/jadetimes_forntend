@@ -10,7 +10,7 @@ import Section from "../components/Section";
 import usePagination from "../hooks/usePagination";
 
 const Search = () => {
-  const [currentIndex, visiblePages, pageItems, lastIndex, prevArticles, nextArticles, handlePrevDisabled, handleNextDisabled, handleCurrentArticle] = usePagination(3, Articles.length);
+  const [currentIndex, visiblePages, pageItems, lastIndex, prevArticles, nextArticles, handlePrevDisabled, handleNextDisabled, handleCurrentArticle] = usePagination(4, Articles.length);
   return (
     <Section className="p-4">
       <div className="md:flex md:flex-row md:gap-4 md:items-center">
@@ -25,7 +25,7 @@ const Search = () => {
           <SearchIcon className="w-6 text-black absolute left-[0.9rem] top-1/2 -translate-y-1/2 -z-10" />
         </div>
       </div>
-      <div className="flex flex-col gap-4 py-4 lg:grid lg:grid-cols-3">
+      <div className="flex flex-col gap-4 py-4 md:grid md:grid-cols-2">
         {Articles.slice(currentIndex * pageItems - pageItems, pageItems * currentIndex).map((article, index) => (
           <article key={index} className="border border-neutral-300 p-4">
             <div className="flex flex-row gap-4 justify-between">

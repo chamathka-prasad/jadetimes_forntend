@@ -6,7 +6,7 @@ const Team = () => {
   return (
     <Section className="p-4">
       <h1 className="text-3xl text-center text-heading">Board of Directors</h1>
-      <div className="flex gap-4 flex-wrap justify-center lg:gap-5 mt-4 lg:mb-1">
+      <div className="flex gap-4 flex-wrap justify-center lg:gap-5 mt-4 lg:mb-1 lg:grid lg:grid-cols-3">
         {teamMembers.map((teamMember) => (
           <div className="p-4 bg-neutral-900 text-white flex flex-col pb-3 max-w-72 lg:p-0">
             <img

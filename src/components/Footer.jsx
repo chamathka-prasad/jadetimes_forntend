@@ -141,7 +141,7 @@ const Footer = () => {
             &copy; 2024 Jadetimes Media LLC. <span className="inline-block 2xl:block">All Rights Reserved</span>
           </div>
           {screenSize >= 1200 && (
-            <ul className="text-[0.6875rem] flex flex-row flex-wrap justify-center 2xl:justify-normal 2xl:max-w-[1063px]">
+            <ul className="text-[0.6875rem] flex flex-row flex-wrap justify-center 2xl:justify-normal 2xl:max-w-[66.45rem]">
               <li>
                 <Link to="/terms-and-conditions" className="duration-300 hover:underline">
                   Terms & Conditions

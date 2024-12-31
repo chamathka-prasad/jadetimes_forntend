@@ -51,15 +51,16 @@ const Membership = () => {
       </section>
       <Section className="p-4">
         <h2 className="text-xl font-semibold text-center">Member Benefits</h2>
-        <ul className="mt-8 flex flex-col gap-4 sm:grid sm:grid-cols-2 lg:gap-x-8">
+        <ul className="mt-8 flex flex-col gap-4 sm:grid sm:grid-cols-2 lg:gap-5">
           {memberBenefits.map((benefit, index) => (
             <li key={index}>
               {screenSize >= 1200 && <div className="text-5xl font-black text-neutral-500 float-left min-w-[4.0625rem] text-center mr-4">{index + 1 <= 9 ? `0${index + 1}` : index + 1}</div>}
-              <div className="flex flex-row gap-4 items-center">
+              <div className="flex flex-row gap-4 items-center lg:flex-col lg:items-start lg:gap-0">
                 {screenSize < 1200 && <div className="text-5xl font-black text-neutral-500 min-w-[4.0625rem] text-center">{index + 1 <= 9 ? `0${index + 1}` : index + 1}</div>}
                 <h3 className="font-semibold text-[1.0625rem]">{benefit.type}</h3>
+                {screenSize >= 1200 && <p className="mt-2 lg:text-sm">{benefit.details}</p>}
               </div>
-              <p className="mt-2 lg:text-sm md:line-clamp-4 lg:line-clamp-3">{benefit.details}</p>
+              {screenSize < 1200 && <p className="mt-2 lg:text-sm">{benefit.details}</p>}
             </li>
           ))}
         </ul>

@@ -54,6 +54,14 @@ iframe {
   aspect-ratio: 16 / 9;
 }
 
+.flip-horizontal {
+  transform: rotate3d(0, 100, 0, 180deg);
+}
+
+.top-full-plus-1rem {
+  top: calc(100% + 1rem);
+}
+
 @media (min-width: 768px) and (min-height: 768px) {
   .custom-screen {
     display: flex;
